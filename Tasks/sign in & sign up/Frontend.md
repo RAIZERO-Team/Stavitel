@@ -16,7 +16,7 @@ and use folder called public to handel the imges of sign in & sign up.
 2. Create css file called User_Sign.css
 3. Create javascript file called User_Sign.js
 
-Omnia create sign in form and the first code of html
+Kero create sign in form and the first code of html
 
 Shahd create sign up form and the responsave of the file in css
 ```
