@@ -12,13 +12,19 @@
 Create Sign in page with html & css & javascript
 and use folder called public to handel the imges of sign in & sign up.
 
-1. Create html file called User_Sign.html
-2. Create css file called User_Sign.css
-3. Create javascript file called User_Sign.js
+Kero:
+1. create sign in form and the first code of html
+2. create Forget Password form
+3. create Code Verification form
+4. create icons in sign in like the desgin
 
-Kero create sign in form and the first code of html
 
-Shahd create sign up form and the responsave of the file in css
+Shahd:
+1. create sign up form and the responsave of the file in css
+2. create the Password Strength Check in sign up page
+3. create Change Password form
+4. change the background colors and background panel of the user-sign form
+
 ```
 
 ### The Design
@@ -66,9 +72,6 @@ backgroud page     backgroud panel
 #0BB3B7            #6FCECC
 #FFC727            #ffd768
 #C6C46F            #DFE2A1
-
-Error Color
-Corect Color
 
 ```
 
