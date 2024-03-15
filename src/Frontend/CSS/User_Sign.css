@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --bg-color: #fff;
+  --text-color: #151111;
+  --subtext-color: #bbb;
+  --link-color: #8371fd;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 2rem;
+  --h4-font-size: 1.1rem;
+  --h6-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/*=============== inner box ===============*/
+/*=============== Sign In Form ===============*/
+/*=============== BASE ===============*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: var(--body-font);
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #ff8c6b;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: 640px;
+  background-color: var(--bg-color);
+  border-radius: 3.3rem;
+  box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+}
+
+.inner-box {
+  position: absolute;
+  width: calc(100% - 4.1rem);
+  height: calc(100% - 4.1rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+.forms-warp {
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0;
+  left: 0;
+}
+
+.carousel {
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  top: 0;
+  left: 45%;
+  background-color: #ffe0d2;
+  border-radius: 2rem;
+}
+
+
+form {
+  max-width: 250px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 27px;
+  margin: 0.3rem;
+}
+
+.logo h4 {
+  font-size: var(--h4-font-size);
+  letter-spacing: -0.5px;
+  color: var(--text-color);
+}
+
+.heading h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--text-color);
+}
+
+.heading h6 {
+  color: #bababa;
+  font-weight: var(--font-regular);
+  font-size: var(--h6-font-size);
+  display: inline;
+}
+
+.toggle {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: var(--font-medium);
+  transition: 0.3s;
+}
+
+.toggle:hover {
+  color: var(--link-color);
+}
+
+.input-wrap {
+  position: relative;
+  height: 37px;
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--subtext-color);
+  padding: 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  transition: 0.4s;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: var(--subtext-color);
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.input-field.active {
+  border-bottom-color: var(--text-color);
+}
+
+.input-field.active + label {
+  font-size: 0.75rem;
+  top: -2px;
+}
+
+.sign-btn {
+  display: inline-block;
+  width: 100%;
+  height: 43px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+}
+
+.sign-btn:hover {
+  background-color: var(--link-color);
+}
+
+/* .email_icons {
+
+} */
+
+.email_icons h6 {
+  margin-top: -0.5rem;
+  color: #bababa;
+  font-weight: var(--font-regular);
+  font-size: var(--h6-font-size);
+}
+
+.email_icons a {
+  text-decoration: none;
+}
+
+.email_icons img {
+  margin-top: 5px;
+  width: 26px;
+  height: 26px;
+  display: inline;
+}
+
+.text {
+  color: var(--subtext-color);
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.text a {
+  color: var(--subtext-color);
+  transition: 0.3s;
+}
+
+.text a:hover {
+  color: var(--link-color);
+}
+
+.copyright {
+  color: var(--subtext-color);
+  font-size: 0.7rem;
+  margin-top: 0.7rem;
+}
