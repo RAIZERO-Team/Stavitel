@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <!--  Discription -->
-  <meta name="description" content=""/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta name="description" content="" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/User_Sign.css">
-  <link rel="icon" href="../../public/Icons/">
-  
-  <title>Stavitel || User Sign</title>
-</head>
-<body>
-  <main>
-    <div class="box">
-      <div class="inner-box">
-        <div class="forms-wrap">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/User_Sign.css" />
+    <link rel="icon" href="../../public/Icons/" />
+
+    <title>Stavitel . User</title>
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-warp">
+            <form
+              action="User_Sign.html"
+              autocomplete="off"
+              class="sign-in-form"
+            >
+              <div class="logo">
+                <img src="/public/Icons/logo.png" alt="Stavitel Logo" />
+                <h4>Stavitel</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                <h6>Not registred yet?</h6>
+                <a href="#" class="toggle">Sign up</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    maxlength="15"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Name</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                <input type="submit" value="Sign In" class="sign-btn"/>
+
+                <div class="email_icons">
+                  <h6>or Sign In With</h6>
+                  <a href="#" target="_blank">
+                    <img src="/public/Icons/google.svg" title="Google" alt="Google Icon">
+                  </a>
+                  <a href="#" target="_blank">
+                    <img src="/public/Icons/linkedin.svg" title="Google" alt="Google Icon">
+                  </a>
+                  <a href="#" target="_blank">
+                    <img src="/public/Icons/github.svg" title="Google" alt="Google Icon">
+                  </a>
+                  <a href="#" target="_blank">
+                    <img src="/public/Icons/github.svg" title="Google" alt="Google Icon">
+                  </a>
+                </div>
+
+                <p class="text">
+                  <a href="#">Forget your password?</a>
+                </p>
+
+                <p class="copyright">
+                  &#169; 2024 Stavitel - All rights reserved
+                </p>
+              </div>
+            </form>
           <form action="index.html" autocomplete="off"
           class="sign-up-form">
         <div class="logo">
@@ -74,9 +144,10 @@
           </p>
         </div>
         </form>
-        </div> 
-        <div class="carousel">
-          <div class="images-wrapper">
+          </div>
+
+          <div class="carousel">
+                    <div class="images-wrapper">
             <img src="C:\Stavitel project\Stavitel\public\User_Sign/Build_web1.svg"  class="image img-1 show"  alt="">
             <img src="C:\Stavitel project\Stavitel\public\User_Sign/Build_web2.svg"  class="image img-2"  alt="">
             <img src="C:\Stavitel project\Stavitel\public\User_Sign/Build_web3.svg"  class="image img-3"  alt="">
@@ -96,13 +167,13 @@
               <span class="active" data-value="1"></span>
               <span data-value="2"></span>
               <span data-value="3"></span>
-              
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-  <script src="./JS/User_Sign.js"></script>
-</body>
+    </main>
+
+    <!--============= Js files =============-->
+    <script src="JS/User_Sign.js"></script>
+  </body>
 </html>

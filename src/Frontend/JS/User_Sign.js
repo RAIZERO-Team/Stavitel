@@ -16,11 +16,14 @@ inp.addEventListener("blur",() => {
     inp.classList.remove("active");
 });
 });
+
+// =============  Button to switch on sign in & sign up =============
 toggle_btn.forEach(btn =>{
 btn.addEventListener("click",() =>{
     main.classList.toggle("sign-in-mode");
 });
 });
+
 function moveSlider(){
     let index = this.dataset.value;
     let currentImage = document.querySelector(`.img-${index}`);
@@ -32,4 +35,3 @@ function moveSlider(){
 bullets.forEach(bullet => {
     bullet.addEventListener("click", moveSlider);
 });
-
