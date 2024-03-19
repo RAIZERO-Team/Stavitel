@@ -20,7 +20,7 @@ inp.addEventListener("blur",() => {
 // =============  Button to switch on sign in & sign up =============
 toggle_btn.forEach(btn =>{
 btn.addEventListener("click",() =>{
-    main.classList.toggle("sign-in-mode");
+    main.classList.toggle("sign-up-mode");
 });
 });
 

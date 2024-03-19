@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --bg-color: #fff;
+  --text-color: #151111;
+  --subtext-color: #bbb;
+  --link-color: #8371fd;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 2rem;
+  --h4-font-size: 1.1rem;
+  --h6-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/*=============== inner box ===============*/
+/*=============== Sign In Form ===============*/
+/*=============== BASE ===============*/
+
 *,
 *::before,
 *::after {
@@ -19,7 +44,7 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #0BB3B7;    /*ff8c6b*/
+  background-color: #dbdbdb;    /*ff8c6b*/
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -175,6 +200,26 @@ label {
   background-color: #8371fd;
 }
 
+
+.email_icons h6 {
+  margin-top: -0.5rem;
+  color: #bababa;
+  font-weight: var(--font-regular);
+  font-size: var(--h6-font-size);
+}
+
+.email_icons a {
+  text-decoration: none;
+}
+
+.email_icons img {
+  margin-top: 5px;
+  width: 26px;
+  height: 26px;
+  display: inline;
+}
+
+
 .text {
   color: #bbb;
   font-size: 0.7rem;
@@ -215,7 +260,7 @@ main.sign-up-mode .carousel {
   width: 55%;
   left: 45%;
   top: 0;
-  background-color: #6FCECC;    /* ffe0d2 */
+  background-color: #cccccc;    /* ffe0d2 */
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -230,9 +275,9 @@ main.sign-up-mode .carousel {
   grid-template-rows: 1fr;
 }
 
-/* #images-wrapper {
+#images-wrapper {
   animation: 20s images-wrapper infinite;
-} */
+}
 
 @keyframes image {
   0% {
@@ -338,6 +383,12 @@ main.sign-up-mode .carousel {
   width: 1.1rem;
   background-color: #151111;
   border-radius: 1rem;
+}
+
+.copyright {
+  color: var(--subtext-color);
+  font-size: 0.7rem;
+  margin-top: 0.7rem;
 }
 
 @media (max-width: 850px) {
