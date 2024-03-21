@@ -1,39 +1,98 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-html {
-    font-size: 62.5%;
+body,
+input {
+  font-family: var(--body-font);
 }
 
-body {
-    padding: 2rem;
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
+
+main {
+    width: 100%;
     min-height: 100vh;
+    overflow: hidden;
+    background-color: #dbdbdb;
+    padding: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-image: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
-}
-
-.feedback-container {
-    border-radius: 1rem;
+    justify-content: center;
+  }
+  
+  .box {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    height: 640px;
     background-color: #fff;
-    padding: 2rem 4rem;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-h1 {
+    border-radius: 3.3rem;
+    box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+  }
+  
+  .inner-box {
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    
+  }
+  
+  .forms-wrap {
+    position: absolute;
+    height: 100%;
+    width: 45%;
+    top: 0;
+    left: 0;
+  
+  }
+  
+  form {
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 27px;
+    margin: 0.3rem;
+  }
+  
+  .logo h4 {
+    font-size: var(--h4-font-size);
+    margin-top: -9px;
+    letter-spacing: -0.5px;
+    color: var(--text-color);
+  }
+  
+
+  .heading h1 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--text-color);
+  }
+  
+  .heading p {
     color: #000;
-    font-size: 2.5rem;
-    margin-bottom: 0.3rem;
-}
-p {
-    color: #191919;
-    font-size: 1.4rem;
-}
+    font-weight: 400;
+    font-size: 0.95rem;
+    display: inline;
+  }
+
 .emoji-box {
     padding: 1rem 0;
     width: 60%;
@@ -50,7 +109,7 @@ p {
     }
   }
 }
-}
+
 
 .question {
     margin: 0.5rem 0;
@@ -162,3 +221,11 @@ input[type="radio"] {
     background-color: #1c84ff;
 }
 }
+.image {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+    animation: 20s image infinite;
+    transition: opacity 0.3s, transform 0.5s;
+  }
