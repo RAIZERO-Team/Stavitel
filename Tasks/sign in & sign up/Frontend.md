@@ -38,6 +38,7 @@ Shahd:
 - Sign Up
 
   ![UX-Design](../../Design/UI/Sign%20up.png)
+  
 
 <br>
 
