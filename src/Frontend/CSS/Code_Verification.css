@@ -97,8 +97,8 @@ form {
 
 .logo h4 {
   font-size: var(--h4-font-size);
-  margin-top: -9px;
-  letter-spacing: -0.5px;
+  margin-top: -3px;
+  letter-spacing: 0.5px;
   color: var(--text-color);
 }
 

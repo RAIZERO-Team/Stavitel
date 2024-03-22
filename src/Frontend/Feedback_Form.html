@@ -1,69 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <!--  Discription -->
-  <meta name="description" content=""/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta name="description" content="" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/Feedback_Form.css">
-  <link rel="icon" href="../../public/Icons/">
-  
-  <title>Stavitel</title>
-</head>
-<body>
-<main>
-  <div class="box">
-    <div class="inner-box">
-     
-    </div>
-  </div>
-    
-      <div class="forms-wrap">
-        <form
-          action="Feedback_Form.html"
-          autocomplete="off"
-          class="feedback-form"
-        >
-          <div class="logo">
-            <img src="/public/Icons/logo.png" alt="Stavitel Logo" />
-            <h4>Stavitel</h4>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/Feedback_Form.css" />
+    <link rel="icon" href="../../public/Icons/" />
+
+    <title>Stavitel</title>
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form
+              action="Feedback_Form.html"
+              autocomplete="off"
+              class="feedback-form"
+            >
+              <div class="logo">
+                <img src="/public/Icons/logo.png" alt="Stavitel Logo" />
+                <h4>Stavitel</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Give us your valuable feedback</h2>
+                <h4>Your feedback is very important to us.</h4>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <textarea
+                    name="Message"
+                    class="input-field"
+                    required
+                  ></textarea>
+                  <label>Your Feedback</label>
+                </div>
+
+                <!-- <div class="accept">
+                  <input type="radio" id="accept" />
+                  <label
+                    >I accept the <a herf="#">terms and conditions</a></label
+                  >
+                </div> -->
+
+                <input type="submit" value="Send" class="continue-btn" />
+
+                <p class="copyright">
+                  &#169; 2024 Stavitel - All rights reserved
+                </p>
+              </div>
+            </form>
           </div>
-  <div class="feedback-container">
-    <h1>Give us your valuable feedback</h1> <br>
-    <p>Your feedback is very important to us</p>
-    <div class="emoji-box">
-      <button class="btn normal">&#128578;</button>
-      <button class="btn normal">&#128515;</button>
-      <button class="btn normal">&#128519;</button>
-      <button class="btn normal">&#128531;</button>
-      <button class="btn normal">&#128532;</button>
-      <button class="btn normal">&#128545;</button>
-    </div>
 
-    <p class="question">What you want to say?</p>
-    <textarea id="textarea" cols="40" rows="5"></textarea>
+          <div class="image">
+            <img src="/public/Workspace/Feedback.svg" alt="Feedback-image" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script scr="./JS/feedback.js"></script>
+  </body>
+</html>
+
+<!---
+
+  <div class="feedback-container">
 
     <div class="radio-btns">
     <div class="accept">
       <input type="radio" id="accept">
       <label>I accept the <a herf="#" >terms and conditions</a></label>
     </div>
-
-    <div class="center">
-      <button class="btn button">Send</button>
-    </div>
-    <div class="image">
-      <img
-        src="/public/Workspace/Feedback.svg"
-        alt=" feedback Image"
-      />
-  </div>
-  </div>
-  </div>
-</main>
-  <script scr="./JS/feedback.js"></script>
-  
-</body>
-</html>
+-->
