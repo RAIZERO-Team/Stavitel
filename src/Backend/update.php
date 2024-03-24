@@ -1,29 +1,29 @@
 <?php
-include ("inc/connection.php");
-include ("functions.php");
+include("inc/connection.php");
+include("functions.php");
 session_start();
 
-if (isset ($_SESSION["user"])) {
+if (isset($_SESSION["user"])) {
   $email = $_SESSION['user']['email'];
-} elseif (isset ($_SESSION['sendemail'])) {
+} elseif (isset($_SESSION['sendemail'])) {
   $email = $_SESSION['sendemail']['email'];
 }
 
-if (isset ($_POST['submit'])) {
+if (isset($_POST['submit'])) {
   $errors = [];
 
   $oldpassword = filter_var($_POST['oldpassword'], FILTER_SANITIZE_STRING);
   $newpassword = filter_var($_POST['newpassword'], FILTER_SANITIZE_STRING);
   $conform = filter_var($_POST['conformpassword'], FILTER_SANITIZE_STRING);
 
-  if (empty ($oldpassword)) {
+  if (empty($oldpassword)) {
     $errors[] = 'please enter old password';
   }
 
-  if (empty ($newpassword)) {
+  if (empty($newpassword)) {
     $errors[] = 'please enter new password';
   }
-  if (empty ($conform)) {
+  if (empty($conform)) {
     $errors[] = 'please enter the same password';
   }
 
@@ -35,9 +35,9 @@ if (isset ($_POST['submit'])) {
     $errors[] = 'password must be at least 6 characters';
   }
 
-  if (empty ($errors)) {
+  if (empty($errors)) {
     updata_password($email, $oldpassword, $newpassword, $conform);
-    if (isset ($_SESSION['sendemail'])) {
+    if (isset($_SESSION['sendemail'])) {
       unset($_SESSION['sendemail']);
     }
     header('location:login.php');

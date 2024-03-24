@@ -24,6 +24,8 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
+
+            <!--================= Sign In Form =================-->
             <form
               action="User_Sign.html"
               autocomplete="off"
@@ -64,22 +66,7 @@
                   <label>Password</label>
                 </div>
 
-                <input type="submit" value="Sign In" class="sign-btn" />
-
-                <!-- <div class="container">
-                  <a href="#" class="button">
-                      <div class="button__content">
-                          <span class="button__text">Button</span>
-          
-                          <div class="button__shape-1"></div>
-                          <div class="button__shape-2"></div>
-                          <div class="button__shape-3"></div>
-                          <div class="button__shape-4"></div>
-                      </div>
-      
-                      <div class="button__shadow"></div>
-                  </a>
-              </div> -->
+                <input type="submit" value="Sign In" name="sign_in" class="sign-btn" />
 
                 <div class="email_icons">
                   <h6>or Sign In With</h6>
@@ -123,6 +110,7 @@
               </div>
             </form>
 
+            <!--================= Sign Up Form =================-->
             <form
               action="User_Sign.html"
               autocomplete="off"
@@ -164,23 +152,55 @@
                 <div class="input-wrap">
                   <input
                     type="password"
-                    minlength="4"
-                    class="input-field"
+                    onkeyup="trigger()"
+                    class="input-field pass"
+                    id="sign_up_pass"
                     autocomplete="off"
                     required
                   />
-                  
                   <label>password</label>
-                  <span class="showBtn">SHOW</span>
                 </div>
-                <div class="indicator">
-                  <span class="Week">1</span>
-                  <span class="medium">2</span>
-                  <span class="strong">3</span>
-                </div>
-                <div class="text">Your password is too week</div>
 
-                <input type="submit" value="Sign Up" class="sign-btn" />
+                <div class="indicator">
+                  <span class="weak"></span>
+                  <span class="medium"></span>
+                  <span class="strong"></span>
+                </div>
+                <div class="pass_text"></div>
+
+                <input type="submit" value="Sign Up" name="sign_up" class="sign-btn" />
+
+                <div class="email_icons">
+                  <h6>or Sign Up With</h6>
+                  <a href="#" target="_blank">
+                    <img
+                      src="/public/Icons/google.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="/public/Icons/linkedin.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="/public/Icons/github.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="/public/Icons/facebook.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                </div>
 
                 <p class="copyright">
                   &#169; 2024 Stavitel - All rights reserved
@@ -189,22 +209,23 @@
             </form>
           </div>
 
+          <!--================= Images =================-->
           <div class="carousel">
             <div class="images-wrapper" id="images-wrapper">
               <img
                 src="/public/User_Sign/Build_web1.svg"
                 class="image img-1 show"
-                alt=""
+                alt="image-slide1"
               />
               <img
                 src="/public/User_Sign/Build_web2.svg"
                 class="image img-2"
-                alt=""
+                alt="image-slide2"
               />
               <img
                 src="/public/User_Sign/Build_web3.svg"
                 class="image img-3"
-                alt=""
+                alt="image-slide3"
               />
             </div>
 
