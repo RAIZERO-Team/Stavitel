@@ -1,2 +1,6 @@
+/UX
 *.excalidraw
+UML Diagrams/
 *.eddx
+*.htaccess
+src/Test
