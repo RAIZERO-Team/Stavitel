@@ -10,9 +10,9 @@ phpmailer/src/PHPMailer.php
 phpmailer/src/SMTP.php
 */
 
-require '../Lib/PHPmailer/src/Exception.php';
-require '../Lib/PHPmailer/src/PHPMailer.php';
-require '../Lib/PHPmailer/src/SMTP.php';
+require '../Lib/Backend/PHPmailer/src/Exception.php';
+require '../Lib/Backend/PHPmailer/src/PHPMailer.php';
+require '../Lib/Backend/PHPmailer/src/SMTP.php';
 
 
 // Generate verification code
