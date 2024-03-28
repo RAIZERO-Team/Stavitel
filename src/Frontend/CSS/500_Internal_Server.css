@@ -1,0 +1,58 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #d7d7d7;
+  --text-color: #161513;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Space Grotesk', sans-serif;
+  --biggest-font-size: 2.375rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+}
+
+/* Responsive typography */
+
+/*=============== BASE ===============*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+
+.main {
+  overflow: hidden; /* For the animations ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+
+
+/* Show menu */
+
+
+/*=============== HOME ===============*/
+
+
+/* Animate ghost */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
+
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+
+
+/* For 4K resolutions (3840 x 2160, 4096 x 2160) */

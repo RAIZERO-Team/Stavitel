@@ -1,18 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <!--  Discription -->
-  <meta name="description" content=""/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta name="description" content="" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/404_error_page.css">
-  <link rel="icon" href="../../public/Icons/">
-  
-  <title>Stavitel</title>
-</head>
-<body>
-  
-</body>
+    <!--=============== Font Awesome ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!--=============== BOXICONS ===============-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="CSS/404_error_page.css" />
+    <link rel="icon" href="../../public/Icons/" />
+
+    <title>Stavitel . Page not Found</title>
+  </head>
+  <body>
+        <!--==================== HEADER ====================-->
+        <header class="header">
+          <nav class="nav container">
+              <a href="#" class="nav_logo">
+                  Stavitel
+              </a>
+
+              <div class="nav_menu" id="nav-menu">
+                  <ul class="nav_list">
+                      <li class="nav_item">
+                          <a href="#" class="nav_link">Home</a>
+                      </li>
+                      <li class="nav_item">
+                          <a href="#" class="nav_link">About</a>
+                      </li>
+                      <li class="nav_item">
+                          <a href="#" class="nav_link">Contact</a>
+                      </li>
+                  </ul>
+
+                  <div class="nav_close" id="nav-close">
+                      <i class='bx bx-x'></i>
+                  </div>
+              </div>
+
+              <!-- Toggle button -->
+              <div class="nav_toggle" id="nav-toggle">
+                  <i class='bx bx-grid-alt'></i>
+              </div>
+          </nav>
+      </header>
+
+      <!--==================== MAIN ====================-->
+      <main class="main">
+          <!--==================== HOME ====================-->
+          <section class="home">
+              <div class="home_container container">
+                  <div class="home_data">
+                      <h1 class="home_title">Oooops!</h1>
+                      <p class="home_description">
+                          We can't seem to find the page <br> you are looking for.
+                      </p>
+                      <a href="#" class="home_button">
+                          Go Home
+                      </a>
+                  </div>
+
+                  <div class="home_img">
+                      <img src="/public/Errors Page/404 error page.svg" alt="">
+                      <div class="home_shadow"></div>
+                  </div>
+              </div>
+
+              <footer class="home_footer">
+                  <span>&#169; 2024 Stavitel - All rights reserved</span>
+              </footer>
+          </section>
+      </main>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="JS/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="JS/Errors.js"></script>
+  </body>
 </html>

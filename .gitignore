@@ -4,3 +4,4 @@ UML Diagrams/
 *.eddx
 *.htaccess
 src/Test
+/src/Lib/Backend/PHPmailer
