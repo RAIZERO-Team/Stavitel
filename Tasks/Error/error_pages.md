@@ -29,3 +29,25 @@ A server error indicates that the request is valid but cannot be completed becau
 521 Web Server Is Down
 522 Connection Timed Out
 524 A Timeout Occurred
+
+## Error Pages Name
+
+```
+400_Bad_Request
+401_Unauthorized
+403_Forbidden
+404_Not_Found
+408_Request_Timeout
+429_Too_Many_Requests
+440_Login_Time-Out
+444_No_Response
+451_Unavailable
+
+500_Server_Error
+502_Bad_Gateway
+503_Service_Unavailable
+504_Gateway_Timeout
+521_Server_Is_Down
+522_Connection_Timed_Out
+524_Timeout_Occurred
+```

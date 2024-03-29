@@ -99,6 +99,12 @@ img {
   font-weight: var(--font-bold);
 }
 
+.nav_logo .logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
 .nav_toggle {
   font-size: 1.25rem;
   cursor: pointer;
