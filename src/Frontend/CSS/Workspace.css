@@ -295,6 +295,24 @@ body.dark .switch::before{
     padding: 12px 60px;
 }
 
+.my_projects{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    opacity: 0;
+}
+.my_projects .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
 .sidebar.close ~ .home{
     left: 78px;
     height: 100vh;

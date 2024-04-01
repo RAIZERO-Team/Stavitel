@@ -19,3 +19,9 @@ modeSwitch.addEventListener("click", () => {
     modeText.innerText = "Dark mode";
   }
 });
+
+// Switch With Sections
+
+const home_section = document.querySelectorAll(".home");
+const my_projects_section = document.querySelectorAll(".my_projects");
+

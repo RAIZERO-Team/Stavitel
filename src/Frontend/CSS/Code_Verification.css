@@ -30,6 +30,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body,
@@ -175,8 +176,9 @@ label {
 
 .copyright {
   color: var(--subtext-color);
-  font-size: 0.7rem;
-  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  /* margin-top: 2rem; */
 }
 
   /* change color here */
@@ -189,4 +191,95 @@ label {
   left:0%;
   background-color: #afcee7;
   border-radius: 2rem;
+}
+
+
+/* ========== Rsponsive ========== */
+@media (max-width: 850px) {
+  .box {
+    height: auto;
+    max-width: 550px;
+    overflow: hidden;
+  }
+
+  .inner-box {
+    position: static;
+    transform: none;
+    width: revert;
+    height: revert;
+    padding: 2rem;
+  }
+
+  .forms-wrap {
+    position: revert;
+    width: 100%;
+    height: auto;
+  }
+
+  form {
+    max-width: revert;
+    padding: 1.5rem 2.5rem 2rem;
+    transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+  }
+
+  .heading {
+    margin: 2rem 0;
+  }
+
+  form.sign-up-form {
+    transform: translateX(100%);
+  }
+
+  main.sign-up-mode form.sign-in-form {
+    transform: translateX(-100%);
+  }
+
+  main.sign-up-mode form.sign-up-form {
+    transform: translateX(0%);
+  }
+
+  /* .carousel {
+    position: revert;
+    height: auto;
+    width: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+  } */
+
+  .image {
+    display: none;
+    /* display: flex;
+    position: revert;
+    height: 70%;
+    width: 70%;
+    margin: 0 50%; */
+  }
+
+}
+
+@media (max-width: 530px) {
+  main {
+    padding: 1rem;
+  }
+
+  .box {
+    border-radius: 2rem;
+  }
+
+  .inner-box {
+    padding: 1rem;
+  }
+
+  .image {
+    display: none;
+    /* display: flex;
+    position: revert;
+    height: 70%;
+    width: 70%;
+    margin: 0 50px; */
+  }
+
+  form {
+    padding: 1rem 2rem 1.5rem;
+  }
 }

@@ -39,6 +39,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 body,
@@ -282,10 +283,10 @@ label {
 /*=============== Different Sign In - Up ===============*/
 
 .email_icons h6 {
-  margin-top: -0.5rem;
   color: #bababa;
-  font-weight: var(--font-regular);
-  font-size: var(--h6-font-size);
+  font-weight: var(--font-medium);
+  font-size: 0.9rem;
+  margin: 0px 0px 10px 0px;
 }
 
 .email_icons a {
@@ -301,7 +302,7 @@ label {
 
 .text {
   color: #bbb;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .text a {
@@ -475,8 +476,8 @@ main.sign-up-mode .carousel {
 
 .copyright {
   color: var(--subtext-color);
-  font-size: 0.7rem;
-  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 @media (max-width: 850px) {

@@ -4,15 +4,9 @@ const main = document.querySelector("main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
-
-
-
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
     inp.classList.add("active");
-  });
-  inp.addEventListener("blur", () => {
-    inp.classList.remove("active");
   });
   inp.addEventListener("blur", () => {
     if (inp.value != "") return;
@@ -20,20 +14,54 @@ inputs.forEach((inp) => {
   });
 });
 
-// =============  Button to switch on sign in & sign up =============
 toggle_btn.forEach((btn) => {
   btn.addEventListener("click", () => {
     main.classList.toggle("sign-up-mode");
   });
 });
 
+// images slide
+
 function moveSlider() {
   let index = this.dataset.value;
+
   let currentImage = document.querySelector(`.img-${index}`);
   images.forEach((img) => img.classList.remove("show"));
   currentImage.classList.add("show");
+
+  const textSlider = document.querySelector(".text-group");
+  textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+
   bullets.forEach((bull) => bull.classList.remove("active"));
   this.classList.add("active");
+}
+
+bullets.forEach((bullet) => {
+  bullet.addEventListener("click", moveSlider);
+});
+
+/////////////////////////////////////
+
+// var slideIndex = 1;
+// showSlides(slideIndex);
+
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+function showSlides(n) {
+  var i;
+  var slides = document.querySelectorAll(".image");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
 }
 
 // =============  Password Strength Check =============
