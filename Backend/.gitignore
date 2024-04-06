@@ -1,2 +1,4 @@
 lib/PHPmailer
 /Test
+.htaccess
+htaccess-info.txt
