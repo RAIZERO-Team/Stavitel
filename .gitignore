@@ -2,6 +2,4 @@
 *.excalidraw
 UML Diagrams/
 *.eddx
-*.htaccess
-src/Test
-/src/Lib/Backend/PHPmailer
+Project road map.md
