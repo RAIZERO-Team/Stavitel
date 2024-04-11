@@ -74,6 +74,10 @@ main {
   width: 45%;
   top: 0;
   left: 55%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transition: 0.8s ease-in-out;
 }
 
 form {
@@ -84,6 +88,8 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
 .logo {
@@ -178,7 +184,6 @@ label {
   color: var(--subtext-color);
   font-size: 0.9rem;
   text-align: center;
-  /* margin-top: 2rem; */
 }
 
   /* change color here */

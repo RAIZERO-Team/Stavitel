@@ -45,6 +45,7 @@ body {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
   color: var(--text-color);
+  overflow: hidden;
 }
 
 
@@ -263,7 +264,7 @@ img {
   .home_container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    column-gap: 2rem;
+    column-gap: 2rem;   /* 10rem */
   }
   .home_data {
     text-align: initial;
