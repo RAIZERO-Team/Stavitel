@@ -1,35 +1,3 @@
-
-```
-B 4*1 
-F 5*1 
-F 2*2 
-M 1*3
-```
-
-4xx: Client error
-A client error indicates that the request cannot be completed because of an issue with the client, or the syntax of the request.
-
-400 Bad Request
-401 Unauthorized
-403 Forbidden
-404 Not Found
-408 Request Timeout
-429 Too Many Requests
-440 Login Time-Out
-444 No Response
-451 Unavailable For Legal Reasons
-
-5xx: Server error
-A server error indicates that the request is valid but cannot be completed because of an issue on the server’s side, such as a lack of available resources.
-
-500 Internal Server Error
-502 Bad Gateway
-503 Service Unavailable
-504 Gateway Timeout
-521 Web Server Is Down
-522 Connection Timed Out
-524 A Timeout Occurred
-
 ## Error Pages Name
 
 ```
@@ -37,17 +5,32 @@ A server error indicates that the request is valid but cannot be completed becau
 401_Unauthorized
 403_Forbidden
 404_Not_Found
-408_Request_Timeout
-429_Too_Many_Requests
-440_Login_Time-Out
-444_No_Response
-451_Unavailable
 
 500_Server_Error
-502_Bad_Gateway
 503_Service_Unavailable
 504_Gateway_Timeout
-521_Server_Is_Down
-522_Connection_Timed_Out
-524_Timeout_Occurred
 ```
+
+- Mahmoud
+Create 400_Bad_Request page
+
+- Afraym
+Create 403_Forbidden
+
+- Kero
+Create 500_Server_Error
+
+- Shahd
+Create 401_Unauthorized
+
+- Yasmeen
+Create 503_Service_Unavailable
+
+- Basmala
+Create 504_Gateway_Timeout
+
+## The Resource
+
+- [Create a Responsive Error Page](https://youtu.be/WG2l4ER3_Qc?si=I_9AwzXspk6EIfro)
+
+Make to 27:45 minutes.
