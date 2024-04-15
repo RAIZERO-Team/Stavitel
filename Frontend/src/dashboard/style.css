@@ -328,6 +328,7 @@ body{
     margin-bottom: 10px;
     color: var(--dark);
 }
+
 .content main .header .left .breadcrumb{
     display: flex;
     align-items: center;
@@ -359,12 +360,14 @@ body{
     font-weight: 500;
 
 }
+
 .content main .insights{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr) );
     grid-gap: 24px;
     margin-top: 36px;
 }
+
 .content main .insights li{
     padding: 24px;
     background: var(--light);
@@ -374,6 +377,7 @@ body{
     grid-gap: 24px;
     cursor: pointer;
 }
+
 .content main .insights li .bx{
     width: 80px;
     height: 80px;
@@ -383,6 +387,7 @@ body{
     align-items: center;
     justify-content: center;
 }
+
 .content main .insights li :nth-child(1) .bx{
     background: var(--light-primary);
     color: var(--primary);
@@ -506,4 +511,110 @@ body{
     background: var(--warning);
 }
 
+.content main .bottom-reminder{
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.content main .bottom-reminder .task-list{
+    width: 100%;
+} 
+
+.content main .bottom-reminder .task-list li{
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 14px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content main .bottom-reminder .task-list li .task-tittle{
+    display: flex;
+    align-items: center;
+}
+
+.content main .bottom-reminder .task-list li .task-tittle p{
+    margin-left: 6px;
+}
+
+.content main .bottom-reminder .task-list li .bx{
+    cursor: pointer;
+}
+
+.content main .bottom-reminder .task-list li .task-tittle li .completed{
+    border-left: 10px solid var(--success);
+}
+
+.content main .bottom-reminder .task-list li .task-tittle li .not-completed{
+    border-left: 10px solid var(--danger);
+}
+
+.content main .bottom-reminder .task-list li .task-tittle li:last-child{
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px){
+    .sidebar{
+        width: 200px;
+    }
+
+    .content{
+        width: calc(100% - 60px);
+        left: 200px;
+    }
+
+
+}
+
+@media screen and (max-width: 576px){
+
+    .content nav from .form-input input{
+        display: none;
+    }
+
+    .content nav from .form-input button{
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: var(--dark);
+        border-radius: none;
+    }
+
+    .content nav from.show .form-input input{
+        display: block;
+        width: 100%;
+    }
+
+    .content nav from.show .form-input button{
+        width: 36px;
+        height: 100%;
+        background: var(--danger);
+        color: var(--light);
+        border-radius: 0 36px 36px 0;
+    }
+
+    .content nav from.show~.notif, .content nav form.show~.profile{
+        display: none;
+    }
+
+    .content main .insights{
+        grid-template-columns: 1fr;
+    }
+
+    .content main .bottom-data .header{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .orders table{
+        min-width: 340px;
+    }
+
+    .content main .bottom-data .reminders .task-list{
+        min-width: 340px;
+    }
+
+
+}
 
