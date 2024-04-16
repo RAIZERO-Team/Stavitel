@@ -1,0 +1,106 @@
+body, html{
+    background-color: #ebebfb;
+    color: #171730;
+    user-select: none;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container{
+    box-sizing: border-box;
+    background-color: white;
+    padding: 10px 50px ;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(200, 200, 200);
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+h1, h3{
+    font-family: "Roboto Slab";
+    font-weight: 600;
+}
+
+span{
+    font-weight: 500;
+    font-family: "Poppins";
+}
+
+.toggle-container{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.toggle{
+    width: 60px;
+    height: 35px;
+    border-radius: 40px;
+    background-color: #ebebfb;
+    display: inline-block;
+}
+
+.toggle-c{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    transition: 300ms all;
+    border: 1px solid #BCBCA4;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]:checked + div .toggle-c{
+    left: 30px;
+    background-color: #30305c;
+    border-color: #30305c;
+}
+
+input[type="radio"]{
+    border: 0px;
+    width: 10%;
+    height: 20px;
+    accent-color: black;
+}
+
+.togg-label{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+
+}
+
+.flex{
+    display: flex;
+    gap: 5px;
+
+}
+
+.bottom{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.bottom:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+label, input[type="radio"]{
+    cursor: pointer;
+}
