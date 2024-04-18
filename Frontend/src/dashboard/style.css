@@ -8,7 +8,7 @@
     --dark-grey: #AAAAAA;
     --dark: #363949;
     --danger: #D32F2F;
-	--light-danger: #FECDD3;
+ --light-danger: #FECDD3;
     --warning: #FBC02D;
     --light-warning: #FFF2C6;
     --success: #388E3C;
@@ -620,4 +620,10 @@ body{
         min-width: 340px;
     }
 
+<<<<<<< HEAD
+=======
+
+}
+
+>>>>>>> 9518fb2a2442a432aaa20bf24c5e84018e71cf69
 }
