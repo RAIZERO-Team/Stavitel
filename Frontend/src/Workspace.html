@@ -20,7 +20,6 @@
     <title>Stavitel</title>
   </head>
   <body>
-
     <!-- Nav Bar -->
     <!-- <div class="navbar">
       <a href="#" class="notif">
@@ -37,7 +36,7 @@
       <header>
         <div class="image-text">
           <span class="image">
-            <img src="../public/photo_2023-10-16_14-54-50.jpg" alt="">
+            <img src="../public/photo_2023-10-16_14-54-50.jpg" alt="" />
           </span>
           <div class="text logo-text">
             <span class="name">Ahmed Badawi</span>
@@ -54,27 +53,27 @@
           </li>
           <ul class="menu-links">
             <li class="nav-link">
-              <a href="#">
+              <a href="#" onclick="showSection(0)">
                 <i class="bx bx-home-alt icon"></i>
                 <span class="text nav-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-link">
-              <a href="#">
-                <i class='bx bxs-file-plus icon'></i>
+              <a href="#" onclick="openSubpage()">
+                <i class="bx bxs-file-plus icon"></i>
                 <span class="text nav-text">New Project</span>
               </a>
             </li>
             <li class="nav-link">
-              <a href="#">
-                <i class='bx bxs-layer icon'></i>
+              <a href="#" onclick="showSection(1)">
+                <i class="bx bxs-layer icon"></i>
                 <span class="text nav-text">My Projects</span>
               </a>
             </li>
             <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bell icon"></i>
-                <span class="text nav-text">Notifications</span>
+              <a href="#" onclick="showSection(2)">
+                <i class="bx bxs-cog icon"></i>
+                <span class="text nav-text">Settings</span>
               </a>
             </li>
           </ul>
@@ -100,13 +99,43 @@
       </div>
     </nav>
 
-    <section class="home">
-      <!-- <div class="text">Dashboard Sidebar</div> -->
+    <section class="Dashboard section" id="section1">
+      <div class="text">
+        Dashboard Sidebar
+        <p>This is the content of Section 1.</p>
+        <!-- <button class="open-modal">Open Modal</button> -->
+      </div>
     </section>
 
+  <div class="overlay" id="overlay" onclick="closeSubpage()"></div>
 
-    <section class="my_projects">
-      <!-- <div class="text">My Projects Sidebar</div> -->
+    <section class="new_project" id="section2">
+      <div class="subpage-container" id="subpageContainer">
+        <div class="subpage">
+          <!-- <button onclick="closeSubpage()">Close</button> -->
+          <span onclick="closeSubpage()"><i class="bx bxs-cog icon"></i></span>
+          <h2>Subpage Content</h2>
+          <p>This is the subpage content.</p>
+          <p>This is the subpage content.</p>
+          <p>This is the subpage content.</p>
+          <p>This is the subpage content.</p>
+          <p>This is the subpage content.</p>
+          <p>This is the subpage content.</p>
+        </div>
+      </div>
+
+      <!-- <div class="text">new_project</div>
+      <p>This is the content of Section 2.</p> -->
+    </section>
+
+    <section class="My Projects section" id="section3">
+      <div class="text">My projects</div>
+      <p>This is the content of Section 3.</p>
+    </section>
+
+    <section class="Settings section" id="section3">
+      <div class="text">Settings</div>
+      <p>This is the content of Section 4.</p>
     </section>
 
     <script src="./JS/Workspace.js"></script>

@@ -334,19 +334,21 @@ body{
     align-items: center;
     grid-gap: 16px;
 }
+
 .content main .header .left .breadcrumb li{
     color: var(--dark);
-
 }
+
 .content main .header .left .breadcrumb li a{
     color: var(--dark-grey);
     pointer-events: none;
-
 }
-.content main .header .left .breadcrumb li a .active{
+
+.content main .header .left .breadcrumb li a.active{
     color: var(--primary);
     pointer-events: none;
 }
+
 .content main .header .report{
     height: 36px;
     padding: 0 16px;
@@ -358,12 +360,11 @@ body{
     justify-content: center;
     grid-gap: 10px;
     font-weight: 500;
-
 }
 
 .content main .insights{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 24px;
     margin-top: 36px;
 }
@@ -388,22 +389,26 @@ body{
     justify-content: center;
 }
 
-.content main .insights li :nth-child(1) .bx{
+.content main .insights li:nth-child(1) .bx{
     background: var(--light-primary);
     color: var(--primary);
 }
-.content main .insights li :nth-child(2) .bx{
+
+.content main .insights li:nth-child(2) .bx{
     background: var(--light-warning);
     color: var(--warning);
 }
-.content main .insights li :nth-child(3) .bx{
+
+.content main .insights li:nth-child(3) .bx{
     background: var(--light-success);
     color: var(--success);
 }
-.content main .insights li :nth-child(4) .bx{
+
+.content main .insights li:nth-child(4) .bx{
     background: var(--light-danger);
     color: var(--danger);
 }
+
 .content main .insights li .info h3{
     font-size: 24px;
     font-weight: 600;
@@ -511,18 +516,19 @@ body{
     background: var(--warning);
 }
 
-.content main .bottom-reminder{
+.content main .bottom-data .reminders{
     flex-grow: 1;
     flex-basis: 300px;
 }
 
-.content main .bottom-reminder .task-list{
+.content main .bottom-data .reminders .task-list{
     width: 100%;
-} 
+}
 
-.content main .bottom-reminder .task-list li{
+.content main .bottom-data .reminders .task-list li{
     width: 100%;
     margin-bottom: 16px;
+    background: var(--grey);
     padding: 14px 10px;
     border-radius: 10px;
     display: flex;
@@ -530,32 +536,32 @@ body{
     justify-content: space-between;
 }
 
-.content main .bottom-reminder .task-list li .task-tittle{
+.content main .bottom-data .reminders .task-list li .task-title{
     display: flex;
     align-items: center;
 }
 
-.content main .bottom-reminder .task-list li .task-tittle p{
+.content main .bottom-data .reminders .task-list li .task-title p{
     margin-left: 6px;
 }
 
-.content main .bottom-reminder .task-list li .bx{
-    cursor: pointer;
+.content main .bottom-data .reminders .task-list li .bx{
+  cursor: pointer;  
 }
 
-.content main .bottom-reminder .task-list li .task-tittle li .completed{
+.content main .bottom-data .reminders .task-list li.completed{
     border-left: 10px solid var(--success);
 }
 
-.content main .bottom-reminder .task-list li .task-tittle li .not-completed{
+.content main .bottom-data .reminders .task-list li.not-completed{
     border-left: 10px solid var(--danger);
 }
 
-.content main .bottom-reminder .task-list li .task-tittle li:last-child{
-    margin-bottom: 0;
+.content main .bottom-data .reminders .task-list li:last-child{
+   margin-bottom: 0;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .sidebar{
         width: 200px;
     }
@@ -565,16 +571,15 @@ body{
         left: 200px;
     }
 
-
 }
 
-@media screen and (max-width: 576px){
-
-    .content nav from .form-input input{
+@media screen and (max-width: 576px) {
+    
+    .content nav form .form-input input{
         display: none;
     }
 
-    .content nav from .form-input button{
+    .content nav form .form-input button{
         width: auto;
         height: auto;
         background: transparent;
@@ -582,24 +587,24 @@ body{
         border-radius: none;
     }
 
-    .content nav from.show .form-input input{
+    .content nav form.show .form-input input{
         display: block;
         width: 100%;
     }
 
-    .content nav from.show .form-input button{
+    .content nav form.show .form-input button{
         width: 36px;
         height: 100%;
-        background: var(--danger);
         color: var(--light);
+        background: var(--danger);
         border-radius: 0 36px 36px 0;
     }
 
-    .content nav from.show~.notif, .content nav form.show~.profile{
+    .content nav form.show~.notif, .content nav form.show~.profile{
         display: none;
     }
 
-    .content main .insights{
+    .content main .insights {
         grid-template-columns: 1fr;
     }
 
@@ -615,6 +620,4 @@ body{
         min-width: 340px;
     }
 
-
 }
-
