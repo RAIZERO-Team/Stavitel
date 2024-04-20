@@ -571,7 +571,7 @@ main.sign-up-mode .carousel {
   }
 }
 
-.slider-frame{
+.slider-frame {
   overflow: hidden;
   height: 400px;
   width: 600;
@@ -583,33 +583,65 @@ main.sign-up-mode .carousel {
 
 /*---------- SLIDE ANIMATION ----------*/
 
-@-webkit-keyframes slide_animation{
-  0% {left:0px;}
-  10% {left:0px;}
-  20% {left:200px;}
-  30% {left:1200px;}
-  40% {left:2400px;}
-  50% {left:2400px;}
-  60% {left:1200px;}
-  70% {left:1200px;}
-  80% {left:0px;}
-  90% {left:0px;}
-  100% {left:0px;}
+@-webkit-keyframes slide_animation {
+  0% {
+    left: 0px;
+  }
+
+  10% {
+    left: 0px;
+  }
+
+  20% {
+    left: 200px;
+  }
+
+  30% {
+    left: 1200px;
+  }
+
+  40% {
+    left: 2400px;
+  }
+
+  50% {
+    left: 2400px;
+  }
+
+  60% {
+    left: 1200px;
+  }
+
+  70% {
+    left: 1200px;
+  }
+
+  80% {
+    left: 0px;
+  }
+
+  90% {
+    left: 0px;
+  }
+
+  100% {
+    left: 0px;
+  }
 }
 
-.slide-images{
+.slide-images {
   width: 3600px;
   height: 800px;
   margin: 0 0 0 -2400px;
   position: relative;
   -webkit-animation-name: slide_animation;
-  -webkit-animation-duration: 30s;
+  -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   -webkit-animation-play-state: running;
 }
 
-.img-container{
+.img-container {
   height: 400px;
   width: 600px;
   position: relative;
