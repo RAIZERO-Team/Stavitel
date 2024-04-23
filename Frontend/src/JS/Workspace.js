@@ -62,13 +62,13 @@ modeSwitch.addEventListener("click", () => {
     // body.classList.remove("dark");
     // body.classList.add("light");
     modeText.innerText = "Light mode";
-    setCookie("mode", "light", 30); // Set cookie to remember light mode
+    setCookie("mode", "light", 30); 
     // updateBodyClass("light");
   } else {
     // body.classList.remove("light");
     // body.classList.add("dark");
     modeText.innerText = "Dark mode";
-    setCookie("mode", "dark", 30); // Set cookie to remember dark mode
+    setCookie("mode", "dark", 30); 
     // updateBodyClass("dark");
   }
 });
@@ -136,3 +136,59 @@ window.onload = function () {
   }
 };
 
+// ================ Dashboard ================ //
+
+const menuBar = document.querySelector('.content .bx.bx-menu');
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 768) {
+        sideBar.classList.add('close');
+      } else {
+        sideBar.classList.remove('close');
+    }
+    if (window.innerWidth > 576) {
+      searchBtnIcon.classList.replace('bx-x', 'bx-search');
+      searchForm.classList.remove('show');
+    }
+});
+
+// ================ Add New Project ================ //
+
+function selectCard(card) {
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((c) => c.classList.remove("selected"));
+  
+  card.classList.add("selected");
+}
+
+// ================ My Project ================ //
+
+
+// ================ Settings ================ //
+
+
+// ================ Rate Form ================ //
+const allStar = document.querySelectorAll('.rating .star')
+const ratingValue = document.querySelector('.rating input')
+
+allStar.forEach((item, idx)=>{
+    item.addEventListener('click', function(){
+        let click = 0
+        ratingValue.value = idx +1
+        console.log(ratingValue.value)
+
+        allStar.forEach(i=> {
+            i.classList.replace('bxs-star' , 'bx-star')
+            i.classList.remove('active')
+        })
+        for(let i=0; i<allStar.length; i++) {
+            if(i<= idx) {
+                allStar[i].classList.replace('bx-star', 'bxs-star' )
+                allStar[i].classList.add('active')
+            }else{
+                allStar[i].style.setProperty('--i' , click)
+                click++
+            }
+        }
+    })
+})

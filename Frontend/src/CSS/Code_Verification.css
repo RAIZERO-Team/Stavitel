@@ -11,7 +11,7 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
-  --h2-font-size: 1.7rem;
+  --h2-font-size: 1.5rem;
   --h4-font-size: 1.1rem;
   --h6-font-size: 0.75rem;
 
@@ -30,12 +30,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body,
 input {
-  font-family: var(--body-font);
+  font-family: "Poppins", sans-serif;
 }
 
 main {
@@ -54,7 +53,7 @@ main {
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background-color: var(--bg-color);
+  background-color: #fff;
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
@@ -65,7 +64,7 @@ main {
   height: calc(100% - 4.1rem);
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
 }
 
 .forms-wrap {
@@ -73,7 +72,7 @@ main {
   height: 100%;
   width: 45%;
   top: 0;
-  left: 55%;
+  left: 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -81,7 +80,7 @@ main {
 }
 
 form {
-  max-width: 250px;
+  max-width: 260px;
   width: 100%;
   margin: 0 auto;
   height: 100%;
@@ -90,6 +89,7 @@ form {
   justify-content: space-evenly;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  transition: opacity 0.02s 0.4s;
 }
 
 .logo {
@@ -99,26 +99,26 @@ form {
 
 .logo img {
   width: 27px;
-  margin: 0.3rem;
+  margin-right: 0.3rem;
 }
 
 .logo h4 {
-  font-size: var(--h4-font-size);
+  font-size: 1.1rem;
   margin-top: -3px;
   letter-spacing: 0.5px;
-  color: var(--text-color);
+  color: #151111;
 }
 
 .heading h2 {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #151111;
 }
 
 .heading h4 {
   color: #bababa;
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   display: inline;
 }
 
@@ -135,10 +135,10 @@ form {
   background: none;
   border: none;
   outline: none;
-  border-bottom: 1px solid var(--subtext-color);
+  border-bottom: 1px solid #bbb;
   padding: 0;
   font-size: 0.95rem;
-  color: var(--text-color);
+  color: #151111;
   transition: 0.4s;
 }
 
@@ -148,13 +148,13 @@ label {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.95rem;
-  color: var(--subtext-color);
+  color: #bbb;
   pointer-events: none;
   transition: 0.4s;
 }
 
 .input-field.active {
-  border-bottom-color: var(--text-color);
+  border-bottom-color: #151111;
 }
 
 .input-field.active + label {
@@ -162,22 +162,36 @@ label {
   top: -2px;
 }
 
-.continue-btn {
+.submit-btn {
   display: inline-block;
   width: 100%;
   height: 43px;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: #151111;
+  color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
   transition: 0.3s;
 }
 
-.continue-btn:hover {
-  background-color: var(--link-color);
+.submit-btn:hover {
+  background-color: #8371fd;
+}
+
+main.sign-up-mode form.sign-in-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  top: 0;
+  left:45%;
+  background-color: #afcee7;
+  border-radius: 2rem;
 }
 
 .copyright {
@@ -185,19 +199,6 @@ label {
   font-size: 0.9rem;
   text-align: center;
 }
-
-  /* change color here */
-
-.image {
-  position: absolute;
-  height: 100%;
-  width: 55%;
-  top: 0;
-  left:0%;
-  background-color: #afcee7;
-  border-radius: 2rem;
-}
-
 
 /* ========== Rsponsive ========== */
 @media (max-width: 850px) {
@@ -231,35 +232,14 @@ label {
     margin: 2rem 0;
   }
 
-  form.sign-up-form {
-    transform: translateX(100%);
-  }
-
-  main.sign-up-mode form.sign-in-form {
-    transform: translateX(-100%);
-  }
-
-  main.sign-up-mode form.sign-up-form {
-    transform: translateX(0%);
-  }
-
-  /* .carousel {
-    position: revert;
-    height: auto;
-    width: 100%;
-    padding: 3rem 2rem;
-    display: flex;
-  } */
-
   .image {
     display: none;
-    /* display: flex;
-    position: revert;
-    height: 70%;
-    width: 70%;
-    margin: 0 50%; */
   }
 
+  .copyright {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 530px) {
@@ -277,14 +257,13 @@ label {
 
   .image {
     display: none;
-    /* display: flex;
-    position: revert;
-    height: 70%;
-    width: 70%;
-    margin: 0 50px; */
   }
 
   form {
     padding: 1rem 2rem 1.5rem;
+  }
+
+  .copyright {
+    font-size: 0.9rem;
   }
 }

@@ -10,10 +10,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="CSS/Feedback_Form.css" />
+    <link rel="stylesheet" href="CSS/Forgot_Password.css" />
     <link rel="icon" href="../public/Icons/logo.png" />
 
-    <title>Stavitel</title>
+    <title>Stavitel . Change User Name</title>
   </head>
   <body>
     <main>
@@ -21,9 +21,9 @@
         <div class="inner-box">
           <div class="forms-wrap">
             <form
-              action="Feedback_Form.html"
+              action="Code_Verification.html"
               autocomplete="off"
-              class="feedback-form"
+              class="forget-password-form"
             >
               <div class="logo">
                 <img src="../public/Icons/logo.png" alt="Stavitel Logo" />
@@ -31,28 +31,22 @@
               </div>
 
               <div class="heading">
-                <h2>Give us your valuable feedback</h2>
-                <h4>Your feedback is very important to us.</h4>
+                <h2>Change User Name</h2>
+                <h4>Enter Your User Name</h4>
               </div>
 
               <div class="actual-form">
                 <div class="input-wrap">
-                  <textarea
-                    name="Message"
+                  <input
+                    type="text"
                     class="input-field"
+                    autocomplete="off"
                     required
-                  ></textarea>
-                  <label>Your Feedback</label>
+                  />
+                  <label>User Name</label>
                 </div>
 
-                <!-- <div class="accept">
-                  <input type="radio" id="accept" />
-                  <label
-                    >I accept the <a herf="#">terms and conditions</a></label
-                  >
-                </div> -->
-
-                <input type="submit" value="Send" class="submit-btn" />
+                <input type="submit" value="submit" class="submit-btn" />
 
               </div>
               <p class="copyright">
@@ -62,12 +56,15 @@
           </div>
 
           <div class="image">
-            <img src="../public/Workspace/Feedback.svg" alt="Feedback-image" />
+              <img
+                src="../public/User_Sign/change username.svg"
+                alt="Forgot-Password-Image"
+              />
           </div>
         </div>
       </div>
     </main>
 
-    <script scr="./JS/feedback.js"></script>
+    <script src="JS/Forgot_Password.js"></script>
   </body>
 </html>

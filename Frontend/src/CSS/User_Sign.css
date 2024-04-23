@@ -29,9 +29,9 @@
   --font-semi-bold: 600;
 }
 
-/*=============== inner box ===============*/
+/* =============== inner box =============== */
 
-/*=============== BASE ===============*/
+/* =============== BASE =============== */
 
 *,
 *::before,
@@ -39,22 +39,20 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
+/* ===============  =============== */
 body,
 input {
   font-family: "Poppins", sans-serif;
 }
 
-/* change color from here */
-
+/* ===============  =============== */
 main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
   background-color: #dbdbdb;
-  /*ff8c6b*/
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -80,8 +78,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-/*=============== User Forms ===============*/
-
+/* =============== User Forms =============== */
 .forms-wrap {
   position: absolute;
   height: 100%;
@@ -124,8 +121,8 @@ form.sign-up-form {
 
 .logo h4 {
   font-size: 1.1rem;
-  margin-top: -3px;
-  letter-spacing: 0.5px;
+  margin-top: -9px;
+  letter-spacing: -0.5px;
   color: #151111;
 }
 
@@ -189,12 +186,12 @@ label {
   border-bottom-color: #151111;
 }
 
-.input-field.active+label {
+.input-field.active + label {
   font-size: 0.75rem;
   top: -2px;
 }
 
-/*=============== Password Strength Check ===============*/
+/* =============== Password Strength Check =============== */
 
 .indicator {
   height: 10px;
@@ -257,10 +254,7 @@ label {
   color: #23ad5c;
 }
 
-
-/*=============== Sign BUTTON ===============*/
-
-
+/* =============== Sign BUTTON =============== */
 .sign-btn {
   display: inline-block;
   width: 100%;
@@ -271,7 +265,7 @@ label {
   cursor: pointer;
   border-radius: 0.8rem;
   font-size: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
   transition: 0.3s;
 }
 
@@ -279,14 +273,13 @@ label {
   background-color: #8371fd;
 }
 
-
-/*=============== Different Sign In - Up ===============*/
+/* =============== Different Sign In - Up =============== */
 
 .email_icons h6 {
   color: #bababa;
   font-weight: var(--font-medium);
   font-size: 0.9rem;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
 .email_icons a {
@@ -302,11 +295,12 @@ label {
 
 .text {
   color: #bbb;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .text a {
   color: #bbb;
+  font-size: 0.85rem;
   transition: 0.3s;
 }
 
@@ -332,8 +326,6 @@ main.sign-up-mode .carousel {
   left: 0%;
 }
 
-/* change color from here */
-
 .carousel {
   position: absolute;
   height: 100%;
@@ -341,7 +333,6 @@ main.sign-up-mode .carousel {
   left: 45%;
   top: 0;
   background-color: #cccccc;
-  /* ffe0d2 */
   border-radius: 2rem;
   display: grid;
   grid-template-rows: auto 1fr;
@@ -356,7 +347,9 @@ main.sign-up-mode .carousel {
   grid-template-rows: 1fr;
 }
 
-#images-wrapper {
+/* =============== Animation Images =============== */
+
+/* #images-wrapper {
   animation: 20s images-wrapper infinite;
 }
 
@@ -396,14 +389,14 @@ main.sign-up-mode .carousel {
   100% {
     left: -400%;
   }
-}
+} */
+
 
 .image {
   width: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
   opacity: 0;
-  animation: 20s image infinite;
   transition: opacity 0.3s, transform 0.5s;
 }
 
@@ -583,7 +576,7 @@ main.sign-up-mode .carousel {
 
 /*---------- SLIDE ANIMATION ----------*/
 
-@-webkit-keyframes slide_animation {
+/* @-webkit-keyframes slide_animation {
   0% {
     left: 0px;
   }
@@ -646,6 +639,6 @@ main.sign-up-mode .carousel {
   width: 600px;
   position: relative;
   float: left;
-}
+} */
 
 /*---------- END OF ANIMATION PART ----------*/

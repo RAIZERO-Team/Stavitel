@@ -2,7 +2,8 @@
 
 :root {
 
-  --body-color: #E4E9F7;  /* #eee */
+  --body-color: #E4E9F7;
+  /* #eee */
   --sidebar-color: #FFF;
   --primary-color: #695CFE;
   --primary-color-light: #F6F5FF;
@@ -29,6 +30,12 @@
   --light-warning: #FFF2C6;
   --success: #388E3C;
   --light-success: #BBF7D0;
+
+  --yellow:#FFBD13;
+  --blue:#4383FF;
+  --blue-d-1: #3278FF;
+  --white: #FFF;
+  --shadow:8px 8px 300px rgba(0,0,0,.05);
 }
 
 * {
@@ -58,7 +65,7 @@ body.dark {
   --text-color: #ccc;
 }
 
-
+/* ================ Side Bar menu ================ */
 .sidebar {
   position: fixed;
   top: 0;
@@ -68,7 +75,7 @@ body.dark {
   padding: 10px 14px;
   background: var(--sidebar-color);
   transition: var(--tran-05);
-  z-index: 100;
+  z-index: 2000;
 }
 
 .sidebar.close {
@@ -312,7 +319,7 @@ body.dark .home .text {
   color: var(--text-color);
 }
 
-/* Switch With Sections */
+/* ================ Switch With Sections ================ */
 
 .section {
   display: none;
@@ -321,15 +328,28 @@ body.dark .home .text {
 .section .text,
 .section p {
   color: var(--text-color);
+  text-align: center;
 }
 
 .section.active {
   display: block;
-  justify-content: center;
-  text-align: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 
-/* dashboard */
+/* ================ dasboard ================ */
+
+.content {
+  position: relative;
+  width: calc(100% - 230px);
+  left: 230px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close~.content {
+  width: calc(100% - 60px);
+  left: 60px;
+}
 
 .content main {
   width: 100%;
@@ -586,6 +606,7 @@ body.dark .home .text {
 
 
 @media screen and (max-width: 768px) {
+
   .content {
     width: calc(100% - 60px);
     left: 200px;
@@ -611,7 +632,7 @@ body.dark .home .text {
   }
 }
 
-/* Add new project */
+/* ================ Add new project ================ */
 .overlay {
   position: fixed;
   top: 0;
@@ -621,7 +642,6 @@ body.dark .home .text {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 999;
-  /* Ensure overlay is on top of everything */
 }
 
 .subpage-container {
@@ -630,15 +650,22 @@ body.dark .home .text {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  height: 40rem;
+  max-width: 1200px;
   padding: 20px;
   border-radius: 10px;
   display: none;
   z-index: 1000;
-  /* Ensure subpage is above the overlay */
   justify-content: center;
-  text-align: center;
+}
+
+.subpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  justify-content: space-between;
 }
 
 .subpage button {
@@ -659,4 +686,249 @@ body.dark .home .text {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  width: 80%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.card {
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #BBF7D0;
+}
+
+.selected {
+  background-color: #BBF7D0;
+}
+
+.card-image {
+  width: 100%;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.project_opthions {
+  display: flex;
+  flex-direction: row;
+  gap: 15rem;
+}
+
+.project_opthions button {
+  width: 115px;
+  height: 50px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ================ settings ================ */
+
+.container {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 10px 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(200, 200, 200);
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.toggle-container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.toggle {
+  width: 60px;
+  height: 35px;
+  border-radius: 40px;
+  background-color: #ebebfb;
+  display: inline-block;
+}
+
+.toggle-c {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  transition: 300ms all;
+  border: 1px solid #BCBCA4;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked+div .toggle-c {
+  left: 30px;
+  background-color: #30305c;
+  border-color: #30305c;
+}
+
+input[type="radio"] {
+  border: 0px;
+  width: 10%;
+  height: 20px;
+  accent-color: black;
+}
+
+.togg-label {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+
+}
+
+.flex {
+  display: flex;
+  gap: 5px;
+
+}
+
+.bottom {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.bottom:hover {
+  text-decoration: underline;
+  cursor: pointer;
+
+}
+
+label,
+input[type="radio"] {
+  cursor: pointer;
+}
+
+/* ================ Rate Form ================ */
+.wrapper {
+  background: var(--white);
+  padding: 2rem;
+  max-width: 576px;
+  width: 100%;
+  border-radius: .75rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.wrapper h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: .5rem;
+  font-size: 2rem;
+  color: var(--yellow);
+  margin-bottom: 2rem;
+
+}
+
+.rating .star {
+  cursor: pointer;
+
+}
+
+.rating .star.active {
+  opacity: 0;
+  animation: animate .5s calc(var(--i) * .1s) ease-in-out forwards;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rating .star:hover {
+  transform: scale(1.1);
+}
+
+textarea {
+  width: 100%;
+  background: var(--light);
+  padding: 1rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  resize: none;
+  margin-bottom: 5rem;
+
+}
+
+.btn-group {
+  justify-content: center;
+  display: flex;
+  grid-gap: .5rem;
+  align-items: center;
+}
+
+.btn-group .btn {
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: .875rem;
+  font-weight: 500;
+}
+
+.btn-group .btn.submit {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-group .btn.cancel {
+  background: var(--white);
+  color: var(--blue);
 }
