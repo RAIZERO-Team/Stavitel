@@ -40,97 +40,115 @@ bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
 
-/////////////////////////////////////
-
-// var slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
 function showSlides(n) {
   var i;
   var slides = document.querySelectorAll(".image");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  if (n > slides.length) {
+    slideIndex = 1;
   }
-  slides[slideIndex-1].style.display = "block";
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
 }
 
 // =============  Password Strength Check =============
 
-const indicator = document.querySelectorAll(".indicator");
-const pass_input = document.querySelectorAll(".pass");
-const week = document.querySelectorAll(".week");
-const medium = document.querySelectorAll(".medium");
-const strong = document.querySelectorAll(".strong");
-const pass_text = document.querySelectorAll(".pass_text");
+// let regExpWeak = /[a-z]+/;
+// let regExpMedium = /\d+/;
+// let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
+
+// function trigger() {
+//   if (pass_input.value != "") {
+//     if (
+//       pass_input.value.length <= 3 &&
+//       (pass_input.value.match(regExpWeak) ||
+//         pass_input.value.match(regExpMedium) ||
+//         pass_input.value.match(regExpStrong))
+//     )
+//       no = 1;
+//     if (
+//       pass_input.value.length >= 6 &&
+//       ((pass_input.value.match(regExpWeak) &&
+//         pass_input.value.match(regExpMedium)) ||
+//         (pass_input.value.match(regExpMedium) &&
+//           pass_input.value.match(regExpStrong)) ||
+//         (pass_input.value.match(regExpWeak) &&
+//           pass_input.value.match(regExpStrong)))
+//     )
+//       no = 2;
+//     if (
+//       pass_input.value.length >= 6 &&
+//       pass_input.value.match(regExpWeak) &&
+//       pass_input.value.match(regExpMedium) &&
+//       pass_input.value.match(regExpStrong)
+//     )
+//       no = 3;
+// }
+
+const input = document.querySelector(".check");
+const pwStrengthEl = document.querySelector(".strength");
+const indicatorEl = document.querySelector(".indicator");
+
+const colors = ["#ff0000", "#ffe100", "#0bd600"];
+const texts = ["weak", "medium", "strong"];
+
+let current_strength = 0;
 
 let regExpWeak = /[a-z]+/;
 let regExpMedium = /\d+/;
 let regExpStrong = /.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/;
 
-function trigger() {
-  if (pass_input.value != "") {
-    // indicator.style.display = "block";
-    // indicator.style.display = "flex";
-    if (
-      pass_input.value.length <= 3 &&
-      (pass_input.value.match(regExpWeak) ||
-        pass_input.value.match(regExpMedium) ||
-        pass_input.value.match(regExpStrong))
-    )
-      no = 1;
-    if (
-      pass_input.value.length >= 6 &&
-      ((pass_input.value.match(regExpWeak) &&
-        pass_input.value.match(regExpMedium)) ||
-        (pass_input.value.match(regExpMedium) &&
-          pass_input.value.match(regExpStrong)) ||
-        (pass_input.value.match(regExpWeak) &&
-          pass_input.value.match(regExpStrong)))
-    )
-      no = 2;
-    if (
-      pass_input.value.length >= 6 &&
-      pass_input.value.match(regExpWeak) &&
-      pass_input.value.match(regExpMedium) &&
-      pass_input.value.match(regExpStrong)
-    )
-      no = 3;
-    if (no == 1) {
-      weak.classList.add("active");
-      pass_text.style.display = "block";
-      pass_text.textContent = "Too Week😥";
-      pass_text.classList.add("weak");
-    }
-    if (no == 2) {
-      medium.classList.add("active");
-      pass_text.textContent = "Medium🙂";
-      pass_text.classList.add("medium");
-    } else {
-      medium.classList.remove("active");
-      pass_text.classList.remove("medium");
-    }
-    if (no == 3) {
-      weak.classList.add("active");
-      medium.classList.add("active");
-      strong.classList.add("active");
-      pass_text.textContent = "Strong💪";
-      pass_text.classList.add("strong");
-    } else {
-      strong.classList.remove("active");
-      pass_text.classList.remove("strong");
-    }
-  } else {
-    indicator.style.display = "none";
-    pass_text.style.display = "none";
-  }
+function checker(width, text, background, color) {
+  indicatorEl.style.width = width;
+  indicatorEl.style.background = background;
+  pwStrengthEl.innerText = text;
+  pwStrengthEl.style.color = color;
 }
+
+// input.addEventListener('input', () => {
+//     if (input.value.length <= 3 && (input.value.match(regExpWeak) || input.value.match(regExpMedium) || input.value.match(regExpStrong))) {
+//         current_strength = 3
+//         checker(`${100 / 3}%`, texts[0], colors[0], colors[0])
+//     } else if (input.value.length <= 15) {
+//         current_strength = 2
+//         checker(`${100 / 2}%`, texts[1], colors[1], colors[1])
+//     } else {
+//         current_strength = 1
+//         checker(`${100 / 1}%`, texts[2], colors[2], colors[2])
+//     }
+// })
+
+input.addEventListener("input", () => {
+  if (
+    input.value.length <= 3 &&
+    (input.value.match(regExpWeak) ||
+      input.value.match(regExpMedium) ||
+      input.value.match(regExpStrong))
+  ) {
+    current_strength = 3;
+    checker(`${100 / 3}%`, texts[0], colors[0], colors[0]);
+  } else if (
+    input.value.length >= 6 &&
+    ((input.value.match(regExpWeak) && input.value.match(regExpMedium)) ||
+      (input.value.match(regExpMedium) && input.value.match(regExpStrong)) ||
+      (input.value.match(regExpWeak) && input.value.match(regExpStrong)))
+  ) {
+    current_strength = 2;
+    checker(`${100 / 2}%`, texts[1], colors[1], colors[1]);
+  } else if (
+    input.value.length >= 6 &&
+    input.value.match(regExpWeak) &&
+    input.value.match(regExpMedium) &&
+    input.value.main.match(regExpStrong)
+  ) {
+    current_strength = 1;
+    checker(`${100 / 1}%`, texts[2], colors[2], colors[2]);
+  }
+  else {
+    console.log("false");
+  }
+});

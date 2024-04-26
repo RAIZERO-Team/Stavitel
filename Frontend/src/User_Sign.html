@@ -24,7 +24,6 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-
             <!--================= Sign In Form =================-->
             <form
               action="User_Sign.html"
@@ -66,50 +65,48 @@
                   <label>Password</label>
                 </div>
 
-                <input type="submit" value="Sign In" name="sign_in" class="sign-btn" />
+                <input
+                  type="submit"
+                  value="Sign In"
+                  name="sign_in"
+                  class="sign-btn"
+                />
 
                 <p class="text">
                   <a href="#">Forget your password?</a>
                 </p>
-
+                <div class="email_icons">
+                  <h6>or Sign In With</h6>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../public/Icons/google.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../public/Icons/linkedin.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../public/Icons/github.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../public/Icons/facebook.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                </div>
               </div>
-
-              <div class="email_icons">
-                <h6>or Sign In With</h6>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/google.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/linkedin.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/github.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/facebook.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-              </div>
-
-
-              <!-- <p class="copyright">
-                &#169; 2024 Stavitel - All rights reserved
-              </p> -->
             </form>
 
             <!--================= Sign Up Form =================-->
@@ -155,7 +152,7 @@
                   <input
                     type="password"
                     onkeyup="trigger()"
-                    class="input-field pass"
+                    class="input-field check"
                     id="sign_up_pass"
                     autocomplete="off"
                     required
@@ -163,108 +160,71 @@
                   <label>password</label>
                 </div>
 
-                <div class="indicator">
-                  <span class="weak"></span>
-                  <span class="medium"></span>
-                  <span class="strong"></span>
+                <div class="indicator-container">
+                  <div class="indicator"></div>
                 </div>
-                <div class="pass_text"></div>
+                <p>Password Strength: <span class="strength"></span></p>
 
-                <input type="submit" value="Sign Up" name="sign_up" class="sign-btn" />
-
-                <!-- <div class="email_icons">
+                <input
+                  type="submit"
+                  value="Sign Up"
+                  name="sign_up"
+                  class="sign-btn"
+                />
+                <div class="email_icons">
                   <h6>or Sign Up With</h6>
                   <a href="#" target="_blank">
                     <img
-                      src="/public/Icons/google.svg"
+                      src="../public/Icons/google.svg"
                       title="Google"
                       alt="Google Icon"
                     />
                   </a>
                   <a href="#" target="_blank">
                     <img
-                      src="/public/Icons/linkedin.svg"
+                      src="../public/Icons/linkedin.svg"
                       title="Google"
                       alt="Google Icon"
                     />
                   </a>
                   <a href="#" target="_blank">
                     <img
-                      src="/public/Icons/github.svg"
+                      src="../public/Icons/github.svg"
                       title="Google"
                       alt="Google Icon"
                     />
                   </a>
                   <a href="#" target="_blank">
                     <img
-                      src="/public/Icons/facebook.svg"
+                      src="../public/Icons/facebook.svg"
                       title="Google"
                       alt="Google Icon"
                     />
                   </a>
-                </div> -->
-
+                </div>
               </div>
-              <div class="email_icons">
-                <h6>or Sign Up With</h6>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/google.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/linkedin.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/github.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-                <a href="#" target="_blank">
-                  <img
-                    src="../public/Icons/facebook.svg"
-                    title="Google"
-                    alt="Google Icon"
-                  />
-                </a>
-              </div>
-
-              <!-- <p class="copyright">
-                &#169; 2024 Stavitel - All rights reserved
-              </p> -->
             </form>
 
-            <p class="copyright">
-              &#169; 2024 Stavitel - All rights reserved
-            </p>
-
+            <p class="copyright">&#169; 2024 Stavitel - All rights reserved</p>
           </div>
 
           <!--================= Images =================-->
           <div class="carousel">
-              <div class="slider-frame">
-                <div class="slide-images">
-                    <div class="img-container show">
-                        <img src="../public/User_Sign/Build_web1.svg">
-                    </div>
-                    <div class="img-container">
-                        <img src="../public/User_Sign/Build_web2.svg">
-                    </div>
-                    <div class="img-container">
-                        <img src="../public/User_Sign/Build_web3.svg">
-                    </div>
+            <div class="slider-frame">
+              <div class="slide-images">
+                <div class="img-container show">
+                  <img src="../public/User_Sign/Build_web1.svg" />
                 </div>
+                <div class="img-container">
+                  <img src="../public/User_Sign/Build_web2.svg" />
+                </div>
+                <div class="img-container">
+                  <img src="../public/User_Sign/Build_web3.svg" />
+                </div>
+              </div>
             </div>
 
-          <!-- <div class="carousel">
+            <!-- <div class="carousel">
             <div class="images-wrapper">
               <img
                 src="../public/User_Sign/Build_web1.svg"

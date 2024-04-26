@@ -1,6 +1,6 @@
 /lib/grapesjs
 /Test
 /src/CSS/sass
-/src/JS/config
-/src/JS/helpers
-/src/JS/another
+/src/JS/build
+/src/Classes
+/src/api
