@@ -6,10 +6,10 @@
   /*========== Colors ==========*/
   --hue: 45;
   --sat: 98%;
-  --first-color: hsl(var(--hue), var(--sat), 60%);
-  --first-color-light: hsl(var(--hue), var(--sat), 85%);
-  --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
-  --first-color-alt: hsl(var(--hue), var(--sat), 53%);
+  --first-color: #FF725E; /*hsl(var(--hue), var(--sat), 60%)*/
+  --first-color-light: #B56F57 ;/*hsl(var(--hue), var(--sat), 85%);*/
+  --first-color-lighten: #FFBF9D; /*hsl(var(--hue), var(--sat), 80%)*/
+  --first-color-alt: hsl(var(--hue), var(--sat), 53%); /**/
   --title-color: hsl(var(--hue), 4%, 15%);
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 65%);
@@ -125,14 +125,6 @@ body.dark-theme {
   color: var(--title-color);
   text-align: center;
   margin-bottom: var(--mb-1);
-}
-
-.svg__color {
-  fill: var(--first-color);
-}
-
-.svg__blob {
-  fill: var(--first-color-light);
 }
 
 .svg__img {
@@ -317,6 +309,11 @@ body.dark-theme {
   padding: 2rem 1.5rem;
   border-radius: 1rem;
   text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.services__data:hover {
+  transform: translateY(-10px);
 }
 
 .services__img {
@@ -416,7 +413,7 @@ body.dark-theme {
 .footer__copy {
   margin-top: 6rem;
   text-align: center;
-  font-size: var(--smaller-font-size);
+  font-size: var(--normal-font-size);
   color: var(--text-color);
 }
 
