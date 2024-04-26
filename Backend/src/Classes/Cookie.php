@@ -1,27 +1,31 @@
 <?php
 class Cookie
 {
-    public static function exists($name)
-    {
-        return isset($_COOKIE[$name]);
-    }
+  // ============== Cookie is exists or not ==============
+  public static function exists($name)
+  {
+    return isset($_COOKIE[$name]);
+  }
 
-    public static function get($name)
-    {
-        return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
-    }
+  // ============== Get Cookie ==============
+  public static function get($name)
+  {
+    return isset($_COOKIE[$name]) ? $_COOKIE[$name] : null;
+  }
 
-    public static function set($name, $value, $expiry)
-    {
-        if (setcookie($name, $value, time() + $expiry, '/')) {
-            return true;
-        } else {
-            return false;
-        }
+  // ============== Set Cookie ==============
+  public static function set($name, $value, $expiry)
+  {
+    if (setcookie($name, $value, time() + $expiry, '/')) {
+      return true;
+    } else {
+      return false;
     }
+  }
 
-    public static function delete($name)
-    {
-        self::set($name, '', time() - 1);
-    }
+  // ============== Delete Cookie  ==============
+  public static function delete($name)
+  {
+    self::set($name, '', time() - 1);
+  }
 }

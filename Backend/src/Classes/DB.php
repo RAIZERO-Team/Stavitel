@@ -3,10 +3,10 @@ class DB
 {
   private static $_instance = null;
   private $_pdo,
-  $_query,
-  $_result,
-  $_error = false,
-  $_count = 0;
+    $_query,
+    $_result,
+    $_error = false,
+    $_count = 0;
 
   private function __construct()
   {
@@ -16,6 +16,8 @@ class DB
       die($e->getMessage());
     }
   }
+
+  // ============== Connection function ==============
   public static function getInstance()
   {
     if (!isset(self::$_instance)) {
@@ -24,6 +26,7 @@ class DB
     return self::$_instance;
   }
 
+  // ============== Query  ==============
   public function query($sql, $params = array())
   {
     $this->_error = false;
@@ -31,9 +34,8 @@ class DB
       $index = 1;
       if (count($params)) {
         foreach ($params as $param) {
-          $this->_query->bindValue($index++, $param);
+          $this->_query->bindValue($index++, $param);   // diff
         }
-
       }
       if ($this->_query->execute()) {
         $this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ);
@@ -43,16 +45,16 @@ class DB
       }
     }
     return $this;
-
   }
 
+  // ============== Action(Select) function ==============
   private function action($action, $table, $where = array())
   {
     if (count($where) === 3) {
-      $operators = array('=', '>', '<', '>=', '<=');
-      $field = $where[0];
-      $operator = $where[1];
-      $value = $where[2];
+      $operators  = array('=', '>', '<', '>=', '<=');
+      $field      = $where[0];
+      $operator   = $where[1];
+      $value      = $where[2];
 
       if (in_array($operator, $operators)) {
         $sql = "{$action}  FROM {$table} WHERE {$field} {$operator} ?";
@@ -65,8 +67,19 @@ class DB
     return false;
   }
 
+  // ============== Get Action function ==============
+  public function get($table, $where)
+  {
+    return $this->action('SELECT *', $table, $where);
+  }
 
+  // ============== Delete function ==============
+  public function delete($table, $where)
+  {
+    return $this->action('DELETE', $table, $where);
+  }
 
+  // ============== Insert function ==============
   public function insert($table, $fields = array())
   {
     if (count($fields)) {
@@ -78,7 +91,6 @@ class DB
         $values .= '?';
         if ($index < count($fields)) {
           $values .= ',';
-
         }
         $index++;
       }
@@ -93,9 +105,9 @@ class DB
   }
 
 
+  // ============== Update function ==============
   public function update($table, $id, $fields = array())
   {
-
     $set = '';
     $index = 1;
 
@@ -114,40 +126,32 @@ class DB
     return false;
   }
 
-
-
-  public function get($table, $where)
-  {
-    return $this->action('SELECT *', $table, $where);
-  }
-  public function delete($table, $where)
-  {
-    return $this->action('DELETE', $table, $where);
-
-  }
-
+  // ============== emailExists function ==============
   public function emailExists($email)
   {
     $user = $this->get('users', array("email", "=", $email))->results();
     return !empty($user);
   }
 
-
+  // ============== get result function ==============
   public function results()
   {
     return $this->_result;
   }
+
+  // ==============  ==============
   public function first()
   {
     return $this->results()[0];
-
   }
+
+  // ============== Error function ==============
   public function errors()
   {
     return $this->_error;
   }
 
-
+  // ============== count function ==============
   public function count()
   {
     return $this->_count;
