@@ -14,7 +14,7 @@ def to_markdown(text):
 
 #from google.colab import userdata
 
-GOOGLE_API_KEY='your_api_key'
+GOOGLE_API_KEY='your_Api_key'
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -35,14 +35,34 @@ def print_response(response):
 
 html ="""
 """""
+#--------------------------------------------------------------------------------------------#
+#q1 = "Change title to \"%s\" , generate a similar paragraph, and show all HTML code" %(name)
+#q1 = "Change title to \"%s\" , I want to change a paragraph similar to the same topic as the paragraph in the code , and show all HTML code" %(name)
+#q = "generate paragraphs similar to the same topic as each of the paragraphs in the code and replace them and show all HTML code "
 
-q1 = "show html code just"
-q2 = "Show the rest of the code"
-respond1 = send_message(html +"  "+q1)
-respond2 = send_message(html +"  "+q2)
+#q1 = " Change title to \"%s\" and show me all html code" %(name)
+#q1 = " Change the title tag to \"%s\" and show me all html code" %(name)
+# q2 = "generate paragraphs similar to the same topic as the paragraphs in the code and replace them and show all html code "
+# q2 = "I'd like change the content of each paragraph while keeping the overall meaning similar and show all html code"
 
 
+# q5 = '''
+# I have some HTML code where I want to change the content of all the paragraphs to be similar, but not exactly the same. Here's the code:
+# '''
 
+# q6 = '''
+# Can you modify the code so that the paragraphs have similar meaning but use different wording? Please show me the complete HTML code with the updated paragraphs.
+# '''
+#------------------------------------------------------------------------------------------#
+name = input("enter your name ")
+q1 = "change  title website to \"" + name + "\" and Invent new paragraphs similar to the same topic as the paragraphs in the html code and replace the old ones with new paragraphs and Show me all HTML code  "
+# q2 = " change  title website to \"%s\" and Show me all HTML code" %(name)
+q3 = "Show the rest of the code"
+
+respond1 = send_message(html + q1)
+# respond2 = send_message(q2)
+respond3 = send_message(q3)
+respond4 = send_message(q3)
 
 def extract_html_content(html_content):
     pattern = r'<!DOCTYPE html>.*?</html>'
@@ -51,8 +71,10 @@ def extract_html_content(html_content):
         return match.group(0)
     return "none"
     
+# print(responds)
+HTML_code_afte_edit =  extract_html_content(respond1 + respond3 + respond4)   
+print(HTML_code_afte_edit)
 
-HTML_code_afte_edit =  extract_html_content(respond1 + respond2)   
 
 # Write to file
 #file_path = 'sample.txt'
