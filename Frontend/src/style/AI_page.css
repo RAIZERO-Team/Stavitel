@@ -31,11 +31,11 @@
   --success: #388E3C;
   --light-success: #BBF7D0;
 
-  --yellow:#FFBD13;
-  --blue:#4383FF;
+  --yellow: #FFBD13;
+  --blue: #4383FF;
   --blue-d-1: #3278FF;
   --white: #FFF;
-  --shadow:8px 8px 300px rgba(0,0,0,.05);
+  --shadow: 8px 8px 300px rgba(0, 0, 0, .05);
 }
 
 * {
@@ -43,7 +43,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  overflow: hidden;
 }
 
 body {
@@ -150,7 +149,7 @@ header .image-text .profession {
   border-radius: 20px;
   left: 20%;
   background-color: #ddd;
-  margin-right: 20px; 
+  margin-right: 20px;
   position: relative;
 }
 
@@ -204,6 +203,169 @@ main {
 }
 
 /* ================ Chose Catogire ================ */
+.container {
+  max-width: 1000px;
+  margin: 1.25rem;
+  text-align: center;
+}
+
+.container.bottom-text {
+  color: #70738e;
+  font-size: 1.15rem;
+  padding: 0 5rem;
+}
+
+.grid-container {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  transition: s ease;
+}
+
+.grid-container .item {
+  background-color: #beb4c3a1;
+  padding: 1rem 2rem;
+  box-shadow: 6px 4px 20px 0px #ffff;
+  /* box-shadow: 0 25px 1px #ffff; */
+  border-radius: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 123px;
+}
+
+.grid-container :hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 253, 253);
+}
+
+/* .grid-container .item:hover
+{
+  background-color: rgb(11, 142, 185);
+}   */
+
+.grid-container .item .icon {
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid-container .item .icon i {
+  color: #1e2246;
+  width: 55px;
+  height: 55px;
+  font-size: 1.5rem;
+  display: grid;
+  place-content: center;
+  border-radius: .75rem;
+}
+
+.grid-container .item .icon .topic {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* .grid-container .item a {
+  display: block;
+  color: #1e2246;
+  padding: 1rem;
+  width: 100%;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5rem;
+  outline: 1px solid #1e2246;
+  transition: all 200ms ease;
+} */
+
+.grid-container .item a {
+  font-size: 0.8rem;
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  text-decoration: none;
+}
+
+.btnSeeFAQ:active {
+  scale: 0.92;
+}
+
+.grid-container .item a:hover {
+  background-color: #1e2246;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container .item .sport {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(192, 234, 252, 1) 0x, rgba(233, 213, 255, 1) 100%);
+}
+
+.grid-container .item .portfolio i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(252, 190, 217, 1) 0x, rgba(255, 209, 214, 1) 100%);
+}
+
+.grid-container .item .education i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(192, 234, 252, 1) 0x, rgba(233, 213, 255, 1) 100%);
+}
+
+.grid-container .item .online_store i {
+  margin-left: -70px;
+  background: linear-gradient(159deg, rgba(190, 248, 231, 1) 0x, rgba(210, 226, 253, 1) 100%);
+}
+
+.grid-container .item .food i {
+  margin-left: -80px;
+  background: linear-gradient(159deg, rgba(194, 216, 248, 1) 0x, rgba(248, 213, 218, 1) 100%);
+}
+
+.grid-container .item .fashions i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(253, 223, 203, 1) 0x, rgba(220, 218, 247, 1) 100%);
+}
+
+.grid-container .item .car_store i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(253, 223, 203, 1) 0x, rgba(220, 218, 247, 1) 100%);
+}
+
+.grid-container .item .booking i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(253, 223, 203, 1) 0x, rgba(220, 218, 247, 1) 100%);
+}
+
+.grid-container .item .computer_store i {
+  margin-left: -60px;
+  background: linear-gradient(159deg, rgba(253, 223, 203, 1) 0x, rgba(220, 218, 247, 1) 100%);
+}
+
+
+
+.btnSeeFAQ:hover {
+  background: rgb(2, 29, 78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+}
+
+@media (max-width: 768px) {
+  .container .bottom-text {
+    padding: 0 1rem;
+  }
+}
 
 /* ================ Chose Templete ================ */
 .chose_templet {

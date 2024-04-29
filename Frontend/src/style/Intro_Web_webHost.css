@@ -6,10 +6,10 @@
   /*========== Colors ==========*/
   --hue: 45;
   --sat: 98%;
-  --first-color: #FF725E; /*hsl(var(--hue), var(--sat), 60%)*/
-  --first-color-light: #B56F57 ;/*hsl(var(--hue), var(--sat), 85%);*/
-  --first-color-lighten: #FFBF9D; /*hsl(var(--hue), var(--sat), 80%)*/
-  --first-color-alt: hsl(var(--hue), var(--sat), 53%); /**/
+  --first-color: hsl(var(--hue), var(--sat), 60%);
+  --first-color-light: hsl(var(--hue), var(--sat), 85%);
+  --first-color-lighten: hsl(var(--hue), var(--sat), 80%);
+  --first-color-alt: hsl(var(--hue), var(--sat), 53%);
   --title-color: hsl(var(--hue), 4%, 15%);
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 65%);
@@ -125,6 +125,14 @@ body.dark-theme {
   color: var(--title-color);
   text-align: center;
   margin-bottom: var(--mb-1);
+}
+
+.svg__color {
+  fill: var(--first-color);
+}
+
+.svg__blob {
+  fill: var(--first-color-light);
 }
 
 .svg__img {
@@ -310,6 +318,7 @@ body.dark-theme {
   border-radius: 1rem;
   text-align: center;
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .services__data:hover {
@@ -320,26 +329,6 @@ body.dark-theme {
   width: 135px;
   justify-self: center;
   margin-bottom: var(--mb-0-5);
-}
-
-/*=============== APP ===============*/
-.app__container {
-  gap: 2.5rem;
-}
-
-.app__data {
-  text-align: center;
-}
-
-.app__description {
-  margin-bottom: var(--mb-1-5);
-}
-
-.app__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
-  gap: .5rem;
 }
 
 /*=============== CONTACT ===============*/
@@ -413,7 +402,7 @@ body.dark-theme {
 .footer__copy {
   margin-top: 6rem;
   text-align: center;
-  font-size: var(--normal-font-size);
+  font-size: var(--smaller-font-size);
   color: var(--text-color);
 }
 
@@ -474,9 +463,6 @@ body.dark-theme {
   .services__img {
     width: 100px;
   }
-  .app__buttons {
-    grid-template-columns: max-content;
-  }
 }
 
 /* For medium devices */
@@ -491,7 +477,6 @@ body.dark-theme {
   .about__container,
   .security__container,
   .services__container,
-  .app__container,
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -502,13 +487,11 @@ body.dark-theme {
   .home__container,
   .about__container,
   .security__container,
-  .app__container,
   .contact__container {
     align-items: center;
   }
   .about__data,
   .security__data,
-  .app__data,
   .contact__description {
     text-align: initial;
   }
@@ -556,7 +539,6 @@ body.dark-theme {
   }
   .about__container,
   .security__container,
-  .app__container,
   .contact__container {
     column-gap: 6rem;
   }

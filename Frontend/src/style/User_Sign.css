@@ -39,13 +39,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 /* ===============  =============== */
 body,
 input {
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 
 /* ===============  =============== */
@@ -315,7 +315,7 @@ main.sign-up-mode .carousel {
 
 /* =============== Animation Images =============== */
 
-/* #images-wrapper {
+#images-wrapper {
   animation: 20s images-wrapper infinite;
 }
 
@@ -355,7 +355,7 @@ main.sign-up-mode .carousel {
   100% {
     left: -400%;
   }
-} */
+}
 
 
 .image {
@@ -483,20 +483,20 @@ main.sign-up-mode .carousel {
   }
 
   .carousel {
-    /* position: revert;
+    position: revert;
     height: auto;
     width: 100%;
-    padding: 3rem 2rem; */
-    display: none;  /* flex */
+    padding: 3rem 2rem;
+    display: flex;  /* flex */
   }
 
-  /* .images-wrapper {
+  .images-wrapper {
     display: none;
   }
 
   .text-slider {
     width: 100%;
-  } */
+  }
 
   .copyright {
     font-size: 0.9rem;
@@ -518,18 +518,18 @@ main.sign-up-mode .carousel {
   }
 
   .carousel {
-    /* padding: 1.5rem 1rem;
-    border-radius: 1.6rem; */
+    padding: 1.5rem 1rem;
+    border-radius: 1.6rem;
     display: none;
   }
 
-  /* .text-wrap {
+  .text-wrap {
     margin-bottom: 1rem;
   }
 
   .text-group h2 {
     font-size: 1.2rem;
-  } */
+  }
 
   form {
     padding: 1rem 2rem 1.5rem;

@@ -62,13 +62,13 @@ modeSwitch.addEventListener("click", () => {
     // body.classList.remove("dark");
     // body.classList.add("light");
     modeText.innerText = "Light mode";
-    setCookie("mode", "light", 30); 
+    setCookie("mode", "light", 30);
     // updateBodyClass("light");
   } else {
     // body.classList.remove("light");
     // body.classList.add("dark");
     modeText.innerText = "Dark mode";
-    setCookie("mode", "dark", 30); 
+    setCookie("mode", "dark", 30);
     // updateBodyClass("dark");
   }
 });
@@ -122,7 +122,6 @@ window.onload = function () {
   const modeSwitch = body.querySelector(".toggle-switch");
   const modeText = body.querySelector(".mode-text");
 
-
   if (savedMode === "dark") {
     body.classList.add("dark");
     // modeSwitch.classList.add("dark-mode");
@@ -138,57 +137,154 @@ window.onload = function () {
 
 // ================ Dashboard ================ //
 
-const menuBar = document.querySelector('.content .bx.bx-menu');
+const menuBar = document.querySelector(".content .bx.bx-menu");
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   if (window.innerWidth < 768) {
-        sideBar.classList.add('close');
-      } else {
-        sideBar.classList.remove('close');
-    }
-    if (window.innerWidth > 576) {
-      searchBtnIcon.classList.replace('bx-x', 'bx-search');
-      searchForm.classList.remove('show');
-    }
+    sideBar.classList.add("close");
+  } else {
+    sideBar.classList.remove("close");
+  }
+  if (window.innerWidth > 576) {
+    searchBtnIcon.classList.replace("bx-x", "bx-search");
+    searchForm.classList.remove("show");
+  }
 });
+
+// dashboard chartjs
+
+/* 
+   I will target the canvas element and i will store it in
+   the `ctx` variable. 
+*/
+let ctx = document.getElementById("myChart");
+
+/*
+   Next i will create two global variables, the `myChart` variable
+   and the `JsonData` variable. We are going assign to them values that
+   we create inside the functions that we will use down the script.
+*/
+let myChart;
+let Jsondata;
+
+/*
+   Next we are going to send a get request to the `data.json`
+   file to retrieve the file's data.
+*/
+fetch("data.json")
+  .then(function (response) {
+    if (response.status == 200) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    /*
+      Assigning the data from the JSON file to the `jsonData`
+      global variable.	
+   */
+    Jsondata = data;
+
+    /*
+      Calling the `createChart` function to create the chart
+      from the json data.
+      The function takes two parameters. The first parameter holds
+      the json data, and the second the chart type.
+      Here we initiating the chart type to `bar`.
+   */
+    createChart(Jsondata, "bar");
+  });
+
+/*
+   Next we have the createChart function.
+*/
+function createChart(data, type) {
+  // Inside the function we create a new instance of the Chart object.
+  // The constructor takes the canvas element `ctx`,
+  // as its first argument, and an object with the Chart.js properties.
+  myChart = new Chart(ctx, {
+    // Setting the chart's type to the `type` parameter.
+    type: type,
+    data: {
+      // Creating an array from the `months` from the json data
+      // using the `map` method and assign it to the labels
+      // property.
+      labels: data.map((row) => row.month),
+
+      datasets: [
+        {
+          label: "# of Income",
+
+          // Creating an array from the `incomes` from the json data
+          // using the `map` method and assign it to the data
+          // property.
+          data: data.map((row) => row.income),
+
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+      // Making the chart responsive.
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+}
+
+/*
+   The `setChartType` function will dynamically change the chart type
+   depending on which button we click on in the index file.
+*/
+function setChartType(chartType) {
+  // To change the chart type we have first to destroy the current
+  // chart object.
+  myChart.destroy();
+
+  // Next we render a new one passing-in, the `Jsondata`
+  // and the `chartType` that the button sends.
+  createChart(Jsondata, chartType);
+}
 
 // ================ Add New Project ================ //
 
 function selectCard(card) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((c) => c.classList.remove("selected"));
-  
+
   card.classList.add("selected");
 }
 
 // ================ My Project ================ //
 
-
 // ================ Settings ================ //
 
-
 // ================ Rate Form ================ //
-const allStar = document.querySelectorAll('.rating .star')
-const ratingValue = document.querySelector('.rating input')
+const allStar = document.querySelectorAll(".rating .star");
+const ratingValue = document.querySelector(".rating input");
 
-allStar.forEach((item, idx)=>{
-    item.addEventListener('click', function(){
-        let click = 0
-        ratingValue.value = idx +1
-        console.log(ratingValue.value)
+allStar.forEach((item, idx) => {
+  item.addEventListener("click", function () {
+    let click = 0;
+    ratingValue.value = idx + 1;
+    console.log(ratingValue.value);
 
-        allStar.forEach(i=> {
-            i.classList.replace('bxs-star' , 'bx-star')
-            i.classList.remove('active')
-        })
-        for(let i=0; i<allStar.length; i++) {
-            if(i<= idx) {
-                allStar[i].classList.replace('bx-star', 'bxs-star' )
-                allStar[i].classList.add('active')
-            }else{
-                allStar[i].style.setProperty('--i' , click)
-                click++
-            }
-        }
-    })
-})
+    allStar.forEach((i) => {
+      i.classList.replace("bxs-star", "bx-star");
+      i.classList.remove("active");
+    });
+    for (let i = 0; i < allStar.length; i++) {
+      if (i <= idx) {
+        allStar[i].classList.replace("bx-star", "bxs-star");
+        allStar[i].classList.add("active");
+      } else {
+        allStar[i].style.setProperty("--i", click);
+        click++;
+      }
+    }
+  });
+});

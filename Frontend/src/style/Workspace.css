@@ -36,6 +36,17 @@
   --blue-d-1: #3278FF;
   --white: #FFF;
   --shadow:8px 8px 300px rgba(0,0,0,.05);
+
+  /* Settings color */
+  --c-text-primary: #282a32;
+  --c-text-secondary: #686b87;
+  --c-text-action: #404089;
+  --c-accent-primary: #434ce8;
+  --c-border-primary: #eff1f6;
+  --c-background-primary: #ffffff;
+  --c-background-secondary: #fdfcff;
+  --c-background-tertiary: #ecf3fe;
+  --c-background-quaternary: #e9ecf4;
 }
 
 * {
@@ -333,11 +344,25 @@ body.dark .home .text {
 
 .section.active {
   display: block;
-  /* justify-content: center;
-  align-items: center; */
 }
 
 /* ================ dasboard ================ */
+/* test */
+.chart {
+  max-width: 150px;
+  height: 150px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.chart .chart_types {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chart .chart_types button {
+  padding: 10px 25px;
+}
 
 .content {
   position: relative;
@@ -353,7 +378,7 @@ body.dark .home .text {
 
 .content main {
   width: 100%;
-  padding: 36px 24px;
+  padding: 50px 60px;
   max-height: calc(100vh - 56px);
 }
 
@@ -370,39 +395,6 @@ body.dark .home .text {
   font-weight: 600;
   margin-bottom: 10px;
   color: var(--dark);
-}
-
-.content main .header .left .breadcrumb {
-  display: flex;
-  align-items: center;
-  grid-gap: 16px;
-}
-
-.content main .header .left .breadcrumb li {
-  color: var(--dark);
-}
-
-.content main .header .left .breadcrumb li a {
-  color: var(--dark-grey);
-  pointer-events: none;
-}
-
-.content main .header .left .breadcrumb li a.active {
-  color: var(--primary);
-  pointer-events: none;
-}
-
-.content main .header .report {
-  height: 36px;
-  padding: 0 16px;
-  border-radius: 36px;
-  background: var(--primary);
-  color: var(--light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 10px;
-  font-weight: 500;
 }
 
 .content main .insights {
@@ -748,92 +740,6 @@ body.dark .home .text {
 }
 
 /* ================ settings ================ */
-
-.container {
-  box-sizing: border-box;
-  background-color: white;
-  padding: 10px 50px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgb(200, 200, 200);
-  width: 450px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-}
-
-.toggle-container {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-}
-
-.toggle {
-  width: 60px;
-  height: 35px;
-  border-radius: 40px;
-  background-color: #ebebfb;
-  display: inline-block;
-}
-
-.toggle-c {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: white;
-  display: inline-block;
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  transition: 300ms all;
-  border: 1px solid #BCBCA4;
-}
-
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"]:checked+div .toggle-c {
-  left: 30px;
-  background-color: #30305c;
-  border-color: #30305c;
-}
-
-input[type="radio"] {
-  border: 0px;
-  width: 10%;
-  height: 20px;
-  accent-color: black;
-}
-
-.togg-label {
-  display: flex;
-  align-self: center;
-  justify-content: space-between;
-
-}
-
-.flex {
-  display: flex;
-  gap: 5px;
-
-}
-
-.bottom {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-.bottom:hover {
-  text-decoration: underline;
-  cursor: pointer;
-
-}
-
-label,
-input[type="radio"] {
-  cursor: pointer;
-}
 
 /* ================ Rate Form ================ */
 .wrapper {

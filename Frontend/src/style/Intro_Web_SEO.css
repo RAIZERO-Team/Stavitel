@@ -89,32 +89,6 @@ img {
   height: auto;
 }
 
-/*=============== THEME ===============*/
-/*========== Variables Dark theme ==========*/
-body.dark-theme {
-  --first-color-light: hsl(var(--hue), var(--sat), 75%);
-  --title-color: hsl(var(--hue), 4%, 95%);
-  --text-color: hsl(var(--hue), 4%, 80%);
-  --body-color: hsl(var(--hue), 8%, 13%);
-  --container-color: hsl(var(--hue), 8%, 16%);
-  --scroll-bar-color: hsl(var(--hue), 4%, 32%);
-  --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
-}
-
-/*========== Button Dark/Light ==========*/
-.change-theme {
-  position: absolute;
-  right: 1.5rem;
-  top: 2.2rem;
-  color: var(--title-color);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-.dark-theme .footer {
-  background-color: var(--container-color);
-}
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4.5rem 0 1rem;
@@ -200,22 +174,6 @@ body.dark-theme {
 /* Show menu */
 .show-menu {
   top: calc(var(--header-height) + 1rem);
-}
-
-/* Active link */
-.active-link {
-  position: relative;
-}
-
-.active-link::before {
-  content: '';
-  position: absolute;
-  bottom: -.75rem;
-  left: 45%;
-  width: 5px;
-  height: 5px;
-  background-color: var(--title-color);
-  border-radius: 50%;
 }
 
 /* Change background header */
@@ -322,26 +280,6 @@ body.dark-theme {
   margin-bottom: var(--mb-0-5);
 }
 
-/*=============== APP ===============*/
-.app__container {
-  gap: 2.5rem;
-}
-
-.app__data {
-  text-align: center;
-}
-
-.app__description {
-  margin-bottom: var(--mb-1-5);
-}
-
-.app__buttons {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  justify-content: center;
-  gap: .5rem;
-}
-
 /*=============== CONTACT ===============*/
 .contact__container {
   padding-bottom: 3rem;
@@ -417,35 +355,6 @@ body.dark-theme {
   color: var(--text-color);
 }
 
-/*=============== SCROLL UP ===============*/
-.scrollup {
-  position: fixed;
-  background: var(--first-color);
-  right: 1rem;
-  bottom: -20%;
-  display: inline-flex;
-  padding: .3rem;
-  border-radius: .25rem;
-  z-index: var(--z-tooltip);
-  opacity: .8;
-  transition: .4s;
-}
-
-.scrollup:hover {
-  background-color: var(--first-color);
-  opacity: 1;
-}
-
-.scrollup__icon {
-  font-size: 1.25rem;
-  color: var(--title-color);
-}
-
-/* Show Scroll Up*/
-.show-scroll {
-  bottom: 3rem;
-}
-
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: .6rem;
@@ -474,9 +383,6 @@ body.dark-theme {
   .services__img {
     width: 100px;
   }
-  .app__buttons {
-    grid-template-columns: max-content;
-  }
 }
 
 /* For medium devices */
@@ -491,7 +397,6 @@ body.dark-theme {
   .about__container,
   .security__container,
   .services__container,
-  .app__container,
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
@@ -502,13 +407,11 @@ body.dark-theme {
   .home__container,
   .about__container,
   .security__container,
-  .app__container,
   .contact__container {
     align-items: center;
   }
   .about__data,
   .security__data,
-  .app__data,
   .contact__description {
     text-align: initial;
   }
@@ -535,14 +438,8 @@ body.dark-theme {
   .nav__toggle {
     display: none;
   }
-  .change-theme {
-    position: initial;
-  }
   .home__container {
     padding: 6rem 0 2rem;
-  }
-  .app__buttons {
-    justify-content: initial;
   }
 }
 
@@ -556,7 +453,6 @@ body.dark-theme {
   }
   .about__container,
   .security__container,
-  .app__container,
   .contact__container {
     column-gap: 6rem;
   }
@@ -590,8 +486,5 @@ body.dark-theme {
   }
   .footer__container {
     column-gap: 3rem;
-  }
-  .scrollup {
-    right: 2rem;
   }
 }
