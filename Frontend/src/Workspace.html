@@ -71,7 +71,7 @@
               </a>
             </li>
             <li class="nav-link">
-              <a onclick="showSection(2)">
+              <a onclick="openSettings()">
                 <i class="bx bxs-cog icon"></i>
                 <span class="text nav-text">Settings</span>
               </a>
@@ -99,9 +99,9 @@
       </div>
     </nav>
 
-    <!-- ============= Dahboard ============= -->
     <div class="content">
       <main>
+        <!-- ============= Dahboard ============= -->
         <section class="Dashboard section" id="section1">
           <div class="header">
             <div class="left">
@@ -237,7 +237,7 @@
         </section>
 
         <!-- ============= To Hide Add new Project ============= -->
-        <div class="overlay" id="overlay" onclick="closeSubpage()"></div>
+        <div class="overlay" id="overlay" onclick="closeSubpage() , closeSettings()"></div>
 
         <!-- ============= Add new Project Section ============= -->
         <section class="new_project" id="section2">
@@ -306,8 +306,186 @@
         </section>
 
         <!-- ============= Settings Section ============= -->
-        <section class="Settings section" id="section3"></section>
+        <section class="Settings">
+          <div class="container" id="settingContainer">
+            <!-- <div class="subpage"> -->
+            <div>
+              <h1>Settings</h1>
+            </div>
+            <div>
+              <div>
+                <label for="togg-1" class="togg-label">
+                  <span>Dark Mode</span>
+                  <input type="checkbox" id="togg-1" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label for="togg-2" class="togg-label">
+                  <span>Desktop Notification</span>
+                  <input type="checkbox" id="togg-2" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label for="togg-3" class="togg-label">
+                  <span>Focused Inbox</span>
+                  <input type="checkbox" id="togg-3" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h3>Conservation view</h3>
+              </div>
+              <div>
+                <label for="radio1" class="flex">
+                  <input type="radio" name="Filter" id="radio1" />
+                  <span>Newest On Top</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio2" class="flex">
+                  <input type="radio" name="Filter" id="radio2" />
+                  <span>Newest On Bottom</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio3" class="flex">
+                  <input type="radio" name="Filter" id="radio3" />
+                  <span>Off</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h3>Reading Pannel</h3>
+              </div>
 
+              <div>
+                <label for="radio4" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio4" />
+                  <span>Show On The Right</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio5" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio5" />
+                  <span>Show On The Left</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio6" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio6" />
+                  <span>Off</span>
+                </label>
+              </div>
+            </div>
+            <div class="bottom" onclick="closeSettings() , showSection(2)">
+              <span>View all setting...</span>
+            </div>
+          </div>
+          <!-- </div> -->
+        </section>
+
+        <!-- ============= More Settings Section ============= -->
+        <section class="moreSettings section" id="section4">
+          <div class="main">
+            <div class="responsive-wrapper">
+              <!-- ============= settings header ============= -->
+              <div class="main-header">
+                <h1>Settings</h1>
+                <div class="search">
+                  <input type="text" placeholder="Search" />
+                  <button type="submit">
+                    <i class="ph-magnifying-glass-bold"></i>
+                  </button>
+                </div>
+              </div>
+      
+              <!-- ============= selected tabs ============= -->
+              <div class="horizontal-tabs">
+                <a href="#my_profile" onclick="showSettingsTabs(0),test()">My Profile</a>
+                <a href="#change_password" onclick="showSettingsTabs(1)"
+                  >Change Password</a
+                >
+                <a href="#project_settings" onclick="showSettingsTabs(2)"
+                  >Project Settings</a
+                >
+                <a href="#notifications" onclick="showSettingsTabs(3)"
+                  >Notifications</a
+                >
+                <a href="#integration" onclick="showSettingsTabs(4)" class="active"
+                  >Integrations</a
+                >
+              </div>
+      
+              <!-- ============= Content Header should change ============= -->
+              <div class="content-header">
+                <div class="content-header-intro">
+                  <h2>Intergrations and connected apps</h2>
+                  <p>
+                    Supercharge your workflow and connect the tool you use every day.
+                  </p>
+                </div>
+                <div class="content-header-actions">
+                  <a href="#" class="button">
+                    <i class="ph-faders-bold"></i>
+                    <span>Filters</span>
+                  </a>
+                  <a href="#" class="button">
+                    <i class="ph-plus-bold"></i>
+                    <span>Request integration</span>
+                  </a>
+                </div>
+              </div>
+      
+              <div class="content">
+                <div class="content-main">
+                  <!-- ============= My Profile ============= -->
+                  <div class="my_profile settings-tabs" id="my_profile">
+                    My profile
+                  </div>
+      
+                  <!-- ============= Change Password ============= -->
+                  <div class="change_password settings-tabs" id="change_password">
+                    <form action="#">
+                      <div class="input-wrap">
+                        <input
+                          type="password"
+                          class="input-field"
+                          autocomplete="off"
+                          required
+                        />
+                        <label>Enter password</label>
+                      </div>
+                    </form>
+                  </div>
+      
+                  <!-- ============= Project Settings ============= -->
+                  <div class="project_settings settings-tabs" id="project_settings">
+                    project_settings
+                  </div>
+      
+                  <!-- ============= Notifications ============= -->
+                  <div class="notifications settings-tabs" id="notifications">
+                    notifications
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- ============= Rate Form Section ============= -->
         <section class="rate_form section">
           <div class="wrapper">

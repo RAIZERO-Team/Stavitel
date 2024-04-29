@@ -301,7 +301,7 @@ main.sign-up-mode .carousel {
   background-color: #cccccc;
   border-radius: 2rem;
   display: grid;
-  grid-template-rows: auto 1fr;
+  /* grid-template-rows: auto 1fr; */
   padding-bottom: 2rem;
   overflow: hidden;
   transition: 0.8s ease-in-out;
@@ -313,53 +313,9 @@ main.sign-up-mode .carousel {
   grid-template-rows: 1fr;
 }
 
-/* =============== Animation Images =============== */
-
-#images-wrapper {
-  animation: 20s images-wrapper infinite;
-}
-
-@keyframes image {
-  0% {
-    left: 0;
-  }
-
-  20% {
-    left: 0;
-  }
-
-  25% {
-    left: -100%;
-  }
-
-  45% {
-    left: -100%;
-  }
-
-  50% {
-    left: -200%;
-  }
-
-  70% {
-    left: -200%;
-  }
-
-  75% {
-    left: -300%;
-  }
-
-  95% {
-    left: -300%;
-  }
-
-  100% {
-    left: -400%;
-  }
-}
-
-
 .image {
   width: 100%;
+  height: 28rem;
   grid-column: 1/2;
   grid-row: 1/2;
   opacity: 0;
@@ -433,6 +389,49 @@ main.sign-up-mode .carousel {
   border-radius: 1rem;
 }
 
+/* =============== Animation Images =============== */
+/* #images-wrapper {
+  animation: 20s images-wrapper infinite;
+}
+
+@keyframes image {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+} */
+
 .copyright {
   color: var(--subtext-color);
   font-size: 0.9rem;
@@ -483,11 +482,12 @@ main.sign-up-mode .carousel {
   }
 
   .carousel {
-    position: revert;
+    display: none;
+    /* position: revert;
     height: auto;
     width: 100%;
     padding: 3rem 2rem;
-    display: flex;  /* flex */
+    display: flex; */
   }
 
   .images-wrapper {
@@ -518,9 +518,9 @@ main.sign-up-mode .carousel {
   }
 
   .carousel {
-    padding: 1.5rem 1rem;
-    border-radius: 1.6rem;
-    display: none;
+    /* padding: 1.5rem 1rem;
+    border-radius: 1.6rem; */
+    display: none; 
   }
 
   .text-wrap {
@@ -540,7 +540,7 @@ main.sign-up-mode .carousel {
   }
 }
 
-.slider-frame {
+/* .slider-frame {
   overflow: hidden;
   height: 400px;
   width: 600;
@@ -548,7 +548,7 @@ main.sign-up-mode .carousel {
   margin-right: auto;
   margin-top: auto;
   margin-bottom: auto;
-}
+} */
 
 /*---------- SLIDE ANIMATION ----------*/
 

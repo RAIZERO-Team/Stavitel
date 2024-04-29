@@ -153,70 +153,32 @@ window.addEventListener("resize", () => {
 
 // dashboard chartjs
 
-/* 
-   I will target the canvas element and i will store it in
-   the `ctx` variable. 
-*/
 let ctx = document.getElementById("myChart");
-
-/*
-   Next i will create two global variables, the `myChart` variable
-   and the `JsonData` variable. We are going assign to them values that
-   we create inside the functions that we will use down the script.
-*/
 let myChart;
 let Jsondata;
 
-/*
-   Next we are going to send a get request to the `data.json`
-   file to retrieve the file's data.
-*/
-fetch("data.json")
+fetch("./data.json")
   .then(function (response) {
     if (response.status == 200) {
       return response.json();
     }
   })
   .then(function (data) {
-    /*
-      Assigning the data from the JSON file to the `jsonData`
-      global variable.	
-   */
+
     Jsondata = data;
 
-    /*
-      Calling the `createChart` function to create the chart
-      from the json data.
-      The function takes two parameters. The first parameter holds
-      the json data, and the second the chart type.
-      Here we initiating the chart type to `bar`.
-   */
     createChart(Jsondata, "bar");
   });
 
-/*
-   Next we have the createChart function.
-*/
 function createChart(data, type) {
-  // Inside the function we create a new instance of the Chart object.
-  // The constructor takes the canvas element `ctx`,
-  // as its first argument, and an object with the Chart.js properties.
   myChart = new Chart(ctx, {
     // Setting the chart's type to the `type` parameter.
     type: type,
     data: {
-      // Creating an array from the `months` from the json data
-      // using the `map` method and assign it to the labels
-      // property.
       labels: data.map((row) => row.month),
-
       datasets: [
         {
           label: "# of Income",
-
-          // Creating an array from the `incomes` from the json data
-          // using the `map` method and assign it to the data
-          // property.
           data: data.map((row) => row.income),
 
           borderWidth: 1,
@@ -229,17 +191,12 @@ function createChart(data, type) {
           beginAtZero: true,
         },
       },
-      // Making the chart responsive.
       responsive: true,
       maintainAspectRatio: false,
     },
   });
 }
 
-/*
-   The `setChartType` function will dynamically change the chart type
-   depending on which button we click on in the index file.
-*/
 function setChartType(chartType) {
   // To change the chart type we have first to destroy the current
   // chart object.
@@ -262,6 +219,40 @@ function selectCard(card) {
 // ================ My Project ================ //
 
 // ================ Settings ================ //
+function openSettings() {
+  var settingsContainer = document.getElementById("settingContainer");
+  var overlay = document.getElementById("overlay");
+  settingsContainer.style.display = "block";
+  overlay.style.display = "block";
+}
+
+// Function to close the subpage
+function closeSettings() {
+  var settingsContainer = document.getElementById("settingContainer");
+  var overlay = document.getElementById("overlay");
+  settingsContainer.style.display = "none";
+  overlay.style.display = "none";
+}
+
+// ================ More Settings ================ //
+function showSettingsTabs(index) {
+  var sections = document.querySelectorAll(".settings-tabs");
+  // let tabs = document.querySelectorAll(".horizontal-tabs");
+
+  sections.forEach(function (section) {
+    section.classList.remove("active");
+  });
+
+  sections[index].classList.add("active");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  showSettingsTabs(0);
+});
+
+function test() {
+  console.log("test");
+}
 
 // ================ Rate Form ================ //
 const allStar = document.querySelectorAll(".rating .star");
