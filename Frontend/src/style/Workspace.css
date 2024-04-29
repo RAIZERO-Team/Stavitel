@@ -376,6 +376,10 @@ body.dark .home .text {
   left: 60px;
 }
 
+.sidebar.close~.container{
+  left: 60%;
+}
+
 .content main {
   width: 100%;
   padding: 50px 60px;
@@ -741,18 +745,19 @@ body.dark .home .text {
 
 /* ================ settings ================ */
 
-.container{
-  position: fixed;
+.container {
+  position: absolute;
   box-sizing: border-box;
   background-color: white;
   padding: 10px 50px ;
   border-radius: 20px;
-  top: 4%;
-  left: 8%;
+  top: 1%;
+  left: 4.2rem;
   width: 450px;
   gap: 10px;
   display: none;
   z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 h1, h3{
