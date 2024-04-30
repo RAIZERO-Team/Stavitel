@@ -1,3 +1,4 @@
+//alert("Welcome, we are very happy to have you visit us❤️");
 class App {
     constructor() {
         this.heroImages = [...document.querySelectorAll('.hero_images img')];
