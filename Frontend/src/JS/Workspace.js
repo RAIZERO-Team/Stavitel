@@ -4,7 +4,7 @@ const body = document.querySelector("body"),
   searchBtn = body.querySelector(".search-box"),
   modeSwitch = body.querySelector(".toggle-switch"),
   modeText = body.querySelector(".mode-text");
-toggle.addEventListener("click", () => {
+  toggle.addEventListener("click", () => {
   sidebar.classList.toggle("close");
 });
 
@@ -33,9 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   showSection(0); // Show section 0 by default
 });
 
-// add new project
-
-// Function to open the subpage
+// ============= add new project =============
 function openSubpage() {
   var subpageContainer = document.getElementById("subpageContainer");
   var overlay = document.getElementById("overlay");
@@ -43,7 +41,7 @@ function openSubpage() {
   overlay.style.display = "block";
 }
 
-// Function to close the subpage
+
 function closeSubpage() {
   var subpageContainer = document.getElementById("subpageContainer");
   var overlay = document.getElementById("overlay");
@@ -137,62 +135,6 @@ window.onload = function () {
 
 // ================ Dashboard ================ //
 
-// dashboard chartjs
-
-let ctx = document.getElementById("myChart");
-let myChart;
-let Jsondata;
-
-fetch("./data.json")
-  .then(function (response) {
-    if (response.status == 200) {
-      return response.json();
-    }
-  })
-  .then(function (data) {
-
-    Jsondata = data;
-
-    createChart(Jsondata, "bar");
-  });
-
-function createChart(data, type) {
-  myChart = new Chart(ctx, {
-    // Setting the chart's type to the `type` parameter.
-    type: type,
-    data: {
-      labels: data.map((row) => row.month),
-      datasets: [
-        {
-          label: "# of Income",
-          data: data.map((row) => row.income),
-
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-    },
-  });
-}
-
-function setChartType(chartType) {
-  // To change the chart type we have first to destroy the current
-  // chart object.
-  myChart.destroy();
-
-  // Next we render a new one passing-in, the `Jsondata`
-  // and the `chartType` that the button sends.
-  createChart(Jsondata, chartType);
-}
-
 // ================ Add New Project ================ //
 
 function selectCard(card) {
@@ -265,3 +207,7 @@ allStar.forEach((item, idx) => {
     }
   });
 });
+
+
+
+// test_redireect.goTo(404);
