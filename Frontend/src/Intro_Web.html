@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    --  Discription --
     <meta name="description" content="" />
     <title>Stavitel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -11,20 +10,25 @@
     <link rel="icon" href="../../public/Icons/" />
     <link href="https://cdn.jsdeliver.net/npm/remixicon@2.5.0/fonts/remixicon.css"rel="stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="images/logo.png" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 
   <!-- Header -->
   <header>
     <nav class="navigation">
-        <a href="#">Home<span></span></a>
-        <a href="#">About<span></span></a>
-        <a href="#">Gifts<span></span></a>
-        <a href="#">Services<span></span></a>
-        <a href="#">Contact<span></span></a>
+      <a href="#" class="nav-link animate__animated animate__fadeInUp">Home<span></span></a>
+      <a href="#" class="nav-link animate__animated animate__fadeInUp">About<span></span></a>
+      <a href="#" class="nav-link animate__animated animate__fadeInUp">Services<span></span></a>
+      <a href="Contact_us.html" target="_blank" class="nav-link animate__animated animate__fadeInUp">Contact Us<span></span></a>
+      <a href="User_Sign.html" target="_blank" class="nav-link animate__animated animate__fadeInUp">Sign in<span></span></a>
+      <a href="#" class="nav-link animate__animated animate__fadeInUp">Get Started<span></span></a>
     </nav>
   </header>
 
@@ -35,14 +39,34 @@
       <p> Stavitel is the collaborative front-end platform with integrated UI development
           and content modeling tools. A powerful visual builder to create and publish your
           headless static websites instantly.</p>
+          <div class="video">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/rT9No0gdUGE" frameborder="0" allowfullscreen></iframe>
+            </div>
     </div>
   </section>
 
-  <!--================== Scroll ===================-->
-  <!--================== Abolyazeed ===================-->
-  <h1 style="text-align: center">Infinite Scroll Animation</h1>
+  <!--paragraph-->
+  <section class="parag">
+    <div class="par">
+      <h1>Creative power that goes
+        beyond templates</h1><br><br>
+        <p>You design, we generate the code — for everything
+          from fully custom layouts to complex animations.</p><br><br>
+          <a href="User_Sign.html"><button class="btn"> Get Started - its free 
+          </button></a>
+    </div>
 
-  <div class="scroller" data-speed="fast">
+  </section>
+
+   <!--================== Scroll ===================-->
+  <!--================== Abolyazeed ===================-->
+  <div class="scroller" data-speed="3000"> <!-- زيادة السرعة هنا -->
+    <h1>Create stunning
+      static websites and UI elements,
+      through a seamless workflow
+      Integrate an advanced developer-centric front-end design system that works with any workflow.
+      Enable seamless collaboration between designers and developers.</h1>
     <ul class="tag-list scroller__inner">
       <li>HTML</li>
       <li>CSS</li>
@@ -54,7 +78,7 @@
     </ul>
   </div>
   
-  <div class="scroller" data-direction="right" data-speed="slow">
+  <div class="scroller" data-direction="right" data-speed="4000"> <!-- زيادة السرعة هنا -->
     <div class="scroller__inner">
       <img src="https://i.pravatar.cc/150?img=1" alt="" />
       <img src="https://i.pravatar.cc/150?img=2" alt="" />
@@ -64,34 +88,100 @@
       <img src="https://i.pravatar.cc/150?img=6" alt="" />
     </div>
   </div>
+  <script>
+    const scrollers = document.querySelectorAll(".scroller");
   
-  <a class="yt" href="https://youtu.be/pKHKQwAsZLI">
-    Watch the tutorial
-  </a>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+  
+    function addAnimation() {
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+  
+        const scrollerInner = scroller.querySelector(".scroller__inner");
+        const scrollerContent = Array.from(scrollerInner.children);
+  
+        scrollerContent.forEach((item) => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute("aria-hidden", true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
+      });
+    }
+  </script>
 
-<!--<a class="yt" href="https://youtu.be/pKHKQwAsZLI">
-  Watch the tutorial
-</a>-->
- 
+  <!--A platform-->
+  <section class="platform"></section>
+  <div class="plat">
+    <h1>A platform
+      designed for growth<br>
+      Tools to help you scale your site with your business</h1><br><br>
+      <a href="User_Sign.html"><button>
+        Get Started - its free
+    </button></a>
+  </div>
 
-  <!-- Services Section - SEO -->
-  <section class="SEO">
-    <div class="Seo">
-     <h1> SEO <br> <br></h1>
-      <div class="SeoContent">
-        <br>
-       <p>Optimize your SEO and improve discoverability
-        <br>with fine-tuned controls, high-performance 
-        <br>hosting, and flexible content management tools.</p>
-        <div class="Seoimg">
-          <img src="../public/Intro/SEO Img.svg" alt="SEO" class="SEO-image">
+  <!--###########  New  ###############-->
+  
+  <section class="sec-01">
+    <div class="container">
+      <h2 class="main-title">SEO</h2>
+      <div class="content">
+        <div class="image"> 
+          <img src="../public/Intro/SEO2.svg" alt="">
+        </div>
+        <div class="text-box">
+          <h3>SEO</h3>
+          <p>Optimize your SEO and improve discoverability
+            with fine-tuned controls, high-performance
+            hosting, and flexible content management tools.</p><br><br>
+            <a href="Intro_Web_SEO.html" target="_blank">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Learn More
+              </a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Services Section - Code Generation -->
-
+   
+  <section class="sec-02">
+    <div class="container">
+      <h3 class="section-title">Eidator</h3>
+      <div class="content">
+        <div class="image">
+          <img src="../public/Intro/code generation.svg" alt="">
+        </div>
+        <div class="info">
+          <h4 class="info-title">Description</h4>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A vitae, beatae iste, 
+            aliquam exercitationem voluptatum in sapiente amet quia nobis soluta! Delectus enim ipsam,
+            iste sequi quam tempore commodi nisi!</p>
+              <a href="Intro_Web_Editor.html" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Learn More
+            </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="sec-03">
+    <div class="container">
+      <h3 class="section-title">Lorem Ipsum</h3>
+      <div class="content">
+        <div class="image">
+          <img src="../public/Intro/editor2.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- AI Section - AI Website Generation -->
 
@@ -156,7 +246,7 @@
       <h2>2023 collection</h2>
       <p>Our new collection is everything you need for your next adventure. Made to be flexible, breathable and long lasting so you can enjoy more of the #OutdoorLiving.</p>
     </div>
-    <img src="../public/Intro/fullwidth.jpg" />
+    <img src="../public/Intro/pexels-fabian-wiktor-3471423.jpg" />
   </section>
   <section class="join-us">
     <div class="join-us__inner">
@@ -170,13 +260,172 @@
         </span>
       </h2>
       <p class="join-us__text">Leave your email to be part of the email list when we launch.</p>
-      <button>Sign me up</button>
+      <a href="User_Sign.html"><button>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>Sign me up</span>
+      </button></a>
     </div>
   </section>
 
+  <!--web developer-->
+  <section class="developer">
+    <div class="ag-format-container">
+      <div class="ag-create_box">
+        <a href="#" class="js-create_video ag-create_item">
+          <video muted="" playsinline="">
+            <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.webm" type="video/webm">
+          </video>
+  
+          <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
+            <polygon class="cls-2" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+            <polygon class="cls-3" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+            <line class="cls-4" x1="395" x2="395" y1="410" y2="419"></line>
+            <line class="cls-4" x1="399.5" x2="390.5" y1="414.5" y2="414.5"></line>
+          </svg>
+  
+          <div class="ag-create_title-item">Web<br>Development</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <script>(function ($) {
+    $(function () {
+  
+  
+      if (!('ontouchstart' in window)) {
+        const videoPropCont = document.querySelectorAll('.js-create_video');
+  
+        videoPropCont.forEach(function (item) {
+          item.addEventListener('mouseenter', function () {
+            var video = this.querySelector('video');
+  
+            if(!item.classList.contains('js-active')){
+  
+              item.classList.add('js-active');
+  
+              video.play();
+              video.loop = false;
+  
+              video.addEventListener('ended', function () {
+                item.classList.remove('js-active');
+                item.classList.remove('js-video-end');
+                item.classList.remove('js-video-pause');
+              });
+  
+              video.addEventListener('timeupdate', function () {
+                if((video.currentTime >= 2) && !item.classList.contains('js-video-end')) {
+                  video.pause();
+                  item.classList.add('js-video-pause');
+                }
+              });
+            }
+          });
+  
+          item.addEventListener('mouseleave', function () {
+            var video = this.querySelector('video');
+  
+            if(item.classList.contains('js-active')) {
+              if(item.classList.contains('js-video-pause')){
+                item.classList.add('js-video-end');
+                video.play()
+              } else {
+                item.classList.add('js-video-end');
+              }
+            }
+  
+          });
+  
+        });
+      }
+  
+  
+    });
+  })(jQuery);</script>
 
+  <!--nama-->
+  <div class="bbox-container">
+    <div class="box-item">
+      <div class="flip-box">
+        <div class="flip-box-front text-center"
+          style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
+          <div class="inner color-white">
+            <h3 class="flip-box-header">AI</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta velit officia atque 
+              iusto. Perferendis earum qui nulla ad 
+              corporis sit repellat quidem reiciendis dolore recusandae? Magnam quae similique saepe esse.</p>
+            <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
+          </div>
+        </div>
+        <div class="flip-box-back text-center"
+          style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
+          <div class="inner color-white">
+            <h3 class="flip-box-header"> </h3>
+            <p></p>
+            <a href="AI_page.html"><button class="flip-box-button">Learn More</button></a>
+          </div>
+        </div>
+    </div>
+    </div>
 
-  <!-- Footer -->
+  <!--End-->
+
+  <!--Free-
+  <section class="free">
+    <div class="text-section__content">
+        <h1> Get started for free </h1>
+        <p> Try Webflow for as long as you like with our
+          free Starter plan. Purchase a paid Site plan to 
+          publish, host, and unlock additional features. </p>
+    </div>
+</section>
+
+  
+--      photo        
+
+<section class="gallery-container">
+  <div class="image-gallery">
+    <img src="/Frontend/public/Intro/AI.svg" id="image1" alt="Slideshow Image">
+    <img src="/Frontend/public/Intro/Photo7.jpg" id="image2" alt="Slideshow Image">
+    <img src="/Frontend/public/Intro/Contact Us.svg" id="image3" alt="Slideshow Image">
+    <img src="/Frontend/public/Intro/code generation.svg" id="image4" alt="Slideshow Image">
+    <img src="/Frontend/public/Intro/SEO Img.svg" id="image5" alt="Slideshow Image">
+  </div>
+  <div class="gallery-buttons">
+    <button onclick="showImage(1)">Image 1</button>
+    <button onclick="showImage(2)">Image 2</button>
+    <button onclick="showImage(3)">Image 3</button>
+    <button onclick="showImage(4)">Image 4</button>
+    <button onclick="showImage(5)">Image 5</button>
+  </div>
+</section><br><br>
+<script>let currentImage = 1;
+
+  function showImage(imageNumber) {
+    var images = document.querySelectorAll('.image-gallery img');
+    images.forEach(function(image) {
+      image.style.display = 'none';
+    });
+  
+    var selectedImage = document.getElementById('image' + imageNumber);
+    selectedImage.style.display = 'block';
+  }
+  
+  function startSlideshow() {
+    setInterval(function() {
+      currentImage = (currentImage % 5) + 1;
+      showImage(currentImage);
+    }, 5000); 
+  }</script>
+
+  --mony-->
+  
+
+  <Footer>
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -224,262 +473,4 @@
   <!-- JavaScript -->
   <script src="Js/Intro_Web.js"></script>
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!----
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    --  Discription --
-    <meta name="description" content="" />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="CSS/Intro_Web.css" />
-    <link rel="icon" href="../../public/Icons/" />
-
-    <link
-      href="https://cdn.jsdeliver.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-    <title>Stavitel</title>
-  </head>
-  <body>
-    
-    -================== Header ========================
-
-    <header>
-      <a href="#" class="logo"
-        ><i class="ri-home-heart-fill"></i> <span>Logo</span>
-      </a>
-
-      <ul class="navbar">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-
-      <div class="main">
-        <a href="#" class="user">
-          <i class="ri-user-fill"></i>
-          Sign In</a>
-        <a href="#">Register</a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-      </div>
-    </header>
-
-    --================== Hero Section ==================
-    --==================  Afraim ========================
-
-    <section class="Hero">
-      <div class="HeroSection">
-        Create. Code. Publish.<br>
-        Stavitel
-        <br>
-        <p>
-          Stavitel is the collaborative front-end platform with integrated UI
-          development and content modelling tools. A powerful visual builder to
-          create and publish your headless static websites instantly.
-        </p>
-      </div>
-    </section>
-
-
-    -================== Scroll ===================
-    ================== Abolyazeed ===================
-    <h1 style="text-align: center">Infinite Scroll Animation</h1>
-
-    <div class="scroller" data-direction="right" data-speed="slow">
-      <div class="scroller__inner">
-        <img src="https://i.pravatar.cc/150?img=1" alt="" />
-        <img src="https://i.pravatar.cc/150?img=2" alt="" />
-        <img src="https://i.pravatar.cc/150?img=3" alt="" />
-        <img src="https://i.pravatar.cc/150?img=4" alt="" />
-        <img src="https://i.pravatar.cc/150?img=5" alt="" />
-        <img src="https://i.pravatar.cc/150?img=6" alt="" />
-      </div>
-    </div>
-
-    ================== Services Section ==============
-    ================== Abolyazeed ====================
-    <section class="SEO">
-      <div class="Seo">
-        SEO
-        <br>
-        <div class="SeoContent">
-          <br />Optimize your SEO and improve discoverability <br>with
-          fine-tuned controls, high-performance <br>hosting, and flexible
-          content management tools.
-          <div class="Seoimg">
-            <img src="/public/SEO Img.svg" alt="SEO" class="SEO-image" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    ================== Services Section ==============-
-    -================== Abolyazeed ====================
-    <section class=" ">
-      <div class="SS">
-        <br>
-        <div class="ssContent">
-          <div class="Ssimg">
-            <img src="" alt="dont" class="SS-image" />
-          </div>
-        </div>
-      </div>
-
-      <div class="AA">
-        code Generation
-        <br>
-        <div class="aaContent">
-          <div class="Aaimg">
-            <img src="img/SEO Img.svg" alt="dont" class="AA-image" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    -================== AI Section ===================--
-    -================== Abolyazeed ===================--
-    <h1>With AI Your Work Will Be Easy</h1>
-    <section class="AI">
-      <div class="ai">
-        AI Website Generation
-        <br>
-        <div class="aiContent">
-          <div class="Aiimg">
-            <img src="/public/AI.svg" alt="AI-image" class="AI-image" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    --================== dont wore Section ===================--
-    -================== Abolyazeed ===================--
-    <section class=" ">
-      <div class="MM">
-        <br>
-        <div class="mmContent">
-          <div class="Mmimg">
-            <img src="" alt="dont" class="MM-image" />
-          </div>
-        </div>
-      </div>
-
-      <div class="NN">
-        <br>
-        <div class="nnContent">
-          <div class="Nnimg">
-            <img src="" alt="dont" class="NN-image" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    --================== Get Started Section === ======--
-
-    -================== Footer =======================--
-
-    <footer>
-      <div class="row">
-        <div class="col">
-          <img src="/public/Icons/logo.png" class="logo" />
-          <p>
-            Subscribe Easy Tutorials Youtube channel to watch more videos on
-            wepsite development and Press the bell icon to get immediate
-            notification of latest videos.
-          </p>
-        </div>
-        <div class="col">
-          <h3>
-            Office
-            <div class="underline"></div>
-            <span></span>
-          </h3>
-          <p>Whitefield, Bangalore</p>
-          <p>Karnataka, PIN 560066, India</p>
-          <p class="email-id">avinashdm@outlook.com</p>
-          <h4>+91 - 0123456789</h4>
-        </div>
-
-        <div class="col">
-          <h3>
-            Links
-            <div class="underline"></div>
-            <span></span>
-          </h3>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">About Us</a></li>
-            <li><a href="">Feature</a></li>
-            <li><a href="">Contacts</a></li>
-          </ul>
-        </div>
-
-        <div class="col">
-          <h3>
-            Newletter
-            <div class="underline"></div>
-            <span></span>
-          </h3>
-          <form>
-            <i class="far fa-envelpe"></i>
-            <input type="email" placeholder="Enter your email id" required />
-            <button type="submit"><i class="fas fa-arrow-right"></i></button>
-          </form>
-          <div class="social-icons">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-whatsapp"></i>
-            <i class="fab fa-pinterest"></i>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <p class="copyright">Easy Tutorials © 2024 - All Rights Reserved</p>
-    </footer>
-
-    <script src="JS/Intro_Web.js"></script>
-    <script src="https://kit.fontawesome.com/c4254e24a8.js"></script>
-  </body>
 </html>
