@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta
+      name="description"
+      content="Stavitel is webpage builder to help student and none developer 
+      to create powerfull websites without writing any code."
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../style/User_Sign.css" />
+    <link rel="icon" href="../../public/Icons/logo.png" />
+
+    <title>Stavitel . User</title>
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <!--================= Sign In Form =================-->
+            <form
+              action="Workspace.html"
+              autocomplete="off"
+              class="sign-in-form"
+            >
+              <div class="logo">
+                <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
+                <h4>Stavitel</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Welcome Back</h2>
+                <h6>Not registred yet?</h6>
+                <a href="#" class="toggle">Sign up</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    maxlength="15"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Name</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Password</label>
+                </div>
+
+                <input
+                  type="submit"
+                  value="Sign In"
+                  name="sign_in"
+                  class="sign-btn"
+                />
+
+                <p class="text">
+                  <a href="Forgot_Password.html">Forget your password?</a>
+                </p>
+                <div class="email_icons">
+                  <h6>or Sign In With</h6>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/google.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/linkedin.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/github.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/facebook.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </form>
+
+            <!--================= Sign Up Form =================-->
+            <form
+              action="User_Sign.html"
+              autocomplete="off"
+              class="sign-up-form"
+            >
+              <div class="logo">
+                <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
+                <h3>Stavitel</h3>
+              </div>
+
+              <div class="heading">
+                <h2>Get Started</h2>
+                <h6>Already have an account?</h6>
+                <a href="#" class="toggle">Sign in</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Name</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    onkeyup="trigger()"
+                    class="input-field check"
+                    id="sign_up_pass"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>password</label>
+                </div>
+
+                <div class="indicator-container">
+                  <div class="indicator"></div>
+                </div>
+                <p>Password Strength: <span class="strength"></span></p>
+
+                <input
+                  type="submit"
+                  value="Sign Up"
+                  name="sign_up"
+                  class="sign-btn"
+                />
+                <div class="email_icons">
+                  <h6>or Sign Up With</h6>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/google.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/linkedin.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/github.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                  <a href="#" target="_blank">
+                    <img
+                      src="../../public/Icons/facebook.svg"
+                      title="Google"
+                      alt="Google Icon"
+                    />
+                  </a>
+                </div>
+              </div>
+            </form>
+
+            <p class="copyright">&#169; 2024 Stavitel - All rights reserved</p>
+          </div>
+
+          <!--================= Images =================-->
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img
+                src="../../public/User_Sign/Build_web1.svg"
+                class="image img-1 show"
+                alt="image-slide1"
+              />
+              <img
+                src="../../public/User_Sign/Build_web2.svg"
+                class="image img-2"
+                alt="image-slide2"
+              />
+              <img
+                src="../../public/User_Sign/Build_web3.svg"
+                class="image img-3"
+                alt="image-slide3"
+              />
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Create your own courses</h2>
+                  <h2>Customize as you like</h2>
+                  <h2>Invite students to your class</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--============= Js files =============-->
+    <script src="../../JS/User_Sign.js"></script>
+  </body>
+</html>

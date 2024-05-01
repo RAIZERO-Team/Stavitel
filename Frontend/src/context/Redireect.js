@@ -1,11 +1,6 @@
 // import fetchData from "api.js";
 
 class redireect {
-
-  // constructor (){
-  //   this.tt_Error = error;
-  // }
-
   goTo(handel_Error) {
     switch (handel_Error) {
       case 400:
@@ -21,7 +16,7 @@ class redireect {
         break;
 
       case 404:
-        window.location.href = "../View/Error/404_Not_Found.html";
+        window.open("/Frontend/src/View/Error/404_Not_Found.html");
         break;
 
       case 500:
@@ -35,6 +30,11 @@ class redireect {
       case 504:
         window.location.href = "../View/Error/500_Internal_Server.html";
         break;
+      default:
+        // Handle any other error codes or unknown codes
+        console.error("Unknown error code:", errorCode);
+        break;
     }
   }
 }
+

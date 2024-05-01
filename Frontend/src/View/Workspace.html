@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta name="description" content="" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/Workspace.css" />
+    <link rel="icon" href="../../public/Icons/logo.png" />
+
+    <title>Stavitel</title>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <!-- <div class="navbar">
+      <a href="#" class="notif">
+          <i class='bx bx-bell'></i>
+          <span class="count">12</span>
+      </a>
+      <a href="#" class="profile">
+          <img src="../../public/Icons/logo.png">
+      </a>
+    </div> -->
+
+    <!-- Side Bar -->
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="../../public/photo_2023-10-16_14-54-50.jpg" alt="" />
+          </span>
+          <div class="text logo-text">
+            <span class="name">Ahmed Badawi</span>
+            <span class="profession">ahmedbad063@gmail.com</span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+      <div class="menu-bar">
+        <div class="menu">
+          <li class="search-box">
+            <i class="bx bx-search icon"></i>
+            <input type="text" placeholder="Search..." />
+          </li>
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a onclick="showSection(0)">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a onclick="openSubpage()">
+                <i class="bx bxs-file-plus icon"></i>
+                <span class="text nav-text">New Project</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a onclick="showSection(1)">
+                <i class="bx bxs-layer icon"></i>
+                <span class="text nav-text">My Projects</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a onclick="openSettings()">
+                <i class="bx bxs-cog icon"></i>
+                <span class="text nav-text">Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom-content">
+          <li class="">
+            <a href="Intro_Web.html">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+          <li class="mode">
+            <div class="sun-moon">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <main>
+        <!-- ============= Dahboard ============= -->
+        <section class="Dashboard section" id="section1">
+          <div class="header">
+            <div class="left">
+              <h1>Dashboard</h1>
+            </div>
+          </div>
+
+          <!-- Insights -->
+          <ul class="insights">
+            <li>
+              <i class="bx bx-calendar-check"></i>
+              <span class="info">
+                <h3>1,074</h3>
+                <p>Paid Order</p>
+              </span>
+            </li>
+            <li>
+              <i class="bx bx-show-alt"></i>
+              <span class="info">
+                <h3>3,944</h3>
+                <p>Site Visit</p>
+              </span>
+            </li>
+            <li>
+              <i class="bx bx-line-chart"></i>
+              <span class="info">
+                <h3>14,721</h3>
+                <p>Searches</p>
+              </span>
+            </li>
+            <li>
+              <i class="bx bx-dollar-circle"></i>
+              <span class="info">
+                <h3>$6,742</h3>
+                <p>Total Sales</p>
+              </span>
+            </li>
+          </ul>
+          <!-- End of Insights -->
+
+          <div class="bottom-data">
+            <div class="orders">
+              <div class="header">
+                <i class="bx bx-receipt"></i>
+                <h3>Recent Orders</h3>
+                <i class="bx bx-filter"></i>
+                <i class="bx bx-search"></i>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img src="images/profile-1.jpg" />
+                      <p>John Doe</p>
+                    </td>
+                    <td>14-08-2023</td>
+                    <td><span class="status completed">Completed</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/profile-1.jpg" />
+                      <p>John Doe</p>
+                    </td>
+                    <td>14-08-2023</td>
+                    <td><span class="status pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="images/profile-1.jpg" />
+                      <p>John Doe</p>
+                    </td>
+                    <td>14-08-2023</td>
+                    <td><span class="status process">Processing</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Reminders -->
+            <div class="reminders">
+              <!-- <div class="header">
+                <i class="bx bx-note"></i>
+                <h3>Remiders</h3>
+                <i class="bx bx-filter"></i>
+                <i class="bx bx-plus"></i>
+              </div> -->
+
+              <div class="chart">
+                <div class="chart_types">
+                  <button onclick="setChartType('bar')">Bars</button>
+                  <button onclick="setChartType('line')">Line</button>
+                  <button onclick="setChartType('doughnut')">Doughnut</button>
+                  <button onclick="setChartType('polarArea')">PolarArea</button>
+                  <button onclick="setChartType('radar')">Radar</button>
+                </div>
+                <canvas id="myChart"></canvas>
+              </div>
+
+              <!-- <ul class="task-list">
+                <li class="completed">
+                  <div class="task-title">
+                    <i class="bx bx-check-circle"></i>
+                    <p>Start Our Meeting</p>
+                  </div>
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </li>
+                <li class="completed">
+                  <div class="task-title">
+                    <i class="bx bx-check-circle"></i>
+                    <p>Analyse Our Site</p>
+                  </div>
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </li>
+                <li class="not-completed">
+                  <div class="task-title">
+                    <i class="bx bx-x-circle"></i>
+                    <p>Play Footbal</p>
+                  </div>
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </li>
+              </ul> -->
+            </div>
+
+            <!-- End of Reminders-->
+          </div>
+        </section>
+
+        <!-- ============= To Hide Add new Project ============= -->
+        <div
+          class="overlay"
+          id="overlay"
+          onclick="closeSubpage() , closeSettings()"
+        ></div>
+
+        <!-- ============= Add new Project Section ============= -->
+        <section class="new_project" id="section2">
+          <div class="subpage-container" id="subpageContainer">
+            <div class="subpage">
+              <!-- <button onclick="closeSubpage()">Close</button> -->
+              <span onclick="closeSubpage()"
+                ><i class="bx bxs-cog icon"></i
+              ></span>
+              <div class="card-container">
+                <div class="card" onclick="selectCard(this)">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('/Frontend/../public/User_Sign/Build_web1.svg');
+                    "
+                  ></div>
+                  <div class="card-content">
+                    <h3>Editor 1</h3>
+                    <p>Let's Go To Build Your Website</p>
+                  </div>
+                </div>
+
+                <div class="card" onclick="selectCard(this)">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('/Frontend/../public/User_Sign/Build_web1.svg');
+                    "
+                  ></div>
+                  <div class="card-content">
+                    <h3>Editor 2</h3>
+                    <p>Let's Go To Build Your Website</p>
+                  </div>
+                </div>
+
+                <div class="card" onclick="selectCard(this)">
+                  <div
+                    class="card-image"
+                    style="
+                      background-image: url('/Frontend/../public/User_Sign/Build_web1.svg');
+                    "
+                  ></div>
+                  <div class="card-content">
+                    <h3>Stavitel AI</h3>
+                    <p>Build Your Website With AI</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project_opthions">
+                <button
+                  type="submit"
+                  id="create-project"
+                  onclick="closeSubpage()"
+                >
+                  Create Project
+                </button>
+                <button type="submit" onclick="closeSubpage()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============= My Project Section ============= -->
+        <section class="My Projects section" id="section3">
+          <div class="Project">
+            <div class="project_info"></div>
+            
+            <div class="project_header">
+              <h1>Projects</h1>
+            </div>
+
+            <div class="search">
+              <input type="text" placeholder="Search" />
+              <button type="submit">
+                <i class="bx bx-search icon"></i>
+              </button>
+            </div>
+
+            <div class="Projects_list">
+              <div id="projectContainer">
+                <!-- projects will be dynamically generated here -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============= Settings Section ============= -->
+        <section class="Settings">
+          <div class="container" id="settingContainer">
+            <!-- <div class="subpage"> -->
+            <div>
+              <h1>Settings</h1>
+            </div>
+            <div>
+              <div>
+                <label for="togg-1" class="togg-label">
+                  <span>Dark Mode</span>
+                  <input type="checkbox" id="togg-1" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label for="togg-2" class="togg-label">
+                  <span>Desktop Notification</span>
+                  <input type="checkbox" id="togg-2" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+              <div>
+                <label for="togg-3" class="togg-label">
+                  <span>Focused Inbox</span>
+                  <input type="checkbox" id="togg-3" />
+                  <div class="toggle-container">
+                    <span class="toggle"></span>
+                    <span class="toggle-c"></span>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h3>Conservation view</h3>
+              </div>
+              <div>
+                <label for="radio1" class="flex">
+                  <input type="radio" name="Filter" id="radio1" />
+                  <span>Newest On Top</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio2" class="flex">
+                  <input type="radio" name="Filter" id="radio2" />
+                  <span>Newest On Bottom</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio3" class="flex">
+                  <input type="radio" name="Filter" id="radio3" />
+                  <span>Off</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h3>Reading Pannel</h3>
+              </div>
+
+              <div>
+                <label for="radio4" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio4" />
+                  <span>Show On The Right</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio5" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio5" />
+                  <span>Show On The Left</span>
+                </label>
+              </div>
+              <div>
+                <label for="radio6" class="flex">
+                  <input type="radio" name="Show-Mode" id="radio6" />
+                  <span>Off</span>
+                </label>
+              </div>
+            </div>
+            <div class="bottom" onclick="closeSettings() , showSection(2)">
+              <span>View all setting...</span>
+            </div>
+          </div>
+          <!-- </div> -->
+        </section>
+
+        <!-- ============= More Settings Section ============= -->
+        <section class="moreSettings section" id="section4">
+          <div class="main">
+            <div class="responsive-wrapper">
+              <!-- ============= settings header ============= -->
+              <div class="main-header">
+                <h1>Settings</h1>
+                <div class="search">
+                  <input type="text" placeholder="Search" />
+                  <button type="submit">
+                    <i class="bx bx-search icon"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- ============= selected tabs ============= -->
+              <div class="horizontal-tabs">
+                <a href="#my_profile" onclick="showSettingsTabs(0),test()"
+                  >My Profile</a
+                >
+                <a href="#change_password" onclick="showSettingsTabs(1)"
+                  >Change Password</a
+                >
+                <a href="#project_settings" onclick="showSettingsTabs(2)"
+                  >Project Settings</a
+                >
+                <a href="#notifications" onclick="showSettingsTabs(3)"
+                  >Notifications</a
+                >
+                <a
+                  href="#integration"
+                  onclick="showSettingsTabs(4)"
+                  class="active"
+                  >Integrations</a
+                >
+              </div>
+
+              <!-- ============= Content Header should change ============= -->
+              <div class="content-header">
+                <div class="content-header-intro">
+                  <h2>Intergrations and connected apps</h2>
+                  <p>
+                    Supercharge your workflow and connect the tool you use every
+                    day.
+                  </p>
+                </div>
+                <div class="content-header-actions">
+                  <a href="#" class="button">
+                    <i class="ph-faders-bold"></i>
+                    <span>Filters</span>
+                  </a>
+                  <a href="#" class="button">
+                    <i class="ph-plus-bold"></i>
+                    <span>Request integration</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="content">
+                <div class="content-main">
+                  <!-- ============= My Profile ============= -->
+                  <div class="my_profile settings-tabs" id="my_profile">
+                    My profile
+                  </div>
+
+                  <!-- ============= Change Password ============= -->
+                  <div
+                    class="change_password settings-tabs"
+                    id="change_password"
+                  >
+                    <form action="#">
+                      <div class="input-wrap">
+                        <input
+                          type="password"
+                          class="input-field"
+                          autocomplete="off"
+                          required
+                        />
+                        <label>Enter password</label>
+                      </div>
+                    </form>
+                  </div>
+
+                  <!-- ============= Project Settings ============= -->
+                  <div
+                    class="project_settings settings-tabs"
+                    id="project_settings"
+                  >
+                    project_settings
+                  </div>
+
+                  <!-- ============= Notifications ============= -->
+                  <div class="notifications settings-tabs" id="notifications">
+                    notifications
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- ============= Rate Form Section ============= -->
+        <section class="rate_form section">
+          <div class="wrapper">
+            <h3>👇Rate Our Website👇</h3>
+            <form action="#">
+              <div class="rating">
+                <input type="number" name="rating" hidden />
+                <i class="bx bx-star star" style="--i: 0"></i>
+                <i class="bx bx-star star" style="--i: 1"></i>
+                <i class="bx bx-star star" style="--i: 2"></i>
+                <i class="bx bx-star star" style="--i: 3"></i>
+                <i class="bx bx-star star" style="--i: 4"></i>
+              </div>
+              <div class="btn-group">
+                <button type="submit" class="btn submit">Submit</button>
+                <button class="btn cancel">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../../JS/Workspace.js"></script>
+    <script src="./../context/Redireect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>
