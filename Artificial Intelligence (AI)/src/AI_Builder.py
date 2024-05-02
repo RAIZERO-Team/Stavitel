@@ -14,7 +14,7 @@ def to_markdown(text):
 
 #from google.colab import userdata
 
-GOOGLE_API_KEY='your_Api_key'
+GOOGLE_API_KEY='your_api_key'
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -54,15 +54,27 @@ html ="""
 # Can you modify the code so that the paragraphs have similar meaning but use different wording? Please show me the complete HTML code with the updated paragraphs.
 # '''
 #------------------------------------------------------------------------------------------#
+
+#  / Change name and paragraphs / #
 name = input("enter your name ")
-q1 = "change  title website to \"" + name + "\" and Invent new paragraphs similar to the same topic as the paragraphs in the html code and replace the old ones with new paragraphs and Show me all HTML code  "
+# q1 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and Show me all HTML code  "
+# q3 = "Show the rest of the code"
 # q2 = " change  title website to \"%s\" and Show me all HTML code" %(name)
+
+
+   # try to change images ,name and paragraphs  #
+path1 = ""
+path2 = ""
+q2 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and ,Change the link of only one  images contained in this code with this link   \"%s\" ,\"%s\" ,  Show me all HTML code  "%(path1,path2)
 q3 = "Show the rest of the code"
 
-respond1 = send_message(html + q1)
-# respond2 = send_message(q2)
+
+ #  /responds /#
+#respond1 = send_message(html + q1)
+respond1 = send_message(html+ q2)
 respond3 = send_message(q3)
 respond4 = send_message(q3)
+respond5 = send_message(q3)
 
 def extract_html_content(html_content):
     pattern = r'<!DOCTYPE html>.*?</html>'
@@ -72,7 +84,7 @@ def extract_html_content(html_content):
     return "none"
     
 # print(responds)
-HTML_code_afte_edit =  extract_html_content(respond1 + respond3 + respond4)   
+HTML_code_afte_edit =  extract_html_content(respond1 + respond3 + respond4 + respond5  )   
 print(HTML_code_afte_edit)
 
 
