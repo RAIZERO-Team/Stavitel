@@ -2,7 +2,7 @@ let ctx = document.getElementById('myChart');
 let myChart;
 let Jsondata;
 
-fetch("http://127.0.0.1:5500/Frontend/src/View/data.json")
+fetch("data.json")
 .then(function(response){
    if(response.status == 200){
       return response.json();
