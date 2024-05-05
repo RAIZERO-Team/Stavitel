@@ -1,59 +1,50 @@
-// getting all required elements
-const searchWrapper = document.querySelector(".search-input");
-const inputBox = searchWrapper.querySelector("input");
-const suggBox = searchWrapper.querySelector(".autocom-box");
-const icon = searchWrapper.querySelector(".icon");
-let linkTag = searchWrapper.querySelector("a");
-let webLink;
+const notifications = document.querySelector(".notifications"),
+  buttons = document.querySelectorAll(".buttons .btn");
 
-// if user press any key and release
-inputBox.onkeyup = (e)=>{
-    let userData = e.target.value; //user enetered data
-    let emptyArray = [];
-    if(userData){
-        icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
-        }
-        emptyArray = suggestions.filter((data)=>{
-            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
-            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data)=>{
-            // passing return data inside li tag
-            return data = `<li>${data}</li>`;
-        });
-        searchWrapper.classList.add("active"); //show autocomplete box
-        showSuggestions(emptyArray);
-        let allList = suggBox.querySelectorAll("li");
-        for (let i = 0; i < allList.length; i++) {
-            //adding onclick attribute in all li tag
-            allList[i].setAttribute("onclick", "select(this)");
-        }
-    }else{
-        searchWrapper.classList.remove("active"); //hide autocomplete box
-    }
-}
+// Object containing details for different types of toasts
+const toastDetails = {
+  timer: 5000,
+  success: {
+    icon: "fa-circle-check",
+    text: "Success: This is a success toast.",
+  },
+  error: {
+    icon: "fa-circle-xmark",
+    text: "Error: This is an error toast.",
+  },
+  warning: {
+    icon: "fa-triangle-exclamation",
+    text: "Warning: This is a warning toast.",
+  },
+  info: {
+    icon: "fa-circle-info",
+    text: "Info: This is an information toast.",
+  },
+};
 
-function select(element){
-    let selectData = element.textContent;
-    inputBox.value = selectData;
-    icon.onclick = ()=>{
-        webLink = `https://www.google.com/search?q=${selectData}`;
-        linkTag.setAttribute("href", webLink);
-        linkTag.click();
-    }
-    searchWrapper.classList.remove("active");
-}
+const removeToast = (toast) => {
+  toast.classList.add("hide");
+  if (toast.timeoutId) clearTimeout(toast.timeoutId); // Clearing the timeout for the toast
+  setTimeout(() => toast.remove(), 500); // Removing the toast after 500ms
+};
 
-function showSuggestions(list){
-    let listData;
-    if(!list.length){
-        userValue = inputBox.value;
-        listData = `<li>${userValue}</li>`;
-    }else{
-      listData = list.join('');
-    }
-    suggBox.innerHTML = listData;
-}
+const createToast = (id) => {
+  // Getting the icon and text for the toast based on the id passed
+  const { icon, text } = toastDetails[id];
+  const toast = document.createElement("li"); // Creating a new 'li' element for the toast
+  toast.className = `toast ${id}`; // Setting the classes for the toast
+  // Setting the inner HTML for the toast
+  toast.innerHTML = `<div class="column">
+                        <i class="fa-solid ${icon}"></i>
+                        <span>${text}</span>
+                      </div>
+                      <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
+  notifications.appendChild(toast); // Append the toast to the notification ul
+  // Setting a timeout to remove the toast after the specified duration
+  toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
+};
+
+// Adding a click event listener to each button to create a toast when clicked
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => createToast(btn.id));
+});
