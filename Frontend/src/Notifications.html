@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stavitel</title>
+    <link rel="stylesheet" href="style/Style_Notifications.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="../public/Icons/logo.png"/>
+  </head>
+  <body>
+    <ul class="class notifications">
+        <li class="class toast success">
+          <div class="class column">
+            <i class="fa-solid fa-circle-check"></i>
+              <span>Success: This is a success toast.</span>
+          </div>
+          <i class="fa-solid fa-xmark"></i>
+        </li>
+        <li class="class toast error">
+          <div class="class column">
+            <i class="fa-solid fa-circle-xmark"></i>
+              <span>Error: This is a error toast.</span>
+          </div>
+          <i class="fa-solid fa-xmark"></i>
+        </li>
+        <li class="class toast warning">
+          <div class="class column">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>Warning: This is a warning toast.</span>
+          </div>
+          <i class="fa-solid fa-xmark"></i>
+        </li>
+        <li class="class toast info">
+          <div class="class column">
+            <i class="fa-solid fa-circle-info"></i>
+              <span>Info: This is a info toast.</span>
+          </div>
+          <i class="fa-solid fa-xmark"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button class="btn" id="success">Success</button>
+      <button class="btn" id="error">Error</button>
+      <button class="btn" id="warning">Warning</button>
+      <button class="btn" id="info">Info</button>
+    </div>
+    <script src="js/script_notifications.js" defer></script>
+  </body>
+</html>
