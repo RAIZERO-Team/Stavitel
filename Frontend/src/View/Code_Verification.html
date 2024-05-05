@@ -7,8 +7,8 @@
   <meta name="description" content=""/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../../style/Code_Verification.css">
-  <link rel="icon" href="../../public/Icons/logo.png">
+  <link rel="stylesheet" href="/Frontend/src/style/Code_Verification.css">
+  <link rel="icon" href="/Frontend/public/Icons/logo.png">
   
   <title>Stavitel . Code Verification</title>
 </head>
@@ -23,7 +23,7 @@
             class="Change-Password-form"
           >
             <div class="logo">
-              <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
+              <img src="/Frontend/public/Icons/logo.png" alt="Stavitel Logo" />
               <h4>Stavitel</h4>
             </div>
 
@@ -34,14 +34,12 @@
 
             <div class="actual-form">
               <div class="input-wrap">
-                <input
-                  type="number"
-                  class="input-field"
-                  autocomplete="off"
-                  placeholder="Your Code"
-                  required
-                />
-                <!-- <label>Your Code</label> -->
+              <div class="input-field">
+                <input type="number" />
+                <input type="number" disabled />
+                <input type="number" disabled />
+                <input type="number" disabled />
+              </div>
               </div>
 
               <input type="submit" value="Submit" class="submit-btn" />
@@ -55,7 +53,7 @@
 
         <div class="image">
             <img
-              src="../../public/User_Sign/Code Verification.svg"
+              src="/Frontend/public/User_Sign/Code Verification.svg"
               alt="Code-Verification-Image"
             />
         </div>
@@ -63,6 +61,6 @@
     </div>
   </main>
 
-  <script src="../../JS/Code_Verification.js"></script>
+  <script src="/Frontend/src/app/Code_Verification.js"></script>
 </body>
 </html>

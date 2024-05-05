@@ -62,6 +62,7 @@ export default [
       if (confirm("Are you sure to clean the canvas?")) {
         editor.runCommand("core:canvas-clear");
         setTimeout(function () {
+          // =------------- add the data in server --------------=
           localStorage.setItem("stjs-assets", "");
           localStorage.setItem("stjs-components", "");
           localStorage.setItem("stjs-html", "");
@@ -85,11 +86,13 @@ export default [
       let modal = editor.Modal;
       modal.setTitle("Deploy");
 
+      // =-------------  --------------=
       const getSEO = localStorage.getItem("gram-seo");
       const { title, description, token } = getSEO
         ? JSON.parse(getSEO)
         : { title: "", description: "" };
 
+        // =-------------  --------------=
       localStorage.setItem("gram-deploying-site", "");
 
       // ============= Form to set netlify token and host it there =============
@@ -180,6 +183,7 @@ export default [
 
             let site_id = e.target.parentNode.id;
             let domain = e.target.parentNode.querySelector("a").href;
+            // =------------- get seo from server --------------=
             const getSEO = localStorage.getItem("gram-seo");
             const { token } = getSEO ? JSON.parse(getSEO) : {};
 
@@ -227,6 +231,7 @@ export default [
           noty.error("Netlify token is required");
           return;
         }
+        // =------------- add the seo data in server --------------=
         localStorage.setItem("gram-seo", JSON.stringify(SEO));
 
         const existingSiteDiv = document.querySelector(".existing-sites");
@@ -236,6 +241,7 @@ export default [
         let global = await getGlobalJsCss();
         const data = { token, title, description, html, css, global, type };
         if (type === "PUT") {
+          // =------------- add site id in server --------------=
           let site_id = localStorage.getItem("gram-deploying-site");
           if (!site_id) {
             noty.error("You must check a site in existing sites.");
@@ -259,6 +265,7 @@ export default [
       modal.setTitle("Export");
 
       // ============= Get SEO function =============
+      // =------------- get the seo from server --------------=
       const getSEO = localStorage.getItem("gram-seo");
       const { title, description } = getSEO
         ? JSON.parse(getSEO)
@@ -308,6 +315,7 @@ export default [
           noty.error("Description is required");
           return;
         }
+        // =------------- set the seo in server --------------=
         localStorage.setItem("gram-seo", JSON.stringify(SEO));
 
         let html = editor.getHtml() || "";

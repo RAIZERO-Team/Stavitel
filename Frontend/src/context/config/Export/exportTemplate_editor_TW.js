@@ -5,7 +5,7 @@
   ====================================
 */
 
-import { getLocal } from "./../helpers/index";
+import { getLocal } from "../../helpers/TW-Editor-app";
 
 export const exportTemplate = (data) => {
   const { title, description, html } = data;
@@ -41,14 +41,13 @@ export const exportTemplate = (data) => {
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/font-awesome-line-awesome/css/all.min.css" />
         ${dependencyLinks}
         <link rel="stylesheet" href="css/global.css" />
         <link rel="stylesheet" href="css/style.css" />
     <body>
         ${html || ""}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
         <script src="js/global.js"></script>
         ${dependencyScripts}
         <script src="js/script.js"></script>

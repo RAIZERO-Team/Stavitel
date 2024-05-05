@@ -5,7 +5,7 @@
   ====================================
 */
 
-import { getLocal } from "./../helpers/index";
+import { getLocal } from "../../helpers/BT-Editor-app";
 
 export const exportTemplate = (data) => {
   const { title, description, html } = data;

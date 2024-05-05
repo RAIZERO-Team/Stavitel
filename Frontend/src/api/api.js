@@ -16,3 +16,5 @@ async function fetchData(url, method, data) {
     throw error;
   }
 }
+
+module.exports = fetchData;

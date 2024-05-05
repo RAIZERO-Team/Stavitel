@@ -129,38 +129,30 @@ form {
   margin-bottom: 2rem;
 }
 
-.input-field {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: none;
-  border: none;
+form .input-field {
+  display: flex;
+  left: 8%;
+  gap: 15px;
+  position: relative;
+}
+
+.input-field input {
+  height: 45px;
+  width: 42px;
+  border-radius: 6px;
   outline: none;
-  border-bottom: 1px solid #bbb;
-  padding: 0;
-  font-size: 0.95rem;
-  color: #151111;
-  transition: 0.4s;
+  font-size: 1.125rem;
+  text-align: center;
+  border: 1px solid #ddd;
 }
 
-label {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.95rem;
-  color: #bbb;
-  pointer-events: none;
-  transition: 0.4s;
+.input-field input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.input-field.active {
-  border-bottom-color: #151111;
-}
-
-.input-field.active + label {
-  font-size: 0.75rem;
-  top: -2px;
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+  display: none;
 }
 
 .submit-btn {
