@@ -12,6 +12,16 @@ def to_markdown(text):
   text = text.replace('•', '  *')
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
+
+# extract HTML code from response
+def extract_html_content(html_content):
+    pattern = r'<!DOCTYPE html>.*?</html>'
+    match = re.search(pattern, html_content, re.DOTALL)
+    if match:
+        return match.group(0)
+    return "none"
+
+
 #from google.colab import userdata
 
 GOOGLE_API_KEY='your_api_key'
@@ -35,24 +45,71 @@ def print_response(response):
 
 html ="""
 """""
+# commands format
+#--------------------------------------------------------------------------------------------#
+#q1 = "Change title to \"%s\" , generate a similar paragraph, and show all HTML code" %(name)
+#q1 = "Change title to \"%s\" , I want to change a paragraph similar to the same topic as the paragraph in the code , and show all HTML code" %(name)
+#q = "generate paragraphs similar to the same topic as each of the paragraphs in the code and replace them and show all HTML code "
 
-q1 = "show html code just"
-q2 = "Show the rest of the code"
-respond1 = send_message(html +"  "+q1)
-respond2 = send_message(html +"  "+q2)
+#q1 = " Change title to \"%s\" and show me all html code" %(name)
+#q1 = " Change the title tag to \"%s\" and show me all html code" %(name)
+# q2 = "generate paragraphs similar to the same topic as the paragraphs in the code and replace them and show all html code "
+# q2 = "I'd like change the content of each paragraph while keeping the overall meaning similar and show all html code"
+
+
+# q5 = '''
+# I have some HTML code where I want to change the content of all the paragraphs to be similar, but not exactly the same. Here's the code:
+# '''
+
+# q6 = '''
+# Can you modify the code so that the paragraphs have similar meaning but use different wording? Please show me the complete HTML code with the updated paragraphs.
+# '''
+#------------------------------------------------------------------------------------------#
+
+#  / Change name and paragraphs / #
+
+# q1 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and Show me all HTML code  "
+# q3 = "Show the rest of the code"
+# q2 = " change  title website to \"%s\" and Show me all HTML code" %(name)
 
 
 
+   # try to change images ,name and paragraphs  #
+name = input("enter your name")
+img_path1 = r""
+img_path2 = r""
+img_path3 = r""
+# q1 = "change  name  website only to \"%s\"  and Invent new paragraphs similar to the same topic as the paragraphs in the html code and replace the old ones with new paragraphs , Replace the old images link in the <img> tag with src attribute with the new link \"%s\" , \"%s\" , \"%s\"  and Show me all HTML code  " %(name , path2 ,path1 , path3)
+q2 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and ,Change the link of only one  images contained in this code with this link   \"%s\" ,\"%s\" ,  Show me all HTML code  "%(path1,path2)
+q3 = "Show the rest of the code"
 
-def extract_html_content(html_content):
-    pattern = r'<!DOCTYPE html>.*?</html>'
-    match = re.search(pattern, html_content, re.DOTALL)
-    if match:
-        return match.group(0)
-    return "none"
+
+ #  /responds /#
+#respond1 = send_message(html + q1)
+def get_respond():
+  respond1 = send_message(html+ q2)
+  respond3 = send_message(q3)
+  respond4 = send_message(q3)
+  respond5 = send_message(q3)
+  HTML_code_afte_edit =  extract_html_content(respond1 + respond3 + respond4 + respond5 )   
+  print(HTML_code_afte_edit) # print(responds)
+
+
+# test gmeini respond if exist respond or not 
+correct_respond = False
+numOftest = 0 
+
+while not correct_respond and numOftest <= 2:
+    # try and except to handle error 
+    try: 
+       get_respond()
+       test = True
+    except:
+       numOftest+=1
+
     
 
-HTML_code_afte_edit =  extract_html_content(respond1 + respond2)   
+
 
 # Write to file
 #file_path = 'sample.txt'
