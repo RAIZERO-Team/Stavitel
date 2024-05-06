@@ -31,11 +31,11 @@
   --success: #388E3C;
   --light-success: #BBF7D0;
 
-  --yellow:#FFBD13;
-  --blue:#4383FF;
+  --yellow: #FFBD13;
+  --blue: #4383FF;
   --blue-d-1: #3278FF;
   --white: #FFF;
-  --shadow:8px 8px 300px rgba(0,0,0,.05);
+  --shadow: 8px 8px 300px rgba(0, 0, 0, .05);
 
   /* Settings color */
   --c-text-primary: #282a32;
@@ -347,11 +347,11 @@ body.dark .home .text {
 }
 
 /* ================ dasboard ================ */
-/* test */
+
 .chart {
-  max-width: 150px;
-  height: 150px;
-  padding: 50px;
+  /* max-width: 880px; */
+  height: 20rem;
+  padding: 25px;
   margin: 0 auto;
 }
 
@@ -363,6 +363,8 @@ body.dark .home .text {
 .chart .chart_types button {
   padding: 10px 25px;
 }
+
+/* ================ dasboard ================ */
 
 .content {
   position: relative;
@@ -377,7 +379,7 @@ body.dark .home .text {
 }
 
 .sidebar.close~.container,
-.sidebar.close~.subpage-container{
+.sidebar.close~.subpage-container {
   left: 60%;
 }
 
@@ -537,70 +539,38 @@ body.dark .home .text {
 }
 
 .content main .bottom-data .orders table tr td .status {
+  display: flex;
+  width: 110px;
+  align-items: center;
+  justify-content: center;
   font-size: 10px;
   padding: 6px 16px;
   color: var(--light);
   border-radius: 20px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
-.content main .bottom-data .orders table tr td .status.completed {
+.content main .bottom-data .orders table tr td .status.ai {
   background: var(--success);
 }
 
-.content main .bottom-data .orders table tr td .status.process {
+.content main .bottom-data .orders table tr td .status.editor {
   background: var(--primary);
 }
 
-.content main .bottom-data .orders table tr td .status.pending {
-  background: var(--warning);
-}
-
-.content main .bottom-data .reminders {
+.content main .bottom-data .chart_card {
   flex-grow: 1;
   flex-basis: 300px;
 }
 
-.content main .bottom-data .reminders .task-list {
+.content main .bottom-data .chart_card .task-list {
   width: 100%;
 }
 
-.content main .bottom-data .reminders .task-list li {
-  width: 100%;
-  margin-bottom: 16px;
-  background: var(--grey);
-  padding: 14px 10px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.chart_card .title {
+  font-size: 24px;
+  font-weight: 600;
 }
-
-.content main .bottom-data .reminders .task-list li .task-title {
-  display: flex;
-  align-items: center;
-}
-
-.content main .bottom-data .reminders .task-list li .task-title p {
-  margin-left: 6px;
-}
-
-.content main .bottom-data .reminders .task-list li .bx {
-  cursor: pointer;
-}
-
-.content main .bottom-data .reminders .task-list li.completed {
-  border-left: 10px solid var(--success);
-}
-
-.content main .bottom-data .reminders .task-list li.not-completed {
-  border-left: 10px solid var(--danger);
-}
-
-.content main .bottom-data .reminders .task-list li:last-child {
-  margin-bottom: 0;
-}
-
 
 @media screen and (max-width: 768px) {
 
@@ -624,7 +594,7 @@ body.dark .home .text {
     min-width: 340px;
   }
 
-  .content main .bottom-data .reminders .task-list {
+  .content main .bottom-data .chart_card .task-list {
     min-width: 340px;
   }
 }
@@ -778,6 +748,7 @@ body.dark .home .text {
 
 .project:hover {
   border-color: #888;
+
   .more-icon {
     display: block;
   }
@@ -836,13 +807,14 @@ body.dark .home .text {
 .hover-item:hover {
   background-color: #f0f0f0;
 }
+
 /* ================ settings ================ */
 
 .container {
   position: absolute;
   box-sizing: border-box;
   background-color: white;
-  padding: 10px 50px ;
+  padding: 10px 50px;
   border-radius: 20px;
   top: 5%;
   left: 4.2rem;
@@ -853,23 +825,24 @@ body.dark .home .text {
   transition: all 0.3s ease;
 }
 
-h1, h3{
+h1,
+h3 {
   font-family: "Roboto Slab";
   font-weight: 600;
 }
 
-span{
+span {
   font-weight: 500;
   font-family: "Poppins";
 }
 
-.toggle-container{
+.toggle-container {
   position: relative;
   width: fit-content;
   height: fit-content;
 }
 
-.toggle{
+.toggle {
   width: 60px;
   height: 35px;
   border-radius: 40px;
@@ -877,7 +850,7 @@ span{
   display: inline-block;
 }
 
-.toggle-c{
+.toggle-c {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -890,48 +863,49 @@ span{
   border: 1px solid #BCBCA4;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   display: none;
 }
 
-input[type="checkbox"]:checked + div .toggle-c{
+input[type="checkbox"]:checked+div .toggle-c {
   left: 30px;
   background-color: #30305c;
   border-color: #30305c;
 }
 
-input[type="radio"]{
+input[type="radio"] {
   border: 0px;
   width: 10%;
   height: 20px;
   accent-color: black;
 }
 
-.togg-label{
+.togg-label {
   display: flex;
   align-self: center;
   justify-content: space-between;
 
 }
 
-.flex{
+.flex {
   display: flex;
   gap: 5px;
 
 }
 
-.bottom{
+.bottom {
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
-.bottom:hover{
+.bottom:hover {
   text-decoration: underline;
   cursor: pointer;
 
 }
 
-label, input[type="radio"]{
+label,
+input[type="radio"] {
   cursor: pointer;
 }
 
@@ -1160,7 +1134,7 @@ label, input[type="radio"]{
 
 
 /* -------- Change Password -------- */
-.input-wrap{
+.input-wrap {
   position: absolute;
   justify-content: left;
   height: 37px;
@@ -1169,21 +1143,21 @@ label, input[type="radio"]{
 
 .input-field {
   font: inherit;
-    color: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1em 0 15px;
-    height: 30px;
-    border-radius: 8px;
-    border: black ;
-    
-    color: var(--c-text-action);
-    font-size: 0.875rem;
-    transition: 0.15s ease;
-    
-    line-height: 1;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em 0 15px;
+  height: 30px;
+  border-radius: 8px;
+  border: black;
+
+  color: var(--c-text-action);
+  font-size: 0.875rem;
+  transition: 0.15s ease;
+
+  line-height: 1;
 }
 
 /* -------- Project Settings -------- */

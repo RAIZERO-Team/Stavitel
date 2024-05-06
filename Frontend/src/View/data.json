@@ -1,8 +1,9 @@
 [
-	{ "month": "Ian", "income": 1210 },
-	{ "month": "Feb", "income": 1920},
-	{ "month": "mar", "income": 830 },
-	{ "month": "Apr", "income": 1300 },
-	{ "month": "Mai", "income": 990 },
-	{ "month": "Jun", "income": 1250 }
+	{ "Day": "Sat", "Hours": 5 },
+	{ "Day": "Sun", "Hours": 2},
+	{ "Day": "Mon", "Hours": 3 },
+	{ "Day": "Tue", "Hours": 4 },
+	{ "Day": "Wen", "Hours": 1 },
+	{ "Day": "Thrs", "Hours": 2 },
+	{ "Day": "Fri", "Hours": 8 }
 ]

@@ -6,6 +6,7 @@
     <!--  Discription -->
     <meta name="description" content="" />
 
+    <!-- <link rel="stylesheet" href="chart.css"> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -147,91 +148,65 @@
           <div class="bottom-data">
             <div class="orders">
               <div class="header">
-                <i class="bx bx-receipt"></i>
-                <h3>Recent Orders</h3>
-                <i class="bx bx-filter"></i>
-                <i class="bx bx-search"></i>
+                <h3>Recent Projects</h3>
               </div>
               <table>
                 <thead>
                   <tr>
-                    <th>User</th>
-                    <th>Order Date</th>
-                    <th>Status</th>
+                    <th>Project Name</th>
+                    <th>Project Date</th>
+                    <th>Type</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>
-                      <img src="images/profile-1.jpg" />
-                      <p>John Doe</p>
+                      <img src="/Frontend/public/Icons/logo.png" />
+                      <p>Project1</p>
                     </td>
                     <td>14-08-2023</td>
-                    <td><span class="status completed">Completed</span></td>
+                    <td><span class="status ai">AI</span></td>
                   </tr>
                   <tr>
                     <td>
-                      <img src="images/profile-1.jpg" />
-                      <p>John Doe</p>
+                      <img src="/Frontend/public/Icons/logo.png" />
+                      <p>Project1</p>
                     </td>
                     <td>14-08-2023</td>
-                    <td><span class="status pending">Pending</span></td>
+                    <td><span class="status ai">AI</span></td>
                   </tr>
                   <tr>
                     <td>
-                      <img src="images/profile-1.jpg" />
-                      <p>John Doe</p>
+                      <img src="/Frontend/public/Icons/logo.png" />
+                      <p>Project1</p>
                     </td>
                     <td>14-08-2023</td>
-                    <td><span class="status process">Processing</span></td>
+                    <td><span class="status editor">Tailwind Editor</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img src="/Frontend/public/Icons/logo.png" />
+                      <p>Project1</p>
+                    </td>
+                    <td>14-08-2023</td>
+                    <td><span class="status editor">Tailwind Editor</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <!-- Reminders -->
-            <div class="reminders">
-              <!-- <div class="header">
-                <i class="bx bx-note"></i>
-                <h3>Remiders</h3>
-                <i class="bx bx-filter"></i>
-                <i class="bx bx-plus"></i>
-              </div> -->
-
-              <div class="chart">
-                <div class="chart_types">
-                  <button onclick="setChartType('bar')">Bars</button>
-                  <button onclick="setChartType('line')">Line</button>
-                  <button onclick="setChartType('doughnut')">Doughnut</button>
-                  <button onclick="setChartType('polarArea')">PolarArea</button>
-                  <button onclick="setChartType('radar')">Radar</button>
-                </div>
-                <canvas id="myChart"></canvas>
+            <div class="chart_card">
+              <div class="title">
+              <h3>Productivity</h3>
               </div>
+            <div class="chart">
+              <div class="chart_types">
+                <!-- <button onclick="setChartType('line')">Line</button> -->
+              </div>
+              <canvas id="myChart"></canvas>
+            </div>
 
-              <!-- <ul class="task-list">
-                <li class="completed">
-                  <div class="task-title">
-                    <i class="bx bx-check-circle"></i>
-                    <p>Start Our Meeting</p>
-                  </div>
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </li>
-                <li class="completed">
-                  <div class="task-title">
-                    <i class="bx bx-check-circle"></i>
-                    <p>Analyse Our Site</p>
-                  </div>
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </li>
-                <li class="not-completed">
-                  <div class="task-title">
-                    <i class="bx bx-x-circle"></i>
-                    <p>Play Footbal</p>
-                  </div>
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </li>
-              </ul> -->
             </div>
 
             <!-- End of Reminders-->
@@ -566,7 +541,8 @@
     </div>
 
     <script src="/Frontend/src/app/Workspace.js"></script>
-    <script src="/Frontend/src/context/Redireect.js"></script>
+    <script type="module" src="/Frontend/src/context/Redireect.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
   </body>
 </html>

@@ -1,15 +1,15 @@
 /* I always reset all the html elements */
-*{
+/* *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-body{
+} */
+/* body{
 	font-family: sans-serif;
 	min-height: 100vh;
 	color: #555;
 	background-color: #fff;
-}
+} */
 .chart{
 	max-width: 900px;
 	height: 450px;

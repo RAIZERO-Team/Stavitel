@@ -1,20 +1,28 @@
 // ============= Fetch API =============
-
-async function fetchData(url, method, data) {
+async function fetchData(url, method, data = null) {
   try {
-    const response = await fetch(url, {
-    method: method,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-  const responseData = await response.json();
-  return responseData;
+    const options = {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    if (data) {
+      options.body = JSON.stringify(data);
+    }
+
+    const response = await fetch(url, options);
+    const responseData = await response.json();
+
+    if (!response.ok) {
+      throw new Error(responseData.message || 'Something went wrong!');
+    }
+
+    return responseData;
   } catch (error) {
-    console.error('API Error:', error);
-    throw error;
+    throw new Error(error.message || 'Failed to fetch data.');
   }
 }
 
-module.exports = fetchData;
+export { fetchData };
