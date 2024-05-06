@@ -487,8 +487,36 @@
                 <div class="content-main">
                   <!-- ============= My Profile ============= -->
                   <div class="my_profile settings-tabs" id="my_profile">
-                    My profile
+                    <h3>Edit Profile</h3>
+      
+                    
+                  <div class="editProfileContainer">
+                  <label class="updateText">New Name</label><br>
+                  <input type="text"
+                         class="newName_edit"
+                         autocomplete="off"
+                         required ><br><br>
+                  <div class="uploadContainer">
+                    <figure class="image-container">
+                      <img id="chosen-image" >
+                      <figcaption id="file-name"></figcaption>
+                    </figure>
+      
+                    <input type="file" id="upload-button" accept="image/*">
+                    <label class="upload" for="upload-button">
+                      <i class="fa-solid fa-upload"></i> &nbsp;
+                      Choose A Photo
+                    </label>
                   </div>
+                  <script src="setting.js"></script>
+                  <div class="btn-group">
+                    <button type="submit" class="btn update">Update</button>
+                    <button type="cancel" class="btn cancel">Cancel</button>
+      
+                  </div>
+                  </div>
+                    </div>  
+                    <script src="../JS/script.js"></script>
 
                   <!-- ============= Change Password ============= -->
                   <div
