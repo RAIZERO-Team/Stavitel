@@ -1,8 +1,22 @@
+import { userData } from "../context/userData.js";
+
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector("main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
+
+// ============ login data ============
+let login_username = document.getElementById("login_userName").value;
+let login_password = document.getElementById("login_password").value;
+let login_btn = document.getElementById("sign_in_btn");
+
+// ============ register data ============
+let register_username = document.getElementById("register_username").value;
+let register_email = document.getElementById("register_email").value;
+let register_password = document.getElementById("register_password").value;
+let register_btn = document.getElementById("sign_up_btn");
+
 
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
@@ -177,3 +191,19 @@ document.getElementsByClassName("pro-data")[0].innerHtml ='';
 document.querySelector("#btnwrap").classList.remove("hidden");
 document.querySelector(".pro-data").classList.add("hidden");
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  let user = new userData(login_username,login_password,register_username,register_email,register_password);
+  
+  login_btn.addEventListener('click', async () => {
+    try {
+
+      
+      const result = await user.create_user();
+      console.log('User inserted successfully:', result);
+    } catch (error) {
+      //console.error('Failed to insert user:', error.message);
+    }
+  });
+
+});

@@ -52,17 +52,19 @@
                     minlength="4"
                     maxlength="15"
                     class="input-field"
+                    id="login_userName"
                     autocomplete="off"
                     required
-                  />
-                  <label>Name</label>
-                </div>
-
-                <div class="input-wrap">
-                  <input
+                    />
+                    <label>Name</label>
+                  </div>
+                  
+                  <div class="input-wrap">
+                    <input
                     type="password"
                     minlength="4"
                     class="input-field"
+                    id="login_password"
                     autocomplete="off"
                     required
                   />
@@ -74,6 +76,7 @@
                   value="Sign In"
                   name="sign_in"
                   class="sign-btn"
+                  id="sign_in_btn"
                 />
 
                 <p class="text">
@@ -158,30 +161,32 @@
                     type="text"
                     minlength="4"
                     class="input-field"
+                    id="register_username"
                     autocomplete="off"
                     required
-                  />
-                  <label>Name</label>
-                </div>
+                    />
+                    <label>Name</label>
+                  </div>
 
-                <div class="input-wrap">
-                  <input
+                  <div class="input-wrap">
+                    <input
                     type="email"
                     class="input-field"
+                    id="register_email"
                     autocomplete="off"
                     required
-                  />
-                  <label>Email</label>
-                </div>
+                    />
+                    <label>Email</label>
+                  </div>
 
                 <div class="input-wrap">
                   <input
-                    type="password"
-                    onkeyup="trigger()"
-                    class="input-field check"
-                    id="sign_up_pass"
-                    autocomplete="off"
-                    required
+                  type="password"
+                  onkeyup="trigger()"
+                  class="input-field check"
+                  id="register_password"
+                  autocomplete="off"
+                  required
                   />
                   <label>password</label>
                 </div>
@@ -196,6 +201,7 @@
                   value="Sign Up"
                   name="sign_up"
                   class="sign-btn"
+                  id="sign_up_btn"
                 />
                
                 <div class="email_icons">
@@ -276,6 +282,9 @@
     </main>
 
     <!--============= Js files =============-->
-    <script src="/Frontend/src/app/User_Sign.js"></script>
+    <script type="module" src="/Frontend/src/app/User_Sign.js"></script>
+    <script type="module" src="/Frontend/src/context/userData.js"></script>
+    <script type="module" src="/Frontend/src/api/api.js"></script>
+    
   </body>
 </html>
