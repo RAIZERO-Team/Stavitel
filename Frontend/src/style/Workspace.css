@@ -1131,52 +1131,57 @@ input[type="radio"] {
 }
 
 /* -------- My Profile Tab -------- */
-.newName_edit{
+.newName_edit {
+  background-color: #388E3C;
   font: inherit;
-    color: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1em 0 15px;
-    height: 30px;
-    border-radius: 8px;
-    border: black ;
-    left: 430px;
-    top: 150px;
-    
-    color: var(--c-text-action);
-    font-size: 0.875rem;
-    transition: 0.15s ease;
-    line-height: 1;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em 0 15px;
+  height: 30px;
+  border-radius: 8px;
+  border: black;
+  left: 430px;
+  top: 150px;
+
+  color: var(--c-text-action);
+  font-size: 0.875rem;
+  transition: 0.15s ease;
+  line-height: 1;
 }
-.updateText{
+
+.updateText {
   left: 30%;
   top: 130px;
   position: relative;
 }
 
 
-.uploadContainer{
+.profile_container {
   background-color: #ffffff;
-  width: 10%;
-  min-width: 400px;
-  position: relative;
-  transform: translate(-50% , -50%);
-  top: 90px;
-  left: 40px;
-  bottom: 90%;
-  padding: 10px .1% 10px ;
-  box-shadow: 0 20px 35px rgba(0,0,0,.15);
+  width: 100%;
+  padding: 50px 60px;
+  max-height: calc(100vh - 56px);
+  position: absolute;
+  /* width: 10%; */
+  min-width: 60rem;
+  height: 30rem;
+  transform: translate(-50%, -50%);
+  top: 209%;
+  left: 30%;
+  /* bottom: -21%; */
+  box-shadow: 0 20px 35px rgba(0, 0, 0, .15);
   border-radius: 7px;
 }
 
-.image-container{
+.image-container {
   width: 80%;
   margin: 0 auto 30px auto;
 }
 
-.image-container img{
+.image-container img {
   display: block;
   position: relative;
   max-width: 100%;
@@ -1184,21 +1189,21 @@ input[type="radio"] {
   margin: auto;
 }
 
-figcaption{
+figcaption {
   margin: 20px 0 30px 0;
   text-align: center;
   color: #2a292a;
 
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
 }
 
-.upload{
+.upload {
   display: block;
   position: relative;
-  background-color: #025bee;
+  background-color: #434ce8;
   color: #ffffff;
   font-size: 14px;
   text-align: center;
@@ -1209,34 +1214,38 @@ input[type="file"]{
   cursor: pointer;
 }
 
-.btn-group{
-  top: 70px;
-  right: 58%;
+.profile_container .profile_buttons {
   position: relative;
   display: flex;
-  grid-gap: .5rem;
+  gap: 1.5rem;
   align-items: center;
+  top: 15rem;
 }
 
-.btn-group .btn{
-  padding: .75rem 1rem;
+.profile_container .profile_buttons .btn {
+  padding: .5rem 0.8rem;
   border-radius: .5rem;
+  width: 8rem;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: .875rem;
-  font-weight: 500px;
-  
 }
 
-.btn-group .btn.update{
-  background-color: var(--blue);
+.profile_container .profile_buttons .btn.update {
+  background-color: #434ce8;
   color: var(--white);
 }
 
-.btn-group .btn.cancel{
+.profile_container .profile_buttons .btn.cancel {
+  border: 2px solid #434ce8;
   background-color: var(--white);
-  color: var(--blue);
+  color: #434ce8;
+}
+
+.profile_container .profile_buttons .btn.cancel:hover {
+  background-color: #434ce8;
+  color: #fff;
 }
 
 /* -------- Change Password -------- */
