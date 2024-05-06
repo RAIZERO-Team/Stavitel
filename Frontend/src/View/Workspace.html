@@ -289,15 +289,28 @@
               <h1>Projects</h1>
             </div>
 
-            <div class="search">
+            <!-- <div class="search">
               <input type="text" placeholder="Search" />
               <button type="submit">
                 <i class="bx bx-search icon"></i>
               </button>
-            </div>
+            </div> -->
 
             <div class="Projects_list">
               <div id="projectContainer">
+                <div class="search-wrapper search">
+                  <input type="text" placeholder="Search" id="search" data-search/>
+                  <button type="submit">
+                    <i class="bx bx-search icon"></i>
+                  </button>
+                </div>
+                <div class="user-cards" data-user-cards-container></div>
+                <template data-user-template>
+                  <div class="card">
+                    <div class="header" data-header></div>
+                    <div class="body" data-body></div>
+                  </div>
+                </template>
                 <!-- projects will be dynamically generated here -->
               </div>
             </div>
@@ -566,5 +579,6 @@
     <script type="module" src="/Frontend/src/context/Redireect.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="chart.js"></script>
+    <script type="module" src="/Frontend/src/context/search.js"></script>
   </body>
 </html>

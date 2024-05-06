@@ -1,3 +1,5 @@
+// import { search } from "../context/search.js";
+
 const body = document.querySelector("body"),
   sidebar = body.querySelector("nav"),
   toggle = body.querySelector(".toggle"),
@@ -143,7 +145,7 @@ function selectCard(card) {
   // if (card.classList.contains("selected")){
   //   window.open("Editor_BT.html", "_parent");
   // }
-  }
+}
 
 // ================ My Project ================ //
 function generateProject() {
@@ -217,6 +219,27 @@ document.addEventListener("click", function (event) {
   }
 });
 
+// ------------------------
+
+const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardContainer = document.querySelector("[data-user-cards-container]");
+const searchInput = document.querySelector("[data-search]");
+
+let users = [];
+
+searchInput.addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+  users.forEach((user) => {
+    const isVisible =
+      user.name.toLowerCase().includes(value) ||
+      user.email.toLowerCase().includes(value);
+    user.element.classList.toggle("hide", !isVisible);
+  });
+});
+
+// const ser1 = new search(userCardTemplate,userCardContainer);
+// ser1.search_project();
+
 // ================ Settings ================ //
 function openSettings() {
   var settingsContainer = document.getElementById("settingContainer");
@@ -264,8 +287,8 @@ uploadButton.onchange = () => {
   console.log(uploadButton.files[0]);
   reader.onload = () => {
     chosenImage.setAttribute("src", reader.result);
-  }
-}
+  };
+};
 
 // ================ Rate Form ================ //
 const allStar = document.querySelectorAll(".rating .star");
