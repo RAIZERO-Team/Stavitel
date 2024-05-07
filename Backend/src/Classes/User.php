@@ -32,7 +32,7 @@ class User
     return $this->is_LoggedIn;
   }
 
-  // ============== insert user into database function ==============
+  // ============== register user into database function ==============
   public function create($fields = array())
   {
     if (!$this->db->insert("users", $fields)) {
@@ -62,7 +62,7 @@ class User
   }
 
   // ============== Login function ==============
-  public function login($email = null, $password = null, $remember = false)
+  public function login($email = null, $password = null, $remember = true)
   {
     if (!$email && !$password && $this->exist()) {
 
@@ -71,7 +71,7 @@ class User
       $user = $this->find($email);
 
       if ($user) {
-        if ($this->_data->password === Hash::make($password, $this->get_data()->salt)) {
+        if (($this->_data->password === Hash::make($password, $this->get_data()->salt)) && ($this->_data->varified == 'yes')) {
 
           Session::put($this->_sessioNanme, $this->get_data()->id);
 
@@ -112,5 +112,16 @@ class User
   public function exist()
   {
     return (!empty($this->_data)) ? true : false;
+  }
+
+  // ============== verified user function ==============
+
+  public function isVerified()
+  {
+    if ($this->get_data()->varified == 'yes') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

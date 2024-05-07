@@ -6,9 +6,13 @@ class Input
   {
     switch ($type) {
       case 'post':
-        return (!empty($_POST)) ? true : false;
+        return ($_SERVER['REQUEST_METHOD'] === 'POST') ? true : false;
       case 'get':
-        return (!empty($_GET)) ? true : false;
+        return ($_SERVER['REQUEST_METHOD'] === 'GET') ? true : false;
+      // case 'put':
+      //   return ($_SERVER['REQUEST_METHOD'] === 'PUT') ? true : false;
+      // case 'delete':
+      //   return ($_SERVER['REQUEST_METHOD'] === 'DELETE') ? true : false;
       default:
         return false;
     }

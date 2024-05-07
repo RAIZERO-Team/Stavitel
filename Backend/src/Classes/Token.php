@@ -2,9 +2,9 @@
 class Token
 {
   // ============== Generate Token function ==============
-  public static function generate_TOKEN()
+  public static function generate_TOKEN($token)
   {
-    return Session::put(Config::get("session/token_name"), md5(uniqid()));
+    return Session::put(Config::get("session/token_name"), $token);
   }
 
   // ============== Check If Token Is Exists Or Not ==============

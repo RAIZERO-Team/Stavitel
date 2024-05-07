@@ -74,13 +74,21 @@ class Validation
     }
   }
 
-  // ============== validatePassword function ==============
+  // ============== validate Password function ==============
   private static function validatePassword($password, $isRegistration = false)
   {
     if (empty($password)) {
       self::$errors['password'] = "Please enter a password.";
-    } elseif (strlen($password) < 6 && $isRegistration) {
-      self::$errors['password'] = "Password must be at least 6 characters.";
+    } elseif (strlen($password) < 8 && $isRegistration) {
+      self::$errors['password'] = "Password must be at least 8 characters.";
+    } elseif (!preg_match('/[A-Z]/', $password)) {
+      self::$errors['password'] = "Password must contain at least one uppercase letter.";
+    } elseif (!preg_match('/[a-z]/', $password)) {
+      self::$errors['password'] = "Password must contain at least one lowercase letter.";
+    } elseif (!preg_match('/\d/', $password)) {
+      self::$errors['password'] = "Password must contain at least one number.";
+    } elseif (!preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password)) {
+      self::$errors['password'] = "Password must contain at least one special character.";
     }
   }
 
@@ -94,6 +102,6 @@ class Validation
   // ============== passed function ==============
   public function passed()
   {
-    return empty(self::$errors);
+    return empty(self::$errors) ? true : false;
   }
 }
