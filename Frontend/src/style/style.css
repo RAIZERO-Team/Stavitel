@@ -5,15 +5,45 @@
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
 
-  --bg-color: #fff;
+  /* -------- Main colors -------- */
+  --hue: 45;
+  --sat: 98%;
+
+  /* -------- Background Colors -------- */
+  --bg-light: #fff;
+  --bg-dark: #151111;
+  --bg-user: #dbdbdb;
+
+  /* -------- Link Colors -------- */
+  --link-color: #8371fd;
+  
+  /* -------- Text Colors -------- */
   --text-color: #151111;
   --subtext-color: #bbb;
-  --link-color: #8371fd;
+  
+  
+  /* -------- Buttons Colors -------- */
+  --submit-btn-user: #151111;
+  --submit-btn-hover: #8371fd;
+  
+  /* -------- Borders Colors -------- */
+  --border-user: #151111;
+  
+  /* -------- intro colors -------- */
 
-  --first-color: hsl(260, 100%, 50%);
-  --second-color: hsl(190, 100%, 50%);
-  --third-color: hsl(54, 100%, 50%);
-  --fourth-color: hsl(210, 100%, 50%);
+
+  /* -------- user image Background -------- */
+  --user-sign-image: #cccccc;
+  --forget-password-image: #e1dac7;
+  --code-verification-image: #afcee7;
+  --chang-password-image: #ffe0d2;
+  --feedback-image: #e0e5ea;
+
+  /* -------- Notification Colors -------- */
+  --success: #0ABF30;
+  --error: #E24D4C;
+  --warning: #E9BD0C;
+  --info: #3498DB;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -27,16 +57,25 @@
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
-}
+  --font-bold: 900;
 
-*,
-*::before,
-*::after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  /*========== Transition ==========*/
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+  /*========== Margenes ==========*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+
 }
 
 /* ========== Loading page ========== */
