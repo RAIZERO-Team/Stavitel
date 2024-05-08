@@ -6,16 +6,9 @@ const main = document.querySelector("main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
-// ============ login data ============
-let login_username = document.getElementById("login_userName").value;
-let login_password = document.getElementById("login_password").value;
 let login_btn = document.getElementById("sign_in_btn");
-
-// ============ register data ============
-let register_username = document.getElementById("register_username").value;
-let register_email = document.getElementById("register_email").value;
-let register_password = document.getElementById("register_password").value;
 let register_btn = document.getElementById("sign_up_btn");
+
 
 
 inputs.forEach((inp) => {
@@ -167,6 +160,7 @@ input.addEventListener("input", () => {
   }
 });
 
+// ========= Sign in button with google =========
 function handleCredentialResponse(response){
   fetch("auth_init.php",{
     method:"post",
@@ -192,18 +186,21 @@ document.querySelector("#btnwrap").classList.remove("hidden");
 document.querySelector(".pro-data").classList.add("hidden");
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  let user = new userData(login_username,login_password,register_username,register_email,register_password);
-  
-  login_btn.addEventListener('click', async () => {
-    try {
+// ======== Register ========
 
-      
-      const result = await user.create_user();
-      console.log('User inserted successfully:', result);
-    } catch (error) {
-      //console.error('Failed to insert user:', error.message);
-    }
-  });
+// // });
 
+register_btn.addEventListener('click', async (event) => {
+  event.preventDefault();
+  let register_username = document.getElementById("register_username").value;
+  let register_email = document.getElementById("register_email").value;
+  let register_password = document.getElementById("register_password").value;
+
+  let user = new userData('', '', register_username, register_email, register_password);
+  try {
+    const result = await user.user_register();
+    console.log('User registered successfully:', result);
+  } catch (error) {
+    console.error('Failed to register user:');
+  }
 });

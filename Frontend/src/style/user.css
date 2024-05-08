@@ -17,7 +17,7 @@ main {
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: #dbdbdb;
+  background-color: var(--bg-user);
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ main {
   width: 100%;
   max-width: 1020px;
   height: 640px;
-  background-color: #fff;
+  background-color: var(--bg-light);
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
 }
@@ -111,7 +111,7 @@ form {
   background: none;
   border: none;
   outline: none;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid var(--subtext-color);
   padding: 0;
   font-size: 0.95rem;
   color: #151111;
@@ -124,13 +124,13 @@ label {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.95rem;
-  color: #bbb;
+  color: var(--subtext-color);
   pointer-events: none;
   transition: 0.4s;
 }
 
 .input-field.active {
-  border-bottom-color: #151111;
+  border-bottom-color: var(--border-user);
 }
 
 .input-field.active + label {
@@ -173,7 +173,7 @@ label {
   width: 100%;
   height: 43px;
   background-color: var(--submit-btn-user);
-  color: #fff;
+  color: var(--bg-light);
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
@@ -196,28 +196,28 @@ main.sign-up-mode form.sign-in-form {
   width: 55%;
   top: 0;
   left:45%;
-  background-color: #e1dac7;
+  background-color: var(--bg-image);
   border-radius: 2rem;
 }
 
 .forget-password {
-  background-color: #e1dac7;
+  background-color: var(--forget-password-image);
 }
 
 .code_verification {
-  background-color: #afcee7;
+  background-color: var(--code-verification-image);
 }
 
 .change_password{
-  background-color: #ffe0d2;
+  background-color: var(--chang-password-image);
 }
 
 .change_username {
-  background-color: #ffe0d2;
+  background-color: var(--chang-password-image);
 }
 
 .feedback{
-  background-color: #e0e5ea;
+  background-color: var(--feedback-image);
 }
 
 .copyright {
