@@ -1,0 +1,123 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    background-position: center;
+    color: #fff;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #fff8f8; /* Adjusting text color for better visibility */
+}
+
+.header {
+    padding: 100px 0; /* Adding padding to center the text vertically */
+}
+
+.header-background {
+    background-image: url("images/bg.jpg"); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 20px 0; /* Adding padding to center the text vertically */
+}
+h1,p,form{
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-top: 50px;
+}
+p{
+    margin-top: 12px;
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+}
+
+form {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    height: 80px;
+    background: #050a42;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+
+}
+
+form input {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 30px;
+    border-radius: 30px;
+}
+
+form button {
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: #ff8000;
+    color: #fff;
+    font-size: 18px;
+    padding: 0 40px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s; /* Adding transition for smoother hover effect */
+}
+
+form button:hover {
+    background: #fca01f; /* Changing background color on hover */
+}
+
+::placeholder {
+    color: #fff;
+    font-size: 18px;
+}
+
+#show_more_btn {
+    background: #ff3929;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 20px auto 100px; /* Adjusted margin for better spacing */
+    cursor: pointer;
+    display: none;
+}
+
+#search_result {
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+#search_result img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
