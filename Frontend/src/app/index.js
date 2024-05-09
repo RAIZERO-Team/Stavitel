@@ -1,12 +1,16 @@
-// ============= loading spinner function =============
-function loadingSpinner() {
-  let spinner_wrapper = document.querySelector(".spinner-wrapper");
+// ============ Loading function ============
 
-  spinner_wrapper.classList.remove("hide");
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      spinner_wrapper.classList.add("hide");
-    }, 4000);
+function loadingSpinner() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var spinner_wrapper = document.querySelector(".spinner-wrapper");
+    if (spinner_wrapper) {
+      spinner_wrapper.classList.remove("active");
+      setTimeout(function () {
+        spinner_wrapper.classList.add("active");
+      }, 900);
+    } else {
+      console.log("Element with class 'spinner-wrapper' not found.");
+    }
   });
 }
 

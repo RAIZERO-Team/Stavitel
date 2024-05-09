@@ -186,9 +186,26 @@ document.querySelector("#btnwrap").classList.remove("hidden");
 document.querySelector(".pro-data").classList.add("hidden");
 }
 
-// ======== Register ========
 
-// // });
+
+// document.addEventListener('DOMContentLoaded', () => {
+
+  // ======== login ========
+  login_btn.addEventListener('click', async (event) => {
+    event.preventDefault();
+    let login_email = document.getElementById("login_email").value;
+    let login_password = document.getElementById("login_password").value;
+    let user = new userData(login_email, login_password, '', '', '');
+    
+  try {
+    const result = await user.user_login();
+    console.log('User login successfully:', result);
+  } catch (error) {
+    console.error('Failed to register user:');
+  }
+});
+
+// ======== Register ========
 
 register_btn.addEventListener('click', async (event) => {
   event.preventDefault();
@@ -204,3 +221,6 @@ register_btn.addEventListener('click', async (event) => {
     console.error('Failed to register user:');
   }
 });
+// });
+
+

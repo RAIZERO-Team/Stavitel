@@ -1,18 +1,17 @@
 import { fetchData } from "../api/api.js";
 class userData {
   constructor(
-    login_username,
+    login_email,
     login_password,
     register_username,
     register_email,
     register_password
   ) {
-    this.login_username = login_username;
+    this.login_email = login_email;
     this.login_password = login_password;
     this.register_username = register_username;
     this.register_email = register_email;
     this.register_password = register_password;
-    this.flag = 0;
   }
 
   generateToken(length) {
@@ -56,9 +55,8 @@ class userData {
         })
         .then((data) => {
           console.log("Success:", data);
-          // window.location.href = "../View/Error/404_Not_Found.html";
           if (!data.error) {
-            window.location.href = "../View/Error/404_Not_Found.html";
+            // window.location.href = "../View/Error/404_Not_Found.html";
           } else {
             console.log("Error");
             alert(data.error.username);
@@ -67,25 +65,82 @@ class userData {
           }
         });
 
-        
-        console.log("End user_register");
-      } catch (error) {
-        console.error(`Failed to insert user: ${error.message}`);
-        throw error; // Rethrow the error for higher level handling
-      }
+      console.log("End user_register");
+    } catch (error) {
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error; // Rethrow the error for higher level handling
     }
-
-    async user_login() {
-    // Implement login functionality
-  }
-  
-  async update_user() {
-    // Implement update user functionality
   }
 
-  async delete_user() {
-    // Implement delete user functionality
+  async email_verify() {
+    fetch("../../../Backend/src/Functions/send_varified_email.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userEnteredPage: true }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // parse response JSON
+      })
+      .then((data) => {
+        console.log("Response:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
+
+  async user_login() {
+    let token = this.generateToken(32);
+
+    try {
+      const url = "../../../Backend/src/Functions/login.php";
+      const method = "POST";
+      const data = {
+        login_email: this.login_email,
+        login_password: this.login_password, // Corrected key name
+        token: token,
+      };
+
+      fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Success:", data);
+          if (!data.error) {
+            window.location.href = "../View/Error/404_Not_Found.html";
+          } else {
+            console.log("Error");
+            alert(data.error);
+          }
+        });
+
+      console.log("End user_login");
+    } catch (error) {
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error; // Rethrow the error for higher level handling
+    }
+  }
+
+  async update_user() {}
+
+  async change_password() {}
+
+  async delete_user() {}
 }
 
 export { userData };

@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <!--  Discription -->
-  <meta name="description" content=""/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  Discription -->
+    <meta name="description" content="" />
 
-  <link rel="stylesheet" href="../style/style.css" />
-  <link rel="stylesheet" href="../style/user.css" />
-  <link rel="icon" href="../../public/Icons/logo.png" />
-  
-  <title>Stavitel . Code Verification</title>
-</head>
-<body>
-  <div class="spinner-wrapper">
-    <div class="spinner">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/user.css" />
+    <link rel="icon" href="../../public/Icons/logo.png" />
+
+    <title>Stavitel . Code Verification</title>
+  </head>
+  <body>
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
     </div>
-  </div>
-  
-  <main>
-    <div class="box">
-      <div class="inner-box">
-        <div class="forms-wrap">
-          <form
-            action="Change_Password.html"
-            autocomplete="off"
-            class="Change-Password-form"
-          >
-            <div class="logo">
-              <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
-              <h4>Stavitel</h4>
-            </div>
 
-            <div class="heading">
-              <h2>Code Verification</h2>
-              <h4>We've sent a password reset code to your email.</h4>
-            </div>
-
-            <div class="actual-form">
-              <div class="input-wrap">
-              <div class="input-code">
-                <input type="number" />
-                <input type="number" disabled />
-                <input type="number" disabled />
-                <input type="number" disabled />
-              </div>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form
+              action="Change_Password.html"
+              autocomplete="off"
+              class="Change-Password-form"
+            >
+              <div class="logo">
+                <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
+                <h4>Stavitel</h4>
               </div>
 
-              <input type="submit" value="Submit" class="submit-btn" />
+              <div class="heading">
+                <h2>Code Verification</h2>
+                <h4>We've sent a password reset code to your email.</h4>
+              </div>
 
-            </div>
-            <p class="copyright">
-              &#169; 2024 Stavitel - All rights reserved
-            </p>
-          </form>
-        </div>
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <div class="input-code">
+                    <input class="code" type="number" />
+                    <input class="code" type="number" disabled />
+                    <input class="code" type="number" disabled />
+                    <input class="code" type="number" disabled />
+                  </div>
+                </div>
 
-        <div class="image code_verification">
+                <input
+                  type="submit"
+                  value="Submit"
+                  class="submit-btn"
+                  id="code_verification_btn"
+                />
+              </div>
+              <p class="copyright">
+                &#169; 2024 Stavitel - All rights reserved
+              </p>
+            </form>
+          </div>
+
+          <div class="image code_verification">
             <img
               src="../../public/User_Sign/Code Verification.svg"
               alt="Code-Verification-Image"
             />
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <script src="../app/Code_Verification.js"></script>
-  <script src="../app/user.js"></script>
-</body>
+    <script src="../app/user.js"></script>
+    <script src="../app/index.js"></script>
+    <script src="../app/Code_verification.js"></script>
+  </body>
 </html>
