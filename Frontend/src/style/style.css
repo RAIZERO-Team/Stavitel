@@ -16,23 +16,24 @@
 
   /* -------- Link Colors -------- */
   --link-color: #8371fd;
-  
+
   /* -------- Text Colors -------- */
   --text-color: #151111;
   --subtext-color: #bbb;
-  
-  
+
+
   /* -------- Buttons Colors -------- */
   --submit-btn-user: #151111;
   --submit-btn-hover: #8371fd;
-  
+
   /* -------- Borders Colors -------- */
   --border-user: #151111;
-  
+
   /* -------- intro colors -------- */
 
 
   /* -------- user image Background -------- */
+  --bg-image: #e1dac7;
   --user-sign-image: #cccccc;
   --forget-password-image: #e1dac7;
   --code-verification-image: #afcee7;
@@ -90,10 +91,16 @@
   top: 0;
   transition: all .4s ease;
   width: 100%;
-  z-index: 999
+  z-index: 999;
 }
 
-.loader {
+.spinner-wrapper.active {
+  opacity: 0;
+  /* transform: translateY(-2000px); */
+  visibility: hidden;
+}
+
+.spinner {
   flex-direction: row;
   display: flex;
   align-items: center;

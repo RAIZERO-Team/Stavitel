@@ -384,7 +384,9 @@ body.dark .home .text {
 }
 
 .content main {
+  position: relative;
   width: 100%;
+  top: 3rem;
   padding: 50px 60px;
   max-height: calc(100vh - 56px);
 }
@@ -494,51 +496,51 @@ body.dark .home .text {
   cursor: pointer;
 }
 
-.content main .bottom-data .orders {
+.content main .bottom-data .recent_projects {
   flex-grow: 1;
   flex-basis: 500px;
 }
 
-.content main .bottom-data .orders table {
+.content main .bottom-data .recent_projects table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.content main .bottom-data .orders table th {
+.content main .bottom-data .recent_projects table th {
   padding-bottom: 12px;
   font-size: 13px;
   text-align: left;
   border-bottom: 1px solid var(--grey);
 }
 
-.content main .bottom-data .orders table td {
+.content main .bottom-data .recent_projects table td {
   padding: 16px 0;
 }
 
-.content main .bottom-data .orders table tr td:first-child {
+.content main .bottom-data .recent_projects table tr td:first-child {
   display: flex;
   align-items: center;
   grid-gap: 12px;
   padding-left: 6px;
 }
 
-.content main .bottom-data .orders table td img {
+.content main .bottom-data .recent_projects table td img {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.content main .bottom-data .orders table tbody tr {
+.content main .bottom-data .recent_projects table tbody tr {
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.content main .bottom-data .orders table tbody tr:hover {
+.content main .bottom-data .recent_projects table tbody tr:hover {
   background: var(--grey);
 }
 
-.content main .bottom-data .orders table tr td .status {
+.content main .bottom-data .recent_projects table tr td .status {
   display: flex;
   width: 110px;
   align-items: center;
@@ -550,11 +552,11 @@ body.dark .home .text {
   font-weight: 800;
 }
 
-.content main .bottom-data .orders table tr td .status.ai {
+.content main .bottom-data .recent_projects table tr td .status.ai {
   background: var(--success);
 }
 
-.content main .bottom-data .orders table tr td .status.editor {
+.content main .bottom-data .recent_projects table tr td .status.editor {
   background: var(--primary);
 }
 
@@ -590,7 +592,7 @@ body.dark .home .text {
     min-width: 340px;
   }
 
-  .content main .bottom-data .orders table {
+  .content main .bottom-data .recent_projects table {
     min-width: 340px;
   }
 
@@ -724,12 +726,74 @@ body.dark .home .text {
 }
 
 /* ================ My project ================ */
-.Projects_list {
+.search {
   position: relative;
-  left: 1rem;
-  display: grid;
-  width: 90%;
-  top: 5rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+
+  input {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em 0 36px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--c-border-primary);
+    color: var(--c-text-action);
+    font-size: 0.875rem;
+    transition: 0.15s ease;
+    width: 100%;
+    line-height: 1;
+
+    &::placeholder {
+      color: var(--c-text-action);
+    }
+
+    &:focus,
+    &:hover {
+      border-color: var(--c-accent-primary);
+    }
+  }
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25em;
+    color: var(--c-text-action);
+    padding: 0;
+    height: 40px;
+  }
+}
+
+.user_projects {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+
+.content main .user_projects>div {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  width: 100%;
+  height: 34rem;
+  margin-top: 35px;
+  overflow-x: auto;
 }
 
 .project {
@@ -816,7 +880,7 @@ body.dark .home .text {
   background-color: white;
   padding: 10px 50px;
   border-radius: 20px;
-  top: 5%;
+  bottom: 45%;
   left: 4.2rem;
   width: 450px;
   gap: 10px;
@@ -916,13 +980,6 @@ input[type="radio"] {
   outline: 0;
 }
 
-.responsive-wrapper {
-  width: 90%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* --------  -------- */
 
 .button {
@@ -955,79 +1012,6 @@ input[type="radio"] {
   &:focus {
     border-color: var(--c-accent-primary);
     color: var(--c-accent-primary);
-  }
-}
-
-.main {
-  padding-top: 3rem;
-}
-
-.main-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-
-  h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 1.25;
-
-    @media (max-width: 550px) {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
-/* -------- Search field -------- */
-.search {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-
-  input {
-    font: inherit;
-    color: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1em 0 36px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid var(--c-border-primary);
-    color: var(--c-text-action);
-    font-size: 0.875rem;
-    transition: 0.15s ease;
-    width: 100%;
-    line-height: 1;
-
-    &::placeholder {
-      color: var(--c-text-action);
-    }
-
-    &:focus,
-    &:hover {
-      border-color: var(--c-accent-primary);
-    }
-  }
-
-  button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    background-color: transparent;
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.25em;
-    color: var(--c-text-action);
-    padding: 0;
-    height: 40px;
   }
 }
 
@@ -1098,44 +1082,10 @@ input[type="radio"] {
   }
 }
 
-/* -------- Settings Header Tittle -------- */
-.content-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 3rem;
-  margin-top: -1px;
-  border-top: 1px solid var(--c-border-primary);
-}
-
-.content-header-intro {
-  h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  p {
-    color: var(--c-text-secondary);
-    margin-top: 0.25rem;
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-  }
-}
-
-.content-header-actions {
-  a:first-child {
-    @media (min-width: 800px) {
-      display: none;
-    }
-  }
-}
-
 /* -------- Tabs Content -------- */
 
-.content {
+/* .content {
   border-top: 1px solid var(--c-border-primary);
-  /* margin-top: 2rem; */
   display: flex;
   align-items: flex-start;
 }
@@ -1144,7 +1094,7 @@ input[type="radio"] {
   padding-top: 2rem;
   padding-bottom: 6rem;
   flex-grow: 1;
-}
+} */
 
 /* -------- Show Tabs -------- */
 
@@ -1208,12 +1158,29 @@ input[type="radio"] {
   position: relative;
   left:2%;
 
+
 }
 
 .textContainer{
   position: relative;
   left: 47%;
   top: 39%;
+.my_profile {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+
+.my_profile>div {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 25px;
+  width: 75%;
+  height: 25rem;
+  margin-top: 5rem;
+  overflow-x: auto;
 }
 
 .updateText{

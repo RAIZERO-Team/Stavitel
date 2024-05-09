@@ -6,16 +6,23 @@
     <!--  Discription -->
     <meta name="description" content="" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/Frontend/src/style/Forgot_Password.css" />
-    <link rel="icon" href="/Frontend/public/Icons/logo.png" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../style/user.css" />
+    <link rel="icon" href="../../public/Icons/logo.png" />
 
     <title>Stavitel . Change User Name</title>
   </head>
   <body>
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+
     <main>
       <div class="box">
         <div class="inner-box">
@@ -26,7 +33,7 @@
               class="forget-password-form"
             >
               <div class="logo">
-                <img src="/Frontend/public/Icons/logo.png" alt="Stavitel Logo" />
+                <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
                 <h4>Stavitel</h4>
               </div>
 
@@ -47,7 +54,6 @@
                 </div>
 
                 <input type="submit" value="submit" class="submit-btn" />
-
               </div>
               <p class="copyright">
                 &#169; 2024 Stavitel - All rights reserved
@@ -56,15 +62,16 @@
           </div>
 
           <div class="image change_username">
-              <img
-                src="/Frontend/public/User_Sign/change username.svg"
-                alt="Forgot-Password-Image"
-              />
+            <img
+              src="../../public/User_Sign/change username.svg"
+              alt="Forgot-Password-Image"
+            />
           </div>
         </div>
       </div>
     </main>
 
-    <script src="/Frontend/src/app/Forgot_Password.js"></script>
+    <script src="../app/Forgot_Password.js"></script>
+    <script src="../app/user.js"></script>
   </body>
 </html>
