@@ -1,59 +1,54 @@
-<?php 
+<?php
 
-function updateProjectFile($projectName, $fileName, $content, $isJson = false) {
-    $filePath = "projects/" . $projectName . "/" . $fileName;
-    if (file_exists($filePath)) {
-        // If content is JSON, decode it
-        if ($isJson) {
-            $decodedContent = json_decode($content, true);
-            $content = $decodedContent[$fileName];
-        }
-        file_put_contents($filePath, $content);
-        return true;
-    }
-    return false;
+function updateProject($projectName, $htmlContent, $cssContent) {
+    // Assuming the project already exists, so we don't need to check if the project folder exists.
+
+    // Locate the project folder
+    $projectFolderPath = __DIR__ . "/projects"; // Assuming 'projects' is the folder where all projects are stored
+    $projectFolder = $projectFolderPath . "/$projectName";
+
+    // Update HTML content
+    file_put_contents("$projectFolder/index.html", $htmlContent);
+
+    // Update CSS content
+    $cssFolderPath = $projectFolder . "/css";
+    file_put_contents("$cssFolderPath/style.css", $cssContent);
+
+    echo "Project '$projectName' updated successfully.";
 }
 
-// usage:
+// Example usage
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $projectName = $_POST["update_project_name"];
-    $newHTMLContent = $_POST["html_content"];
+    $projectName = $_POST["project_name"];
+    $htmlContent = $_POST["html_content"];
+    $cssContent = $_POST["css_content"];
 
-    // Update HTML file
-    if (updateProjectFile($projectName, "index.html", $newHTMLContent)) {
-        echo "Project '$projectName' HTML updated successfully.";
-    } else {
-        echo "Failed to update project. Project '$projectName' does not exist.";
-    }
-
-    $newCSSContent = $_POST["css_content"];
-
-    // Update CSS file
-    if (updateProjectFile($projectName, "css/style.css", $newCSSContent)) {
-        echo "Project '$projectName' CSS updated successfully.";
-    } else {
-        echo "Failed to update project. Project '$projectName' does not exist.";
-    }
+    updateProject($projectName, $htmlContent, $cssContent);
 }
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Project Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Project</title>
 </head>
-
 <body>
-    <h2>Update Project Files</h2>
-    <form action="update.php" method="POST">
-        <label for="update_project_name">Project Name:</label>
-        <input type="text" id="update_project_name" name="update_project_name" required><br><br>
+    <h2>Update Project</h2>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <label for="project_name">Project Name:</label><br>
+        <input type="text" id="project_name" name="project_name"><br><br>
+
         <label for="html_content">New HTML Content:</label><br>
-        <textarea id="html_content" name="html_content" rows="6" cols="50" required></textarea><br><br>
+        <textarea id="html_content" name="html_content" rows="5" cols="50"></textarea><br><br>
+
         <label for="css_content">New CSS Content:</label><br>
-        <textarea id="css_content" name="css_content" rows="6" cols="50" required></textarea><br><br>
-        <button type="submit">Update Files</button>
+        <textarea id="css_content" name="css_content" rows="5" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Update Project">
     </form>
 </body>
-
 </html>
