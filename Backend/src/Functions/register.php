@@ -6,15 +6,15 @@ if (Input::exists()) {
   $formData = json_decode($postData, true);
 
   // ============== Check if user data is valid ==============
-  if ($formData && isset($formData['username']) && isset($formData['email']) && isset($formData['password']) && isset($formData['token'])) {
+  if ($formData && isset($formData['register_username']) && isset($formData['register_email']) && isset($formData['register_password']) && isset($formData['token'])) {
     // ============== Access individual form fields ==============
     $token = Token::generate_TOKEN($formData['token']);
 
     if (Token::check_token($token)) {
 
-      $username = $formData['username'];
-      $email = $formData['email'];
-      $password = $formData['password'];
+      $username = $formData['register_username'];
+      $email = $formData['register_email'];
+      $password = $formData['register_password'];
 
       // Insert data into database
       $validate = new Validation();
@@ -60,3 +60,4 @@ if (Input::exists()) {
     echo "Method Not Allowed";
   }
 }
+?>
