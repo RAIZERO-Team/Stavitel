@@ -127,7 +127,7 @@ let ctx = document.getElementById("myChart");
 let myChart;
 let Jsondata;
 
-fetch("./data.json")
+fetch("../app/data.json")
   .then(function (response) {
     if (response.status == 200) {
       return response.json();
@@ -163,10 +163,10 @@ function createChart(data, type) {
   });
 }
 
-// function setChartType(chartType) {
-//   myChart.destroy();
-//   createChart(Jsondata, chartType);
-// }
+function setChartType(chartType) {
+  myChart.destroy();
+  createChart(Jsondata, chartType);
+}
 
 // ================ Add New Project ================ //
 
