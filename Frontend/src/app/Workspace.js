@@ -127,7 +127,7 @@ let ctx = document.getElementById("myChart");
 let myChart;
 let Jsondata;
 
-fetch("../View/data.json")
+fetch("./data.json")
   .then(function (response) {
     if (response.status == 200) {
       return response.json();

@@ -22,48 +22,45 @@ inputs.forEach((inp) => {
 
 // ============ User functions ============
 
-let forget_password_btn = document.getElementById("forget_password_btn");
-let code_verification_btn = document.getElementById("code_verification_btn");
-let change_password_btn = document.getElementById("change_password_btn");
+// let forget_password_btn = document.getElementById("forget_password_btn");
+// let code_verification_btn = document.getElementById("code_verification_btn");
+// let change_password_btn = document.getElementById("change_password_btn");
 
 
-// Forget password -> user email
-forget_password_btn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  let forget_password_email = document.getElementById("forget_password_email").value;
+// // Forget password -> user email
+// forget_password_btn.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   let forget_password_email = document.getElementById("forget_password_email").value;
 
-    try {
-      // const result = await user.user_register();
-      console.log("", result);
-    } catch (error) {
-      console.error("", error);
-    }
-  });
+//     try {
+//       // const result = await user.user_register();
+//     } catch (error) {
+//       console.log("");
+//     }
+//   });
 
-  // Code verification -> user code
-  code_verification_btn.addEventListener("click", async (event) => {
-    event.preventDefault();
-    // let code_verification_code = document.getElementById("code_verification_code").value;
+//   // Code verification -> user code
+//   code_verification_btn.addEventListener("click", async (event) => {
+//     event.preventDefault();
+//     // let code_verification_code = document.getElementById("code_verification_code").value;
 
-    try {
-      // const result = await user.user_register();
-      console.log("", result);
-    } catch (error) {
-      console.error("", error);
-    }
-  });
+//     try {
+//       // const result = await user.user_register();
+//     } catch (error) {
+//       console.log("");
+//     }
+//   });
   
-  // Change password -> user password
-  change_password_btn.addEventListener("click", async (event) => {
-    event.preventDefault();
-    let change_password_new_password = document.getElementById("change_password_new_password").value;
-    let change_password_confirm_new_password = document.getElementById("change_password_confirm_new_password").value;
+//   // Change password -> user password
+//   change_password_btn.addEventListener("click", async (event) => {
+//     event.preventDefault();
+//     let change_password_new_password = document.getElementById("change_password_new_password").value;
+//     let change_password_confirm_new_password = document.getElementById("change_password_confirm_new_password").value;
 
-    try {
-      // const result = await user.user_register();
-      console.log("", result);
-    } catch (error) {
-      console.error("", error);
-    }
-  });
+//     try {
+//       // const result = await user.user_register();
+//     } catch (error) {
+//       console.log("");
+//     }
+//   });
 
