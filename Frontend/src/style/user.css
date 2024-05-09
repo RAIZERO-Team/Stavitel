@@ -98,6 +98,20 @@ form {
   display: inline;
 }
 
+/* -------- verification email page paragraph -------- */
+
+.title h3 {
+  /* text-align: center; */
+  display: grid;
+  color: #bababa;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.title span {
+  text-align: center;
+}
+
 .input-wrap {
   position: relative;
   height: 37px;
@@ -198,6 +212,14 @@ main.sign-up-mode form.sign-in-form {
   left:45%;
   background-color: var(--bg-image);
   border-radius: 2rem;
+}
+
+.user_sign {
+  background-color: var(--code-verification-image);
+}
+
+.verify_email {
+  background-color: var(--verify-email-image);
 }
 
 .forget-password {

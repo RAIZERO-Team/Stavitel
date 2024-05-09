@@ -1,18 +1,23 @@
-// Call This The Editor
+/*
+==========================
+imports functions from the 
+config folder
+==========================
+*/
 
-import blockManager from "./config/manager/blockManager_editor_TW";
+import blockManager from "./config/manager/blockManager_editor_BT";
 import styleManager from "./config/manager/styleManager";
 import assetManager from "./config/manager/assetManager";
 import sectionDependencies from "./config/Dependencies/sectionDependencies";
 import dependencyCDNLinks from "./config/Dependencies/dependencyCDNLinks";
 import customScripts from "./config/Dependencies/customScripts";
-import { checkExtension, loadingSpinner } from "./helpers/index.js";
+import { checkExtension, loadingSpinner } from "./helpers/index";
 import { addLocal, getLocal } from "./helpers/index";
-import buttons from "./config/buttons";
+import buttons from "./config/commands/buttons";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
-class editor_TW {
+class editor {
   constructor() {
     this.msg = new Notyf({
       duration: 3000,
@@ -35,11 +40,12 @@ class editor_TW {
       canvas: {
         styles: [
           "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap",
+          "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css",
           "https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/font-awesome-line-awesome/css/all.min.css",
           "./config/global/global.css",
         ],
         scripts: [
-          "https://cdn.tailwindcss.com",
+          "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js",
           "./config/global/global.js",
         ],
       },
@@ -63,10 +69,13 @@ class editor_TW {
     this.appendDependencies();
   }
 
+  // ============= Import model window function =============
   codeImportModal() {
     // ---------------------
-    // Import/Edit
+    // Edit and Import
     // ---------------------
+
+    // --------- create html variables ---------
     let prefix = this.editor.getConfig().stylePrefix;
 
     let modal_content_wrapper = document.createElement("div");
@@ -100,6 +109,7 @@ class editor_TW {
     copyCss.className = "btn " + prefix + "btn-css";
     exportTxt.className = "btn " + prefix + "btn-export";
 
+    // --------- upload file function ---------
     fileLoadInput.onchange = (e) => {
       let currentFile = e.target.files[0];
       let fType = checkExtension(currentFile["name"]);
@@ -123,6 +133,7 @@ class editor_TW {
     };
 
     // import button inside import editor
+    // ---------  ---------
     btnEdit.onclick = () => {
       let htmlCode = htmlCodeEditor.editor.getValue();
       let cssCode = cssCodeEditor.editor.getValue();
@@ -133,6 +144,7 @@ class editor_TW {
       this.modal.close();
     };
 
+    // --------- Copy html code from canves function ---------
     copyHtml.onclick = () => {
       let htmlCodes = htmlCodeEditor.editor.getValue();
       let dummy = document.createElement("input");
@@ -145,6 +157,7 @@ class editor_TW {
       this.msg.success("You have copied HTML codes!");
     };
 
+    // --------- Copy css code from canves function ---------
     copyCss.onclick = () => {
       let cssCodes = cssCodeEditor.editor.getValue();
       let dummy = document.createElement("input");
@@ -158,6 +171,7 @@ class editor_TW {
     };
 
     // onclick save as button inside import editor
+    // --------- export code in txt *change here ---------
     exportTxt.onclick = () => {
       let InnerHtml = this.editor.getHtml();
       let Css = this.editor.getCss({ avoidProtected: true });
@@ -174,6 +188,7 @@ class editor_TW {
       document.body.removeChild(anchor);
     };
 
+    // ---------  ---------
     header_menus.appendChild(fileLoader);
     header_menus.appendChild(exportTxt);
     header_menus.appendChild(copyCss);
@@ -181,6 +196,7 @@ class editor_TW {
     header_menus.appendChild(btnEdit);
 
     // import nav button click event
+    // --------- edit model form ---------
     this.editor.Commands.add("html-edit", {
       run: (editor, sender) => {
         sender && sender.set("active", 0);
@@ -222,6 +238,7 @@ class editor_TW {
     });
   }
 
+  // --------- build code editor function ---------
   buildCodeEditor = (type) => {
     let codeEditor = this.editor.CodeManager.getViewer("CodeMirror").clone();
     codeEditor.set({
@@ -239,7 +256,9 @@ class editor_TW {
     return codeEditor;
   };
 
+  // --------- append dependencies function ---------
   appendDependencies() {
+    // --------- server data ---------
     let dependencies = getLocal("gram-dependencies");
 
     let links = dependencies.map((d) => d.css);
@@ -256,24 +275,28 @@ class editor_TW {
     }
   }
 
+  // --------- append custom script function ---------
   appendCustomScript = () => {
     // Append Custom Script
     let doc = this.editor.Canvas.getDocument();
+    // --------- server data ---------
     let stjsScripts = getLocal("stjs-scripts");
     for (let s of stjsScripts) {
       const scriptEl = document.createElement("script");
       scriptEl.className = `${s.name}-script`;
       scriptEl.innerHTML = `window.addEventListener('DOMContentLoaded', (event) => {
             ${s.script}
-         })`;
+        })`;
       doc.body.appendChild(scriptEl);
     }
   };
 
+  // --------- add dependency function ---------
   addDependency = (dependency) => {
     let doc = this.editor.Canvas.getDocument();
     const appendDependency = () => {
       return new Promise((resolve, reject) => {
+        // --------- server data ---------
         let dependencies = getLocal("gram-dependencies");
         let isDependencyExit = dependencies.filter(
           (d) => d.name === dependency
@@ -304,6 +327,7 @@ class editor_TW {
 
         dependencies.push(ds);
 
+        // --------- server data ---------
         addLocal("gram-dependencies", dependencies);
 
         resolve(script);
@@ -313,6 +337,7 @@ class editor_TW {
     appendDependency().then((dep) => {
       if (dep === dependency) return;
 
+      // --------- server data ---------
       let cScripts = getLocal("stjs-scripts");
       let isCustomScriptExit = cScripts.filter((d) => d.name === dependency);
 
@@ -327,20 +352,24 @@ class editor_TW {
         customScript.className = `${dependency}-script`;
         doc.body.appendChild(customScript);
 
+        // --------- server data ---------
         let customScriptArr = getLocal("stjs-scripts");
         customScriptArr.push({
           name: dependency,
           script: customScript.innerHTML,
         });
 
+        // --------- server data ---------
         addLocal("stjs-scripts", customScriptArr);
       });
     });
   };
 
+  // --------- remove dependency ---------
   removeDependency(dependency) {
     let doc = this.editor.Canvas.getDocument();
 
+    // --------- server data ---------
     let customScript = getLocal("stjs-scripts");
     // Custom scripts
     for (let custom of customScript) {
@@ -348,9 +377,11 @@ class editor_TW {
       allCustomScripts.forEach((e) => (e.outerHTML = ""));
     }
     customScript = customScript.filter((c) => c.name !== dependency);
+    // --------- server data ---------
     addLocal("stjs-scripts", customScript);
 
     // Dependencies / plugins
+    // --------- server data ---------
     let dependencies = getLocal("gram-dependencies");
     if (dependencies.length == 0) return;
 
@@ -360,9 +391,11 @@ class editor_TW {
     }
 
     dependencies = dependencies.filter((d) => d.name !== dependency);
+    // --------- server data ---------
     addLocal("gram-dependencies", dependencies);
   }
 
+  // --------- listen add dependencies ---------
   listenAddDependencies = () => {
     this.editor.on("component:add", (component) => {
       let section = component.attributes.attributes.id;
@@ -375,6 +408,7 @@ class editor_TW {
     });
   };
 
+  // --------- listen remove dependencies ---------
   listenRemoveDependencies = () => {
     this.editor.on("component:remove", (component) => {
       let section = component.attributes.attributes.id;
@@ -386,6 +420,7 @@ class editor_TW {
     });
   };
 
+  // --------- init function ---------
   init() {
     this.editor = grapesjs.init(this.config);
     this.editor.Panels.addButton("options", buttons);
@@ -442,6 +477,6 @@ class editor_TW {
   }
 }
 
-new editor_TW().init();
+new editor().init();
 
 loadingSpinner();

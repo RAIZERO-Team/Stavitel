@@ -11,7 +11,7 @@
     />
 
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="/Frontend/src//style/Intro_Web_SEO.css" />
+    <link rel="stylesheet" href="../style/Docs_Editor.css" />
 
     <title>Stavitel</title>
   </head>
@@ -24,7 +24,7 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
+              <a href="#home" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
               <a href="#about" class="nav__link">About us</a>
@@ -33,8 +33,10 @@
               <a href="#services" class="nav__link">Services</a>
             </li>
             <li class="nav__item">
-              <a href="Contact_us.html" class="nav__link">Contact us</a>
+              <a href="#contact" class="nav__link">Contact us</a>
             </li>
+
+            <i class="bx bx-toggle-left change-theme" id="theme-button"></i>
           </ul>
         </div>
 
@@ -42,7 +44,7 @@
           <i class="bx bx-grid-alt"></i>
         </div>
 
-        <a href="User_Sign.html" class="button button__header">Get Started</a>
+        <a href="#" class="button button__header">Get Started</a>
       </nav>
     </header>
 
@@ -51,7 +53,7 @@
       <section class="home section" id="home">
         <div class="home__container container grid">
           <img
-            src="/Frontend/public/Intro/SEO1.svg"
+            src="/Frontend/public/Intro/SEO4.svg"
             class="svg__img home__img"
             alt="SEO Image"
           />
@@ -65,7 +67,7 @@
               right to where you are.
             </p>
 
-            <a href="User_Sign.html" class="button">Get Started</a>
+            <a href="#" class="button">Get Started</a>
           </div>
         </div>
       </section>
@@ -86,7 +88,7 @@
           </div>
 
           <img
-            src="/Frontend/public/Intro/SEO2.svg"
+            src="/Frontend/public/Intro/SEO3.svg"
             class="svg__img about__img"
             alt="SEO Image"
           />
@@ -109,22 +111,23 @@
           </div>
 
           <img
-            src="/Frontend/public/Intro/SEO3.svg"
+            src="/Frontend/public/Intro/SEO2.svg"
             class="svg__img"
             alt="SEO Image"
           />
         </div>
       </section>
 
-      <!--=============== More Docs ===============-->
+      <!--=============== SERVICES ===============-->
       <section class="services section container" id="services">
         <h2 class="section__title">
-          More Details To <br />
-          Know
+          Some Services We <br />
+          Offer
         </h2>
         <div class="services__container grid">
           <div class="services__data">
-            <h3 class="services__subtitle">Google</h3>
+            <h3 class="services__subtitle">Payment Done</h3>
+
             <img
               src="/Frontend/public/Intro/SEO4.svg"
               class="services__img"
@@ -134,19 +137,15 @@
               Pay with a Visa or PayPal card and without much ado.
             </p>
             <div>
-              <a
-                href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
-                target="_blank"
-                class="button button-link"
-                >Learn More</a
-              >
+              <a href="#" class="button button-link">Learn More</a>
             </div>
           </div>
 
           <div class="services__data">
-            <h3 class="services__subtitle">MDN</h3>
+            <h3 class="services__subtitle">Find Your Product</h3>
+
             <img
-              src="/Frontend/public/Intro/SEO5.svg"
+              src="/Frontend/public/Intro/SEO4.svg"
               class="services__img"
               alt="SEO Image"
             />
@@ -154,19 +153,15 @@
               We offer sale of products through the Internet.
             </p>
             <div>
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Glossary/SEO"
-                target="_blank"
-                class="button button-link"
-                >Learn More</a
-              >
+              <a href="#" class="button button-link">Learn More</a>
             </div>
           </div>
 
           <div class="services__data">
-            <h3 class="services__subtitle">Wikipedia</h3>
+            <h3 class="services__subtitle">Product Received</h3>
+
             <img
-              src="/Frontend/public/Intro/SEO6.svg"
+              src="/Frontend/public/Intro/SEO4.svg"
               class="services__img"
               alt="SEO Image"
             />
@@ -174,14 +169,39 @@
               In our app you can see the delay time of your order.
             </p>
             <div>
-              <a
-                href="https://en.wikipedia.org/wiki/Wikipedia:Search_engine_optimization"
-                target="_blank"
-                class="button button-link"
-                >Learn More</a
-              >
+              <a href="#" class="button button-link">Learn More</a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!--=============== APP ===============-->
+      <section class="app section container">
+        <div class="app__container grid">
+          <div class="app__data">
+            <h2 class="section__title-center">
+              Watch Your Delivery <br />
+              At Any Time
+            </h2>
+            <p class="app__description">
+              With our app you can view the route of your order, from our local
+              headquarters to the place where you are. Look for the app now!
+            </p>
+            <div class="app__buttons">
+              <a href="#" class="button button-flex">
+                <i class="bx bxl-apple button__icon"></i> App Store
+              </a>
+              <a href="#" class="button button-flex">
+                <i class="bx bxl-play-store button__icon"></i> Google Play
+              </a>
+            </div>
+          </div>
+
+          <img
+            src="/Frontend/public/Intro/SEO4.svg"
+            class="svg__img app__img"
+            alt="SEO Image"
+          />
         </div>
       </section>
 
@@ -214,7 +234,7 @@
           </ul>
 
           <div class="contact__content">
-            <a href="User_Sign.html" class="button">Get Started</a>
+            <a href="#" class="button">Contact Us</a>
           </div>
         </div>
       </section>
@@ -275,7 +295,12 @@
       <p class="footer__copy">&#169; Stavitel. All right reserved</p>
     </footer>
 
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="bx bx-up-arrow-alt scrollup__icon"></i>
+    </a>
+
     <!--=============== MAIN JS ===============-->
-    <script src="/Frontend/src/app/Intro_Web_SEO.js"></script>
+    <script src="../app/Docs.js"></script>
   </body>
 </html>
