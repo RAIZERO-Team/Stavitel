@@ -4,7 +4,7 @@
 }
 
 body{
-    background-color: #fbfcfe;
+    background-color:rgb(230, 230, 221);
     font-family: "Muli",sans-serif;
     display: flex;
     align-items: center;
@@ -13,10 +13,21 @@ body{
     overflow: hidden;
     margin: 0;
 }
-
-  .div p{
+.logo{
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 30px;
+  margin-left: 17rem;
+}
+ .logo p{
+  font-size: 28px;
+  /*margin-top: 0px;*/
+  letter-spacing: 0.5px;
     text-align: center;
-    margin-bottom: 30px;
+    color: #000;
+   /* margin-bottom: 15px;*/
   }
 
 .container{
@@ -28,9 +39,9 @@ body{
     text-align: center;
 }
 .container p{
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    line-height: 40px;
+    margin-bottom: 50px;
 }
 .container button{
     display: inline-block;
@@ -41,7 +52,7 @@ body{
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
-  font-size: 0.9rem;
+  font-size: 30px;
   transition: 0.3s;
 }
 .container button:hover{
