@@ -52,15 +52,19 @@ function showSuggestions(list){
 }
 
 //---------------------Profile setting-------------------
-let uploadButton = document.getElementById("upload-button");
-let chosenImage = document.getElementById("chosen-image");
-let fileName = document.getElementById("file-name");
+const imgDiv = document.querySelector('.user-img');
+const userImg = document.querySelector('#userPhoto');
+const userFile = document.querySelector('#userFile');
+const uploadbtn = document.querySelector('#uploadbtn');
 
-uploadButton.onchange = () => {
-  let reader = new FileReader();
-  reader.readAsDataURL(uploadButton.files[0]);
-  console.log(uploadButton.files[0]);
-  reader.onload = () => {
-    chosenImage.setAttribute("src", reader.result);
+userFile.addEventListener('change' , function(){
+
+  const choosedfile =this.files[0];
+  if(choosedfile){
+    const userReader = new FileReader();
+    userReader.addEventListener( 'load' , function(){
+      userImg.setAttribute('src' , userReader.result);
+    })
+  userReader.readAsDataURL (choosedfile);
   }
-}
+})
