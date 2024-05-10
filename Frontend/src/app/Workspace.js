@@ -121,25 +121,65 @@ window.onload = function () {
 
 // ================ Dashboard ================ //
 
-// ---------- Productivity ----------
+// ---------- Data quik look ----------
+let proj_ai_type_number = document.getElementById("proj_ai_type_number");
+let proj_editor_type_number = document.getElementById(
+  "proj_editor_type_number"
+);
+let siteVisitor = document.getElementById("siteVisitor");
+let recent_proje = document.getElementById("recent_proje");
 
-let ctx = document.getElementById("myChart");
-let myChart;
+let data = {
+  ai: "10",
+  editor: "5",
+  siteVist: "20",
+  proj_name: "Stavitel",
+  proj_date: "10-5-2024",
+  proj_tybe: "AI",
+};
+
+// let ai_type = 
+
+proj_ai_type_number.innerText = data.ai;
+proj_editor_type_number.innerText = data.editor;
+siteVisitor.innerText = data.siteVist;
+
+recent_proje.innerHTML = `<tr>
+<td>
+  <img src="../../public/Icons/logo.png" />
+  <p>${data.proj_name}</p>
+</td>
+<td>${data.proj_date}</td>
+<td><span class="status ${data.proj_tybe}">${data.proj_tybe}</span></td>
+</tr>`;
+
+// ---------- Recent projects ----------
+
+// ---------- Productivity ----------
+let productivityChart = document.getElementById("myChart");
+
+import { dashboard } from "../context/dashboard.js";
+const test = new dashboard("", "", "", "", "", "", "", productivityChart);
+const charttest = test.chart();
+
+
 let Jsondata;
 
-fetch("../app/data.json")
-  .then(function (response) {
-    if (response.status == 200) {
-      return response.json();
-    }
-  })
-  .then(function (data) {
-    Jsondata = data;
-    createChart(Jsondata, "line");
-  });
+// fetch("../app/data.json")
+//   .then(function (response) {
+//     if (response.status == 200) {
+//       return response.json();
+//     }
+//   })
+//   .then(function (data) {
+//     Jsondata = data;
+//     createChart(Jsondata, "line");
+//   });
+
+let myChart;
 
 function createChart(data, type) {
-  myChart = new Chart(ctx, {
+  myChart = new Chart(productivityChart, {
     type: type,
     data: {
       labels: data.map((row) => row.Day),
@@ -163,10 +203,9 @@ function createChart(data, type) {
   });
 }
 
-function setChartType(chartType) {
-  myChart.destroy();
-  createChart(Jsondata, chartType);
-}
+createChart(charttest, "line");
+
+
 
 // ================ Add New Project ================ //
 
@@ -319,7 +358,6 @@ document.addEventListener("DOMContentLoaded", function () {
   showSettingsTabs(0);
 });
 
-
 //---------------------Profile setting-------------------
 let uploadButton = document.getElementById("upload-button");
 let chosenImage = document.getElementById("chosen-image");
@@ -361,3 +399,11 @@ allStar.forEach((item, idx) => {
 });
 
 // test_redireect.goTo(404);
+
+// ========= Notfication Toast =========
+
+// import { notification } from "../context/notfication.js";
+
+// let toast = new notification();
+
+// toast.createToast("success");

@@ -552,11 +552,11 @@ body.dark .home .text {
   font-weight: 800;
 }
 
-.content main .bottom-data .recent_projects table tr td .status.ai {
+.content main .bottom-data .recent_projects table tr td .status.AI {
   background: var(--success);
 }
 
-.content main .bottom-data .recent_projects table tr td .status.editor {
+.content main .bottom-data .recent_projects table tr td .status.Editor {
   background: var(--primary);
 }
 

@@ -28,6 +28,7 @@
     </div>
   </div>
 
+  <ul class="notifications"></ul>
     <!-- Nav Bar -->
     <!-- <div class="navbar">
       <a href="#" class="notif">
@@ -120,16 +121,16 @@
           <!-- Insights -->
           <ul class="insights">
             <li>
-              <i class='bx bx-check-double'></i>
+              <i class='bx bx-bot'></i>
               <span class="info">
-                <h3>40</h3>
+                <h3 id="proj_ai_type_number">0</h3>
                 <p>projects AI</p>
               </span>
             </li>
             <li>
               <i class='bx bx-check-double'></i>
               <span class="info">
-                <h3>20</h3>
+                <h3 id="proj_editor_type_number">0</h3>
                 <p>projects Editor</p>
               </span>
             </li>
@@ -143,7 +144,7 @@
             <li>
               <i class="bx bx-show-alt"></i>
               <span class="info">
-                <h3>3000</h3>
+                <h3 id="siteVisitor">1</h3>
                 <p>site visitor</p>
               </span>
             </li>
@@ -163,14 +164,16 @@
                     <th>Type</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
+                <tbody id="recent_proje">
+                  <!-- Here the projects of user will show -->
+
+                  <!-- <tr>
                     <td>
                       <img src="../../public/Icons/logo.png" />
                       <p>Project1</p>
                     </td>
                     <td>14-08-2023</td>
-                    <td><span class="status ai">AI</span></td>
+                    <td><span class="status AI">AI</span></td>
                   </tr>
                   <tr>
                     <td>
@@ -178,24 +181,8 @@
                       <p>Project1</p>
                     </td>
                     <td>14-08-2023</td>
-                    <td><span class="status ai">AI</span></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="../../public/Icons/logo.png" />
-                      <p>Project1</p>
-                    </td>
-                    <td>14-08-2023</td>
-                    <td><span class="status editor">Tailwind Editor</span></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="../../public/Icons/logo.png" />
-                      <p>Project1</p>
-                    </td>
-                    <td>14-08-2023</td>
-                    <td><span class="status editor">Tailwind Editor</span></td>
-                  </tr>
+                    <td><span class="status Editor">Tailwind Editor</span></td>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
@@ -584,7 +571,9 @@
       </main>
     </div>
 
-    <script src="../../src/app/Workspace.js"></script>
+    <script type="module" src="../context/dashboard.js"></script>
+    <script type="module" src="../app/Workspace.js"></script>
+    <!-- <script type="module" src="../context/notfication.js"></script> -->
     <script src="../app/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="chart.js"></script> -->
