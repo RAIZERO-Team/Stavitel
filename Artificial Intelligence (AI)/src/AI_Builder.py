@@ -3,6 +3,10 @@ import textwrap
 import json
 import re
 import google.generativeai as genai
+import requests
+
+from flask import Flask, request, jsonify
+app = Flask(__name__)
 
 from IPython.display import display
 from IPython.display import Markdown
@@ -43,8 +47,6 @@ def print_response(response):
   print(response)
 
 
-html ="""
-"""""
 # commands format
 #--------------------------------------------------------------------------------------------#
 #q1 = "Change title to \"%s\" , generate a similar paragraph, and show all HTML code" %(name)
@@ -75,38 +77,67 @@ html ="""
 
 
    # try to change images ,name and paragraphs  #
-name = input("enter your name")
-img_path1 = r""
-img_path2 = r""
-img_path3 = r""
+
 # q1 = "change  name  website only to \"%s\"  and Invent new paragraphs similar to the same topic as the paragraphs in the html code and replace the old ones with new paragraphs , Replace the old images link in the <img> tag with src attribute with the new link \"%s\" , \"%s\" , \"%s\"  and Show me all HTML code  " %(name , path2 ,path1 , path3)
-q2 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and ,Change the link of only one  images contained in this code with this link   \"%s\" ,\"%s\" ,  Show me all HTML code  "%(path1,path2)
-q3 = "Show the rest of the code"
+
+
+# get 3 images 
+def get_images(category):
+  #
+  url = 'http://localhost:3000/api/data'
+  response = requests.get(url , {category})
+  return jsonify(response)
+
 
 
  #  /responds /#
 #respond1 = send_message(html + q1)
-def get_respond():
-  respond1 = send_message(html+ q2)
-  respond3 = send_message(q3)
-  respond4 = send_message(q3)
-  respond5 = send_message(q3)
+def get_respond(html ,name , img_path1 , img_path2 , img_path3):
+  q1 = "change  title website to \"" + name + "\" ,and create new paragraphs similar to the same topic as the paragraphs in the html code and replace all the old ones with new paragraphs and ,Change the link of only one  images contained in this code with this link   \"%s\" ,\"%s\",\"%s\" ,  Show me all HTML code  "%(img_path1,img_path2 , img_path3)
+  q2 = "Show the rest of the code"
+  respond1 = send_message(html+ q1)
+  respond3 = send_message(q2)
+  respond4 = send_message(q2)
+  respond5 = send_message(q2)
   HTML_code_afte_edit =  extract_html_content(respond1 + respond3 + respond4 + respond5 )   
-  print(HTML_code_afte_edit) # print(responds)
+  # print(HTML_code_afte_edit) # print(responds)
+  return HTML_code_afte_edit
 
 
 # test gmeini respond if exist respond or not 
-correct_respond = False
-numOftest = 0 
 
-while not correct_respond and numOftest <= 2:
+# numOftest = 0 
+# while  numOftest <= 2:
+#     # try and except to handle error 
+#     try: 
+#       htmlcode = get_respond()
+      
+#     except:
+#        numOftest+=1
+
+
+@app.route('/edit_html', methods=['POST'])
+def edit_html():
+    data = request.get_json()
+    name = data['websitename']
+    category = data['category']
+    html = data['html']
+
+    # get there image paths
+    image_paths = get_images(category)
+    numOftest = 1 
+    while  numOftest <= 3:
     # try and except to handle error 
-    try: 
-       get_respond()
-       test = True
-    except:
+      try: 
+        respond = get_respond(html ,name , image_paths["path1"] , image_paths["path2"] , image_paths["path3"])
+        response = {'html': respond}
+        return jsonify(response)
+      except:
        numOftest+=1
 
+    return None
+if __name__ == '__main__':
+    app.run(debug=True)
     
 
 
