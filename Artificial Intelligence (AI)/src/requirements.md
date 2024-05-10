@@ -3,3 +3,4 @@
 - pip install -q -U google-generativeai 
 - pip install IPython
 
+- npm install express
