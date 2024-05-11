@@ -1,30 +1,38 @@
+<?php
 
 
+require_once('core/init.php');
 
+if (!Input::exists()) {
+    $response = array('error' => 'No data available for verification.');
+    echo json_encode($response);
+    return;
+}
 
-<!DOCTYPE html>
-<html lang="en">
+$postData = file_get_contents('php://input');
+$formData = json_decode($postData, true);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+if (!isset($formData['code'])) {
+    $response = array('error' => 'No code present in the sent data.');
+    echo json_encode($response);
+    return;
+}
 
-<body>
+$userEmail = Session::get('user_email');
+if (empty($userEmail)) {
+    $response = array('error' => 'User email is not present in session.');
+    echo json_encode($response);
+    return;
+}
 
-    <form action="" method='POST'>
+$user = new User();
+$userData = $user->get_data($userEmail);
 
-        <input class="form-control" type="number" name="otp" placeholder="Enter verification code" required><br>
+if (empty($userData) || !isset($userData->code) || $formData['code'] !== $userData->code) {
+    $response = array('error' => 'Invalid code.');
+    echo json_encode($response);
+    return;
+}
 
-
-        <input class="form-control button" type="submit" name="checkcode" value="Submit">
-
-
-    </form>
-
-
-
-</body>
-
-</html>
+$response = array('message' => 'Code verification successful.');
+echo json_encode($response);

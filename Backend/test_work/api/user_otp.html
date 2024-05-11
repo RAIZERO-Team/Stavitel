@@ -15,15 +15,16 @@
 
     <form action="" method='POST'>
 
-        <input class="form-control" type="number" name="otp" placeholder="Enter verification code" required><br>
+        <input class="form-control" type="number" id="code" name="otp" placeholder="Enter verification code" required><br>
+    <br>
+    <span id="otpError"></span>
 
-
-        <input class="form-control button" type="submit" name="checkcode" value="Submit">
+        <input class="form-control button" type="submit"  id="checkcode" name="checkcode" value="Submit">
 
 
     </form>
 
-
+ <script src="Apiendpoints/post_user_otp.js"></script>
 
 </body>
 
