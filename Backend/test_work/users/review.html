@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
+</head>
+<body>
+    <h2>Add a Review</h2>
+    <form action="submit_review.php" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="rating">Rating:</label><br>
+        <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" required></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
