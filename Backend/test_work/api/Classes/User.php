@@ -56,10 +56,17 @@ class User
         }
         return false;
     }
-    public function get_data()
+    public function get_data($email=null)
     {
+        if($email!=null)
+        {
+         return $this->db->get('users',array('email','=',$email))->first();
+
+        }
+        else{
         return $this->_data;
     }
+}
     public function login($email = null, $password = null, $remember = true)
     {
         if (!$email && !$password && $this->exist()) {
@@ -128,4 +135,25 @@ class User
             return false;
         }
     }
+
+
+       
+    
+
+
+    public function changeUserpassword($email,$newpassword){
+        $this->db->get('users',array('email','=',$email));
+        $this->db->update('users',$this->db->get('users',array('email','=',$email))->first()->id,
+        
+        array(
+    
+            'password'=>Hash::make($newpassword, $this->db->get('users',array('email','=',$email))->first()->salt)
+        )
+        );
+            
+    
+        }   
+
+
+
 }

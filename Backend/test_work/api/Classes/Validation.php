@@ -23,7 +23,7 @@ class Validation
                     self::validateEmail($value, true); 
                     break;
                 case 'password':
-                    self::validatePassword($value);
+                    self::validatePassword($value,true);
                     break;
                 default:
                     break;
@@ -75,13 +75,13 @@ class Validation
             self::$errors['password'] = "Please enter a password.";
         } elseif (strlen($password) < 8 && $isRegistration) {
             self::$errors['password'] = "Password must be at least 8 characters.";
-        } elseif (!preg_match('/[A-Z]/', $password)) {
+        } elseif (!preg_match('/[A-Z]/', $password) && $isRegistration) {
             self::$errors['password'] = "Password must contain at least one uppercase letter.";
-        } elseif (!preg_match('/[a-z]/', $password)) {
+        } elseif (!preg_match('/[a-z]/', $password)&& $isRegistration) {
             self::$errors['password'] = "Password must contain at least one lowercase letter.";
-        } elseif (!preg_match('/\d/', $password)) {
+        } elseif (!preg_match('/\d/', $password)&& $isRegistration) {
             self::$errors['password'] = "Password must contain at least one number.";
-        } elseif (!preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password)) {
+        } elseif (!preg_match('/[!@#$%^&*()\-_=+{};:,<.>]/', $password)&& $isRegistration) {
             self::$errors['password'] = "Password must contain at least one special character.";
         }
     }

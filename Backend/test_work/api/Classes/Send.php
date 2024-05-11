@@ -42,7 +42,7 @@ class Send
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'am736347@gmail.com';
-            $mail->Password = 'ykveehddlxlijmrk';
+            $mail->Password = 'ptwdogozwmczypgq';
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
@@ -54,7 +54,7 @@ class Send
             $mail->Body = $message;
 
             $mail->send();
-            header('location:user_otp.php');
+         
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
