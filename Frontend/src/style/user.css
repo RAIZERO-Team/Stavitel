@@ -147,6 +147,22 @@ label {
   border-bottom-color: var(--border-user);
 }
 
+.error_email.error {
+  border-bottom-color: var(--error);
+}
+
+.error_code_verify.error {
+  border-bottom-color: var(--error);
+}
+
+.error_password.error {
+  border-bottom-color: var(--error);
+}
+
+.error_confirm_password.error {
+  border-bottom-color: var(--error);
+}
+
 .input-field.active + label {
   font-size: 0.75rem;
   top: -2px;

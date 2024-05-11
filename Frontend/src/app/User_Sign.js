@@ -48,21 +48,6 @@ bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
 
-function showSlides(n) {
-  var i;
-  var slides = document.querySelectorAll(".image");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
-}
-
 // =============  Password Strength Check =============
 
 // let regExpWeak = /[a-z]+/;
@@ -213,9 +198,66 @@ login_btn.addEventListener("click", async (event) => {
   let login_password = document.getElementById("login_password").value;
   let user = new userData(login_email, login_password, "", "", "");
 
+  // Error style object
+  let errorStyle = {
+    error_email: {
+      text: "Email",
+      color: "#bbb",
+    },
+    error_password: {
+      text: "Password",
+      color: "#bbb",
+    },
+  };
+
   try {
-    const result = await user.user_login();
-    console.log("User login successfully:", result);
+    // the fetch login data
+    const result = await user.user_register({
+      username: login_email,
+      email: login_password,
+    });
+
+    if (result) {
+      if (result.email) {
+        console.log(result.email);
+
+        Ername.forEach((inp) => {
+          inp.classList.remove("error");
+        });
+
+        Eremail.forEach((inp) => {
+          inp.classList.add("error");
+          if (inp.value != "") return;
+          inp.classList.remove("error");
+        });
+
+        Erpassword.forEach((inp) => {
+          inp.classList.remove("error");
+        });
+
+        errorStyle.error_email.text = "*Email";
+        errorStyle.error_email.color = "#ff0000";
+      } else if (result.password) {
+        console.log(result.password);
+
+        Ername.forEach((inp) => {
+          inp.classList.remove("error");
+        });
+
+        Eremail.forEach((inp) => {
+          inp.classList.remove("error");
+        });
+
+        Erpassword.forEach((inp) => {
+          inp.classList.add("error");
+          if (inp.value != "") return;
+          inp.classList.remove("error");
+        });
+
+        errorStyle.error_password.text = "*Password";
+        errorStyle.error_password.color = "#ff0000";
+      }
+    }
   } catch (error) {
     console.error("Failed to register user:");
   }
@@ -225,6 +267,7 @@ login_btn.addEventListener("click", async (event) => {
 
 register_btn.addEventListener("click", async (event) => {
   event.preventDefault();
+  // call the elements from html
   let register_username = document.getElementById("register_username").value;
   let register_email = document.getElementById("register_email").value;
   let register_password = document.getElementById("register_password").value;
@@ -239,27 +282,30 @@ register_btn.addEventListener("click", async (event) => {
     register_email,
     register_password
   );
+
+  // Error style object
+  let errorStyle = {
+    error_name: {
+      text: "Name",
+      color: "#ddd",
+    },
+    error_email: {
+      text: "Email",
+      color: "#bbb",
+    },
+    error_password: {
+      text: "Password",
+      color: "#bbb",
+    },
+  };
+
   try {
+    // the fetch registration data
     const result = await user.user_register({
       username: register_username,
       email: register_email,
       password: register_password,
     });
-
-    let errorStyle = {
-      error_name: {
-        text: "Name",
-        color: "#ddd",
-      },
-      error_email: {
-        text: "Email",
-        color: "#bbb",
-      },
-      error_password: {
-        text: "Password",
-        color: "#bbb",
-      },
-    };
 
     if (result) {
       if (result.username) {
@@ -281,7 +327,6 @@ register_btn.addEventListener("click", async (event) => {
 
         errorStyle.error_name.text = "*Name";
         errorStyle.error_name.color = "#ff0000";
-
       } else if (result.email) {
         console.log(result.email);
 

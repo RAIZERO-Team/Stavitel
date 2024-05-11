@@ -43,7 +43,7 @@
 
   /* -------- Notification Colors -------- */
   --success: #0ABF30;
-  --error: #E24D4C;
+  --error: #ff0000;  /*#E24D4C*/
   --warning: #E9BD0C;
   --info: #3498DB;
 

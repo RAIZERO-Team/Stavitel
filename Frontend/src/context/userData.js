@@ -4,13 +4,20 @@ class userData {
     login_password,
     register_username,
     register_email,
-    register_password
+    register_password,
+    forget_password_email,
+    change_password_new_password,
+    change_pass_confirm_new_pass
   ) {
     this.login_email = login_email;
     this.login_password = login_password;
     this.register_username = register_username;
     this.register_email = register_email;
     this.register_password = register_password;
+    this.forget_password_email = forget_password_email;
+    this.change_password_new_password = change_password_new_password;
+    this.change_pass_confirm_new_pass = change_pass_confirm_new_pass;
+
   }
 
   getData() {
@@ -136,7 +143,41 @@ class userData {
       const responseData = await response.json();
 
       if (!responseData.error) {
-        window.location.href = "../View/verification_email.html";
+        window.location.href = "../View/Workspace.html";
+      } else {
+        return responseData.error; // Return error data
+      }
+
+    } catch (error) {
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error; // Rethrow the error for higher level handling
+    }
+  }
+  
+  async forget_password() {
+    try {
+      const url = "../../../Backend/src/";
+      const method = "POST";
+      const data = {
+        forget_password_email: this.forget_password_email
+      };
+
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        window.location.href = "../View/Code_Verification.html";
       } else {
         return responseData.error; // Return error data
       }
@@ -147,29 +188,12 @@ class userData {
     }
   }
 
-  async update_user() {}
 
+  async code_verifiction() {}
   async change_password() {}
-
+  
+  async update_user() {}
   async delete_user() {}
 }
 
 export { userData };
-
-// const response = await fetch(url, {
-//   method: method,
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify(data),
-// });
-
-// if (!response.ok) {
-//   throw new Error("Network response was not ok");
-// }
-// const responseData = await response.json();
-// if (!responseData.error) {
-//   window.location.href = "send_verified_email.html";
-// } else {
-//   console.error(responseData.error); // Log error response
-// }
