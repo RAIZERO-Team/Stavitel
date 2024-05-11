@@ -1,4 +1,4 @@
-import { fetchData } from "../api/api.js";
+
 class userData {
   constructor(
     login_email,

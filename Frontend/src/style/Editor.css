@@ -1,13 +1,7 @@
 /*=============== VARIABLES CSS ===============*/
 
 :root {
-  /*========== Colors ==========*/
   --theme-color: #41dad2;
-
-  /*========== Font and typography ==========*/
-  /*.5rem = 8px | 1rem = 16px ...*/
-
-  /*========== Font weight ==========*/
 }
 
 /*=============== fonts ===============*/
@@ -127,7 +121,7 @@ html {
 }
 
 .icon-add-comp {
-  background: url("/Frontend/public/Editor-icons/icon-sq-a.svg") no-repeat center;
+  background: url("../../public/Editor-icons/icon-sq-a.svg") no-repeat center;
 }
 
 .icon-comp100 {
@@ -154,55 +148,55 @@ html {
 }
 
 .icon-dir-row {
-  background: url("./svg/flex-dir-row.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-dir-row.svg") no-repeat center;
 }
 
 .icon-dir-row-rev {
-  background: url("./svg/flex-dir-row-rev.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-dir-row-rev.svg") no-repeat center;
 }
 
 .icon-dir-col {
-  background: url("./svg/flex-dir-col.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-dir-col.svg") no-repeat center;
 }
 
 .icon-dir-col-rev {
-  background: url("./svg/flex-dir-col-rev.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-dir-col-rev.svg") no-repeat center;
 }
 
 .icon-just-start {
-  background: url("./svg/flex-just-start.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-just-start.svg") no-repeat center;
 }
 
 .icon-just-end {
-  background: url("./svg/flex-just-end.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-just-end.svg") no-repeat center;
 }
 
 .icon-just-sp-bet {
-  background: url("./svg/flex-just-sp-bet.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-just-sp-bet.svg") no-repeat center;
 }
 
 .icon-just-sp-ar {
-  background: url("./svg/flex-just-sp-ar.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-just-sp-ar.svg") no-repeat center;
 }
 
 .icon-just-sp-cent {
-  background: url("./svg/flex-just-sp-cent.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-just-sp-cent.svg") no-repeat center;
 }
 
 .icon-al-start {
-  background: url("./svg/flex-al-start.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-al-start.svg") no-repeat center;
 }
 
 .icon-al-end {
-  background: url("./svg/flex-al-end.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-al-end.svg") no-repeat center;
 }
 
 .icon-al-str {
-  background: url("./svg/flex-al-str.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-al-str.svg") no-repeat center;
 }
 
 .icon-al-center {
-  background: url("./svg/flex-al-center.svg") no-repeat center;
+  background: url("../../public/Editor-icons/flex-al-center.svg") no-repeat center;
 }
 
 [data-tooltip]::after {
@@ -257,80 +251,6 @@ html {
 .grp-handler-cp-wrap {
   border-color: transparent;
 }
-
-/*=============== spinner loading ===============*/
-.spinner-wrapper {
-  align-items: center;
-  background: #212121;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  transition: all .4s ease;
-  width: 100%;
-  z-index: 999
-}
-
-.loader {
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle {
-  width: 20px;
-  height: 20px;
-  background-color: #8BC6EC;
-  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-  border-radius: 50%;
-  margin-right: 1rem;
-  animation: pulse 1.2s ease-in-out infinite;
-}
-
-.circle:nth-child(2) {
-  animation-delay: 0.2s;
-  background-color: #4158D0;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-}
-
-.circle:nth-child(3) {
-  animation-delay: 0.4s;
-  background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-}
-
-.circle:nth-child(4) {
-  animation-delay: 0.6s;
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-}
-
-.circle:nth-child(5) {
-  animation-delay: 0.8s;
-  background-color: #00DBDE;
-  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-}
-
 
 /*=============== Overwrite GrapeJS css ===============*/
 

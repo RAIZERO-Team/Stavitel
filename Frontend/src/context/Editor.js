@@ -5,15 +5,15 @@ config folder
 ==========================
 */
 
-import blockManager from "./config/manager/blockManager_editor_BT";
-import styleManager from "./config/manager/styleManager";
-import assetManager from "./config/manager/assetManager";
-import sectionDependencies from "./config/Dependencies/sectionDependencies";
-import dependencyCDNLinks from "./config/Dependencies/dependencyCDNLinks";
-import customScripts from "./config/Dependencies/customScripts";
-import { checkExtension, loadingSpinner } from "./helpers/index";
-import { addLocal, getLocal } from "./helpers/index";
-import buttons from "./config/commands/buttons";
+import blockManager from "./config/manager/blockManager_editor_BT.js";
+import styleManager from "./config/manager/styleManager.js";
+import assetManager from "./config/manager/assetManager.js";
+import sectionDependencies from "./config/Dependencies/sectionDependencies.js";
+import dependencyCDNLinks from "./config/Dependencies/dependencyCDNLinks.js";
+import customScripts from "./config/Dependencies/customScripts.js";
+import { checkExtension, loadingSpinner } from "./helpers/index.js";
+import { addLocal, getLocal } from "./helpers/index.js";
+import buttons from "./config/commands/buttons.js";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 
