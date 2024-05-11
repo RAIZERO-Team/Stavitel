@@ -1,4 +1,5 @@
 // import { search } from "../context/search.js";
+import { notification } from "../context/notfication.js";
 
 const body = document.querySelector("body"),
   sidebar = body.querySelector("nav"),
@@ -402,8 +403,15 @@ allStar.forEach((item, idx) => {
 
 // ========= Notfication Toast =========
 
-// import { notification } from "../context/notfication.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const successButton = document.getElementById("successButton");
+  const notificationsContainer = document.getElementById(".notifications");
 
-// let toast = new notification();
+  const notifier = new notification();
 
-// toast.createToast("success");
+  successButton.addEventListener("click", () => {
+    const customMessage = "This is a error message";
+    const successNotification = notifier.createToast('error', customMessage);
+    notificationsContainer.appendChild(successNotification);
+  });
+});

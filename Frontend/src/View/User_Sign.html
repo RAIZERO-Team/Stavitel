@@ -10,7 +10,10 @@
       to create powerfull websites without writing any code."
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="../style/User_Sign.css" />
+    <link rel="stylesheet" href="../style/style.css" />
+
     <link rel="icon" href="../public/Icons/logo.png" />
 
     <script src="https://account.google.com/gsi/client" async></script>
@@ -19,6 +22,7 @@
   <body>
     <main>
       <div class="box">
+        <ul class="notifications" id="notifications"></ul>
         <div class="inner-box">
           <div class="forms-wrap">
             <!--================= Sign In Form =================-->
@@ -35,7 +39,7 @@
               <div class="heading">
                 <h2>Welcome Back</h2>
                 <h6>Not registred yet?</h6>
-                <a href="#" class="toggle">Sign up</a>
+                <a href="#" class="toggle" id="successButton">Sign up</a>
               </div>
 
               <div class="actual-form">
@@ -242,6 +246,7 @@
     <!--============= Js files =============-->
     <script type="module" src="../app/User_Sign.js"></script>
     <script type="module" src="../context/userData.js"></script>
+    <script type="module" src="../context/notfication.js"></script>
     <script type="module" src="../api/api.js"></script>
     
   </body>

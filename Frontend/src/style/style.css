@@ -177,10 +177,10 @@
   position: relative;
   overflow: hidden;
   list-style: none;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 16px 17px;
   margin-bottom: 10px;
-  background: var(--light);
+  background: #fff;
   justify-content: space-between;
   animation: show_toast 0.3s ease forwards;
 }

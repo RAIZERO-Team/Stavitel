@@ -1,4 +1,5 @@
 import { userData } from "../context/userData.js";
+import { notification } from "../context/notfication.js";
 
 const inputs = document.querySelectorAll(".input-field");
 const Ername = document.querySelectorAll(".error_name");
@@ -275,6 +276,16 @@ register_btn.addEventListener("click", async (event) => {
   let error_email = document.getElementById("error_email");
   let error_password = document.getElementById("error_password");
 
+  // const successButton = document.getElementById("successButton");
+  const notificationsContainer = document.querySelector(".notifications");
+  const notifier = new notification();
+
+  // successButton.addEventListener("click", () => {
+  //   const customMessage = "This is a error message";
+  //   const successNotification = notifier.createToast('info', customMessage);
+  //   notificationsContainer.appendChild(successNotification);
+  // });
+
   let user = new userData(
     "",
     "",
@@ -283,24 +294,24 @@ register_btn.addEventListener("click", async (event) => {
     register_password
   );
 
-  // Error style object
-  let errorStyle = {
-    error_name: {
-      text: "Name",
-      color: "#ddd",
-    },
-    error_email: {
-      text: "Email",
-      color: "#bbb",
-    },
-    error_password: {
-      text: "Password",
-      color: "#bbb",
-    },
-  };
-
   try {
     // the fetch registration data
+    // Error style object
+    let errorStyle = {
+      error_name: {
+        text: "Name",
+        color: "#ddd",
+      },
+      error_email: {
+        text: "Email",
+        color: "#bbb",
+      },
+      error_password: {
+        text: "Password",
+        color: "#bbb",
+      },
+    };
+
     const result = await user.user_register({
       username: register_username,
       email: register_email,
@@ -310,6 +321,10 @@ register_btn.addEventListener("click", async (event) => {
     if (result) {
       if (result.username) {
         console.log(result.username);
+
+      const customMessage = "There is Error In Name";
+      const successNotification = notifier.createToast("error", customMessage);
+      notificationsContainer.appendChild(successNotification);
 
         Ername.forEach((inp) => {
           inp.classList.add("error");

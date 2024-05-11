@@ -6,6 +6,8 @@
     <!--  Discription -->
     <meta name="description" content="" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -28,7 +30,7 @@
     </div>
   </div>
 
-  <ul class="notifications"></ul>
+  <ul class="notifications" id="notifications"></ul>
     <!-- Nav Bar -->
     <!-- <div class="navbar">
       <a href="#" class="notif">
@@ -64,7 +66,7 @@
             <li class="nav-link">
               <a onclick="showSection(0)">
                 <i class="bx bx-home-alt icon"></i>
-                <span class="text nav-text">Dashboard</span>
+                <span class="text nav-text" id="successButton">Dashboard</span>
               </a>
             </li>
             <li class="nav-link">
@@ -573,7 +575,7 @@
 
     <script type="module" src="../context/dashboard.js"></script>
     <script type="module" src="../app/Workspace.js"></script>
-    <!-- <script type="module" src="../context/notfication.js"></script> -->
+    <script type="module" src="../context/notfication.js"></script>
     <script src="../app/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="chart.js"></script> -->
