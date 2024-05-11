@@ -1,10 +1,12 @@
 // ============ Input field animation function ============
 import { userData } from "../context/userData.js";
+import { review } from "../context/review.js";
 
 const inputs = document.querySelectorAll(".input-field");
 const Eremail = document.querySelectorAll(".error_email");
 const Erpassword = document.querySelectorAll(".error_password");
 const Erconfirmpassword = document.querySelectorAll(".error_confirm_password");
+const review_btn = document.getElementById("review-btn");
 
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
@@ -101,6 +103,24 @@ code_verification_btn.addEventListener("click", async (event) => {
 });
 
 // Change password -> user password
+review_btn.addEventListener("click", async (event) => {
+  event.preventDefault();
+  let user_review = document.getElementById("user_review").value;
+
+  let review1 = new review(5 , user_review);
+  review1.add_review();
+  // try {
+  //   // here put the code
+  //   const result = await review1.add_review({
+  //     rate: user_rate,
+  //     feedback: user_feedback,
+  //   });
+
+  // } catch (error) {
+  //   console.log("error");
+  // }
+});
+
 change_password_btn.addEventListener("click", async (event) => {
   event.preventDefault();
   let change_password_new_password = document.getElementById(
@@ -118,12 +138,12 @@ change_password_btn.addEventListener("click", async (event) => {
   }
 });
 
-for (const key in errorStyle) {
-  if (Object.hasOwnProperty.call(errorStyle, key)) {
-    const element = document.getElementById(key);
-    if (element) {
-      element.innerText = errorStyle[key].text;
-      element.style.color = errorStyle[key].color;
-    }
-  }
-}
+// for (const key in errorStyle) {
+//   if (Object.hasOwnProperty.call(errorStyle, key)) {
+//     const element = document.getElementById(key);
+//     if (element) {
+//       element.innerText = errorStyle[key].text;
+//       element.style.color = errorStyle[key].color;
+//     }
+//   }
+// }

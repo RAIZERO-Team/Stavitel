@@ -26,11 +26,7 @@
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <form
-              action="Workspace.html"
-              autocomplete="off"
-              class="feedback-form"
-            >
+            <form action="#" autocomplete="off" class="feedback-form">
               <div class="logo">
                 <img src="../../public/Icons/logo.png" alt="Stavitel Logo" />
                 <h4>Stavitel</h4>
@@ -43,16 +39,27 @@
 
               <div class="actual-form">
                 <div class="input-wrap">
-                  <textarea
-                    name="Message"
+                  <!-- <textarea
+                    name="text"
                     class="input-field"
+                    id="user_review"
                     required
-                  ></textarea>
+                  ></textarea> -->
+                  <input
+                    type="text"
+                    class="input-field"
+                    id="user_review"
+                    required
+                  />
                   <label>Your Feedback</label>
                 </div>
 
-                <input type="submit" value="Send" class="submit-btn" />
-
+                <input
+                  type="submit"
+                  value="Send"
+                  class="submit-btn"
+                  id="review_btn"
+                />
               </div>
               <p class="copyright">
                 &#169; 2024 Stavitel - All rights reserved
@@ -61,13 +68,17 @@
           </div>
 
           <div class="image feedback">
-            <img src="../../public/Workspace/Feedback.svg" alt="Feedback-image" />
+            <img
+              src="../../public/Workspace/Feedback.svg"
+              alt="Feedback-image"
+            />
           </div>
         </div>
       </div>
     </main>
 
-    <script src="../app/user.js"></script>
+    <script type="module" src="../app/user.js"></script>
+    <script type="module" src="../context/review.js"></script>
     <script src="../app/index.js"></script>
   </body>
 </html>
