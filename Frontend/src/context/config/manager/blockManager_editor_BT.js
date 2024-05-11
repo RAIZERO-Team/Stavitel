@@ -13,7 +13,7 @@ the user to drag and drop it to create his website.
 ====================================================
 */
 
-import sectionBlocks from "./sectionBlocks";
+import sectionBlocks from "./sectionBlocks.js";
 
 // ============= Bootstrap basic blocks elements =============
 const bootstrapBasicBlocks = [

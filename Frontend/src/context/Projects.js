@@ -1,45 +1,45 @@
-import {fetchData} from '../api/api.js';
 class project {
 
   // ============= Constructor =============
-  constructor (name, type , data){
-    this.project_name = name;
-    this.project_type = type;
-    this.project_data = data;
-    this.apiUrl = 'http://localhost/stavitel_test/php';
+  constructor (project_name){
+    this.project_name = project_name;
   }
 
   // ============= API Functions =============
   async create_project() {
     try {
-      const url = '';
-      const method = 'POST';
+      const url = "../../../Backend/src/Functions/createProject.php";
+      const method = "POST";
       const data = {
-          "username": this.project_name,
-          "email": this.project_type,
-          "password": this.project_data,
+        project_name: this.project_name
       };
 
-      return await fetchData(url, method, data);
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        // window.location.href = "../View/verification_email.html";
+      } else {
+        return responseData.error; // Return error data
+      }
     } catch (error) {
-      throw new Error(`Failed to insert user: ${error.message}`);
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error; // Rethrow the error for higher level handling
     }
-  }
-
-  async update_project() {}
-  
-  async delete_project() {
-    const url = 'php/delete-data.php?username=' + this.username;
-    const method = 'GET';
-
-    return await fetchData(url, method);
-
-  } catch (error) {
-    throw new Error(`Failed to delete user: ${error.message}`);
   }
 
   async display_project() {}
 }
-
 
 export { project };

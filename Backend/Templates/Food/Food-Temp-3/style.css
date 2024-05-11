@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("https://onedrive.live.com/embed?resid=3934C6D5E44CBAD5%21681&authkey=!AEoBH6QoXwAmeBI");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#navbar {
+    background-color: rgb(15, 13, 13);
+}
+
+#QuickFood-logo {
+    margin: 60px 480px;
+}
+
+.cart {
+    color: white;
+    float: right;
+    margin-top: -130px;
+    margin-right: 20px;
+    height: 40px;
+}
+
+.cart-txt {
+    color: whitesmoke;
+    float: right;
+    margin-top: -120px;
+    font-family: 'Roboto Mono', monospace;
+    margin-right: 10px;
+}
+
+.mobile {
+    color: white;
+    float: left;
+    margin-top: -130px;
+    height: 43px;
+    margin-left: 10px;
+}
+
+.sub-txt {
+    margin-top: 10px;
+    color: gray;
+}
+
+.sub-txt:hover {
+    color: orange;
+}
+
+.num-txt {
+    color: whitesmoke;
+    float: left;
+    margin-top: -120px;
+    font-family: 'Roboto Mono', monospace;
+    margin-left: 20px;
+}
+
+.num {
+    margin-left: 30px;
+}
+
+#content {
+    overflow: hidden;
+    background-color: transparent;
+    list-style-type: none;
+}
+
+#li {
+    float: left;
+    font-family: 'Pirata One', cursive;
+    font-size: 20px;
+    padding-bottom: 10px;
+    font-family: 'Merriweather', serif;
+}
+
+#li a:hover {
+    color: orange;
+}
+
+#li a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 50px;
+}
+
+.active {
+    margin-left: 300px;
+    border-bottom: 1px solid rgb(255, 136, 0);
+}
+
+#navbar {
+    padding-bottom: 10px;
+}
+
+#pizza {
+    height: 300px;
+    margin-top: 45px;
+    margin-left: 54px;
+}
+
+#searc-bar {
+    float: right;
+    margin-top: 250px;
+    margin-right: 160px;
+}
+
+#seach:hover {
+    border-bottom: 2px solid whitesmoke;
+}
+
+#seach {
+    background-color: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    border-bottom: none;
+    letter-spacing: 3px;
+    height: 30px;
+    width: 600px;
+    color: white;
+    font-size: 28px;
+    font-family: 'Pirata One', cursive;
+    border-bottom: 2px solid wheat;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#sub {
+    background-color: transparent;
+    border: none;
+    height: 20px;
+    width: 100px;
+    font-size: 28px;
+    margin-right: 10px;
+    color: whitesmoke;
+}
+
+#search-txt {
+    color: whitesmoke;
+    letter-spacing: 3px;
+    font-family: 'Rock Salt', cursive;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: -144px;
+    text-align: center;
+}
+
+#btn1 {
+    background-color: transparent;
+    border: 2px solid orange;
+    color: black;
+    background-color: orange;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 2px;
+    transition: 0.5s ease-in-out;
+    margin-left: 800px;
+}
+
+#btn1:hover {
+    background-color: transparent;
+    color: orange;
+}
+
+#head2 {
+    background-image: url(https://onedrive.live.com/embed?resid=3934C6D5E44CBAD5%21682&authkey=%21AF-Pyj-ejsEUzOM&width=1920&height=456);
+}
+
+#icon1 {
+    text-align: center;
+    position: relative;
+}
+
+.txt1 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+
+.txt1-sub {
+    margin: 0px;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+#icon2 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    width: auto;
+    height: auto;
+}
+
+.txt2 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+
+.txt2-sub {
+    margin: 0px;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+#icon1 {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+.txt3 {
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+
+.txt3-sub {
+    margin: 0px;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+#icon3 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    width: auto;
+    height: auto;
+}
+
+#head2 {
+    margin-top: 40px;
+}
+
+#best-sales {
+    background-image: url("https://onedrive.live.com/embed?resid=3934C6D5E44CBAD5%21681&authkey=!AEoBH6QoXwAmeBI");
+}
+
+#sales-head {
+    color: whitesmoke;
+    text-align: center;
+    font-family: 'New Rocker', cursive;
+    font-size: 50px;
+}
+
+#Pizza1 {
+    height: 500px;
+    margin-left: 50px;
+    transition: 1s ease-in-out;
+}
+
+#Pizza1:hover {
+    transform: rotate(360deg);
+}
+
+#Pizza1-txt {
+    color: white;
+    font-family: 'Reggae One', cursive;
+    margin-left: 95px;
+    font-size: 55px;
+}
+
+#para1 {
+    color: wheat;
+    font-size: 18px;
+    width: 500px;
+    text-align: center;
+    margin-left: 49px;
+    margin-top: 30px;
+}
+
+#Pizza2 {
+    float: right;
+    margin-top: -651px;
+    height: 500px;
+    margin-right: 50px;
+    transition: 1s ease-in-out;
+}
+
+#Pizza2:hover {
+    transform: rotate(360deg);
+}
+
+#para2 {
+    float: right;
+    color: wheat;
+    font-size: 18px;
+    width: 500px;
+    margin-left: 260px;
+    margin-top: -67px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+#Pizza2-txt {
+    color: white;
+    font-family: 'Reggae One', cursive;
+    float: right;
+    margin-top: -153px;
+    font-size: 55px;
+    margin-right: 8px;
+}
+
+#review {
+    background: url("https://onedrive.live.com/embed?resid=3934C6D5E44CBAD5%21679&authkey=!ACQbas9KChC4B1Y");
+}
+
+#head-review {
+    text-align: center;
+    font-family: 'Ranchers', cursive;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+#icon1-review {
+    margin-right: 100px;
+    margin-top: 140px;
+    float: right;
+}
+
+#review1 {
+    color: black;
+    font-size: 20px;
+    font-family: 'Mukta', sans-serif;
+    border: 4px solid black;
+    width: 1000px;
+    margin-top: 100px;
+}

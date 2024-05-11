@@ -1,73 +1,74 @@
+import Chart from "chart.js/auto";
+
 class dashboard {
   constructor(
-    projectAI_type,
-    projectEditor_type,
-    sit_visit,
-    last_projects,
-    project_name,
-    project_type,
-    project_date,
-    productivityChart
+    dataUrl,
+    chartType,
+    xAxisLabel,
+    yAxisLabel,
+    chartTitle,
+    chartBackgroundColor,
+    chartBorderColor,
+    chartElement
   ) {
-    this.projectAI_type = projectAI_type;
-    this.projectEditor_type = projectEditor_type;
-    this.sit_visit = sit_visit;
-    this.project_type = project_type;
-    this.last_projects = last_projects;
-    this.project_name = project_name;
-    this.project_date = project_date;
-    this.productivityChart = productivityChart;
+    this.dataUrl = dataUrl;
+    this.chartType = chartType;
+    this.xAxisLabel = xAxisLabel;
+    this.yAxisLabel = yAxisLabel;
+    this.chartTitle = chartTitle;
+    this.chartBackgroundColor = chartBackgroundColor;
+    this.chartBorderColor = chartBorderColor;
+    this.chartElement = chartElement;
   }
 
-  async display() {
+  async fetchData() {
     try {
-      const url = "";
-      const method = "Get";
-
-      console.log("Done1");
-
-      fetch(url, {
-        method: method,
-        headers: {
-          "Content-Type": "application/json",
-        }
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Success:", data);
-          if (!data.error) {
-            // window.location.href = "../View/Error/404_Not_Found.html";
-          } else {
-          }
-        });
+      const response = await fetch(this.dataUrl);
+      if (response.ok) {
+        const data = await response.json();
+        this.createChart(data);
+      } else {
+        console.error("Failed to fetch data");
+      }
     } catch (error) {
+      console.error("Error fetching data:", error);
     }
   }
 
-  async chart() {
-    let Jsondata;
-    try {
-    fetch("../app/data.json")
-      .then(function (response) {
-        if (response.status == 200) {
-          return response.json();
-        }
-      })
-      .then(function (data) {
-        Jsondata = data;
-        // createChart(Jsondata, "line");
-        // console.log(Jsondata);
-        return Jsondata;
-      });
-    } catch (error) {
-      console.log("Error")
-    }
+  createChart(data) {
+    const chartConfig = {
+      type: this.chartType,
+      data: {
+        labels: data.map((row) => row[this.xAxisLabel]),
+        datasets: [
+          {
+            label: this.yAxisLabel,
+            data: data.map((row) => row[this.yAxisLabel]),
+            backgroundColor: this.chartBackgroundColor,
+            borderColor: this.chartBorderColor,
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: this.chartTitle,
+          },
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    };
+
+    this.myChart = new Chart(this.chartElement, chartConfig);
   }
 }
 
-export {dashboard};
+export { dashboard };

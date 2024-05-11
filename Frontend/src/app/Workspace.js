@@ -1,5 +1,7 @@
 // import { search } from "../context/search.js";
-import { notification } from "../context/notfication.js";
+// import { notification } from "../context/notfication.js";
+// import { dashboard } from "../context/dashboard.js";
+import { project } from "../context/Projects.js";
 
 const body = document.querySelector("body"),
   sidebar = body.querySelector("nav"),
@@ -131,7 +133,7 @@ let siteVisitor = document.getElementById("siteVisitor");
 let recent_proje = document.getElementById("recent_proje");
 
 let data = {
-  ai: "10",
+  ai: "200",
   editor: "5",
   siteVist: "20",
   proj_name: "Stavitel",
@@ -157,14 +159,29 @@ recent_proje.innerHTML = `<tr>
 // ---------- Recent projects ----------
 
 // ---------- Productivity ----------
-let productivityChart = document.getElementById("myChart");
 
-import { dashboard } from "../context/dashboard.js";
-const test = new dashboard("", "", "", "", "", "", "", productivityChart);
-const charttest = test.chart();
+const productivityChart = document.getElementById('myChart');
+
+const test = new dashboard(
+  './data.json',
+  'line',
+  'Day',
+  'Hours',
+  '# of Hours',
+  'rgba(54, 162, 235, 0.2)',
+  'rgba(54, 162, 235, 1)',
+  productivityChart
+);
+
+test.fetchData();
+
+// let productivityChart = document.getElementById("myChart");
+
+// const test = new dashboard("", "", "", "", "", "", "", productivityChart);
+// const charttest = test.chart();
 
 
-let Jsondata;
+// let Jsondata;
 
 // fetch("../app/data.json")
 //   .then(function (response) {
@@ -177,34 +194,34 @@ let Jsondata;
 //     createChart(Jsondata, "line");
 //   });
 
-let myChart;
+// let myChart;
 
-function createChart(data, type) {
-  myChart = new Chart(productivityChart, {
-    type: type,
-    data: {
-      labels: data.map((row) => row.Day),
-      datasets: [
-        {
-          label: "# of Hours",
-          data: data.map((row) => row.Hours),
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-      responsive: true,
-      maintainAspectRatio: false,
-    },
-  });
-}
+// function createChart(data, type) {
+//   myChart = new Chart(productivityChart, {
+//     type: type,
+//     data: {
+//       labels: data.map((row) => row.Day),
+//       datasets: [
+//         {
+//           label: "# of Hours",
+//           data: data.map((row) => row.Hours),
+//           borderWidth: 1,
+//         },
+//       ],
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: true,
+//         },
+//       },
+//       responsive: true,
+//       maintainAspectRatio: false,
+//     },
+//   });
+// }
 
-createChart(charttest, "line");
+// createChart(charttest, "line");
 
 
 
@@ -403,15 +420,15 @@ allStar.forEach((item, idx) => {
 
 // ========= Notfication Toast =========
 
-document.addEventListener("DOMContentLoaded", () => {
-  const successButton = document.getElementById("successButton");
-  const notificationsContainer = document.getElementById(".notifications");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const successButton = document.getElementById("successButton");
+//   const notificationsContainer = document.getElementById(".notifications");
 
-  const notifier = new notification();
+//   const notifier = new notification();
 
-  successButton.addEventListener("click", () => {
-    const customMessage = "This is a error message";
-    const successNotification = notifier.createToast('error', customMessage);
-    notificationsContainer.appendChild(successNotification);
-  });
-});
+//   successButton.addEventListener("click", () => {
+//     const customMessage = "This is a error message";
+//     const successNotification = notifier.createToast('error', customMessage);
+//     notificationsContainer.appendChild(successNotification);
+//   });
+// });

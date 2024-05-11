@@ -2,7 +2,7 @@
 
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import { exportTemplate } from "../config/Export/exportTemplate_editor_BT";
+import { exportTemplate } from "../config/Export/exportTemplate_editor_BT.js";
 import { Notyf } from "notyf";
 
 // =============  =============
