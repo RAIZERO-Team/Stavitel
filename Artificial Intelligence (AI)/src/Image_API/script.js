@@ -1,48 +1,44 @@
-const accessKey = "vrJzGZDBcUH-jTxX-v7qSph89W4O078RnSmdnII5eRk";// Access key for the Unsplash API
+const accessKey = "vrJzGZDBcUH-jTxX-v7qSph89W4O078RnSmdnII5eRk";
 const searchForm = document.getElementById("search_form");
 const searchBox = document.getElementById("search_box");
 const searchResult = document.getElementById("search_result");
+
 const messageDiv = document.createElement("div");
 
 let keyword = "";
 let page = 1;
-const imagePaths = []; // Array to store image paths
+const imagePaths = [];
 
-async function searchImages() { // asyn() to search images
-  
-  keyword = searchBox.value;// Get the keyword from the search box
+async function searchImages() {
+  keyword = searchBox.value.trim();
+
   const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=3`;
 
-  // Fetch the data from the Unsplash API
   const response = await fetch(url);
+
   const data = await response.json();
 
-  // Clear the search result and image paths array if this is the first page
   if (page === 1) {
     searchResult.innerHTML = "";
     imagePaths.length = 0;
   }
 
-  const results = data.results; // Get the search results
+  const results = data.results;
 
-  results.forEach((result) => {  // Loop through the search results
-
-    // Create an image element and set its source to the small image URL
+  results.forEach((result) => {
     const image = document.createElement("img");
     image.src = result.urls.small;
 
-    // Create an anchor element to link to the full image URL
     const imageLink = document.createElement("a");
     imageLink.href = result.urls.full;
-    imageLink.target = "_blank";
     imageLink.appendChild(image);
 
-    searchResult.appendChild(imageLink);// Add the image link to the search result
+    searchResult.appendChild(imageLink);
 
     imagePaths.push(result.urls.full);
   });
 
-  if (imagePaths.length <= 3) {//check image paths
+  if (imagePaths.length <= 6) {
     imagePaths.forEach((path, index) => {
       navigator.clipboard.writeText(path).then(() => {
         console.log(`Image path copied to clipboard: ${path}`);
@@ -52,15 +48,62 @@ async function searchImages() { // asyn() to search images
     });
   }
 
-  imagePaths.sort();//sort image paths in arr
+  imagePaths.sort();
 
-  messageDiv.innerHTML = `Copied the first 3 image paths to the website: ${imagePaths.slice(0, 3).join(', ')}`;
+  messageDiv.innerHTML = `Copied the first 3 image paths to the clipboard: ${imagePaths.slice(0, 3).join(', ')}`;
   document.body.appendChild(messageDiv);
 }
 
-// Add an event listener to the search form to trigger the search on submit
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   page = 1;
   searchImages();
+});
+
+async function searchImagesWithKeyword(keyword) {
+  const url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${accessKey}&per_page=3`;
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  if (page === 1) {
+    searchResult.innerHTML = "";
+    imagePaths.length = 0;
+  }
+  const results = data.results; 
+
+  results.forEach((result) => {
+    const image = document.createElement("img");
+    image.src = result.urls.small;
+    const imageLink = document.createElement("a");
+    imageLink.href = result.urls.full;
+    imageLink.appendChild(image);
+
+    searchResult.appendChild(imageLink);
+
+    imagePaths.push(result.urls.full);
+  });
+
+  if (imagePaths.length <= 6) {
+    imagePaths.forEach((path, index) => {
+      navigator.clipboard.writeText(path).then(() => {
+        console.log(`Image path copied to clipboard: ${path}`);
+      }).catch((error) => {
+        console.log(`Error copying image path: ${error}`);
+      });
+    });
+  }
+
+  imagePaths.sort();
+
+  messageDiv.innerHTML = `Copied the first 3 image paths to the clipboard: ${imagePaths.slice(0, 3).join(', ')}`;
+  document.body.appendChild(messageDiv);
+}
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const keyword = searchBox.value.trim();
+  page = 1;
+  searchImagesWithKeyword(keyword);
 });
