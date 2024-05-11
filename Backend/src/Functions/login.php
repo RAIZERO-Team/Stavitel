@@ -1,41 +1,52 @@
 <?php
-require_once("../core/init.php");
+require_once("core/init.php");
 
+// Check if form data is submitted
 if (Input::exists()) {
-
+  // Retrieve the posted data
   $postData = file_get_contents('php://input');
+
+  // Parse JSON data to associative array
   $formData = json_decode($postData, true);
 
-  // ============== Check if user data is valid ==============
+  // Check if form data is valid
   if ($formData && isset($formData['login_email']) && isset($formData['login_password']) && isset($formData['token'])) {
-    // ============== Access individual form fields ==============
+    // Verify token
     $token = Token::generate_TOKEN($formData['token']);
 
     if (Token::check_token($token)) {
       $email = $formData['login_email'];
-      $password = $formData['login_password']; {
+      $password = $formData['login_password'];
 
-        $Validate = new Validation();
-        $Validate->CheckLogin(
-          array(
-            'email' =>  $email,
-            'password' =>   $password
-          )
-        );
+      // Validate email and password
+      $Validate = new Validation();
+      $Validate->CheckLogin(array(
+        'email' =>  $email,
+        'password' =>   $password
+      ));
 
-        if ($Validate->passed()) {
-          $user = new User();
-          $login = $user->login($email,   $password);
-          if ($login) {
-            $response = array('message' => 'User logined successfully');
-            echo json_encode($response);
-            //Redireect::to("index.php");
-          } else {
-            echo 'failed';
-          }
+      if ($Validate->passed()) {
+        $user = new User();
+        $login = $user->login($email, $password);
+
+        if ($login) {
+          // Send success response
+          $response = array('message' => 'User logged in successfully');
+          echo json_encode($response);
+        } else {
+          // Send login failed response
+          $response = array('error' => 'Login failed');
+          echo json_encode($response);
         }
+      } else {
+        // Send validation errors
+        $response = array('error' => $Validate->geterrors());
+        echo json_encode($response);
       }
+    } else {
+      // Send token error response
+      $response = array('error' => 'Invalid token');
+      echo json_encode($response);
     }
   }
 }
-?>

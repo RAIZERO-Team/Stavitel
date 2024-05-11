@@ -151,35 +151,35 @@
                   <input
                     type="text"
                     minlength="4"
-                    class="input-field"
+                    class="input-field error_name"
                     id="register_username"
                     autocomplete="off"
                     required
                     />
-                    <label>Name</label>
+                    <label id="error_name">Name</label>
                   </div>
 
                   <div class="input-wrap">
                     <input
                     type="email"
-                    class="input-field"
+                    class="input-field error_email"
                     id="register_email"
                     autocomplete="off"
                     required
                     />
-                    <label>Email</label>
+                    <label id="error_email">Email</label>
                   </div>
 
                 <div class="input-wrap">
                   <input
                   type="password"
                   onkeyup="trigger()"
-                  class="input-field check"
+                  class="input-field check error_password"
                   id="register_password"
                   autocomplete="off"
                   required
                   />
-                  <label>password</label>
+                  <label id="error_password">password</label>
                 </div>
 
                 <div class="indicator-container">

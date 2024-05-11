@@ -1,4 +1,3 @@
-
 class userData {
   constructor(
     login_email,
@@ -14,6 +13,10 @@ class userData {
     this.register_password = register_password;
   }
 
+  getData() {
+    return this.register_email;
+  }
+
   generateToken(length) {
     const charset =
       "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -26,7 +29,6 @@ class userData {
   }
 
   async user_register() {
-    console.log("Start user_register");
     let token = this.generateToken(32);
 
     try {
@@ -38,34 +40,47 @@ class userData {
         register_password: this.register_password, // Corrected key name
         token: token,
       };
-      console.log("Done1");
 
-      fetch(url, {
+      // fetch(url, {
+      //   method: method,
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // })
+      //   .then((response) => {
+      //     if (!response.ok) {
+      //       throw new Error("Network response was not ok");
+      //     }
+      //     return response.json();
+      //   })
+      //   .then((data) => {
+      //     if (!data.error) {
+      //       window.location.href = "../View/verification_email.html";
+      //     } else {
+      //       return data.error;
+      //     }
+      //   });
+
+      const response = await fetch(url, {
         method: method,
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Success:", data);
-          if (!data.error) {
-            // window.location.href = "../View/Error/404_Not_Found.html";
-          } else {
-            console.log("Error");
-            alert(data.error.username);
-            alert(data.error.email);
-            alert(data.error.password);
-          }
-        });
+      });
 
-      console.log("End user_register");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        window.location.href = "../View/verification_email.html";
+      } else {
+        return responseData.error; // Return error data
+      }
     } catch (error) {
       console.error(`Failed to insert user: ${error.message}`);
       throw error; // Rethrow the error for higher level handling
@@ -106,30 +121,26 @@ class userData {
         token: token,
       };
 
-      fetch(url, {
+      const response = await fetch(url, {
         method: method,
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("Success:", data);
-          if (!data.error) {
-            window.location.href = "../View/Error/404_Not_Found.html";
-          } else {
-            console.log("Error");
-            alert(data.error);
-          }
-        });
+      });
 
-      console.log("End user_login");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        window.location.href = "../View/verification_email.html";
+      } else {
+        return responseData.error; // Return error data
+      }
+
     } catch (error) {
       console.error(`Failed to insert user: ${error.message}`);
       throw error; // Rethrow the error for higher level handling

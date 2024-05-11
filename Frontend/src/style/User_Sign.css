@@ -187,6 +187,18 @@ label {
   border-bottom-color: #151111;
 }
 
+.error_name.error {
+  border-bottom-color: #ff0000;
+}
+
+.error_email.error {
+  border-bottom-color: #ff0000;
+}
+
+.error_password.error {
+  border-bottom-color: #ff0000;
+}
+
 .input-field.active + label {
   font-size: 0.75rem;
   top: -2px;
