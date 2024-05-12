@@ -23,9 +23,8 @@ const createChatLi = (message, className) => {
     outgoing from user and incoming from bot
 ================================================
 */
-
 const handleChat = () => {
-  userMessage = chatInput.value.trim();
+  const userMessage = chatInput.value.trim();
   if (!userMessage) return;
 
   // Remove the initial bot message if it exists
@@ -43,16 +42,15 @@ const handleChat = () => {
     chatbox.appendChild(incomingChatLi);
     chatbox.scrollTo(0, chatbox.scrollHeight);
     generateResponse(incomingChatLi);
-    
-}, 600);
+  }, 600);
 
-  fetch("/get_response?msg=" + userMessage)
-   .then(response => response.json())
-   .then(data => {
+  fetch(`http://127.0.0.1:5000/get_response?msg=${encodeURIComponent(userMessage)}`)
+    .then(response => response.json())
+    .then(data => {
       const response = data.response;
-      
       chatbox.appendChild(createChatLi(response, "incoming"));
-    });
+    })
+    .catch(error => console.error(error)); // Add error handling
 };
 
 sendChatBtn.addEventListener("click", handleChat);
@@ -119,78 +117,220 @@ function showFAQ() {
 
   // Append FAQ message to the chat container
   const faqMessage = `
+  
   <div class="faq_part">
-  <div class="wrapper">
+          <div class="wrapper">
+            <p>This is a question and answer section</p>
 
-    <div class="faq">
-      <button class="accordion">
-        What is Krushi?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="pannel">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-          porro saepe quo, quibusdam nisi minus modi vero, dolorem ullam
-          ea perferendis corrupti explicabo temporibus nesciunt amet,
-          fugit sint quisquam harum.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-          porro saepe quo, quibusdam nisi minus modi vero, dolorem ullam
-          ea perferendis corrupti explicabo temporibus nesciunt amet,
-          fugit sint quisquam harum.
-        </p>
-      </div>
-    </div>
+            <div class="faq">
+              <button class="accordion">
+                How can I create a website?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                  porro saepe quo, quibusdam nisi minus modi vero, dolorem ullam
+                  ea perferendis corrupti explicabo temporibus nesciunt amet,
+                  fugit sint quisquam harum.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                  porro saepe quo, quibusdam nisi minus modi vero, dolorem ullam
+                  ea perferendis corrupti explicabo temporibus nesciunt amet,
+                  fugit sint quisquam harum.
+                </p>
+              </div>
+            </div>
 
-    <div class="faq">
-      <button class="accordion">
-        How does it work?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="pannel">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Facilis saepe molestiae distinctio asperiores cupiditate
-          consequuntur dolor ullam, iure eligendi harum eaque hic
-          corporis debitis porro consectetur voluptate rem officiis
-          architecto.
-        </p>
-      </div>
-    </div>
+            <div class="faq">
+              <button class="accordion">
+                How can I create a website by AI?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
 
-    <div class="faq">
-      <button class="accordion">
-        What are the major challanges of current agriculture?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="pannel">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Facilis saepe molestiae distinctio asperiores cupiditate
-          consequuntur dolor ullam, iure eligendi harum eaque hic
-          corporis debitis porro consectetur voluptate rem officiis
-          architecto.
-        </p>
-      </div>
-    </div>
+            <div class="faq">
+              <button class="accordion">
+                Where can I view my profile?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
 
-    <div class="faq">
-      <button class="accordion">
-        How does the Krushi address the above challanges?
-        <i class="fa-solid fa-chevron-down"></i>
-      </button>
-      <div class="pannel">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Facilis saepe molestiae distinctio asperiores cupiditate
-          consequuntur dolor ullam, iure eligendi harum eaque hic
-          corporis debitis porro consectetur voluptate rem officiis
-          architecto.
-        </p>
-        </div>
-        </div>
-        </div>
-        </div>
-      `;
+            <div class="faq">
+              <button class="accordion">
+                How can I change my password?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+            
+
+
+
+            <div class="faq">
+              <button class="accordion">
+                How do I change my profile picture?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                How do I enable dark mode on the website?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                How can i finde my old projects?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                What services does your website offer?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                What the languge availabpl in website?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+
+
+            <div class="faq">
+              <button class="accordion">
+                How can i save my websites?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                where can i see the (HTML OR CSS) code?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="faq">
+              <button class="accordion">
+                How do I change the name of the project?
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="pannel">
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facilis saepe molestiae distinctio asperiores cupiditate
+                  consequuntur dolor ullam, iure eligendi harum eaque hic
+                  corporis debitis porro consectetur voluptate rem officiis
+                  architecto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> 
+        `;
 
   chatbox.innerHTML += faqMessage;
 
