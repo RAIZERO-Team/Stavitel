@@ -1,7 +1,7 @@
 // import { search } from "../context/search.js";
 // import { notification } from "../context/notfication.js";
 // import { dashboard } from "../context/dashboard.js";
-import { project } from "../context/Projects.js";
+// import { project } from "../context/Projects.js";
 
 const body = document.querySelector("body"),
   sidebar = body.querySelector("nav"),
@@ -21,29 +21,18 @@ searchBtn.addEventListener("click", () => {
 
 // Function to show the selected section
 function showSection(index) {
-  // Get all sections
   var sections = document.querySelectorAll(".section");
-
   // Hide all sections
   sections.forEach(function (section) {
     section.classList.remove("active");
   });
 
-  // Show the selected section
   sections[index].classList.add("active");
 }
 
-// Show the initial section (index 0) when the page loads
 document.addEventListener("DOMContentLoaded", function () {
-  showSection(0); // Show section 0 by default
+  showSection(0);
 });
-
-// Function to update body class based on mode
-// function updateBodyClass(mode) {
-//   const body = document.querySelector("body");
-//   body.classList.remove("dark", "light");
-//   body.classList.add(mode);
-// }
 
 // =================== set mode cookie ===================
 
@@ -160,68 +149,68 @@ recent_proje.innerHTML = `<tr>
 
 // ---------- Productivity ----------
 
-const productivityChart = document.getElementById('myChart');
+// const productivityChart = document.getElementById('myChart');
 
-const test = new dashboard(
-  './data.json',
-  'line',
-  'Day',
-  'Hours',
-  '# of Hours',
-  'rgba(54, 162, 235, 0.2)',
-  'rgba(54, 162, 235, 1)',
-  productivityChart
-);
+// const test = new dashboard(
+//   './data.json',
+//   'line',
+//   'Day',
+//   'Hours',
+//   '# of Hours',
+//   'rgba(54, 162, 235, 0.2)',
+//   'rgba(54, 162, 235, 1)',
+//   productivityChart
+// );
 
-test.fetchData();
+// test.fetchData();
 
-// let productivityChart = document.getElementById("myChart");
 
 // const test = new dashboard("", "", "", "", "", "", "", productivityChart);
 // const charttest = test.chart();
 
 
-// let Jsondata;
+let productivityChart = document.getElementById("myChart");
+let Jsondata;
+let myChart;
 
-// fetch("../app/data.json")
-//   .then(function (response) {
-//     if (response.status == 200) {
-//       return response.json();
-//     }
-//   })
-//   .then(function (data) {
-//     Jsondata = data;
-//     createChart(Jsondata, "line");
-//   });
+fetch("../app/data.json")
+  .then(function (response) {
+    if (response.status == 200) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    Jsondata = data;
+    createChart(Jsondata, "line");
+  });
 
-// let myChart;
 
-// function createChart(data, type) {
-//   myChart = new Chart(productivityChart, {
-//     type: type,
-//     data: {
-//       labels: data.map((row) => row.Day),
-//       datasets: [
-//         {
-//           label: "# of Hours",
-//           data: data.map((row) => row.Hours),
-//           borderWidth: 1,
-//         },
-//       ],
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//         },
-//       },
-//       responsive: true,
-//       maintainAspectRatio: false,
-//     },
-//   });
-// }
+function createChart(data, type) {
+  myChart = new Chart(productivityChart, {
+    type: type,
+    data: {
+      labels: data.map((row) => row.Day),
+      datasets: [
+        {
+          label: "# of Hours",
+          data: data.map((row) => row.Hours),
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+}
 
-// createChart(charttest, "line");
+createChart(charttest, "line");
 
 
 

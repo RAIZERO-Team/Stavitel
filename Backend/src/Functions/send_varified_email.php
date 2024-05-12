@@ -2,7 +2,7 @@
 
 require_once("../core/init.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (Input::exists()) {
   $postData = file_get_contents('php://input');
   $data = json_decode($postData, true);
 

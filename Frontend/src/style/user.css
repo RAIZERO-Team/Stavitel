@@ -258,6 +258,14 @@ main.sign-up-mode form.sign-in-form {
   background-color: var(--feedback-image);
 }
 
+.error_email.error {
+  border-bottom-color: #ff0000;
+}
+
+.error_email.error {
+  border-bottom-color: #ff0000;
+}
+
 .copyright {
   color: var(--subtext-color);
   font-size: 0.9rem;

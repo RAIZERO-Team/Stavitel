@@ -1,8 +1,26 @@
-// import fetchData from "api.js";
-
 class redireect {
-  goTo(handel_Error) {
-    switch (handel_Error) {
+  constructor() {
+    // Initialize any properties here
+    this.lastPage = null;
+  }
+
+  // Function to perform actions and redirect based on filePath
+  redirectTo(filePath) {
+    // Save the current page as the last visited page
+    this.lastPage = window.location.href;
+
+    // Perform any necessary actions on the current page
+    // For example, you can do some processing or call APIs
+
+    // Simulate loading time (replace with actual operations)
+    setTimeout(() => {
+      // Navigate to the new page
+      window.location.href = filePath;
+    }, 1000); // Adjust this delay as needed
+  }
+
+  handleError(errorCode) {
+    switch (errorCode) {
       case 400:
         window.location.href = "../View/Error/400_Bad_Request.html";
         break;
@@ -36,5 +54,27 @@ class redireect {
         break;
     }
   }
+
+  navigateBack() {
+    if (this.lastPage) {
+      window.location.href = this.lastPage;
+    } else {
+      // If no lastPage is recorded, go to a default page
+      window.location.href = "../View/index.html";
+    }
+  }
 }
 
+export { redireect };
+
+// Example usage:
+const redirector = new CallRedirect();
+
+// Simulate calling redirectTo with a file path
+redirector.redirectTo("newpage.html");
+
+// Simulate handling a 404 error
+redirector.handleError(404);
+
+// Simulate navigating back to the last visited page
+redirector.navigateBack();

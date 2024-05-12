@@ -1,5 +1,5 @@
 <?php
-require_once("core/init.php");
+require_once("../core/init.php");
 
 // Check if form data is submitted
 if (Input::exists()) {

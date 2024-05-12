@@ -1,12 +1,11 @@
 // ============ Input field animation function ============
 import { userData } from "../context/userData.js";
-import { review } from "../context/review.js";
 
 const inputs = document.querySelectorAll(".input-field");
 const Eremail = document.querySelectorAll(".error_email");
 const Erpassword = document.querySelectorAll(".error_password");
 const Erconfirmpassword = document.querySelectorAll(".error_confirm_password");
-const review_btn = document.getElementById("review-btn");
+const review_btn = document.getElementById("review_btn");
 
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
@@ -50,9 +49,7 @@ let errorStyle = {
 // Forget password -> user email
 forget_password_btn.addEventListener("click", async (event) => {
   event.preventDefault();
-  let forget_password_email = document.getElementById(
-    "forget_password_email"
-  ).value;
+  let forget_password_email = document.getElementById("forget_password_email").value;
 
   let user_forget_pass = new userData(
     "",
@@ -61,82 +58,74 @@ forget_password_btn.addEventListener("click", async (event) => {
     "",
     "",
     forget_password_email,
+    "",
     ""
   );
 
   try {
     // the fetch login data
-    const result = await user.user_register({
-      username: login_email,
-      email: login_password,
+    const result = await user_forget_pass.forget_password({
+      forget_password_email: forget_password_email
     });
 
     if (result) {
-      if (result.email) {
-        console.log(result.email);
+      if (result.error) {
+        console.log(result.error);
 
-        Eremail.forEach((inp) => {
-          inp.classList.add("error");
-          if (inp.value != "") return;
-          inp.classList.remove("error");
-        });
-
-        errorStyle.error_email.text = "*Email";
-        errorStyle.error_email.color = "#ff0000";
       }
     }
   } catch (error) {
-    console.log("");
+    console.log("Error Not connection");
   }
 });
 
 // Code verification -> user code
-code_verification_btn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  // let code_verification_code = document.getElementById("code_verification_code").value;
+// code_verification_btn.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   // let code_verification_code = document.getElementById("code_verification_code").value;
 
-  try {
-    // here put the code
-  } catch (error) {
-    console.log("");
-  }
-});
+//   try {
+//     // here put the code
+//   } catch (error) {
+//     console.log("");
+//   }
+// });
 
 // Change password -> user password
-review_btn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  let user_review = document.getElementById("user_review").value;
+// review_btn.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   let user_review = document.getElementById("user_review").value;
 
-  let review1 = new review(5 , user_review);
-  review1.add_review();
-  // try {
-  //   // here put the code
-  //   const result = await review1.add_review({
-  //     rate: user_rate,
-  //     feedback: user_feedback,
-  //   });
+//   const review1 = new review(5 , user_review);
+//   review1.add_review();
+//   // try {
+//   //   // here put the code
+//   //   const result = await review1.add_review({
+//   //     rate: user_rate,
+//   //     feedback: user_feedback,
+//   //   });
 
-  // } catch (error) {
-  //   console.log("error");
-  // }
-});
+//   // } catch (error) {
+//   //   console.log("error");
+//   // }
+// });
 
-change_password_btn.addEventListener("click", async (event) => {
-  event.preventDefault();
-  let change_password_new_password = document.getElementById(
-    "change_password_new_password"
-  ).value;
+// change_password_btn.addEventListener("click", async (event) => {
+//   event.preventDefault();
+//   let change_password_new_password = document.getElementById(
+//     "change_password_new_password"
+//   ).value;
 
-  let change_pass_confirm_new_pass = document.getElementById(
-    "change_password_confirm_new_password"
-  ).value;
+//   let change_pass_confirm_new_pass = document.getElementById(
+//     "change_password_confirm_new_password"
+//   ).value;
 
-  try {
-    // here put the code
-  } catch (error) {
-    console.log("");
-  }
-});
+//   try {
+//     // here put the code
+//   } catch (error) {
+//     console.log("");
+//   }
+// });
 
 // for (const key in errorStyle) {
 //   if (Object.hasOwnProperty.call(errorStyle, key)) {

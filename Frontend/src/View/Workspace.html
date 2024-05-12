@@ -6,7 +6,10 @@
     <!--  Discription -->
     <meta name="description" content="" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -19,18 +22,17 @@
     <title>Stavitel</title>
   </head>
   <body>
-
-  <div class="spinner-wrapper">
-    <div class="spinner">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
+    <div class="spinner-wrapper">
+      <div class="spinner">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
     </div>
-  </div>
 
-  <ul class="notifications" id="notifications"></ul>
+    <ul class="notifications" id="notifications"></ul>
     <!-- Nav Bar -->
     <!-- <div class="navbar">
       <a href="#" class="notif">
@@ -123,14 +125,14 @@
           <!-- Insights -->
           <ul class="insights">
             <li>
-              <i class='bx bx-bot'></i>
+              <i class="bx bx-bot"></i>
               <span class="info">
                 <h3 id="proj_ai_type_number">0</h3>
                 <p>projects AI</p>
               </span>
             </li>
             <li>
-              <i class='bx bx-check-double'></i>
+              <i class="bx bx-check-double"></i>
               <span class="info">
                 <h3 id="proj_editor_type_number">0</h3>
                 <p>projects Editor</p>
@@ -418,9 +420,7 @@
 
           <!-- ============= selected tabs ============= -->
           <div class="horizontal-tabs">
-            <a href="#my_profile" onclick="showSettingsTabs(0)"
-              >My Profile</a
-            >
+            <a href="#my_profile" onclick="showSettingsTabs(0)">My Profile</a>
             <a href="#change_password" onclick="showSettingsTabs(1)"
               >Change Password</a
             >
@@ -434,50 +434,63 @@
               >Integrations</a
             >
           </div>
+          <!-- ============= My Profile ============= -->
+          <div class="my_profile settings-tabs" id="my_profile">
+            <div class="profileContainer">
+              <h3 class="editTiltle">Edit Profile</h3>
+              
+              <div class="userIcon">
+                <span id="initials">Img</span><img id="uploadedImg" />
+              </div>
 
+              <div class="profile_buttons">
+                <input type="file" id="upload-button" accept="image/*" />
+                <label class="upload" for="upload-button">
+                  <i class="fa-solid fa-upload"></i> &nbsp; Choose A Photo
+                </label>
+                <button type="submit" class="btn update">Update</button>
+                <button type="cancel" class="btn cancel">Cancel</button>
+              </div>
 
-              <div class="content">
-                <div class="content-main">
-                  <!-- ============= My Profile ============= -->
-                  <div class="my_profile settings-tabs" id="my_profile">
-                    
-      
-                    
-                  
-                  <div class="profileContainer">
-                    <h3 class="editTiltle">Edit Profile</h3>
-                    <div class="user-img">
-                      <img src="###" id="userPhoto">
-                      <input type="File" id="userFile">
-                      <label for="userFile" id="uploadbtn"><i class="fas fa-camera"></i></label>
-                    </div>
-                    <label class="userEmail">example@mail.com</label><br>
-                    <div class="textContainer">
-                    <label class="updateText">UserName</label><br>
-                  <input type="text"
-                         class="input-edit"
-                         autocomplete="off"
-                         required ><br>
-                  
-                         <label class="bioText">Bio</label><br>
-                         <input type="text"
-                                class="bio-edit"
-                                autocomplete="off"
-                                ><br><br>
-                              </div>
-                  
-                  <script src="../JS/script.js"></script>
-                  <div class="profile_buttons">                 
-                    <button type="submit" class="btn update">Update</button>
-                    <button type="cancel" class="btn cancel">Cancel</button>
-                  </div>
-                  </div>
-                    </div>
+              <!-- <h3 class="editTiltle">Edit Profile</h3>
+            <div id="userIcon">
+              <span id="initials">Icon</span><img id="uploadedImg" />
+            </div>
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              onchange="displayImage()"
+            />
+
+            <div class="user-img">
+              <img src="###" id="userPhoto">
+              <input type="File" id="userFile">
+              <label for="userFile" id="uploadbtn"><i class="fas fa-camera"></i></label>
+            </div>
+
+            <label class="userEmail">example@mail.com</label><br>
+
+            <div class="textContainer">
+            <label class="updateText">UserName</label><br>
+          <input type="text"
+                class="input-edit"
+                autocomplete="off"
+                required ><br>
+          
+                <label class="bioText">Bio</label><br>
+                <input type="text"
+                        class="bio-edit"
+                        autocomplete="off"
+                        ><br><br>
+          </div> -->
+            </div>
+          </div>
 
           <div class="settings_content">
             <div class="settings_content_main">
               <!-- ============= My Profile ============= -->
-              <div class="my_profile settings-tabs" id="my_profile">
+              <!-- <div class="my_profile settings-tabs" id="my_profile">
                 <div class="profile_container">
                   <h3>Edit Profile</h3>
 
@@ -505,7 +518,7 @@
                     <button type="cancel" class="btn cancel">Cancel</button>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <!-- ============= Change Password ============= -->
               <div class="change_password settings-tabs" id="change_password">
@@ -573,8 +586,8 @@
       </main>
     </div>
 
-    <script type="module" src="../app/Workspace.js"></script>
-    <script type="module" src="../context/Projects.js"></script>
+    <script src="../app/Workspace.js"></script>
+    <!-- <script type="module" src="../context/Projects.js"></script> -->
     <!-- <script type="module" src="../context/dashboard.js"></script>
     <script type="module" src="../context/notfication.js"></script> -->
     <script src="../app/index.js"></script>

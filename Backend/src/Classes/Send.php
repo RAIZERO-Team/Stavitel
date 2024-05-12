@@ -1,8 +1,8 @@
 <?php
 
-require '../Lib/Backend/PHPmailer/src/Exception.php';
-require '../Lib/Backend/PHPmailer/src/PHPMailer.php';
-require '../Lib/Backend/PHPmailer/src/SMTP.php';
+require '../../lib/PHPmailer/src/Exception.php';
+require '../../lib/PHPmailer/src/PHPMailer.php';
+require '../../Lib/PHPmailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -59,7 +59,6 @@ class Send
       $mail->Body = $message;
 
       $mail->send();
-      header('location:user_otp.php');
     } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
@@ -114,7 +113,7 @@ class Send
             <h2>Hi ' . $name . ',</h2>
             <p>Welcome to RIZERO! We’re so excited to be a part of your coding journey. To begin mastering your chosen programming language(s), please take a moment to confirm your new (project name) account.</p>
             <p class="confirm-button">
-                <a href="http://localhost/api/varfiied.php">Confirm your account</a>
+                <a href="http://localhost/Stavitel/Backend/src/Functions/varfiied.php">Confirm your account</a>
             </p>
             <p>Click the button above to confirm your account and start  your first Kata Progect in Stavitel.</p>
             <p>Best regards,<br>The Codewars Team</p>

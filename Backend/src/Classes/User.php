@@ -65,9 +65,9 @@ class User
       Session::put($this->_sessioNanme, $this->get_data()->id);
     } else {
       $user = $this->find($email);
-
+      
       if ($user) {
-        if (($this->_data->password === Hash::make($password, $this->get_data()->salt)) && ($this->_data->varified == 'yes')) {
+        if (($this->_data->password === Hash::make($password, $this->get_data()->salt)) && ($this->_data->verify == 'yes')) {
 
           Session::put($this->_sessioNanme, $this->get_data()->id);
 

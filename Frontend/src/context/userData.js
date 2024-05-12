@@ -17,7 +17,6 @@ class userData {
     this.forget_password_email = forget_password_email;
     this.change_password_new_password = change_password_new_password;
     this.change_pass_confirm_new_pass = change_pass_confirm_new_pass;
-
   }
 
   getData() {
@@ -48,27 +47,6 @@ class userData {
         token: token,
       };
 
-      // fetch(url, {
-      //   method: method,
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(data),
-      // })
-      //   .then((response) => {
-      //     if (!response.ok) {
-      //       throw new Error("Network response was not ok");
-      //     }
-      //     return response.json();
-      //   })
-      //   .then((data) => {
-      //     if (!data.error) {
-      //       window.location.href = "../View/verification_email.html";
-      //     } else {
-      //       return data.error;
-      //     }
-      //   });
-
       const response = await fetch(url, {
         method: method,
         headers: {
@@ -95,25 +73,33 @@ class userData {
   }
 
   async email_verify() {
-    fetch("../../../Backend/src/Functions/send_varified_email.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ userEnteredPage: true }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json(); // parse response JSON
-      })
-      .then((data) => {
-        console.log("Response:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+    try {
+      const url = "../../../Backend/src/Functions/send_varified_email.php";
+      const method = "POST";
+
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userEnteredPage: true }),
       });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        console.log("Done");
+      } else {
+        return responseData.error;
+      }
+    } catch (error) {
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error; // Rethrow the error for higher level handling
+    }
   }
 
   async user_login() {
@@ -124,7 +110,7 @@ class userData {
       const method = "POST";
       const data = {
         login_email: this.login_email,
-        login_password: this.login_password, // Corrected key name
+        login_password: this.login_password,
         token: token,
       };
 
@@ -147,19 +133,18 @@ class userData {
       } else {
         return responseData.error; // Return error data
       }
-
     } catch (error) {
       console.error(`Failed to insert user: ${error.message}`);
       throw error; // Rethrow the error for higher level handling
     }
   }
-  
+
   async forget_password() {
     try {
-      const url = "../../../Backend/src/";
+      const url = "../../../Backend/src/Functions/send_email_forgetpass.php";
       const method = "POST";
       const data = {
-        forget_password_email: this.forget_password_email
+        forget_password_email: this.forget_password_email,
       };
 
       const response = await fetch(url, {
@@ -181,17 +166,49 @@ class userData {
       } else {
         return responseData.error; // Return error data
       }
-
     } catch (error) {
       console.error(`Failed to insert user: ${error.message}`);
       throw error; // Rethrow the error for higher level handling
     }
   }
 
+  async code_verifiction() {
+    try {
+      const url = "../../../Backend/src/Functions/user_otp.php";
+      const method = "POST";
+      const data = {
+        register_username: this.register_username,
+        register_email: this.register_email,
+        register_password: this.register_password, // Corrected key name
+      };
 
-  async code_verifiction() {}
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const responseData = await response.json();
+
+      if (!responseData.error) {
+        window.location.href = "../View/verification_email.html";
+      } else {
+        return responseData.error; // Return error data
+      }
+    } catch (error) {
+      console.error(`Failed to insert user: ${error.message}`);
+      throw error;
+    }
+  }
+
   async change_password() {}
-  
+
   async update_user() {}
   async delete_user() {}
 }

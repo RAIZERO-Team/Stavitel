@@ -21,8 +21,8 @@ class Redireect
             include("");
             exit();
           case 404:
-            header("HTTP/1.0 404 Not Found");
-            include("includes/errors/404.php");
+            header("location:../../../Frontend/src/View/Error/404_Not_Found.html");
+            // include("Frontend/src/View/Error/404_Not_Found.html");
             exit();
           case 500:
             header("");

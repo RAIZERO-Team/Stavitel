@@ -30,14 +30,24 @@ if (Input::exists()) {
 
       if ($validate->passed()) {
         try {
+          // $user->create(array(
+          //   'username' => $username,
+          //   'email' => $email,
+          //   'password' => Hash::make($password, $salt),
+          //   'salt' => $salt,
+          //   'reges_date' => date('Y-m-d H:i:s'),
+          //   'group' => 1,
+          //   'verify' => 'yes'
+          // ));
+
           Session::put('user_data', array(
             'username' => $username,
             'email' => $email,
             'password' => Hash::make($password, $salt),
             'salt' => $salt,
-            'join' => date('Y-m-d H:i:s'),
+            'reges_date' => date('Y-m-d H:i:s'),
             'group' => 1,
-            'varified' => 'yes'
+            'verify' => 'yes'
           ));
           $response = array('message' => 'User registered successfully');
           echo json_encode($response);
