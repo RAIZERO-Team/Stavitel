@@ -84,7 +84,7 @@ async function searchImagesWithKeyword(keyword) {
     imagePaths.push(result.urls.full);
   });
 
-  if (imagePaths.length <= 6) {
+  if (imagePaths.length <= 3) {
     imagePaths.forEach((path, index) => {
       navigator.clipboard.writeText(path).then(() => {
         console.log(`Image path copied to clipboard: ${path}`);
