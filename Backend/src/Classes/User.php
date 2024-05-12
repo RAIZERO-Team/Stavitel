@@ -1,5 +1,6 @@
 <?php
 
+
 class User
 {
   private $db,
@@ -25,22 +26,17 @@ class User
       $this->find($user);
     }
   }
-
-  // ============== check if user is logged in or not ==============
   public function get_IsLoggedIn()
   {
     return $this->is_LoggedIn;
   }
 
-  // ============== register user into database function ==============
   public function create($fields = array())
   {
     if (!$this->db->insert("users", $fields)) {
       throw new Exception("There is a problem in register");
     }
   }
-
-  // ==============  ==============
   public function find($email = null)
   {
     if ($email) {
@@ -54,14 +50,14 @@ class User
     }
     return false;
   }
-
-  // ============== get data function ==============
-  public function get_data()
+  public function get_data($email = null)
   {
-    return $this->_data;
+    if ($email != null) {
+      return $this->db->get('users', array('email', '=', $email))->first();
+    } else {
+      return $this->_data;
+    }
   }
-
-  // ============== Login function ==============
   public function login($email = null, $password = null, $remember = true)
   {
     if (!$email && !$password && $this->exist()) {
@@ -97,10 +93,12 @@ class User
         }
       }
     }
+
+
     return false;
   }
 
-  // ============== logout function ==============
+
   public function logout()
   {
     $this->db->delete('users_session', array('user_id', '=', $this->get_data()->id));
@@ -108,20 +106,31 @@ class User
     Cookie::delete($this->_cookieName);
   }
 
-  // ============== exit function ==============
   public function exist()
   {
     return (!empty($this->_data)) ? true : false;
   }
 
-  // ============== verified user function ==============
 
   public function isVerified()
   {
+
     if ($this->get_data()->varified == 'yes') {
       return true;
     } else {
       return false;
     }
+  }
+
+  public function changeUserpassword($email, $newpassword)
+  {
+    $this->db->get('users', array('email', '=', $email));
+    $this->db->update(
+      'users',
+      $this->db->get('users', array('email', '=', $email))->first()->id,
+      array(
+        'password' => Hash::make($newpassword, $this->db->get('users', array('email', '=', $email))->first()->salt)
+      )
+    );
   }
 }
