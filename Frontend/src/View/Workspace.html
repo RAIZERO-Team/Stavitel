@@ -421,22 +421,28 @@
           <ul class="selected_tabs">
             <li>
               <div class="horizontal-tabs">
-                <a href="#my_profile" onclick="showSettingsTabs(0)"
+                <a
+                  href="#my_profile"
+                  class="active"
+                  onclick="showSettingsTabs(0)"
                   >My Profile</a
                 >
-                <a href="#change_password" onclick="showSettingsTabs(1)"
+                <a
+                  href="#change_password"
+                  class=""
+                  onclick="showSettingsTabs(1)"
                   >Change Password</a
                 >
-                <a href="#project_settings" onclick="showSettingsTabs(2)"
+                <a
+                  href="#project_settings"
+                  class=""
+                  onclick="showSettingsTabs(2)"
                   >Project Settings</a
                 >
-                <a href="#notifications" onclick="showSettingsTabs(3)"
+                <a href="#notifications" class="" onclick="showSettingsTabs(3)"
                   >Notifications</a
                 >
-                <a
-                  href="#integration"
-                  onclick="showSettingsTabs(4)"
-                  class="active"
+                <a href="#integration" onclick="showSettingsTabs(4)" class=""
                   >Integrations</a
                 >
               </div>
@@ -452,6 +458,7 @@
                 </p>
               </div>
 
+              <hr />
               <!-- user icon -->
               <div class="userIconContainer">
                 <div class="userIcon">
@@ -471,21 +478,34 @@
               </div>
 
               <!-- my profile user data -->
+
               <div class="user_settings">
-                <input type="name" name="username" id="username" oninput="updateIcon()" />
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  oninput="updateIcon()"
+                />
                 <button type="submit">
                   <i class="bx bx-user"></i>
                 </button>
               </div>
+
               <div class="user_settings">
+                <label for="user_email">Email</label>
                 <input type="email" id="user_email" />
                 <button type="submit">
                   <i class="bx bx-envelope"></i>
                 </button>
               </div>
+
               <div class="user_settings_bio">
-                <textarea name="Bio" id="user_bio"></textarea>
-                <!-- <input type="text" id="user_bio" /> -->
+                <label for="user_bio">Bio</label>
+                <textarea id="user_bio"></textarea>
+                <!-- <button type="submit">
+                  <i class="bx bx-save"></i> Save Bio
+                </button> -->
               </div>
             </div>
 
@@ -498,21 +518,24 @@
                 </p>
               </div>
 
+              <hr />
               <!-- change password user -->
               <div class="user_settings">
-                <label for="username">Username:</label>
+                <label for="username">Current Password</label>
                 <input type="password" id="user_password" />
                 <button type="submit">
                   <i class="bx bx-lock"></i>
                 </button>
               </div>
               <div class="user_settings">
+                <label for="username">New Password</label>
                 <input type="password" id="user_password" />
                 <button type="submit">
                   <i class="bx bx-lock"></i>
                 </button>
               </div>
               <div class="user_settings">
+                <label for="username">Confirm New Password</label>
                 <input type="password" id="user_password" />
                 <button type="submit">
                   <i class="bx bx-lock"></i>
@@ -537,6 +560,35 @@
                 <p>
                   Please enter your current password to change your password.
                 </p>
+              </div>
+
+              <div class="wrap">
+                <div class="group">
+                  <div class="group">
+                    <input type="checkbox" id="check1" />
+                    <label for="check1">Project Notifications</label>
+                  </div>
+                </div>
+
+                <div class="group">
+                  <div class="group">
+                    <input type="checkbox" id="check2" />
+                    <label for="check2">Email Updates</label>
+                  </div>
+                </div>
+
+                <div class="group">
+                  <div class="group">
+                    <input type="checkbox" id="check3" />
+                    <label for="check3">Check 3</label>
+                  </div>
+                </div>
+
+                <!-- <div class="btn-group">
+                    <button class="yes-btn">Save changes</button>
+                    <button class="no-btn">Cancel</button>
+                  </div> -->
+                  </div>
               </div>
             </div>
           </div>

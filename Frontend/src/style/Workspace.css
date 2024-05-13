@@ -1048,14 +1048,13 @@ input[type="radio"] {
   border-top: 1px solid var(--c-border-primary);
 }
 
-.content main .settings_contanier{
+.content main .settings_contanier {
   border-radius: 20px;
   background: var(--light);
-  padding: 24px;
+  padding: 35px;
   width: 100%;
   height: 30rem;
   display: flex;
-  /* margin-top: 35px; */
   overflow-x: auto;
   justify-content: flex-start;
   align-content: flex-start;
@@ -1144,11 +1143,11 @@ input[type="radio"] {
   padding: .5rem;
 }
 
-.card > .header {
+.card>.header {
   margin-bottom: .25rem;
 }
 
-.card > .body {
+.card>.body {
   font-size: .8rem;
   color: #777;
 }
@@ -1209,64 +1208,200 @@ input[type="radio"] {
 }
 
 .uploadBtn {
-  background-color: #007bff; /* Blue color */
+  background-color: #007bff;
+  /* Blue color */
 }
 
 .uploadBtn:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
+  /* Darker blue on hover */
 }
 
 .removeBtn {
-  background-color: #dc3545; /* Red color */
-  margin-left: 15px; /* Add spacing between buttons */
+  background-color: #dc3545;
+  /* Red color */
+  margin-left: 15px;
+  /* Add spacing between buttons */
 }
 
 .removeBtn:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333;
+  /* Darker red on hover */
 }
 
 
 /* user data */
+
 .user_settings {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
   width: 100%;
   max-width: 340px;
+}
+
+.user_settings label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.user_settings input {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em 0 36px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid var(--c-border-primary);
+  color: var(--c-text-action);
+  font-size: 1rem;
+  transition: 0.15s ease;
+  width: 100%;
+  line-height: 1;
+
+  &::placeholder {
+    color: var(--c-text-action);
+  }
+
+  &:focus,
+  &:hover {
+    border-color: var(--c-accent-primary);
+  }
+}
+
+.user_settings button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  left: 12px;
+  top: 70%;
+  transform: translateY(-50%);
+  font-size: 1.25em;
+  color: var(--c-text-action);
+  padding: 0;
+  height: 40px;
+
+  &:hover {
+    color: var(--c-accent-primary);
+  }
+}
+
+hr {
+  width: 184%;
+  color: #dcd3d3;
+  margin: 15px 0 15px 0;
+}
+
+/* User bio style */
+
+.user_settings_bio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 340px;
+  margin: 0;
+}
+
+.user_settings_bio label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333333;
+}
+
+.user_settings_bio textarea {
+  font: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  border: 2px solid var(--c-border-primary);
+  color: var(--c-text-action);
+  font-size: 1rem;
+  background-color: #fff;
+  transition: 0.15s ease;
+  resize: none;
+
+  &::placeholder {
+    color: var(--c-text-action);
+  }
+
+  &:focus,
+  &:hover {
+    border-color: var(--c-accent-primary);
+  }
+}
+
+
+
+/* notfication part */
+.group {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+
+  input[type="checkbox"] {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    background-color: #cfcfcf;
+    border-radius: .25rem;
+    appearance: none;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: limegreen;
+  }
+
+  input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 9px;
+    width: 5px;
+    height: 13px;
+    border: 4px solid transparent;
+    border-left: none;
+    border-top: none;
+    transform: rotate(45deg) scale(1);
+  }
+
+  input[type="checkbox"]:checked::before {
+    border-color: #fff;
+    animation: checkAnim .2s ease;
+  }
+
+  @keyframes checkAnim {
+    from {
+      transform: rotate(45deg) scale(0);
+    }
+  }
 
   label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-    color: #333333;
+    color: #272727;
+    font-size: 1.2rem;
+    user-select: none;
   }
+}
 
-  input {
-    font: inherit;
-    color: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1em 0 36px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid var(--c-border-primary);
-    color: var(--c-text-action);
-    font-size: 1rem;
-    transition: 0.15s ease;
-    width: 100%;
-    line-height: 1;
-
-    &::placeholder {
-      color: var(--c-text-action);
-    }
-
-    &:focus,
-    &:hover {
-      border-color: var(--c-accent-primary);
-    }
-  }
+.btn-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 
   button {
     display: inline-flex;
@@ -1276,55 +1411,22 @@ input[type="radio"] {
     background-color: transparent;
     position: absolute;
     left: 12px;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     font-size: 1.25em;
     color: var(--c-text-action);
     padding: 0;
     height: 40px;
-  }
-}
 
-.user_settings_bio {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 340px;
-
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-    color: #333333;
-  }
-
-  textarea {
-    font: inherit;
-    color: inherit;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1em 0 36px;
-    height: 100px;
-    border-radius: 8px;
-    border: 2px solid var(--c-border-primary);
-    color: var(--c-text-action);
-    font-size: 1rem;
-    transition: 0.15s ease;
-    width: 100%;
-    line-height: 1;
-
-    &:focus,
     &:hover {
-      border-color: var(--c-accent-primary);
+      color: var(--c-accent-primary);
     }
   }
+
 }
 
 /* ================ Rate Form ================ */
-.wrapper {
+/* .wrapper {
   background: var(--white);
   padding: 2rem;
   max-width: 576px;
@@ -1391,7 +1493,6 @@ textarea {
   outline: none;
   resize: none;
   margin-bottom: 5rem;
-
 }
 
 .btn-group {
@@ -1419,4 +1520,4 @@ textarea {
 .btn-group .btn.cancel {
   background: var(--white);
   color: var(--blue);
-}
+} */
