@@ -130,7 +130,7 @@ let data = {
   proj_tybe: "AI",
 };
 
-// let ai_type = 
+// let ai_type =
 
 proj_ai_type_number.innerText = data.ai;
 proj_editor_type_number.innerText = data.editor;
@@ -164,10 +164,8 @@ recent_proje.innerHTML = `<tr>
 
 // test.fetchData();
 
-
 // const test = new dashboard("", "", "", "", "", "", "", productivityChart);
 // const charttest = test.chart();
-
 
 let productivityChart = document.getElementById("myChart");
 let Jsondata;
@@ -183,7 +181,6 @@ fetch("../app/data.json")
     Jsondata = data;
     createChart(Jsondata, "line");
   });
-
 
 function createChart(data, type) {
   myChart = new Chart(productivityChart, {
@@ -210,9 +207,7 @@ function createChart(data, type) {
   });
 }
 
-createChart(charttest, "line");
-
-
+// createChart(charttest, "line");
 
 // ================ Add New Project ================ //
 
@@ -361,23 +356,55 @@ function showSettingsTabs(index) {
   sections[index].classList.add("active");
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  showSettingsTabs(0);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   showSettingsTabs(0);
+// });
 
 //---------------------Profile setting-------------------
-let uploadButton = document.getElementById("upload-button");
-let chosenImage = document.getElementById("chosen-image");
-let fileName = document.getElementById("file-name");
+function updateIcon() {
+  const initialsSpan = document.getElementById("initials");
+  const input = document.getElementById("username").value.trim();
+  if (input.length === 0) {
+    initialsSpan.textContent = "-";
+  } else {
+    const names = input.split(" ");
+    const firstNameInitial = names[0].charAt(0).toUpperCase();
+    const lastNameInitial =
+      names.length > 1 ? names[names.length - 1].charAt(0).toUpperCase() : "";
 
-uploadButton.onchange = () => {
-  let reader = new FileReader();
-  reader.readAsDataURL(uploadButton.files[0]);
-  console.log(uploadButton.files[0]);
-  reader.onload = () => {
-    chosenImage.setAttribute("src", reader.result);
-  };
-};
+    const initials = firstNameInitial + lastNameInitial;
+    initialsSpan.textContent = initials;
+  }
+}
+
+function displayImage() {
+  const fileInput = document.getElementById("imageInput");
+  const uploadedImg = document.getElementById("uploadedImg");
+  if (fileInput.files && fileInput.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      uploadedImg.src = e.target.result;
+      uploadedImg.style.display = "block";
+      document.getElementById("initials").style.display = "none";
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+}
+
+// Event listener for upload button
+document.getElementById("uploadBtn").addEventListener("click", function () {
+  document.getElementById("imageInput").click();
+});
+
+// Event listener for remove button
+document.getElementById("removeBtn").addEventListener("click", function () {
+  const initialsSpan = document.getElementById("initials");
+  initialsSpan.textContent = "-";
+  document.getElementById("uploadedImg").src = "";
+  document.getElementById("uploadedImg").style.display = "none";
+  document.getElementById("initials").style.display = "block";
+  document.getElementById("imageInput").value = null; // Reset input file
+});
 
 // ================ Rate Form ================ //
 const allStar = document.querySelectorAll(".rating .star");

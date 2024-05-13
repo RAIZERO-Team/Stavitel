@@ -10,8 +10,8 @@ const main = document.querySelector("main");
 const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
-const login_btn = document.getElementById("sign_in_btn");
-const register_btn = document.getElementById("sign_up_btn");
+let login_btn = document.getElementById("sign_in_btn");
+let register_btn = document.getElementById("sign_up_btn");
 
 inputs.forEach((inp) => {
   inp.addEventListener("focus", () => {
@@ -55,7 +55,6 @@ bullets.forEach((bullet) => {
 // ======== login ========
 login_btn.addEventListener("click", async (event) => {
   event.preventDefault();
-  if (event.target.id === "sign_in_btn") {
 
   let login_email = document.getElementById("login_email").value;
   let login_password = document.getElementById("login_password").value;
@@ -131,15 +130,12 @@ login_btn.addEventListener("click", async (event) => {
   } catch (error) {
     console.error("Failed to register user:");
   }
-}
 });
 
 // ======== Register ========
 
 register_btn.addEventListener("click", async (event) => {
   event.preventDefault();
-
-  if (event.target.id === "sign_up_btn") {
 
   // call the elements from html
   let register_username = document.getElementById("register_username").value;
@@ -160,6 +156,8 @@ register_btn.addEventListener("click", async (event) => {
   // });
 
   let register_user = new userData(
+    "",
+    "",
     register_username,
     register_email,
     register_password
@@ -267,5 +265,5 @@ register_btn.addEventListener("click", async (event) => {
   } catch (error) {
     console.error("Failed to register user:");
   }
-}
+
 });

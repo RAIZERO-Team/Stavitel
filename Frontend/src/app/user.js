@@ -65,7 +65,7 @@ forget_password_btn.addEventListener("click", async (event) => {
   try {
     // the fetch login data
     const result = await user_forget_pass.forget_password({
-      forget_password_email: forget_password_email
+      user_email: forget_password_email
     });
 
     if (result) {

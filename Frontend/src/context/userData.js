@@ -19,7 +19,7 @@ class userData {
     this.change_pass_confirm_new_pass = change_pass_confirm_new_pass;
   }
 
-  getData() {
+  getEmail() {
     return this.register_email;
   }
 

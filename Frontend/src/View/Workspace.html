@@ -410,8 +410,6 @@
 
         <!-- ============= More Settings Section ============= -->
         <section class="moreSettings section" id="section4">
-          <!-- ============= settings header ============= -->
-
           <div class="header">
             <div class="left">
               <h1>Settings</h1>
@@ -419,150 +417,131 @@
           </div>
 
           <!-- ============= selected tabs ============= -->
-          <div class="horizontal-tabs">
-            <a href="#my_profile" onclick="showSettingsTabs(0)">My Profile</a>
-            <a href="#change_password" onclick="showSettingsTabs(1)"
-              >Change Password</a
-            >
-            <a href="#project_settings" onclick="showSettingsTabs(2)"
-              >Project Settings</a
-            >
-            <a href="#notifications" onclick="showSettingsTabs(3)"
-              >Notifications</a
-            >
-            <a href="#integration" onclick="showSettingsTabs(4)" class="active"
-              >Integrations</a
-            >
-          </div>
+
+          <ul class="selected_tabs">
+            <li>
+              <div class="horizontal-tabs">
+                <a href="#my_profile" onclick="showSettingsTabs(0)"
+                  >My Profile</a
+                >
+                <a href="#change_password" onclick="showSettingsTabs(1)"
+                  >Change Password</a
+                >
+                <a href="#project_settings" onclick="showSettingsTabs(2)"
+                  >Project Settings</a
+                >
+                <a href="#notifications" onclick="showSettingsTabs(3)"
+                  >Notifications</a
+                >
+                <a
+                  href="#integration"
+                  onclick="showSettingsTabs(4)"
+                  class="active"
+                  >Integrations</a
+                >
+              </div>
+            </li>
+          </ul>
           <!-- ============= My Profile ============= -->
-          <div class="my_profile settings-tabs" id="my_profile">
-            <div class="profileContainer">
-              <h3 class="editTiltle">Edit Profile</h3>
-              
-              <div class="userIcon">
-                <span id="initials">Img</span><img id="uploadedImg" />
+          <div class="settings_contanier">
+            <div class="settings-tabs active" id="my_profile">
+              <div class="content-header-intro">
+                <h2>My Profile</h2>
+                <p>
+                  Please enter your current password to change your password.
+                </p>
               </div>
 
-              <div class="profile_buttons">
-                <input type="file" id="upload-button" accept="image/*" />
-                <label class="upload" for="upload-button">
-                  <i class="fa-solid fa-upload"></i> &nbsp; Choose A Photo
-                </label>
-                <button type="submit" class="btn update">Update</button>
-                <button type="cancel" class="btn cancel">Cancel</button>
-              </div>
-
-              <!-- <h3 class="editTiltle">Edit Profile</h3>
-            <div id="userIcon">
-              <span id="initials">Icon</span><img id="uploadedImg" />
-            </div>
-            <input
-              type="file"
-              id="imageInput"
-              accept="image/*"
-              onchange="displayImage()"
-            />
-
-            <div class="user-img">
-              <img src="###" id="userPhoto">
-              <input type="File" id="userFile">
-              <label for="userFile" id="uploadbtn"><i class="fas fa-camera"></i></label>
-            </div>
-
-            <label class="userEmail">example@mail.com</label><br>
-
-            <div class="textContainer">
-            <label class="updateText">UserName</label><br>
-          <input type="text"
-                class="input-edit"
-                autocomplete="off"
-                required ><br>
-          
-                <label class="bioText">Bio</label><br>
-                <input type="text"
-                        class="bio-edit"
-                        autocomplete="off"
-                        ><br><br>
-          </div> -->
-            </div>
-          </div>
-
-          <div class="settings_content">
-            <div class="settings_content_main">
-              <!-- ============= My Profile ============= -->
-              <!-- <div class="my_profile settings-tabs" id="my_profile">
-                <div class="profile_container">
-                  <h3>Edit Profile</h3>
-
-                  <label class="updateText">New Name</label>
-                  <input
-                    type="text"
-                    class="newName_edit"
-                    autocomplete="off"
-                    required
-                  />
-
-                  <figure class="image-container">
-                    <img id="chosen-image" />
-                    <figcaption id="file-name"></figcaption>
-                  </figure>
-
-                  <div class="profile_buttons">
-                    <input type="file" id="upload-button" accept="image/*" />
-                    <label class="upload" for="upload-button">
-                      <i class="fa-solid fa-upload"></i> &nbsp; Choose A Photo
-                    </label>
-
-
-                    <button type="submit" class="btn update">Update</button>
-                    <button type="cancel" class="btn cancel">Cancel</button>
-                  </div>
+              <!-- user icon -->
+              <div class="userIconContainer">
+                <div class="userIcon">
+                  <span id="initials">-</span><img id="uploadedImg" />
                 </div>
-              </div> -->
-
-              <!-- ============= Change Password ============= -->
-              <div class="change_password settings-tabs" id="change_password">
-                <form action="#">
-                  <div class="input-wrap">
-                    <label>Enter Old password:</label>
-                    <input
-                      type="password"
-                      class="input-field"
-                      autocomplete="off"
-                      required
-                    /><br /><br />
-                    <label>Enter New password:</label>
-                    <input
-                      type="password"
-                      class="input-field"
-                      autocomplete="off"
-                      required
-                      style="width: 195px"
-                    /><br /><br />
-                    <label>Confirm password:</label>
-                    <input
-                      type="password"
-                      class="input-field"
-                      autocomplete="off"
-                      required
-                      style="width: 205px"
-                    />
-                  </div>
-                </form>
+                <div class="uploadButtons">
+                  <button class="uploadBtn" id="uploadBtn">Upload</button>
+                  <button class="removeBtn" id="removeBtn">Remove</button>
+                  <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    style="display: none"
+                    onchange="displayImage()"
+                  />
+                </div>
               </div>
 
-              <!-- ============= Project Settings ============= -->
-              <div class="project_settings settings-tabs" id="project_settings">
-                project_settings
+              <!-- my profile user data -->
+              <div class="user_settings">
+                <input type="name" name="username" id="username" oninput="updateIcon()" />
+                <button type="submit">
+                  <i class="bx bx-user"></i>
+                </button>
+              </div>
+              <div class="user_settings">
+                <input type="email" id="user_email" />
+                <button type="submit">
+                  <i class="bx bx-envelope"></i>
+                </button>
+              </div>
+              <div class="user_settings_bio">
+                <textarea name="Bio" id="user_bio"></textarea>
+                <!-- <input type="text" id="user_bio" /> -->
+              </div>
+            </div>
+
+            <!-- ============= Change Password ============= -->
+            <div class="settings-tabs" id="change_password">
+              <div class="content-header-intro">
+                <h2>Password</h2>
+                <p>
+                  Please enter your current password to change your password.
+                </p>
               </div>
 
-              <!-- ============= Notifications ============= -->
-              <div class="notifications settings-tabs" id="notifications">
-                notifications
+              <!-- change password user -->
+              <div class="user_settings">
+                <label for="username">Username:</label>
+                <input type="password" id="user_password" />
+                <button type="submit">
+                  <i class="bx bx-lock"></i>
+                </button>
+              </div>
+              <div class="user_settings">
+                <input type="password" id="user_password" />
+                <button type="submit">
+                  <i class="bx bx-lock"></i>
+                </button>
+              </div>
+              <div class="user_settings">
+                <input type="password" id="user_password" />
+                <button type="submit">
+                  <i class="bx bx-lock"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- ============= Project Settings ============= -->
+            <div class="settings-tabs" id="project_settings">
+              <div class="content-header-intro">
+                <h2>Project Settings</h2>
+                <p>
+                  Please enter your current password to change your password.
+                </p>
+              </div>
+            </div>
+
+            <!-- ============= Notifications ============= -->
+            <div class="settings-tabs" id="notifications">
+              <div class="content-header-intro">
+                <h2>Notfications</h2>
+                <p>
+                  Please enter your current password to change your password.
+                </p>
               </div>
             </div>
           </div>
         </section>
+
         <!-- ============= Rate Form Section ============= -->
         <section class="rate_form section">
           <div class="wrapper">

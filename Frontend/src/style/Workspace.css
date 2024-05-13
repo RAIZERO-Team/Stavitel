@@ -975,10 +975,126 @@ input[type="radio"] {
 
 /* ================ More settings ================ */
 
+.selected_tabs li {
+  padding: 15px;
+  background: var(--light);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 36px;
+  grid-gap: 24px;
+  cursor: pointer;
+}
+
+/* -------- Settings Tabs -------- */
+.horizontal-tabs {
+  /* margin-top: 1.5rem; */
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+
+  @media (max-width: 1000px) {
+    scrollbar-width: none;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  a {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 48px;
+    padding: 0 0.25rem;
+    font-weight: 500;
+    color: inherit;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+    transition: 0.15s ease;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: var(--c-accent-primary);
+      border-bottom-color: var(--c-accent-primary);
+    }
+
+    &+* {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.settings_contanier {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  color: var(--dark);
+}
+
+
+.content-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 3rem;
+  margin-top: -1px;
+  border-top: 1px solid var(--c-border-primary);
+}
+
+.content main .settings_contanier{
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  /* margin-top: 35px; */
+  overflow-x: auto;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.content-header-intro {
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--c-text-secondary);
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  /* hr {
+    width: 193%;
+    color: #bbb;
+  } */
+}
 
 :focus {
   outline: 0;
 }
+
+/* -------- Show Tabs -------- */
+
+.settings-tabs {
+  display: none;
+}
+
+.settings-tabs.active {
+  display: block;
+}
+
 
 /* --------  -------- */
 
@@ -1041,127 +1157,34 @@ input[type="radio"] {
   display: none;
 }
 
-/* -------- Settings Tabs -------- */
-.horizontal-tabs {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  overflow-x: auto;
-
-  @media (max-width: 1000px) {
-    scrollbar-width: none;
-    position: relative;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  a {
-    display: inline-flex;
-    flex-shrink: 0;
-    align-items: center;
-    height: 48px;
-    padding: 0 0.25rem;
-    font-weight: 500;
-    color: inherit;
-    border-bottom: 3px solid transparent;
-    text-decoration: none;
-    transition: 0.15s ease;
-
-    &:hover,
-    &:focus,
-    &.active {
-      color: var(--c-accent-primary);
-      border-bottom-color: var(--c-accent-primary);
-    }
-
-    &+* {
-      margin-left: 1rem;
-    }
-  }
-}
 
 /* -------- Tabs Content -------- */
 
-/* .content {
-  border-top: 1px solid var(--c-border-primary);
-  display: flex;
-  align-items: flex-start;
-}
 
-.content-main {
-  padding-top: 2rem;
-  padding-bottom: 6rem;
-  flex-grow: 1;
-} */
 
-/* -------- Show Tabs -------- */
-
-.settings-tabs {
-  display: none;
-}
-
-.settings-tabs.active {
-  display: block;
-}
 
 /* -------- My Profile Tab -------- */
 
-/* .newName_edit {
-  background-color: #388E3C;
-  font: inherit;
-  color: inherit;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1em 0 15px;
-  height: 30px;
-  border-radius: 8px;
-  border: black;
-  left: 430px;
-  top: 150px;
-
-  color: var(--c-text-action);
-  font-size: 0.875rem;
-  transition: 0.15s ease;
-  line-height: 1;
-}
-
-.updateText {
-  left: 30%;
-  top: 130px;
+/* user icon */
+.userIconContainer {
   position: relative;
-} */
-
-.my_profile {
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 24px;
-  width: 100%;
-  color: var(--dark);
-}
-
-.my_profile .profileContainer {
-  border-radius: 20px;
-  background: var(--light);
-  padding: 25px;
-  width: 80%;
-  height: 25rem;
-  margin-top: 5rem;
-  overflow-x: auto;
+  display: inline-flex;
+  margin-bottom: 20px;
+  gap: 10rem;
+  justify-content: center;
 }
 
 .userIcon {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   background-color: lightgray;
-  font-size: 36px;
-  line-height: 100px;
-  margin-bottom: 20px;
+  font-size: 25px;
+  line-height: 72px;
+  margin-right: 15px;
 }
 
 .userIcon img {
@@ -1171,111 +1194,134 @@ input[type="radio"] {
   border-radius: 50%;
 }
 
-/* .image-container {
-  width: 80%;
-  margin: 0 auto 30px auto;
+.uploadButtons {
+  display: flex;
+  align-items: center;
 }
 
-.image-container img {
-  display: block;
-  position: relative;
-  max-width: 100%;
-  max-height: 100px;
-  margin: auto;
-}
-
-figcaption {
-  margin: 20px 0 30px 0;
-  text-align: center;
-  color: #2a292a;
-
-}
-
-input[type="file"] {
-  display: none;
-} */
-
-.upload {
-  display: block;
-  position: relative;
-  background-color: #434ce8;
-  color: #ffffff;
-  font-size: 14px;
-  text-align: center;
-  width: 250px;
-  padding: 7px 0;
+.uploadBtn,
+.removeBtn {
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
-  margin: auto;
+  color: #ffffff;
   cursor: pointer;
 }
 
-.profile_container .profile_buttons {
+.uploadBtn {
+  background-color: #007bff; /* Blue color */
+}
+
+.uploadBtn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.removeBtn {
+  background-color: #dc3545; /* Red color */
+  margin-left: 15px; /* Add spacing between buttons */
+}
+
+.removeBtn:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+
+/* user data */
+.user_settings {
   position: relative;
   display: flex;
-  gap: 1.5rem;
   align-items: center;
-  top: 15rem;
+  width: 100%;
+  max-width: 340px;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333333;
+  }
+
+  input {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em 0 36px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid var(--c-border-primary);
+    color: var(--c-text-action);
+    font-size: 1rem;
+    transition: 0.15s ease;
+    width: 100%;
+    line-height: 1;
+
+    &::placeholder {
+      color: var(--c-text-action);
+    }
+
+    &:focus,
+    &:hover {
+      border-color: var(--c-accent-primary);
+    }
+  }
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25em;
+    color: var(--c-text-action);
+    padding: 0;
+    height: 40px;
+  }
 }
 
-.profile_container .profile_buttons .btn {
-  padding: .5rem 0.8rem;
-  border-radius: .5rem;
-  width: 8rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  font-size: .875rem;
-}
-
-.profile_container .profile_buttons .btn.update {
-  background-color: #434ce8;
-  color: var(--white);
-}
-
-.profile_container .profile_buttons .btn.cancel {
-  border: 2px solid #434ce8;
-  background-color: var(--white);
-  color: #434ce8;
-}
-
-.profile_container .profile_buttons .btn.cancel:hover {
-  background-color: #434ce8;
-  color: #fff;
-}
-
-/* -------- Change Password -------- */
-.input-wrap {
-  position: absolute;
-  justify-content: left;
-  height: 37px;
-  margin-bottom: 2rem;
-}
-
-.input-field {
-  font: inherit;
-  color: inherit;
-  text-decoration: none;
-  display: inline-flex;
+.user_settings_bio {
+  position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 1em 0 15px;
-  height: 30px;
-  border-radius: 8px;
-  border: black;
+  width: 100%;
+  max-width: 340px;
 
-  color: var(--c-text-action);
-  font-size: 0.875rem;
-  transition: 0.15s ease;
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333333;
+  }
 
-  line-height: 1;
+  textarea {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em 0 36px;
+    height: 100px;
+    border-radius: 8px;
+    border: 2px solid var(--c-border-primary);
+    color: var(--c-text-action);
+    font-size: 1rem;
+    transition: 0.15s ease;
+    width: 100%;
+    line-height: 1;
+
+    &:focus,
+    &:hover {
+      border-color: var(--c-accent-primary);
+    }
+  }
 }
-
-/* -------- Project Settings -------- */
-
-
-/* -------- Notifications -------- */
-
-/* -------- Media Query -------- */
 
 /* ================ Rate Form ================ */
 .wrapper {

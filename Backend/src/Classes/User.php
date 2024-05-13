@@ -69,17 +69,17 @@ class User
       if ($user) {
         if (($this->_data->password === Hash::make($password, $this->get_data()->salt)) && ($this->_data->verify == 'yes')) {
 
-          Session::put($this->_sessioNanme, $this->get_data()->id);
+          Session::put($this->_sessioNanme, $this->get_data()->session_id);
 
           if ($remember) {
             $hash = Hash::unique();
-            $hascheck = $this->db->get('users_session', array('user_id', '=', $this->get_data()->id));
+            $hascheck = $this->db->get('users_session', array('user_id', '=', $this->get_data()->session_id));
 
             if (!$hascheck->count()) {
               $this->db->insert(
                 'users_session',
                 array(
-                  'user_id' => $this->get_data()->id,
+                  'user_id' => $this->get_data()->session_id,
                   'hash' => $hash
                 )
               );
