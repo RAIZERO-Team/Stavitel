@@ -1,4 +1,4 @@
-/*=============== SHOW MENU ===============*/
+/=============== SHOW MENU ===============/
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
@@ -13,7 +13,7 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-/*=============== REMOVE MENU MOBILE ===============*/
+//=============== REMOVE MENU MOBILE ===============//
 const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
@@ -23,10 +23,43 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== CHANGE BACKGROUND HEADER ===============*/
+//=============== CHANGE BACKGROUND HEADER ===============//
 function scrollHeader(){
     const nav = document.getElementById('header')
     // When the scroll is greater than 80 viewport height, add the scroll-header class to the header tag
     if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
+
+document.addEventListener("DOMContentLoaded", function() {
+    let nav = document.querySelector("nav");
+    let menuBtn = document.querySelector(".menu-btn");
+    let cancelBtn = document.querySelector(".cancel-btn");
+    let navBar = document.querySelector(".navbar");
+    let body = document.querySelector("body");
+
+    window.onscroll = function() {
+        if (document.documentElement.scrollTop > 20) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
+    };
+
+    menuBtn.onclick = function() {
+        navBar.classList.add("active");
+        body.classList.add("menu-open");
+    };
+
+    cancelBtn.onclick = function() {
+        navBar.classList.remove("active");
+        body.classList.remove("menu-open");
+    };
+
+    document.querySelectorAll(".menu li a").forEach(link => {
+        link.addEventListener("click", function() {
+            navBar.classList.remove("active");
+            body.classList.remove("menu-open");
+        });
+    });
+});

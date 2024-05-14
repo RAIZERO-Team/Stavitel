@@ -9,878 +9,481 @@
     <link href="https://cdn.jsdeliver.net/npm/remixicon@2.5.0/fonts/remixicon.css"rel="stylesheet"/>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <nav>
-      <div class="nav__logo"><span>S</span>Tavital</div>
-      <ul class="nav__links" style="margin: auto;">
-        <li class="link">Home</li>
-        <li class="link">Services </li>
-        <li class="link">About Us</li>
-        <li class="link">Contact Us</li>
-        <li class="link">Sign in</li>
-        <li class="link btn">Get Started</li>
-      </ul>
-    </nav>
+</head>
+<body>
 
-    <!-- HEADER -->
+  <!-- HEADER -->
+  <nav>
+    <div class="nav__logo"><span>S</span>Tavitel</div>
+    <ul class="nav__links" style="margin: auto;">
+      <li class="link"><a href="#home">Home</a></li>
+      <li class="link"><a href="#services">Services</a></li>
+      <li class="link"><a href="#about">About Us</a></li>
+      <li class="link"><a href="#contact">Contact Us</a></li>
+    </ul>
+    <div class="nav__buttons">
+      <li class="link"><a href="#signin">Sign in</a></li>
+      <li class="link btn"><a href="#getstarted">Get Started</a></li>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
+  <!-- HEADER -->
+
+  
+<!-- HERO -->
+<section id="hhero" class="container flex-row" style="margin: auto;">
+  <div class="hhero__content">
+      <h1 class="title"> Create. Code. Publish.Stavitel</h1>
+      <p class="text">
+        Stavitel is the collaborative front-end platform with integrated UI development
+        and content modeling tools. A powerful visual builder to create and publish your
+        headless static websites instantly.
+      </p>
+      <a href="#" class="btn btn-primary">Get Started</a>
+  </div>
+  <div class="hhero__img">
+      <img src="../public/Intro/img/hero.png" alt="Hero Image" />
+  </div>
+</section><br>
+<!-- HERO -->
+
+  <!-- Hero Section -->
   <section class="Hero">
     <div class="HeroSection">
-     <h1> Create. Code. Publish.Stavitel</h1>
-      <p> Stavitel is the collaborative front-end platform with integrated UI development
-          and content modeling tools. A powerful visual builder to create and publish your
-          headless static websites instantly.</p>
           <div class="video">
             <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/rT9No0gdUGE" frameborder="0" allowfullscreen></iframe>
+                <iframe src="../public/Intro/img/Data Structures_yabdelfattah_Lec04_03Mar_2024.mp4 2024-03-30 22-00-33.mp4" frameborder="0" allowfullscreen></iframe>
             </div>
     </div>
-  </section>
-    <!-- Hero Section -->
+  </section><br><br>
+  <!-- Hero Section -->
 
-    <!--- photo-->
-    <section class="gallery-container">
-      <div class="gallery-buttons">
-        <button data-num="0">Image 1</button>
-        <button data-num="1">Image 2</button>
-        <button data-num="2">Image 3</button>
-        <button data-num="3">Image 4</button>
-        <button data-num="4">Image 5</button>
-      </div>
-      <div class="image-gallery">
-        <img
-          data-num="0"
-          src="assets/img/SEO6.svg"
-          id="image1"
-          alt="Slideshow Image"
-        />
-        <img
-          data-num="1"
-          src="assets/img/SEO4.svg"
-          id="image2"
-          alt="Slideshow Image"
-        />
-        <img
-          data-num="2"
-          src="assets/img/SEO3.svg"
-          id="image3"
-          alt="Slideshow Image"
-        />
-        <img
-          src="assets/img/SEO2.svg"
-          id="image4"
-          alt="Slideshow Image"
-          data-num="3"
-        />
-        <img
-          src="assets/img/SEO1.svg"
-          data-num="4"
-          id="image5"
-          alt="Slideshow Image"
-        />
-      </div>
-    </section>
-    <br /><br />
-    <script>var currentImage = 0,
-      buttons = document.getElementsByTagName("button"),
-      imgs = document.getElementsByTagName("img"),
-      buttonsArray = Array.from(buttons),
-      imgsArray = Array.from(imgs);
+  <!--New-->
+  <div class="options" style="margin: auto;">
+    <div class="option active" style="Background:url(../public/Intro/img/design7.png);background-size: cover;background-position: initial;">
+       <div class="shadow"></div>
+       <div class="label">
+       </div>
+    </div>
+    <div class="option" style="Background:url(../public/Intro/img/design8.png);background-size: cover;background-position: initial;">
+       <div class="shadow"></div>
+       <div class="label">  
+       </div>
+    </div>
+    <div class="option" style="Background:url(../public/Intro/img/design9.jpg);background-size: cover;background-position: initial;">
+       <div class="shadow"></div>
+       <div class="label">
+       </div>
+    </div>
+    <div class="option" style="Background:url(../public/Intro/img/design10.jpg);background-size: cover;background-position: initial;">
+       <div class="shadow"></div>
+       <div class="label">
+       </div>
+    </div>
+    <div class="option" style="Background:url(../public/Intro/img/design101.png);background-size: cover;background-position: initial;">
+       <div class="shadow"></div>
+       <div class="label">
+       </div>
+    </div>
+ </div>
+ <script>
+  $(".option").click(function(){
+    $(".option").removeClass("active");
+    $(this).addClass("active");
     
-    imgsArray[currentImage].style.display = "block";
-    
-    //
-    var showImg = (num) => {
-      imgsArray.forEach((img) => {
-        if (img.dataset.num == num) {
-          img.style.display = "block";
-        } else {
-          img.style.display = "none";
-        }
-      });
-    };
-    
-    startSlideshow();
-    
-    // buttons click event
-    buttonsArray.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        currentImage = e.target.dataset.num;
-        showImg(currentImage);
+ });
+ </script>
+  <!--New-->
+
+ <!--paragraph-->
+ <section class="parag">
+  <div class="par">
+    <h1>Creative power that goes
+      beyond templates</h1><br><br>
+      <p>You design, we generate the code — for everything
+        from fully custom layouts to complex animations.</p><br><br>
+        <a href="User_Sign.html"><button class="btn"> Get Started - its free 
+        </button></a>
+  </div>
+</section><br><br><br><br><br><br>
+
+   <!--================== Scroll ===================-->
+<!--================== Abolyazeed ===================-->
+<div class="scroller" data-speed="3000" style="margin: auto;"> 
+  <h1>Create stunning
+    static websites and UI elements,
+    through a seamless workflow
+    Integrate an advanced developer-centric front-end design system that works with any workflow.
+    Enable seamless collaboration between designers and developers.
+  </h1>
+  <div class="scroller__inner scrolly">
+  <ul class="tag-list scroller__inner">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JS</li>
+    <li>php</li>
+    <li>sql</li>
+    <li>animation</li>
+    <li>UI/UX</li>
+    <li>animation</li>
+    <li>sql</li>
+    <li>php</li>
+    <li>JS</li>
+    <li>CSS</li>
+    <li>UI/UX</li>
+    <li>animation</li>
+    <li>sql</li>
+    <li>php</li>
+    <li>JS</li>
+    <li>CSS</li>
+  </ul>
+</div>
+</div>
+
+<div class="scroller" data-direction="right" style="margin: auto;" data-speed="4000">
+  <div class="scroller__inner scrolly">
+    <img src="../public/Intro/img/design11.png" alt="" />
+    <img src="../public/Intro/img/design12.png" alt="" />
+    <img src="../public/Intro/img/design13.jpg" alt="" />
+    <img src="../public/Intro/img/design14.jpg" alt="" />
+    <img src="../public/Intro/img/design15.png" alt="" />
+    <img src="../public/Intro/img/design16.png" alt="" />
+    <!-- copy -->
+    <img src="../public/Intro/img/design17.png" alt="" />
+    <img src="../public/Intro/img/design18.jpg" alt="" />
+    <img src="../public/Intro/img/design19.png" alt="" />
+    <img src="../public/Intro/img/design20.png" alt="" />
+    <img src="../public/Intro/img/design11.png" alt="" />
+    <img src="../public/Intro/img/design11.png" alt="" />
+  </div>
+</div>
+<script>
+  const scrollers = Array.from(document.querySelectorAll(".scroller"));
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    addAnimation();
+  }
+
+  function addAnimation() {
+    scrollers.forEach((scroller) => {
+      scroller.setAttribute("data-animated", true);
+
+      const scrollerInner = scroller.querySelector(".scroller__inner");
+      const scrollerContent = Array.from(scrollerInner.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        duplicatedItem.setAttribute("aria-hidden", true);
+        scrollerInner.appendChild(duplicatedItem);
       });
     });
-    
-    function startSlideshow() {
-      setInterval(function () {
-        currentImage = (currentImage % 5) + 1;
-        if (currentImage >= imgsArray.length) {
-          currentImage = 0;
-        }
-        for (let i = 0; i < imgsArray.length; i++) {
-          if (i == currentImage) {
-            imgsArray[i].style.display = "block";
-          } else {
-            imgsArray[i].style.display = "none";
-          }
-        }
-      }, 5000);
-    }
-    </script>
+  }
+</script><br><br><br>
+<!--================== Scroll ===================-->
 
-   <!--paragraph-->
-   <section class="parag">
-    <div class="par">
-      <h1>Creative power that goes
-        beyond templates</h1><br><br>
-        <p>You design, we generate the code — for everything
-          from fully custom layouts to complex animations.</p><br><br>
-          <a href="User_Sign.html"><button class="btn"> Get Started - its free 
-          </button></a>
-    </div>
-  </section>
-
-     <!--================== Scroll ===================-->
-  <!--================== Abolyazeed ===================-->
-  <div class="scroller" data-speed="3000" style="margin: auto;"> 
-    <h1>Create stunning
-      static websites and UI elements,
-      through a seamless workflow
-      Integrate an advanced developer-centric front-end design system that works with any workflow.
-      Enable seamless collaboration between designers and developers.
-    </h1>
-    <ul class="tag-list scroller__inner">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JS</li>
-      <li>php</li>
-      <li>sql</li>
-      <li>animation</li>
-      <li>UI / UX</li>
-      <li>UI / UX</li>
-      <li>animation</li>
-      <li>sql</li>
-      <li>php</li>
-      <li>JS</li>
-      <li>CSS</li>
-      <li>HTML</li>
-    </ul>
-  </div>
-  
-  <div class="scroller" data-direction="right" style="margin: auto;" data-speed="4000">
-    <div class="scroller__inner scrolly">
-      <img src="https://i.pravatar.cc/150?img=1" alt="" />
-      <img src="https://i.pravatar.cc/150?img=2" alt="" />
-      <img src="https://i.pravatar.cc/150?img=3" alt="" />
-      <img src="https://i.pravatar.cc/150?img=4" alt="" />
-      <img src="https://i.pravatar.cc/150?img=5" alt="" />
-      <img src="https://i.pravatar.cc/150?img=6" alt="" />
-      <!-- copy -->
-      <img src="https://i.pravatar.cc/150?img=1" alt="" />
-      <img src="https://i.pravatar.cc/150?img=2" alt="" />
-      <img src="https://i.pravatar.cc/150?img=3" alt="" />
-      <img src="https://i.pravatar.cc/150?img=4" alt="" />
-      <img src="https://i.pravatar.cc/150?img=5" alt="" />
-      <img src="https://i.pravatar.cc/150?img=6" alt="" />
-    </div>
-  </div>
-  <script>
-    const scrollers = Array.from(document.querySelectorAll(".scroller"));
-    
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
-    }
-
-    function addAnimation() {
-      scrollers.forEach((scroller) => {
-        scroller.setAttribute("data-animated", true);
-  
-        const scrollerInner = scroller.querySelector(".scroller__inner");
-        const scrollerContent = Array.from(scrollerInner.children);
-  
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", true);
-          scrollerInner.appendChild(duplicatedItem);
-        });
-      });
-    }
-  </script>
-  <!--================== Scroll ===================-->
-
-    <!--A platform-->
-  <section class="platform"></section>
-  <div class="plat">
-    <h1>A platform
-      designed for growth<br>
-      Tools to help you scale your site with your business</h1><br><br>
-      <a href="User_Sign.html"><button>
-        Get Started - its free
-    </button></a>
-  </div>
+  <!--A platform-->
+<section class="platform"></section>
+<div class="plat">
+  <h1>A platform
+    designed for growth<br>
+    Tools to help you scale your site with your business</h1><br><br>
+    <a href="User_Sign.html"><button>
+      Get Started - its free
+  </button></a>
+</div>
 
 <br><br><br><br><br><br>
-    <!--A platform-->
+  <!--A platform-->
 
-    <!-- HERO -->
-    <section id="hhero" class="container flex-row">
-      <div class="hhero__content">
-          <h1 class="title">Work Smartly with Endless Possibilities</h1>
-          <p class="text">
+  
+  <!-- SERVICES -->
+  <section id="sevices" 
+    style="
+    background:url(../public/Intro/img/services-bg.png);
+    background-repeat:no-repeat;
+    background-position:top;
+    background-size:80% 50%;
+  ">
+    <div class="container">
+      <h5 class="section-subheading">what we do</h5>
+      <h2 class="section-heading ">
+        Services to solve all kind of business problems
+      </h2> 
+      <div class="services">
+        <div class="service">
+<!--            <div class="service__icon">
+            <img src="assets/img/DrawerDrop.jpg" alt="">
+          </div>-->
+          <h3 class="services__title">Build the Web Drawer Drop</h3>
+          <img src="../public/Intro/img/DrawerDrop.jpg" style="border-radius: 20px;" alt="">
+            <p class="service__text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </p>
-          <a href="#" class="btn btn-primary">Get Started</a>
-      </div>
-      <div class="hhero__img">
-          <img src="assets/img/hero.png" alt="Hero Image" />
-      </div>
-  </section>
-    <!-- HERO -->
-   
-    <!-- ABOUT -->
-    <section id="about" class="container flex-center flex-column">
-      <h5 class="section-subheading"> build trust first</h5>
-      <h2 class="section-heading text-center">
-         Control your business with a single tap
-        </h2>
-         <div class="features text-center">
-         <div class="feature" style="--color:#fe6786";>
-         <div class="feature__icon">
-         <i class="fas fa-anchor"></i>
+            </p>
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
         </div>
-         <h3 class="feature__title"> Complete business controll</h3>
-         <p class="feature__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quasi possimus repellat aperiam? Dolorem error illum ex, vitae quas adipisci earum dicta nobis aut modi fugiat possimus dolore nisi nulla.
-         </p>
+        <div class="service">
+          <!--<div class="service__icon">
+            <img src="assets/img/shopping-cart.png" alt="">
+          </div>-->
+          <h3 class="services__title">Al Build website</h3>
+          <img src="../public/Intro/img/AlBuild.jpg" style="border-radius: 20px;" alt="">
+            <p class="service__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <div class="arrow-icon">
+              <i class="fas fa-arrow-right"></i>
+            </div>
         </div>
-        <div class="feature" style="--color:#5cd8a5";>
-          <div class="feature__icon">
-          <i class="fa-regular fa-file.lines"></i>
-         </div>
-          <h3 class="feature__title"> Critical analytics and report</h3>
-          <p class="feature__text">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quasi possimus repellat aperiam? Dolorem error illum ex, vitae quas adipisci earum dicta nobis aut modi fugiat possimus dolore nisi nulla.
-          </p>
-         </div>
-         <div class="feature" style="--color:#fea95b";>
-          <div class="feature__icon">
-          <i class="fas fa-chart-line"></i>
-         </div>
-          <h3 class="feature__title"> Business Growth</h3>
-          <p class="feature__text">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quasi possimus repellat aperiam? Dolorem error illum ex, vitae quas adipisci earum dicta nobis aut modi fugiat possimus dolore nisi nulla.
-          </p>
-         </div>
+      
+  </section><br><br><br><br><br><br>
+  <!-- SERVICES -->
+
+
+
+  <!-- PROJECTS -->
+  <section id="projects"
+  style="
+    background: url(../public/Intro/img/projects-bg.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:100% 100%;
+    background-attachment:fixed;
+  ">
+    <div class="container">
+      <h5 class="section-subheading">our projects</h5>
+      <h2 class="section-heading">
+        Check the real innovative od problem solving
+      </h2>
+      <div class="projects">
+        <div class="project">
+          <div class="project__img">
+            <img src="../public/Intro/img/SEO2.svg" alt="">
+          </div>
+          <div class="project__content">
+            <h3 class="project__category">SEO</h3>
+            <h3 class="project__title">Lorem ipsum dolor sit amet
+             consectetur adipisicing elit. </h3>
+             <p class="project__text">Optimize your SEO and improve discoverability
+              with fine-tuned controls, high-performance
+              hosting, and flexible content management tools.
+             </p>
+             <a href="#" class="btn btn-secondary">View details</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__img">
+            <img src="../public/Intro/img/editor3.svg" alt="">
+          </div>
+          <div class="project__content">
+            <h3 class="project__category">Editor</h3>
+            <h3 class="project__title">Lorem ipsum dolor sit amet
+             consectetur adipisicing elit. </h3>
+             <p class="project__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nobis magni at, provident laborum dicta hic animi consequatur pariatur quae atque enim praesentium, officiis vitae repellat, dolorem culpa quo iure!
+             </p>
+             <a href="#" class="btn btn-secondary">View details</a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__img">
+            <img src="../public/Intro/img/AlBuild.jpg" alt="">
+          </div>
+          <div class="project__content">
+            <h3 class="project__category">AI</h3>
+            <h3 class="project__title">Welcome to our stavitel AI pages! Here,
+              you can bult AI website</h3>
+             <p class="project__text">
+              please Selcect from Categories
+              Building an AI-powered web page involves integrating artificial intelligence into the design, content generation, or user interaction aspects of the webpage. This can include using AI for creating dynamic and personalized content,
+             </p>
+             <a href="#" class="btn btn-secondary">View details</a>
+          </div>
+        </div>
       </div>
-      <div class="about__details flex-center">
-        <div class="about__details-content">
-          <h1>Most innovative creative team</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab non totam possimus et ad sequi dolorum cumque sint numquam
-          </p>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore temporibus laborum in hic vitae quod qui sunt accusamus eligendi porro consequuntur rerum officia quibusdam quas voluptates, pariatur mollitia repellendus laudantium.
-        </p><br>
-        <a href="#" class="btn btn-primary">Get started</a>
-        </div>
-        <div class="about__details-img">
-          <img src="assets/img/about.png" alt="">
-        </div>
-      </div>
-    </section>
-    <!-- ABOUT -->
+    </div>
+  </section><br><br><br><br><br>
+  <!-- PROJECTS -->
+
+   <!--web developer-->
+<div class="ag-format-container">
+  <div class="ag-create_box">
+    <a href="#" class="js-create_video ag-create_item">
+      <video muted="" playsinline="">
+        <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/statue-xpa-full.mp4" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/statue-xpa-full.webm" type="video/webm">
+      </video>
+      <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
+        <polygon class="cls-2" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+        <polygon class="cls-3" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+        <line class="cls-4" x1="395" x2="395" y1="410" y2="419"></line>
+        <line class="cls-4" x1="399.5" x2="390.5" y1="414.5" y2="414.5"></line>
+      </svg>
+
+      <div class="ag-create_title-item">Branding<br>&amp; Identity</div>
+    </a>
+
+    <a href="#" class="js-create_video ag-create_item">
+      <video muted="" playsinline="">
+        <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.mp4" type="video/mp4">
+        <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.webm" type="video/webm">
+      </video>
+
+      <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
+        <polygon class="cls-2" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+        <polygon class="cls-3" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
+        <line class="cls-4" x1="395" x2="395" y1="410" y2="419"></line>
+        <line class="cls-4" x1="399.5" x2="390.5" y1="414.5" y2="414.5"></line>
+      </svg>
+
+      <div class="ag-create_title-item">Web<br>Development</div>
+    </a>
+  </div>
+</div>
+<script>(function ($) {
+  $(function () {
+
+
+    if (!('ontouchstart' in window)) {
+      const videoPropCont = document.querySelectorAll('.js-create_video');
+
+      videoPropCont.forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          var video = this.querySelector('video');
+
+          if(!item.classList.contains('js-active')){
+
+            item.classList.add('js-active');
+
+            video.play();
+            video.loop = false;
+
+            video.addEventListener('ended', function () {
+              item.classList.remove('js-active');
+              item.classList.remove('js-video-end');
+              item.classList.remove('js-video-pause');
+            });
+
+            video.addEventListener('timeupdate', function () {
+              if((video.currentTime >= 2) && !item.classList.contains('js-video-end')) {
+                video.pause();
+                item.classList.add('js-video-pause');
+              }
+            });
+          }
+        });
+
+        item.addEventListener('mouseleave', function () {
+          var video = this.querySelector('video');
+
+          if(item.classList.contains('js-active')) {
+            if(item.classList.contains('js-video-pause')){
+              item.classList.add('js-video-end');
+              video.play()
+            } else {
+              item.classList.add('js-video-end');
+            }
+          }
+
+        });
+
+      });
+    }
 
     
-    <!-- SERVICES -->
-    <section id="sevices" 
-      style="
-      background:url(assets/img/services-bg.png);
-      background-repeat:no-repeat;
-      background-position:top;
-      background-size:100% 80%;
-    ">
-      <div class="container">
-        <h5 class="section-subheading">what we do</h5>
-        <h2 class="section-heading right">
-          Services to solve all kind of business problems
-        </h2> 
-        <div class="services">
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/squares.png" alt="">
-            </div>
-            <h3 class="services__title">Business 
-              Automation</h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/shopping-cart.png" alt="">
-            </div>
-            <h3 class="services__title"> Ecommerce Support
-              </h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/video-camera.png" alt="">
-            </div>
-            <h3 class="services__title"> Video Prodiction
-              </h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/headphones.png" alt="">
-            </div>
-            <h3 class="services__title"> Realtime Support
-              </h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/placeholder.png" alt="">
-            </div>
-            <h3 class="services__title"> Loction marking
-              </h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
-          <div class="service">
-            <div class="service__icon">
-              <img src="assets/img/upload.png" alt="">
-            </div>
-            <h3 class="services__title"> File upload Protocol
-              </h3>
-              <p class="service__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="arrow-icon">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-          </div>
+  });
+})(jQuery);</script><br><br><br><br><br>
+
+  <!-- Web Development -->
+
+  <!-- TEAM -->
+  <section id="team" class="container">
+    <h5 class="section-subheading text-center">
+      meet our team
+    </h5>
+    <h2 class="section-heading text-center right left">
+      Awesome people with great business skills
+    </h2>
+    <div class="members">
+      <div class="member">
+        <div class="member__img">
+          <img src="../public/Intro/img/design1.jpg" style="border-radius: 20px;" alt="">
+        </div>
+        <div class="member__content">
+          <h1>WebSite Design</h1>
+          <p>web Developer</p>
         </div>
       </div>
-    </section>
-    <!-- SERVICES -->
-
- <!--###########  New  ###############-->
- <section class="sec-01">
-  <div class="container">
-    <h2 class="main-title">SEO</h2>
-    <div class="content">
-      <div class="image"> 
-        <img src="assets/img/SEO2.svg" alt="">
+      <div class="member">
+        <div class="member__img">
+          <img src="../public/Intro/img/design2.png" style="border-radius: 20px;" alt="">
+        </div>
+        <div class="member__content">
+          <h1>WebSite Design</h1>
+          <p>web Developer</p>
+        </div>
       </div>
-      <div class="text-box">
-        <h3>SEO</h3>
-        <p>Optimize your SEO and improve discoverability
-          with fine-tuned controls, high-performance
-          hosting, and flexible content management tools.</p><br><br>
-          <a href=""></a><li class="link btn">Learn Moer</li>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            </a>
+      <div class="member">
+        <div class="member__img">
+          <img src="../public/Intro/img/design3.jpg" style="border-radius: 20px;" alt="">
+        </div>
+        <div class="member__content">
+          <h1>WebSite Design</h1>
+          <p>web Developer</p>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-<section class="sec-02">
-  <div class="container">
-    <h3 class="section-title">Eidator</h3>
-    <div class="content">
-      <div class="image">
-        <img src="assets/img/SEO Img.svg" alt="">
-      </div>
-      <div class="info">
-        <h4 class="info-title">Description</h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A vitae, beatae iste, 
-          aliquam exercitationem voluptatum in sapiente amet quia nobis soluta! Delectus enim ipsam,
-          iste sequi quam tempore commodi nisi!</p>
-          <a href=""></a><li class="link btn">Learn Moer</li>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          </a>
+      <div class="member">
+        <div class="member__img">
+          <img src="../public/Intro/img/design4.jpg" style="border-radius: 20px;" alt="">
+        </div>
+        <div class="member__content">
+          <h1>WebSite Design</h1>
+          <p>web Developer</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
- <!--###########  New  ###############-->
-
-    <!-- PROJECTS -->
-    <section id="projects"
-    style="
-      background: url(assets/img/projects-bg.png);
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:100% 100%;
-      background-attachment:fixed;
-    ">
-      <div class="container">
-        <h5 class="section-subheading">our projects</h5>
-        <h2 class="section-heading">
-          Check the real innovative od problem solving
+  </section>
+    <div class="join-us__inner">
+        <h2 class="join-us__title">
+            Join the
+            <span class="mission">
+                mission
+                <svg
+                    viewBox="0 0 634 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M1.40051 2.37525C1.40051 2.37525 68.8688 48.875 223.369 20.375C377.869 -8.125 633.4 12.3911 633.4 12.3911"
+                        stroke="black"
+                        stroke-width="4"
+                    />
+                </svg>
+            </span>
         </h2>
-        <div class="projects">
-          <div class="project">
-            <div class="project__img">
-              <img src="assets/img/project-1.png" alt="">
-            </div>
-            <div class="project__content">
-              <h3 class="project__category">Development</h3>
-              <h3 class="project__title">Lorem ipsum dolor sit amet
-               consectetur adipisicing elit. </h3>
-               <p class="project__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nobis magni at, provident laborum dicta hic animi consequatur pariatur quae atque enim praesentium, officiis vitae repellat, dolorem culpa quo iure!
-               </p>
-               <a href="#" class="btn btn-secondary">View details</a>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__img">
-              <img src="assets/img/project-2.png" alt="">
-            </div>
-            <div class="project__content">
-              <h3 class="project__category">Development</h3>
-              <h3 class="project__title">Lorem ipsum dolor sit amet
-               consectetur adipisicing elit. </h3>
-               <p class="project__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nobis magni at, provident laborum dicta hic animi consequatur pariatur quae atque enim praesentium, officiis vitae repellat, dolorem culpa quo iure!
-               </p>
-               <a href="#" class="btn btn-secondary">View details</a>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__img">
-              <img src="assets/img/project-3.png" alt="">
-            </div>
-            <div class="project__content">
-              <h3 class="project__category">Development</h3>
-              <h3 class="project__title">Lorem ipsum dolor sit amet
-               consectetur adipisicing elit. </h3>
-               <p class="project__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam nobis magni at, provident laborum dicta hic animi consequatur pariatur quae atque enim praesentium, officiis vitae repellat, dolorem culpa quo iure!
-               </p>
-               <a href="#" class="btn btn-secondary">View details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- PROJECTS -->
-
-     <!--web developer-->
-  <div class="ag-format-container">
-    <div class="ag-create_box">
-      <a href="#" class="js-create_video ag-create_item">
-        <video muted="" playsinline="">
-          <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/statue-xpa-full.mp4" type="video/mp4">
-          <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/statue-xpa-full.webm" type="video/webm">
-        </video>
-
-        <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
-          <polygon class="cls-2" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
-          <polygon class="cls-3" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
-          <line class="cls-4" x1="395" x2="395" y1="410" y2="419"></line>
-          <line class="cls-4" x1="399.5" x2="390.5" y1="414.5" y2="414.5"></line>
-        </svg>
-
-        <div class="ag-create_title-item">Branding<br>&amp; Identity</div>
-      </a>
-
-      <a href="#" class="js-create_video ag-create_item">
-        <video muted="" playsinline="">
-          <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.mp4" type="video/mp4">
-          <source src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/item-svg-video/video/mac-xpa-r.webm" type="video/webm">
-        </video>
-
-        <svg viewBox="0 0 411 431" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <polygon class="cls-1" points="0.5 430.5 340.31 430.5 410.5 361.03 410.5 0.5 0.5 0.5 0.5 430.5"></polygon>
-          <polygon class="cls-2" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
-          <polygon class="cls-3" points="355.17 430.5 410.33 375.33 410.33 430.5 355.17 430.5"></polygon>
-          <line class="cls-4" x1="395" x2="395" y1="410" y2="419"></line>
-          <line class="cls-4" x1="399.5" x2="390.5" y1="414.5" y2="414.5"></line>
-        </svg>
-
-        <div class="ag-create_title-item">Web<br>Development</div>
-      </a>
-    </div>
-  </div>
-  <script>(function ($) {
-    $(function () {
-  
-  
-      if (!('ontouchstart' in window)) {
-        const videoPropCont = document.querySelectorAll('.js-create_video');
-  
-        videoPropCont.forEach(function (item) {
-          item.addEventListener('mouseenter', function () {
-            var video = this.querySelector('video');
-  
-            if(!item.classList.contains('js-active')){
-  
-              item.classList.add('js-active');
-  
-              video.play();
-              video.loop = false;
-  
-              video.addEventListener('ended', function () {
-                item.classList.remove('js-active');
-                item.classList.remove('js-video-end');
-                item.classList.remove('js-video-pause');
-              });
-  
-              video.addEventListener('timeupdate', function () {
-                if((video.currentTime >= 2) && !item.classList.contains('js-video-end')) {
-                  video.pause();
-                  item.classList.add('js-video-pause');
-                }
-              });
-            }
-          });
-  
-          item.addEventListener('mouseleave', function () {
-            var video = this.querySelector('video');
-  
-            if(item.classList.contains('js-active')) {
-              if(item.classList.contains('js-video-pause')){
-                item.classList.add('js-video-end');
-                video.play()
-              } else {
-                item.classList.add('js-video-end');
-              }
-            }
-  
-          });
-  
-        });
-      }
-
-      
-    });
-  })(jQuery);</script>
-
-    <!-- Web Development -->
-
-    <!-- TEAM -->
-    <section id="team" class="container">
-      <h5 class="section-subheading text-center">
-        meet our team
-      </h5>
-      <h2 class="section-heading text-center right left">
-        Awesome people with great business skills
-      </h2>
-      <div class="members">
-        <div class="member">
-          <div class="member__img">
-            <img src="assets/img/member-1.png" alt="">
-          </div>
-          <div class="member__content">
-            <h1>Mohamed Abolyazeed</h1>
-            <p>web Developer</p>
-          </div>
-        </div>
-        <div class="member">
-          <div class="member__img">
-            <img src="assets/img/member-1.png" alt="">
-          </div>
-          <div class="member__content">
-            <h1>Mohamed Abolyazeed</h1>
-            <p>web Developer</p>
-          </div>
-        </div>
-        <div class="member">
-          <div class="member__img">
-            <img src="assets/img/member-1.png" alt="">
-          </div>
-          <div class="member__content">
-            <h1>Mohamed Abolyazeed</h1>
-            <p>web Developer</p>
-          </div>
-        </div>
-        <div class="member">
-          <div class="member__img">
-            <img src="assets/img/member-1.png" alt="">
-          </div>
-          <div class="member__content">
-            <h1>Mohamed Abolyazeed</h1>
-            <p>web Developer</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- TEAM -->
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonial"
-    style="
-      background: url(assets/img/testimonials-bg.png);
-      background-repeat: no-repeat;
-      background-position:right ;
-      background-size: 100%;
-    ">
-      <div class="container flex-row" >
-        <div class="testimonials-wrapper">
-          <p class="quotes">
-          <p class="section-subheading">testimonial
-          </p>
-        <div class="testimonials">
-          <div class="testimonial">
-          <h1 class="testimonial__title">
-            They are awesome
-          </h1>
-          <p class="testimonial__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eligendi unde natus saepe culpa autem impedit. Quis provident et aliquid reiciendis quibusdam laborum, vitae sit possimus quia natus in debitis.
-          </p>
-          <div class="testimonial__author">
-            <h3>Mohamed Abolyazeed</h3>
-            <p>Web Developer</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial__navigation">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>  
-    </div>
-      <div class="testimonials__img">
-        <img src="assets/img/testimonials.png" alt="">
-      </div>
-      </div>
-    </section>
-    <!-- TESTIMONIALS -->
-
-    <!--nama-->
-  <div class="bbox-container">
-    <div class="box-item">
-      <div class="flip-box">
-        <div class="flip-box-front text-center"
-          style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
-          <div class="inner color-white">
-            <h3 class="flip-box-header">AI</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta velit officia atque 
-              iusto. Perferendis earum qui nulla ad 
-              corporis sit repellat quidem reiciendis dolore recusandae? Magnam quae similique saepe esse.</p>
-            <img src="https://s25.postimg.cc/65hsttv9b/cta-arrow.png" alt="" class="flip-box-img">
-          </div>
-        </div>
-        <div class="flip-box-back text-center"
-          style="background-image: url('https://s25.postimg.cc/frbd9towf/cta-2.png');">
-          <div class="inner color-white">
-            <h3 class="flip-box-header"> </h3>
-            <p></p>
-            <a href="Intro_Web.html"><button class="flip-box-button">Learn More</button></a>
-          </div>
-        </div>
-    </div>
-    </div>
-<!--mony-->
-
-<section class="section__container price__container">
-  <p class="section__subheader">Pricing</p>
-  <h2 class="section__header">Check your tour plans</h2>
-  <div class="price__grid">
-    <div class="price__card">
-      <img src="assets/img/AI.svg" alt="price" />
-      <div class="details">
-        <span>Team tour</span>
-        <span>$455/Person</span>
-      </div>
-      <h4>Confirm your group tour recent packages</h4>
-      <div class="price__card__footer">
-        <span class="location">
-          <i class="ri-map-pin-2-fill"></i> Morocco
-        </span>
-        <span class="rating"><i class="ri-star-fill"></i> 5.0</span>
-      </div>
-    </div>
-    <div class="price__card">
-      <img src="assets/img/Contact Us.svg" alt="price" />
-      <div class="details">
-        <span>Team tour</span>
-        <span>$405/Person</span>
-      </div>
-      <h4>Get secured tour plan with your spouse</h4>
-      <div class="price__card__footer">
-        <span class="location">
-          <i class="ri-map-pin-2-fill"></i> Singapore
-        </span>
-        <span class="rating"><i class="ri-star-fill"></i> 4.8</span>
-      </div>
-    </div>
-    <div class="price__card">
-      <img src="assets/img/editor1.svg" alt="price" />
-      <div class="details">
-        <span>Team tour</span>
-        <span>$355/Person</span>
-      </div>
-      <h4>Make your adventures comfortable</h4>
-      <div class="price__card__footer">
-        <span class="location">
-          <i class="ri-map-pin-2-fill"></i> Switzerland
-        </span>
-        <span class="rating"><i class="ri-star-fill"></i> 4.6</span>
-      </div>
-    </div>
-    <div class="price__card">
-      <img src="assets/img/webHost5.svg" alt="price" />
-      <div class="details">
-        <span>Team tour</span>
-        <span>$400/Person</span>
-      </div>
-      <h4>Explore the Paris streets at peace</h4>
-      <div class="price__card__footer">
-        <span class="location">
-          <i class="ri-map-pin-2-fill"></i> Paris
-        </span>
-        <span class="rating"><i class="ri-star-fill"></i> 4.9</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-   <!-- Get Started Section -
-     <section class="hero">
-      <h1 class="hero__title">
-          <div>
-              <span>O</span>
-              <span>u</span>
-              <span>t</span>
-              <span>d</span>
-              <span>o</span>
-              <span>o</span>
-              <span>r</span>
-          </div>
-          <div>
-              <span>T</span>
-              <span>o</span>
-              <span>n</span>
-              <span>e</span>
-              <span>s</span>
-          </div>
-      </h1>
-      <div class="hero__images">
-          <img src="assets/img/Photo1.jpg"/>
-          <img src="assets/img/Photo2.jpg"/>
-          <img src="assets/img/Photo3.jpg"/>
-          <img src="assets/img/Photo4.jpg"/>
-          <img src="assets/img/Photo5.jpg"/>
-          <img src="assets/img/Photo6.jpg"/>
-          <img src="assets/img/Photo7.jpg"/>
-      </div>
-  </section>
-  <section class="text-block">
-      <div class="container">
-          <div class="text__effect">
-              <div class="text__overlay"></div>
-              <p>
-                  Outdoor Tones is committed to motivating everyone to
-                  embrace
-              </p>
-          </div>
-          <div class="text__effect">
-              <div class="text__overlay"></div>
-              <p>
-                  the outdoors. We believe that seeking the thrill of
-                  outdoor
-              </p>
-          </div>
-          <div class="text__effect">
-              <div class="text__overlay"></div>
-              <p>exploration is key to our health. That's why we're</p>
-          </div>
-          <div class="text__effect">
-              <div class="text__overlay"></div>
-              <p>
-                  empowering you to feel confident, vibrant, and primed
-                  for
-              </p>
-          </div>
-          <div class="text__effect">
-              <div class="text__overlay"></div>
-              <p>#OutdoorLiving at its finest.</p>
-          </div>
-      </div>
-  </section>
-  <section class="fullwidth-image">
-      <div class="fullwidth-image__overlay"></div>
-      <div class="fullwidth-image__text">
-          <h2>2023 collection</h2>
-          <p>
-              Our new collection is everything you need for your next
-              adventure. Made to be flexible, breathable and long lasting
-              so you can enjoy more of the #OutdoorLiving.
-          </p>
-      </div>
-      <img src="assets/img/fullwidth.jpg"/>
-  </section>
-  <section class="join-us">
-      <div class="join-us__inner">
-          <h2 class="join-us__title">
-              Join the
-              <span class="mission">
-                  mission
-                  <svg
-                      viewBox="0 0 634 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                  >
-                      <path
-                          d="M1.40051 2.37525C1.40051 2.37525 68.8688 48.875 223.369 20.375C377.869 -8.125 633.4 12.3911 633.4 12.3911"
-                          stroke="black"
-                          stroke-width="4"
-                      />
-                  </svg>
-              </span>
-          </h2>
-          <p class="join-us__text">
-              Leave your email to be part of the email list when we
-              launch.
-          </p>
-          <button>Sign me up</button>
-      </div>
-  </section>
- Get Started Section -->
+        <p class="join-us__text">
+            Leave your email to be part of the email list when we
+            launch.
+        </p>
+        <button>Sign me up</button>
+    </div><br><br><br><br><br>
+  <!-- TEAM -->
 
 
 <!-- FOOTER -->
-<footer>
+<footer style="margin: auto;">
   <div class="footer-row">
     <div class="footer-col">
       <h4>Info</h4>
@@ -921,20 +524,16 @@
         of news, updates, helpful tips, and
         exclusive offers.
       </p>
-      <form action="#">
-        <input type="text" placeholder="Your email" required>
-        <button type="submit">SUBSCRIBE</button>
-      </form>
       <div class="icons">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-github"></i>
+        <h1>Social Media</h1>
+        <a href="#" class="fb"><i class="fab fa-github"></i></a>
+        <a href="#" class="twitter"><i class="fab fa-google"></i></a>
+        <a href="#" class="git"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </div>
 </footer>
-  <!-- FOOTER -->
+<!-- FOOTER -->
 
 
     <!-- FONTAWESOME -->
@@ -946,7 +545,7 @@
     <!-- AOS -->
 
     <!-- SCRIPTS -->
-    <script src="assets/js/script.js"></script>
+    <script src="../app/Intro_Web.js"></script>
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
