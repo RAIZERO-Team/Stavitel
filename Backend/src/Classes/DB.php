@@ -119,7 +119,7 @@ class DB
       $index++;
     }
 
-    $sql = "UPDATE {$table} SET {$set} WHERE id ={$id}";
+    $sql = "UPDATE {$table} SET {$set} WHERE user_id ={$id}";
     if (!$this->query($sql, $fields)->errors()) {
       return true;
     }

@@ -22,14 +22,14 @@ class Send
   public function validationCode($email)
   {
     $validationCode = rand(9999, 1111);
-    $this->_id = $this->_db->get('users', array('email', '=', $email))->first()->id;
+    $this->_id = $this->_db->get('users', array('email', '=', $email))->first()->user_id;
 
     // ============== Generate code verification ==============
     $this->_db->update(
       "users",
       $this->_id,
       array(
-        'code' => $validationCode
+        'Code_Verifi' => $validationCode
       )
     );
     Session::put('code', $validationCode);
@@ -46,12 +46,12 @@ class Send
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
-      $mail->Username = 'am736347@gmail.com';
-      $mail->Password = 'ykveehddlxlijmrk';
+      $mail->Username = 'raizeroteam@gmail.com';
+      $mail->Password = 'ccnymskoseydxrwx';
       $mail->SMTPSecure = 'ssl';
       $mail->Port = 465;
 
-      $mail->setFrom('am736347@gmail.com', 'ahmed');
+      $mail->setFrom('raizeroteam@gmail.com', 'Stavitel');
       $mail->addAddress($toEmail);
 
       $mail->isHTML(true);
@@ -1089,7 +1089,6 @@ class Send
       </table>
     </body>
     </html>
-    
     ';
 
     // ============== Generate the email ==============
@@ -1099,12 +1098,12 @@ class Send
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
-      $mail->Username = 'am736347@gmail.com';
-      $mail->Password = 'ptwdogozwmczypgq';
+      $mail->Username = 'raizeroteam@gmail.com';
+      $mail->Password = 'ccnymskoseydxrwx';
       $mail->SMTPSecure = 'ssl';
       $mail->Port = 465;
 
-      $mail->setFrom('am736347@gmail.com', 'ahmed');
+      $mail->setFrom('raizeroteam@gmail.com', 'Stavitel');
       $mail->addAddress($toEmail);
 
       $mail->isHTML(true);

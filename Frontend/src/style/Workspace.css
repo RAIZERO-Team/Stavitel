@@ -1321,7 +1321,6 @@ hr {
 .user_settings_bio textarea {
   font: inherit;
   text-decoration: none;
-  width: 100%;
   height: 100px;
   border-radius: 8px;
   border: 2px solid var(--c-border-primary);
@@ -1330,7 +1329,7 @@ hr {
   background-color: #fff;
   transition: 0.15s ease;
   resize: none;
-
+  
   &::placeholder {
     color: var(--c-text-action);
   }

@@ -28,7 +28,6 @@
         <div class="inner-box">
           <div class="forms-wrap">
             <form
-              action="Change_Password.html"
               autocomplete="off"
               class="Change-Password-form"
             >
@@ -45,10 +44,10 @@
               <div class="actual-form">
                 <div class="input-wrap">
                   <div class="input-code">
-                    <input class="code" type="number" />
-                    <input class="code" type="number" disabled />
-                    <input class="code" type="number" disabled />
-                    <input class="code" type="number" disabled />
+                    <input class="code" id="code" type="number" />
+                    <input class="code" id="code" type="number" disabled />
+                    <input class="code" id="code" type="number" disabled />
+                    <input class="code" id="code" type="number" disabled />
                   </div>
                 </div>
 
@@ -75,7 +74,8 @@
       </div>
     </main>
 
-    <script src="../app/user.js"></script>
+    <script type="module" src="../app/user.js"></script>
+    <script type="module" src="../context/userData.js"></script>
     <script src="../app/index.js"></script>
     <script src="../app/Code_verification.js"></script>
   </body>

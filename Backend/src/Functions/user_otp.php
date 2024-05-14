@@ -11,7 +11,7 @@ if (!Input::exists()) {
 $postData = file_get_contents('php://input');
 $formData = json_decode($postData, true);
 
-if (!isset($formData['code'])) {
+if (!isset($formData['code_verifiction_password'])) {
   $response = array('error' => 'No code present in the sent data.');
   echo json_encode($response);
   return;
@@ -27,7 +27,7 @@ if (empty($userEmail)) {
 $user = new User();
 $userData = $user->get_data($userEmail);
 
-if (empty($userData) || !isset($userData->code) || $formData['code'] !== $userData->code) {
+if (empty($userData) || !isset($userData->Code_Verifi) || $formData['code_verifiction_password'] !== $userData->Code_Verifi) {
   $response = array('error' => 'Invalid code.');
   echo json_encode($response);
   return;

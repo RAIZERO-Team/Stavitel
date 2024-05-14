@@ -40,7 +40,7 @@ class User
   public function find($email = null)
   {
     if ($email) {
-      $filed = is_numeric($email) ? 'id' : 'email';
+      $filed = is_numeric($email) ? 'user_id' : 'email';
       $data = $this->db->get("users", array($filed, '=', $email));
 
       if ($data->count()) {
@@ -58,28 +58,29 @@ class User
       return $this->_data;
     }
   }
+
   public function login($email = null, $password = null, $remember = true)
   {
     if (!$email && !$password && $this->exist()) {
 
-      Session::put($this->_sessioNanme, $this->get_data()->id);
+      Session::put($this->_sessioNanme, $this->get_data()->user_id);
     } else {
       $user = $this->find($email);
-      
+
       if ($user) {
         if (($this->_data->password === Hash::make($password, $this->get_data()->salt)) && ($this->_data->verify == 'yes')) {
 
-          Session::put($this->_sessioNanme, $this->get_data()->session_id);
+          Session::put($this->_sessioNanme, $this->get_data()->user_id);
 
           if ($remember) {
             $hash = Hash::unique();
-            $hascheck = $this->db->get('users_session', array('user_id', '=', $this->get_data()->session_id));
+            $hascheck = $this->db->get('users_session', array('user_id', '=', $this->get_data()->user_id));
 
             if (!$hascheck->count()) {
               $this->db->insert(
                 'users_session',
                 array(
-                  'user_id' => $this->get_data()->session_id,
+                  'user_id' => $this->get_data()->user_id,
                   'hash' => $hash
                 )
               );
@@ -93,15 +94,13 @@ class User
         }
       }
     }
-
-
     return false;
   }
 
 
   public function logout()
   {
-    $this->db->delete('users_session', array('user_id', '=', $this->get_data()->id));
+    $this->db->delete('users_session', array('user_id', '=', $this->get_data()->user_id));
     Session::delete($this->_sessioNanme);
     Cookie::delete($this->_cookieName);
   }
@@ -114,8 +113,7 @@ class User
 
   public function isVerified()
   {
-
-    if ($this->get_data()->varified == 'yes') {
+    if ($this->get_data()->verify == 'yes') {
       return true;
     } else {
       return false;
@@ -127,7 +125,7 @@ class User
     $this->db->get('users', array('email', '=', $email));
     $this->db->update(
       'users',
-      $this->db->get('users', array('email', '=', $email))->first()->id,
+      $this->db->get('users', array('email', '=', $email))->first()->user_id,
       array(
         'password' => Hash::make($newpassword, $this->db->get('users', array('email', '=', $email))->first()->salt)
       )

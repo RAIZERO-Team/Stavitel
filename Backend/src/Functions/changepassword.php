@@ -11,21 +11,21 @@ if (Input::exists()) {
   $formData = json_decode($postData, true);
 
 
-  if (isset($formData['password']) && isset($formData['confpassword'])) {
-    $password = $formData['password'];
-    $confpassword = $formData['confpassword'];
+  if (isset($formData['change_password_new_password']) && isset($formData['change_pass_confirm_new_pass'])) {
+    $password = $formData['change_password_new_password'];
+    $confpassword = $formData['change_pass_confirm_new_pass'];
 
 
     $validation = $validate->CheckRegistration(array('password' => $password));
 
-    // If validation passes
+
     if ($validate->passed()) {
       if ($password !== $confpassword) {
         $f = 'Passwords do not match.';
         $response = array('error' => array('confpasserror' => $f));
       } else {
         $user->changeUserpassword(Session::get('user_email'), $password);
-        // قم بتعيين رسالة الخطأ إلى قيمة فارغة بعد تغيير كلمة المرور بنجاح
+      
         $f = '';
         $response = array('message' => 'Password changed successfully.', 'error' => array('confpasserror' => $f));
       }

@@ -93,7 +93,7 @@ class Validation
   }
 
   // ============== Is Email Exist function ==============
-  private static function isEmailExist($email)
+  static function isEmailExist($email)
   {
     $validation = new self();
     return $validation->db->emailExists($email);
