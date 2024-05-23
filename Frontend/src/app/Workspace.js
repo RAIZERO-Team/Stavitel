@@ -168,8 +168,10 @@ recent_proje.innerHTML = `<tr>
 // const charttest = test.chart();
 
 let productivityChart = document.getElementById("myChart");
+let projectChart = document.getElementById("project-data-type");
 let Jsondata;
 let myChart;
+let project_data_type;
 
 fetch("../app/data.json")
   .then(function (response) {
@@ -191,6 +193,42 @@ function createChart(data, type) {
         {
           label: "# of Hours",
           data: data.map((row) => row.Hours),
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+}
+
+fetch("../app/projectData.json")
+  .then(function (response) {
+    if (response.status == 200) {
+      return response.json();
+    }
+  })
+  .then(function (data) {
+    Jsondata = data;
+    projectType(Jsondata, "pie");
+  });
+
+function projectType(data, type) {
+  project_data_type = new Chart(projectChart, {
+    type: type,
+    data: {
+      labels: data.map((row) => row.Type),
+      datasets: [
+        {
+          label: "# of count",
+          data: data.map((row) => row.count),
           borderWidth: 1,
         },
       ],

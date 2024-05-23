@@ -219,8 +219,7 @@
             <div class="subpage">
               <!-- <button onclick="closeSubpage()">Close</button> -->
               <span onclick="closeSubpage()"
-                ><i class="bx bxs-cog icon"></i
-              ></span>
+                ><i class='bx bx-x'></i></span>
               <div class="card-container">
                 <div class="card" onclick="selectCard(this)">
                   <div
@@ -231,19 +230,6 @@
                   ></div>
                   <div class="card-content">
                     <h3>Editor 1</h3>
-                    <p>Let's Go To Build Your Website</p>
-                  </div>
-                </div>
-
-                <div class="card" onclick="selectCard(this)">
-                  <div
-                    class="card-image"
-                    style="
-                      background-image: url('../../public/User_Sign/Build_web1.svg');
-                    "
-                  ></div>
-                  <div class="card-content">
-                    <h3>Editor 2</h3>
                     <p>Let's Go To Build Your Website</p>
                   </div>
                 </div>
@@ -278,7 +264,7 @@
 
         <!-- ============= My Project Section ============= -->
         <section class="My Projects section" id="section3">
-          <div class="Project">
+          <!-- <div class="Project"> -->
             <div class="project_info"></div>
 
             <div class="header">
@@ -288,7 +274,7 @@
               <div class="search-wrapper search">
                 <input
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search about projects..."
                   id="search"
                   data-search
                 />
@@ -298,21 +284,34 @@
               </div>
             </div>
 
-            <div class="user_projects">
-              <div class="Projects_list">
-                <div id="projectContainer">
-                  <div class="user-cards" data-user-cards-container></div>
-                  <template data-user-template>
-                    <div class="card">
-                      <div class="header" data-header></div>
-                      <div class="body" data-body></div>
-                    </div>
-                  </template>
-                  <!-- projects will be dynamically generated here -->
+            <div class="project-data">
+                <div class="Projects_list">
+                  <div id="projectContainer">
+                    <div class="user-cards" data-user-cards-container></div>
+                    <template data-user-template>
+                      <div class="card">
+                        <div class="header" data-header></div>
+                        <div class="body" data-body></div>
+                      </div>
+                    </template>
+                    <!-- projects will be dynamically generated here -->
+                  </div>
+              </div>
+  
+              <!-- Productivity -->
+              <div class="chart_card">
+                <div class="title">
+                  <h3>Projects Type</h3>
+                </div>
+                <div class="chart">
+                  <div class="chart_types">
+                    <!-- <button onclick="setChartType('line')">Line</button> -->
+                  </div>
+                  <canvas id="project-data-type"></canvas>
                 </div>
               </div>
+
             </div>
-          </div>
         </section>
 
         <!-- ============= Settings Section ============= -->
@@ -541,6 +540,11 @@
                   <i class="bx bx-lock"></i>
                 </button>
               </div>
+
+              <div class="uploadButtons">
+                <button class="uploadBtn" id="uploadBtn">Upadate Password</button>
+              </div>
+
             </div>
 
             <!-- ============= Project Settings ============= -->
@@ -566,28 +570,26 @@
                 <div class="group">
                   <div class="group">
                     <input type="checkbox" id="check1" />
-                    <label for="check1">Project Notifications</label>
+                    <label for="check1">App Notifications</label>
                   </div>
                 </div>
 
                 <div class="group">
                   <div class="group">
                     <input type="checkbox" id="check2" />
-                    <label for="check2">Email Updates</label>
+                    <label for="check2">Project Notifications</label>
                   </div>
                 </div>
 
                 <div class="group">
                   <div class="group">
                     <input type="checkbox" id="check3" />
-                    <label for="check3">Check 3</label>
+                    <label for="check3">Email Updates</label>
                   </div>
                 </div>
-
-                <!-- <div class="btn-group">
-                    <button class="yes-btn">Save changes</button>
-                    <button class="no-btn">Cancel</button>
-                  </div> -->
+                <div class="uploadButtons">
+                  <button class="uploadBtn" id="uploadBtn">Upadate Password</button>
+                </div>
                   </div>
               </div>
             </div>

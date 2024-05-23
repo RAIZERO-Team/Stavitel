@@ -1,4 +1,12 @@
 <?php
+include ("functions.php");
+
+session_start();
+if (!isset ($_SESSION['user'])) {
+    header('location:login.php');
+    
+    exit();
+}
 // Function to read HTML file
 function readHTMLFile($filename) {
     $fileContent = file_get_contents($filename);
@@ -14,8 +22,10 @@ function readCSSFile($filename) {
 // Main code
 if (isset($_GET['project'])) {
     $project = $_GET['project'];
-    $html_file = "projects/{$project}/index.html";
-    $css_file = "projects/{$project}/css/style.css";
+    $userId="user".getUserID($_SESSION['user']['email']);
+
+    $html_file = "users/".$userId."/projects/{$project}/index.html";
+    $css_file = "users/".$userId."/projects/{$project}/css/style.css";
 
     if(file_exists($html_file) && file_exists($css_file)) {
         $html_content = readHTMLFile($html_file);

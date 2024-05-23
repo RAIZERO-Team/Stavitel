@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!--=============== BOXICONS ===============-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <!--=============== BOXICONS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
 
-  <!--=============== CSS ===============-->
-  <link rel="stylesheet" href="../style/Docs_SEO.css" />
-  <link href="https://cdn.jsdeliver.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../style/Docs_SEO.css" />
 
-  <title>Stavitel</title>
-</head>
-<body>
-  <!-- HEADER -->
-  <nav>
-    <div class="nav__logo"><span>S</span>Tavitel</div>
-    <ul class="nav__links" style="margin: auto;">
-      <li class="link"><a href="#home">Home</a></li>
-      <li class="link"><a href="#services">Services</a></li>
-      <li class="link"><a href="#about">About Us</a></li>
-      <li class="link"><a href="#contact">Contact Us</a></li>
-    </ul>
-    <div class="nav__buttons">
-      <li class="link"><a href="#signin">Sign in</a></li>
-      <li class="link btn"><a href="#getstarted">Get Started</a></li>
-    </div>
-    <div class="menu-btn">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
+    <title>Stavitel</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Stavitel</a>
 
-  <!-- HEADER -->
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About us</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">Services</a>
+            </li>
+            <li class="nav__item">
+              <a href="Contact_us.html" class="nav__link">Contact us</a>
+            </li>
+          </ul>
+        </div>
 
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-grid-alt"></i>
+        </div>
+
+        <a href="User_Sign.html" class="button button__header">Get Started</a>
+      </nav>
+    </header>
+
+    <main class="main">
       <!--=============== HOME ===============-->
       <section class="home section" id="home">
         <div class="home__container container grid">
-          <img src="/Frontend/public/Intro/SEO1.svg"
-            class="svg_img home_img"
+          <img
+            src="/Frontend/public/docs/SEO1.svg"
+            class="svg__img home__img"
             alt="SEO Image"
           />
           <div class="home__data">
             <h1 class="home__title">
-              Keep your SEO controls, under control.
+              Order Products <br />
+              Faster Easier
             </h1>
             <p class="home__description">
-              Optimize your website SEO with fine-tuned controls, high-performance hosting, and flexible content management tools. Contact our Team Work
+              Order your favorite foods at any time and we will deliver them
+              right to where you are.
             </p>
 
             <a href="User_Sign.html" class="button">Get Started</a>
@@ -66,16 +75,19 @@
         <div class="about__container grid">
           <div class="about__data">
             <h2 class="section__title-center">
-              All the power you need, without plugins
+              Find Out A Little More <br />
+              About Us
             </h2>
             <p class="about__description">
-              Stavital gives you fine-level control over SEO markup, indexing rules, redirects, and more. Push any changes live without relying on engineers
+              We are a company dedicated to the distribution of products by
+              delivery to your home or to the place where you are, with the best
+              quality of delivery.
             </p>
           </div>
 
           <img
-            src="/Frontend/public/Intro/SEO2.svg"
-            class="svg_img about_img"
+            src="/Frontend/public/docs/SEO2.svg"
+            class="svg__img about__img"
             alt="SEO Image"
           />
         </div>
@@ -86,15 +98,18 @@
         <div class="security__container grid">
           <div class="security__data">
             <h2 class="section__title-center">
-              Automated SEO
+              Your Safety Is <br />
+              Important
             </h2>
             <p class="security__description">
-              Effortlessly generate SEO-friendly meta titles and descriptions using dynamic fields from your CMS Collections.
+              When your order reaches you, we have the health safety protocols,
+              so that you are protected from any disease. Watch the video of how
+              the delivery is made.
             </p>
           </div>
 
           <img
-            src="/Frontend/public/Intro/SEO3.svg"
+            src="/Frontend/public/docs/SEO3.svg"
             class="svg__img"
             alt="SEO Image"
           />
@@ -111,7 +126,7 @@
           <div class="services__data">
             <h3 class="services__subtitle">Google</h3>
             <img
-              src="/Frontend/public/Intro/SEO4.svg"
+              src="/Frontend/public/docs/SEO4.svg"
               class="services__img"
               alt="SEO Image"
             />
@@ -131,7 +146,7 @@
           <div class="services__data">
             <h3 class="services__subtitle">MDN</h3>
             <img
-              src="/Frontend/public/Intro/SEO5.svg"
+              src="/Frontend/public/docs/SEO5.svg"
               class="services__img"
               alt="SEO Image"
             />
@@ -151,7 +166,7 @@
           <div class="services__data">
             <h3 class="services__subtitle">Wikipedia</h3>
             <img
-              src="/Frontend/public/Intro/SEO6.svg"
+              src="/Frontend/public/docs/SEO6.svg"
               class="services__img"
               alt="SEO Image"
             />
@@ -170,58 +185,95 @@
         </div>
       </section>
 
-  <!-- FOOTER -->
-<footer style="margin: auto;">
-  <div class="footer-row">
-    <div class="footer-col">
-      <h4>Info</h4>
-      <ul class="links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Compressions</a></li>
-        <li><a href="#">Customers</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Collection</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul class="links">
-        <li><a href="#">Free Designs</a></li>
-        <li><a href="#">Latest Designs</a></li>
-        <li><a href="#">Themes</a></li>
-        <li><a href="#">Popular Designs</a></li>
-        <li><a href="#">Art Skills</a></li>
-        <li><a href="#">New Uploads</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Legal</h4>
-      <ul class="links">
-        <li><a href="#">Customer Agreement</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">GDPR</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Media Kit</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Newsletter</h4>
-      <p>
-        Subscribe to our newsletter for a weekly dose
-        of news, updates, helpful tips, and
-        exclusive offers.
-      </p>
-      <div class="icons">
-        <h1>Social Media</h1>
-        <a href="#" class="fb"><i class="fab fa-github"></i></a>
-        <a href="#" class="twitter"><i class="fab fa-google"></i></a>
-        <a href="#" class="git"><i class="fab fa-linkedin"></i></a>
+      <!--=============== CONTACT US ===============-->
+      <section class="contact section container" id="contact">
+        <div class="contact__container grid">
+          <div class="contact__content">
+            <h2 class="section__title-center">
+              Contact Us From <br />
+              Here
+            </h2>
+            <p class="contact__description">
+              You can contact us from here, you can write to us, call us or
+              visit our service center, we will gladly assist you.
+            </p>
+          </div>
+
+          <ul class="contact__content grid">
+            <li class="contact__address">
+              Telephone:
+              <span class="contact__information">999 - 888 - 777</span>
+            </li>
+            <li class="contact__address">
+              Email:
+              <span class="contact__information">delivery@email.com</span>
+            </li>
+            <li class="contact__address">
+              Location: <span class="contact__information">Lima - Peru</span>
+            </li>
+          </ul>
+
+          <div class="contact__content">
+            <a href="User_Sign.html" class="button">Get Started</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer section">
+      <div class="footer__container container grid">
+        <div class="footer__content">
+          <a href="#" class="footer__logo">Delivery</a>
+          <p class="footer__description">
+            Order Products Faster <br />
+            Easier
+          </p>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Our Services</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Pricing </a></li>
+            <li><a href="#" class="footer__link">Discounts</a></li>
+            <li><a href="#" class="footer__link">Report a bug</a></li>
+            <li><a href="#" class="footer__link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Our Company</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Blog</a></li>
+            <li><a href="#" class="footer__link">Our mision</a></li>
+            <li><a href="#" class="footer__link">Get in touch</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Community</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Support</a></li>
+            <li><a href="#" class="footer__link">Questions</a></li>
+            <li><a href="#" class="footer__link">Customer help</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__social">
+          <a href="#" class="footer__social-link"
+            ><i class="bx bxl-facebook-circle"></i
+          ></a>
+          <a href="#" class="footer__social-link"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="#" class="footer__social-link"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
-<!-- FOOTER -->
+
+      <p class="footer__copy">&#169; Stavitel. All right reserved</p>
+    </footer>
 
     <!--=============== MAIN JS ===============-->
     <script src="../app/Docs.js"></script>

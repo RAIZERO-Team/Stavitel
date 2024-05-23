@@ -2,7 +2,7 @@
 
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import { exportTemplate } from "../config/Export/exportTemplate_editor_BT.js";
+import { exportTemplate } from "../config/Export/exportTemplate";
 import { Notyf } from "notyf";
 
 // =============  =============
@@ -14,6 +14,15 @@ const msg = new Notyf({
 });
 
 // ============= get local data function =============
+
+const response = await fetch("../../../Backend/src/Functions", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+});
+
 // here we need to get the data from the server to show it
 export const getLocal = (key) => {
   let localData = localStorage.getItem(key);
@@ -25,6 +34,33 @@ export const getLocal = (key) => {
 // here we need to add the data to server
 export const addLocal = (key, content) => {
   localStorage.setItem(key, JSON.stringify(content || []));
+};
+
+export const saveLocalToBackend = async (data) => {
+  try {
+      const response = await fetch("../../../../Backend/src/Functions", {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+          throw new Error('Failed to save data');
+      }
+
+      const responseData = await response.json();
+      modalMessage({
+          message: 'Data saved successfully!',
+          type: 'success'
+      });
+  } catch (error) {
+      modalMessage({
+          message: `Error: ${error.message}`,
+          type: 'error'
+      });
+  }
 };
 
 // =============  =============

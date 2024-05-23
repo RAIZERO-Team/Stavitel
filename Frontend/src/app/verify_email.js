@@ -1,11 +1,17 @@
 import { userData } from "../context/userData.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-  let userEmail = document.getElementById("userEmail");
+  const userEmailElement = document.getElementById("userEmail");
+
+  // Retrieve the emailData instance from sessionStorage/localStorage or instantiate a new one if needed
+  const email = sessionStorage.getItem('userEmail');
   const email_verify = new userData();
-  const email = email_verify.getEmail();
+  email_verify.emailVerify();
 
-  userEmail.innerText = email;
+  userEmailElement.innerText = email;
 
-  email_verify.email_verify();
+  // To Remove the session
+  setTimeout(() => {
+    sessionStorage.removeItem('userEmail');
+  }, 900000); // 15 minutes
 });

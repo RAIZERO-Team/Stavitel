@@ -1,9 +1,9 @@
 [
-	{ "Day": "Sat", "Hours": 5 },
-	{ "Day": "Sun", "Hours": 2},
-	{ "Day": "Mon", "Hours": 3 },
-	{ "Day": "Tue", "Hours": 4 },
-	{ "Day": "Wen", "Hours": 1 },
-	{ "Day": "Thrs", "Hours": 2 },
-	{ "Day": "Fri", "Hours": 8 }
+	{ "Day": "Sat", "Hours": 0 },
+	{ "Day": "Sun", "Hours": 0},
+	{ "Day": "Mon", "Hours": 0 },
+	{ "Day": "Tue", "Hours": 0 },
+	{ "Day": "Wen", "Hours": 0 },
+	{ "Day": "Thrs", "Hours": 0 },
+	{ "Day": "Fri", "Hours": 0 }
 ]

@@ -565,10 +565,6 @@ body.dark .home .text {
   flex-basis: 300px;
 }
 
-.content main .bottom-data .chart_card .task-list {
-  width: 100%;
-}
-
 .chart_card .title {
   font-size: 24px;
   font-weight: 600;
@@ -777,28 +773,9 @@ body.dark .home .text {
   }
 }
 
-.user_projects {
+/* .project {
   display: flex;
-  flex-wrap: wrap;
-  grid-gap: 24px;
-  margin-top: 24px;
-  width: 100%;
-  color: var(--dark);
-}
-
-.content main .user_projects>div {
-  border-radius: 20px;
-  background: var(--light);
-  padding: 24px;
-  width: 100%;
-  height: 34rem;
-  margin-top: 35px;
-  overflow-x: auto;
-}
-
-.project {
-  display: flex;
-  width: 100%;
+  width: 140%;
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
@@ -816,7 +793,7 @@ body.dark .home .text {
   .more-icon {
     display: block;
   }
-}
+} */
 
 .project-content {
   flex: 1;
@@ -826,7 +803,6 @@ body.dark .home .text {
 
 .more-icon {
   display: none;
-  margin-right: 15px;
   font-size: 24px;
   cursor: pointer;
 }
@@ -870,6 +846,57 @@ body.dark .home .text {
 
 .hover-item:hover {
   background-color: #f0f0f0;
+}
+
+/* projects type chart */
+.content main .project-data {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 24px;
+  margin-top: 5rem;
+  height: 10rem;
+  width: 100%;
+  color: var(--dark);
+}
+
+.content main .project-data>div {
+  border-radius: 20px;
+  background: var(--light);
+  padding: 24px;
+  overflow-x: auto;
+}
+
+.content main .project-data .header {
+  display: flex;
+  align-items: center;
+  grid-gap: 16px;
+  margin-bottom: 24px;
+}
+
+.content main .project-data .header h3 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.content main .project-data .Projects_list {
+  flex-grow: 1;
+  flex-basis: 500px;
+  padding: 35px;
+  height: 29rem;
+  display: flex;
+  overflow-x: auto;
+  align-items: flex-start;
+}
+
+.content main .project-data .chart_card {
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+.chart_card .title {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 /* ================ settings ================ */
@@ -1130,27 +1157,7 @@ input[type="radio"] {
   }
 }
 
-.user-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: .25rem;
-  margin-top: 1rem;
-}
 
-.card {
-  border: 1px solid black;
-  background-color: white;
-  padding: .5rem;
-}
-
-.card>.header {
-  margin-bottom: .25rem;
-}
-
-.card>.body {
-  font-size: .8rem;
-  color: #777;
-}
 
 .hide {
   display: none;
@@ -1348,8 +1355,9 @@ hr {
   align-items: center;
   gap: .5rem;
   margin-bottom: 1rem;
+}
 
-  input[type="checkbox"] {
+.group input[type="checkbox"] {
     position: relative;
     width: 28px;
     height: 28px;
@@ -1359,11 +1367,11 @@ hr {
     cursor: pointer;
   }
 
-  input[type="checkbox"]:checked {
+.group input[type="checkbox"]:checked {
     background-color: limegreen;
   }
 
-  input[type="checkbox"]::before {
+.group input[type="checkbox"]::before {
     content: '';
     position: absolute;
     top: 4px;
@@ -1376,7 +1384,7 @@ hr {
     transform: rotate(45deg) scale(1);
   }
 
-  input[type="checkbox"]:checked::before {
+.group input[type="checkbox"]:checked::before {
     border-color: #fff;
     animation: checkAnim .2s ease;
   }
@@ -1387,22 +1395,23 @@ hr {
     }
   }
 
-  label {
+.group label {
     color: #272727;
     font-size: 1.2rem;
     user-select: none;
   }
-}
 
-.btn-group {
+
+.group .btn-group {
   position: relative;
   width: 100%;
   height: 40px;
   display: flex;
   justify-content: center;
   margin-top: 15px;
+}
 
-  button {
+.group .btn-group button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1421,8 +1430,6 @@ hr {
       color: var(--c-accent-primary);
     }
   }
-
-}
 
 /* ================ Rate Form ================ */
 /* .wrapper {
@@ -1519,4 +1526,20 @@ textarea {
 .btn-group .btn.cancel {
   background: var(--white);
   color: var(--blue);
+} */
+
+/* ======== Scroll bar ======== */
+/* ::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(228, 8%, 35%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(228, 8%, 45%);
+  cursor: pointer;
 } */

@@ -1,3 +1,11 @@
+<?php include ("functions.php");
+
+session_start();
+if (!isset ($_SESSION['user'])) {
+    header('location:login.php');
+    
+    exit();
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +19,11 @@
     // Check if project parameter is provided in URL
     if (isset($_GET['project'])) {
         $project = $_GET['project'];
+        $userId="user".getUserID($_SESSION['user']['email']);
 
         // Define project directory path
-        $projectDir = 'projects/' . $project . '/';
+        $projectDir = "users/".$userId."/projects/" . $project . '/';
+        
 
         // Check if project directory exists
         if (is_dir($projectDir)) {

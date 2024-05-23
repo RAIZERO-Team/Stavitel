@@ -1,5 +1,6 @@
 // Import userData class from userData.js
 import { userData } from "../context/userData.js";
+import { notification } from "../context/notfication.js";
 
 // Wait for DOM content to load
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,16 +18,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  let userdata = new userData();
+  const notifier = new notification();
+
   // Event listener for forget password button
   const forgetPasswordBtn = document.getElementById("forget_password_btn");
   if (forgetPasswordBtn) {
     forgetPasswordBtn.addEventListener("click", async (event) => {
       event.preventDefault();
       const forgetPasswordEmail = document.getElementById("forget_password_email").value;
-      const userForgetPass = new userData("", "", "", "", "", forgetPasswordEmail, "", "");
+
+      const notificationsContainer = document.querySelector(".notifications");
+
+      userdata.forgetPasswordEmail = forgetPasswordEmail;
 
       try {
-        const result = await userForgetPass.forget_password({ user_email: forgetPasswordEmail });
+        const result = await userdata.forgetPassword({ user_email: forgetPasswordEmail });
+
+        if (result) {
+          if (result.email) {
+            const customMessage = result.username;
+            const errorNotification = notifier.createToast("error", customMessage);
+            notificationsContainer.appendChild(errorNotification);
+    
+            errorName.innerText = "*Name";
+            errorName.style.color = "#ff0000";
+          }
+        }
         console.log(result); // Handle API response
       } catch (error) {
         console.error("Error: ", error);
@@ -41,10 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       const codeInputs = document.querySelectorAll(".code");
       const code = Array.from(codeInputs).map((input) => input.value).join("");
-      const codeVerify = new userData("", "", "", "", "", "", code);
+
+      userdata.codeVerificationPassword = code;
 
       try {
-        const result = await codeVerify.code_verifiction({ code });
+        const result = await userdata.codeVerification({ code });
         console.log(result); // Handle API response
       } catch (error) {
         console.error("Error: ", error);
@@ -59,10 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       const newPassword = document.getElementById("change_password_new_password").value;
       const confirmNewPassword = document.getElementById("change_password_confirm_new_password").value;
-      const changePass = new userData("", "", "", "", "", "", "", newPassword, confirmNewPassword);
+
+      userdata.changePasswordNewPassword = newPassword;
+      userdata.changePassConfirmNewPass = confirmNewPassword;
 
       try {
-        const result = await changePass.change_password({ new_password: newPassword, confirm_new_password: confirmNewPassword });
+        const result = await userdata.changePassword({ new_password: newPassword, confirm_new_password: confirmNewPassword });
         console.log(result); // Handle API response
       } catch (error) {
         console.error("Error: ", error);
@@ -71,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event listener for review button
-  const reviewBtn = document.getElementById("review_btn");
-  if (reviewBtn) {
-    reviewBtn.addEventListener("click", async (event) => {
-      event.preventDefault();
-      const userReview = document.getElementById("user_review").value;
-      // Assuming `review` class is defined elsewhere
-      const review1 = new review(5, userReview);
-      review1.add_review(); // Make API call to add review
-    });
-  }
+  // const reviewBtn = document.getElementById("review_btn");
+  // if (reviewBtn) {
+  //   reviewBtn.addEventListener("click", async (event) => {
+  //     event.preventDefault();
+  //     const userReview = document.getElementById("user_review").value;
+  //     // Assuming `review` class is defined elsewhere
+  //     const review1 = new review(5, userReview);
+  //     review1.add_review(); // Make API call to add review
+  //   });
+  // }
 });

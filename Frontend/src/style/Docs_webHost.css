@@ -287,20 +287,20 @@ body.dark-theme {
 }
 
 /*=============== ABOUT ===============*/
-.about__container {
+.left__container {
   gap: 2.5rem;
 }
 
-.about__data {
+.left__data {
   text-align: center;
 }
 
 /*=============== SECURITY ===============*/
-.security__container {
+.right__container {
   gap: 2.5rem;
 }
 
-.security__data {
+.right__data {
   text-align: center;
 }
 
@@ -474,28 +474,28 @@ body.dark-theme {
     text-align: initial;
   }
   .home__container,
-  .about__container,
-  .security__container,
+  .left__container,
+  .right__container,
   .services__container,
   .contact__container,
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .home__img {
+  .right_img {
     order: 1;
   }
   .home__container,
-  .about__container,
-  .security__container,
+  .left__container,
+  .right__container,
   .contact__container {
     align-items: center;
   }
-  .about__data,
-  .security__data,
+  .left__data,
+  .right__data,
   .contact__description {
     text-align: initial;
   }
-  .about__img,
+  .left__img,
   .app__img {
     order: -1;
   }
@@ -537,8 +537,8 @@ body.dark-theme {
   .svg__img {
     width: 470px;
   }
-  .about__container,
-  .security__container,
+  .left__container,
+  .right__container,
   .contact__container {
     column-gap: 6rem;
   }

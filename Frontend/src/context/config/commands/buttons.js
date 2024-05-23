@@ -14,7 +14,7 @@ import {
   removeSite,
   removeSiteFromNetlify,
   getUrl,
-} from "../../helpers/index.js";
+} from "../../helpers/index";
 import { Notyf } from "notyf";
 
 // =============  =============
